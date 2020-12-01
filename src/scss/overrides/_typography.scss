@@ -1,0 +1,38 @@
+@use "../settings/typography-font";
+@use "../settings/typography-size";
+
+@each $size, $map in typography-size.$fs-font-sizes-responsive {
+  .fs-\!-font-size-#{$size} {
+    @include typography-size.fs-font-size($size, $important: true);
+  }
+}
+
+.fs-\!-font-body {
+  font-family: typography-font.$fs-font-body !important;
+}
+.fs-\!-font-body-regular {
+  font-weight: typography-font.$fs-font-body-regular !important;
+}
+.fs-\!-font-body-bold {
+  font-weight: typography-font.$fs-font-body-bold !important;
+}
+
+.fs-\!-font-header {
+  font-family: typography-font.$fs-font-header !important;
+}
+.fs-\!-font-header-regular {
+  font-weight: typography-font.$fs-font-header-regular !important;
+}
+.fs-\!-font-header-bold {
+  font-weight: typography-font.$fs-font-header-bold !important;
+}
+
+.fs-\!-font-code {
+  font-family: typography-font.$fs-font-code !important;
+}
+.fs-\!-font-code-regular {
+  font-weight: typography-font.$fs-font-code-regular !important;
+}
+.fs-\!-font-code-bold {
+  font-weight: typography-font.$fs-font-code-bold !important;
+}

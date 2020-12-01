@@ -1,0 +1,21 @@
+@use "../settings/measurements";
+@use "../settings/media-queries";
+
+.fs-\!-width-one-quarter,
+.fs-\!-width-one-third,
+.fs-\!-width-one-half,
+.fs-\!-width-two-thirds,
+.fs-\!-width-three-quarters,
+.fs-\!-width-full {
+  width: measurements.fs-width(full) !important;
+}
+
+@include media-queries.fs-mq($from: tablet) {
+  @each $width, $width-value in measurements.$fs-grid {
+    @if $width != "full" {
+      .fs-\!-width-#{$width} {
+        width: $width-value !important;
+      }
+    }
+  }
+}

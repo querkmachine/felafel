@@ -1,0 +1,49 @@
+@use "../settings/measurements";
+@use "../settings/media-queries";
+@use "sass:string";
+
+@mixin fs-main-wrapper() {
+  $gutter-safe-area-right: calc(
+    #{measurements.$fs-gutter-half} + env(safe-area-inset-right)
+  );
+  $gutter-safe-area-left: calc(
+    #{measurements.$fs-gutter-half} + env(safe-area-inset-left)
+  );
+  display: block;
+  max-width: measurements.$fs-page-width;
+  margin-right: measurements.$fs-gutter-half;
+  margin-left: measurements.$fs-gutter-half;
+  @supports (margin: max(calc(0px))) {
+    margin-right: max(
+      #{measurements.$fs-gutter-half},
+      #{$gutter-safe-area-right}
+    );
+    margin-left: max(
+      #{measurements.$fs-gutter-half},
+      #{$gutter-safe-area-left}
+    );
+  }
+  @include media-queries.fs-mq($from: tablet) {
+    margin-right: measurements.$fs-gutter;
+    margin-left: measurements.$fs-gutter;
+    @supports (margin: max(calc(0px))) {
+      margin-right: max(#{measurements.$fs-gutter}, #{$gutter-safe-area-right});
+      margin-left: max(#{measurements.$fs-gutter}, #{$gutter-safe-area-left});
+    }
+  }
+  @include media-queries.fs-mq(
+    $and:
+      "(min-width: #{(measurements.$fs-page-width + measurements.$fs-gutter * 2)})"
+  ) {
+    margin-right: auto;
+    margin-left: auto;
+    @supports (margin: max(calc(0px))) {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}
+
+.fs-main-wrapper {
+  @include fs-main-wrapper;
+}

@@ -1,0 +1,120 @@
+@use "sass:map";
+@use "sass:math";
+@use "measurements";
+@use "media-queries";
+
+// Convert pixel line-heights into relative values
+@function _fs-line-height($line-height, $font-size) {
+  @if not
+    math.is-unitless($line-height) and
+    math.unit($line-height) ==
+    math.unit($font-size)
+  {
+    $line-height: $line-height / $font-size;
+  }
+  @return $line-height;
+}
+
+// Responsive font size map
+$fs-font-sizes-responsive: (
+  14: (
+    null: (
+      font-size: 12px,
+      line-height: 15px,
+    ),
+    tablet: (
+      font-size: 14px,
+      line-height: 20px,
+    ),
+  ),
+  16: (
+    null: (
+      font-size: 14px,
+      line-height: 16px,
+    ),
+    tablet: (
+      font-size: 16px,
+      line-height: 20px,
+    ),
+  ),
+  19: (
+    null: (
+      font-size: 16px,
+      line-height: 20px,
+    ),
+    tablet: (
+      font-size: 19px,
+      line-height: 25px,
+    ),
+  ),
+  24: (
+    null: (
+      font-size: 18px,
+      line-height: 20px,
+    ),
+    tablet: (
+      font-size: 24px,
+      line-height: 30px,
+    ),
+  ),
+  36: (
+    null: (
+      font-size: 24px,
+      line-height: 25px,
+    ),
+    tablet: (
+      font-size: 36px,
+      line-height: 40px,
+    ),
+  ),
+  48: (
+    null: (
+      font-size: 32px,
+      line-height: 35px,
+    ),
+    tablet: (
+      font-size: 48px,
+      line-height: 50px,
+    ),
+  ),
+  80: (
+    null: (
+      font-size: 53px,
+      line-height: 55px,
+    ),
+    tablet: (
+      font-size: 80px,
+      line-height: 80px,
+    ),
+  ),
+) !default;
+
+// Responsive font-size mixin
+@mixin fs-font-size($size, $important: false) {
+  @if not map.has-key($fs-font-sizes-responsive, $size) {
+    @error "Unknown font size `#{$size}` - expected a point from the typography scale.";
+  }
+  $size-map: map.get($fs-font-sizes-responsive, $size);
+  @each $breakpoint, $breakpoint-map in $size-map {
+    $font-size: map.get($breakpoint-map, "font-size");
+    $font-size-rem: measurements.fs-px-to-rem($font-size);
+    $line-height: _fs-line-height(
+      map-get($breakpoint-map, "line-height"),
+      $font-size
+    );
+    @if $important {
+      $font-size: $font-size !important;
+      $font-size-rem: $font-size-rem !important;
+      $line-height: $line-height !important;
+    }
+    @if ($breakpoint == null) {
+      font-size: $font-size-rem;
+      line-height: $line-height;
+    } @else {
+      @include media-queries.fs-mq($from: $breakpoint) {
+        font-size: $font-size-rem;
+        line-height: $line-height;
+      }
+    }
+  }
+}

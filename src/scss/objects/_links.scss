@@ -1,0 +1,16 @@
+@use "../settings/colors";
+
+.fs-link {
+  $self: &;
+  color: colors.$fs-link-color;
+  text-decoration: underline;
+  &:not(#{$self}--no-visited):visited {
+    color: colors.$fs-link-visited-color;
+  }
+  &:hover {
+    color: colors.$fs-link-hover-color;
+  }
+  &:active {
+    color: colors.$fs-link-active-color;
+  }
+}

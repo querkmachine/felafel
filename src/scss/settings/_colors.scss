@@ -1,0 +1,57 @@
+@use "sass:string";
+@use "sass:color";
+
+// Color selection function
+@function fs-color($color) {
+  $color: string.quote($color);
+  @return map-get($fs-color-palette, $color);
+}
+
+// Color tweaking functions
+@function fs-color-shade($color, $percentage) {
+  @return color.mix(#000000, $color, $percentage);
+}
+
+@function fs-color-tint($color, $percentage) {
+  @return color.mix(#ffffff, $color, $percentage);
+}
+
+// Color palette
+$fs-color-palette: (
+  "red": #ef4444,
+  "yellow": #f59e0b,
+  "green": #10b981,
+  "blue": #3b82f6,
+  "indigo": #6366f1,
+  "purple": #8b5cf6,
+  "pink": #ec4899,
+  "white": #fff,
+  "black": #000,
+  "grey5": #f9fafb,
+  "grey10": #f3f4f6,
+  "grey20": #e5e7eb,
+  "grey30": #d1d5db,
+  "grey40": #9ca3af,
+  "grey50": #6b7280,
+  "grey60": #4b5563,
+  "grey70": #374151,
+  "grey80": #1f2937,
+  "grey90": #111827,
+) !default;
+
+// Usage defined colours
+$fs-brand-color: fs-color("blue") !default;
+$fs-text-color: fs-color("grey90") !default;
+$fs-text-color-heading: $fs-text-color !default;
+$fs-text-color-secondary: fs-color("grey50") !default;
+$fs-canvas-background-color: fs-color("white") !default;
+$fs-body-background-color: $fs-canvas-background-color !default;
+$fs-focus-color: fs-color("yellow") !default;
+$fs-focus-text-color: fs-color("black") !default;
+$fs-error-color: fs-color("red") !default;
+$fs-success-color: fs-color("green") !default;
+$fs-border-color: fs-color("grey30") !default;
+$fs-link-color: fs-color("blue") !default;
+$fs-link-visited-color: fs-color("purple") !default;
+$fs-link-hover-color: fs-color-shade(fs-color("blue"), 20%) !default;
+$fs-link-active-color: $fs-text-color !default;
