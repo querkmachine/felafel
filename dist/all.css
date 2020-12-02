@@ -409,6 +409,33 @@ body {
   margin-bottom: 0.9375rem;
 }
 
+.fs-\!-sr {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+}
+
+.fs-\!-display-block {
+  display: block !important;
+}
+
+.fs-\!-display-inline {
+  display: inline !important;
+}
+
+.fs-\!-display-inline-block {
+  display: inline-block !important;
+}
+
+.fs-\!-display-none {
+  display: none !important;
+}
+
 .fs-\!-margin-0 {
   margin: 0rem !important;
 }
