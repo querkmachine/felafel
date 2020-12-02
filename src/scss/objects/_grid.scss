@@ -1,0 +1,22 @@
+@use "../settings/measurements" as settings;
+@use "../helpers/layout";
+
+@use "sass:map";
+
+.fs-grid-row {
+  @include layout.fs-clearfix;
+  margin-right: 0 - settings.$fs-gutter-half;
+  margin-left: 0 - settings.$fs-gutter-half;
+}
+
+@each $width in map.keys(settings.$fs-grid) {
+  .fs-grid-column-#{$width} {
+    @include layout.fs-grid-column($width);
+  }
+}
+
+@each $width in map.keys(settings.$fs-grid) {
+  .desktop\:fs-grid-column-#{$width} {
+    @include layout.fs-grid-column($width, $at: desktop);
+  }
+}

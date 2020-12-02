@@ -1,5 +1,5 @@
 @use "../settings/measurements" as settings;
-@use "../helpers/measurements" as helpers;
+@use "../helpers/layout";
 @use "../helpers/media-queries";
 
 .fs-\!-width-one-quarter,
@@ -8,7 +8,7 @@
 .fs-\!-width-two-thirds,
 .fs-\!-width-three-quarters,
 .fs-\!-width-full {
-  width: helpers.fs-width(full) !important;
+  width: layout.fs-grid-width(full) !important;
 }
 
 @include media-queries.fs-mq($from: tablet) {
