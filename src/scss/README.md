@@ -3,6 +3,7 @@
 Felafel's CSS is split into layers roughly akin to the [ITCSS architecture](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/). Each subsequent layer is more specific and explicit than the last, whilst also applying on an ever smaller group of code.
 
 1. [Settings](#settings)
+1. [Helpers](#helpers)
 1. [Core](#core)
 1. [Objects](#objects)
 1. [Components](#components)
@@ -10,9 +11,15 @@ Felafel's CSS is split into layers roughly akin to the [ITCSS architecture](http
 
 ## Settings
 
-Global variables for the project, such as colours, font families, type scales, etc. and any functions and mixins relating to them.
+Global variables for the project, such as colours, font families, type scales, etc.
 
-This lis a combination of the Settings and Helpers layers of ITCSS.
+This layer doesn't output any CSS.
+
+## Helpers
+
+Functions and mixin definitions.
+
+This layer is named equivalent to Tools in ITCSS. This layer doesn't output any CSS.
 
 ## Core
 

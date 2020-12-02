@@ -72,29 +72,29 @@ body {
 
 .fs-main-wrapper {
   display: block;
-  max-width: 60rem;
-  margin-right: 0.9375rem;
-  margin-left: 0.9375rem;
+  max-width: 960px;
+  margin-right: 15px;
+  margin-left: 15px;
 }
 @supports (margin: max(calc(0px))) {
   .fs-main-wrapper {
-    margin-right: max(0.9375rem, calc( 0.9375rem + env(safe-area-inset-right) ));
-    margin-left: max(0.9375rem, calc( 0.9375rem + env(safe-area-inset-left) ));
+    margin-right: max(15px, calc( 15px + env(safe-area-inset-right) ));
+    margin-left: max(15px, calc( 15px + env(safe-area-inset-left) ));
   }
 }
 @media screen and (min-width: 541px) {
   .fs-main-wrapper {
-    margin-right: 1.875rem;
-    margin-left: 1.875rem;
+    margin-right: 30px;
+    margin-left: 30px;
   }
   @supports (margin: max(calc(0px))) {
     .fs-main-wrapper {
-      margin-right: max(1.875rem, calc( 0.9375rem + env(safe-area-inset-right) ));
-      margin-left: max(1.875rem, calc( 0.9375rem + env(safe-area-inset-left) ));
+      margin-right: max(30px, calc( 15px + env(safe-area-inset-right) ));
+      margin-left: max(30px, calc( 15px + env(safe-area-inset-left) ));
     }
   }
 }
-@media screen and (min-width: 63.75rem) {
+@media screen and (min-width: 1020px) {
   .fs-main-wrapper {
     margin-right: auto;
     margin-left: auto;

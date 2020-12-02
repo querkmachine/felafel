@@ -1,5 +1,6 @@
 @use "../settings/measurements";
-@use "../settings/media-queries";
+@use "../helpers/media-queries";
+
 @use "sass:string";
 
 @mixin fs-main-wrapper() {

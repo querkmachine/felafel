@@ -1,0 +1,20 @@
+@use "../settings/measurements" as settings;
+
+@use "sass:map";
+@use "sass:math";
+
+// px to rem unit conversion
+@function fs-px-to-rem($value) {
+  @if (math.is-unitless($value)) {
+    $value: $value * 1px;
+  }
+  @return $value / settings.$fs-font-sizes-root * 1rem;
+}
+
+// Grid function
+@function fs-width($width) {
+  @if not map.has-key(settings.$fs-grid, $width) {
+    @error "Unknown width `#{$width}`.";
+  }
+  @return map.get(settings.$fs-grid, $width);
+}

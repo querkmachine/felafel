@@ -1,0 +1,80 @@
+@use "../settings/spacing" as settings;
+@use "measurements";
+@use "media-queries";
+
+@use "sass:meta";
+@use "sass:map";
+
+@function fs-spacing($spacing-point, $breakpoint: null) {
+  $actual-input-type: meta.type-of($spacing-point);
+  @if $actual-input-type != "number" {
+    @error "Expected a number (integer), but got a #{$actual-input-type}.";
+  }
+  @if not map.has-key(settings.$fs-spacing-responsive, $spacing-point) {
+    @error "Unknown spacing point `#{$spacing-point}`.";
+  }
+  $spacing-map: map.get(settings.$fs-spacing-responsive, $spacing-point);
+  @if not map.has-key($spacing-map, $breakpoint) {
+    @error "Breakpoint `#{$breakpoint}` does not exist for spacing point #{$spacing-point}.";
+  }
+  @return measurements.fs-px-to-rem(map.get($spacing-map, $breakpoint));
+}
+
+// Responsive spacing mixin
+@mixin fs-responsive-spacing(
+  $spacing-point,
+  $property,
+  $direction: "all",
+  $important: false
+) {
+  $spacing-map: map.get(settings.$fs-spacing-responsive, $spacing-point);
+  @each $breakpoint, $breakpoint-value in $spacing-map {
+    @if ($breakpoint == null) {
+      @if $direction == "all" {
+        #{$property}: fs-spacing($spacing-point)
+          if($important, !important, null);
+      } @else {
+        #{$property}-#{$direction}: fs-spacing($spacing-point)
+          if($important, !important, null);
+      }
+    } @else {
+      @include media-queries.fs-mq($from: $breakpoint) {
+        @if $direction == "all" {
+          #{$property}: fs-spacing($spacing-point, $breakpoint)
+            if($important, !important, null);
+        } @else {
+          #{$property}-#{$direction}: fs-spacing($spacing-point, $breakpoint)
+            if($important, !important, null);
+        }
+      }
+    }
+  }
+}
+
+// Responsive margins
+@mixin fs-responsive-margin(
+  $spacing-point,
+  $direction: "all",
+  $important: false
+) {
+  @include fs-responsive-spacing(
+    $spacing-point,
+    "margin",
+    $direction,
+    $important
+  );
+}
+
+// Responsive padding
+@mixin fs-responsive-padding(
+  $spacing-point,
+  $direction: "all",
+  $important: false
+) {
+  @include fs-responsive-spacing(
+    $spacing-point,
+    "padding",
+    $direction,
+    $important
+  );
+}

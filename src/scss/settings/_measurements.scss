@@ -1,22 +1,3 @@
-@use "sass:map";
-@use "sass:math";
-
-// px to rem unit conversion
-@function fs-px-to-rem($value) {
-  @if (math.is-unitless($value)) {
-    $value: $value * 1px;
-  }
-  @return $value / $fs-font-sizes-root * 1rem;
-}
-
-// Grid function
-@function fs-width($width) {
-  @if not map.has-key($fs-grid, $width) {
-    @error "Unknown width `#{$width}`.";
-  }
-  @return map.get($fs-grid, $width);
-}
-
 // Root font size
 //
 // Used to calculate rem sizes for typography. 16px is the default in virtually
@@ -25,7 +6,7 @@
 $fs-font-sizes-root: 16px !default;
 
 // Main container
-$fs-page-width: fs-px-to-rem(960px) !default;
+$fs-page-width: 960px !default;
 
 // Grid system
 $fs-grid: (
@@ -38,7 +19,7 @@ $fs-grid: (
 ) !default;
 
 // Grid gutters
-$fs-gutter: fs-px-to-rem(30px) !default;
+$fs-gutter: 30px !default;
 $fs-gutter-half: $fs-gutter / 2 !default;
 
 // Generic borders

@@ -1,0 +1,19 @@
+@use "../settings/colors-palette" as settings;
+
+@use "sass:string";
+@use "sass:color";
+
+// Color selection function
+@function fs-color($color) {
+  $color: string.quote($color);
+  @return map-get(settings.$fs-color-palette, $color);
+}
+
+// Color tweaking functions
+@function fs-color-shade($color, $percentage) {
+  @return color.mix(#000000, $color, $percentage);
+}
+
+@function fs-color-tint($color, $percentage) {
+  @return color.mix(#ffffff, $color, $percentage);
+}

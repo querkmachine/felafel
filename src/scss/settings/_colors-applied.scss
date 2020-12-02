@@ -1,0 +1,21 @@
+@use "../helpers/colors";
+
+// Usage defined colours
+$fs-brand-color: colors.fs-color("blue") !default;
+$fs-text-color: colors.fs-color("grey90") !default;
+$fs-text-color-heading: $fs-text-color !default;
+$fs-text-color-secondary: colors.fs-color("grey50") !default;
+$fs-canvas-background-color: colors.fs-color("white") !default;
+$fs-body-background-color: $fs-canvas-background-color !default;
+$fs-focus-color: colors.fs-color("yellow") !default;
+$fs-focus-text-color: colors.fs-color("black") !default;
+$fs-error-color: colors.fs-color("red") !default;
+$fs-success-color: colors.fs-color("green") !default;
+$fs-border-color: colors.fs-color("grey30") !default;
+$fs-link-color: colors.fs-color("blue") !default;
+$fs-link-visited-color: colors.fs-color("purple") !default;
+$fs-link-hover-color: colors.fs-color-shade(
+  colors.fs-color("blue"),
+  20%
+) !default;
+$fs-link-active-color: $fs-text-color !default;

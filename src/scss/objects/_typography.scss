@@ -1,7 +1,7 @@
 @use "../settings/typography-font";
-@use "../settings/typography-size";
-@use "../settings/colors";
-@use "../settings/spacing";
+@use "../settings/colors-applied";
+@use "../helpers/spacing";
+@use "../helpers/typography";
 
 // Headings
 
@@ -9,29 +9,29 @@
 .fs-heading-l,
 .fs-heading-m,
 .fs-heading-s {
-  color: colors.$fs-text-color-heading;
+  color: colors-applied.$fs-text-color-heading;
   font-family: typography-font.$fs-font-header;
   font-weight: typography-font.$fs-font-header-bold;
 }
 
 .fs-heading-xl {
   @include spacing.fs-responsive-margin(8, $direction: bottom);
-  @include typography-size.fs-font-size(48);
+  @include typography.fs-font-size(48);
 }
 
 .fs-heading-l {
   @include spacing.fs-responsive-margin(6, $direction: bottom);
-  @include typography-size.fs-font-size(36);
+  @include typography.fs-font-size(36);
 }
 
 .fs-heading-m {
   @include spacing.fs-responsive-margin(4, $direction: bottom);
-  @include typography-size.fs-font-size(24);
+  @include typography.fs-font-size(24);
 }
 
 .fs-heading-s {
   @include spacing.fs-responsive-margin(4, $direction: bottom);
-  @include typography-size.fs-font-size(19);
+  @include typography.fs-font-size(19);
 }
 
 // Subheading
@@ -40,36 +40,36 @@
 .fs-subheading-l,
 .fs-subheading-m {
   display: block;
-  color: colors.$fs-text-color-secondary;
+  color: colors-applied.$fs-text-color-secondary;
   font-family: typography-font.$fs-font-header;
   font-weight: typography-font.$fs-font-header-regular;
 }
 
 .fs-subheading-xl {
   @include spacing.fs-responsive-margin(1, $direction: bottom);
-  @include typography-size.fs-font-size(36);
+  @include typography.fs-font-size(36);
 }
 
 .fs-subheading-l {
-  @include typography-size.fs-font-size(24);
+  @include typography.fs-font-size(24);
 }
 
 .fs-subheading-m {
-  @include typography-size.fs-font-size(19);
+  @include typography.fs-font-size(19);
 }
 
 // Body copy
 
 .fs-body {
-  @include typography-size.fs-font-size(19);
+  @include typography.fs-font-size(19);
 }
 
 .fs-body-l {
-  @include typography-size.fs-font-size(24);
+  @include typography.fs-font-size(24);
 }
 
 .fs-body-s {
-  @include typography-size.fs-font-size(16);
+  @include typography.fs-font-size(16);
 }
 
 // Lists

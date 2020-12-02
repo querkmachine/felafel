@@ -1,9 +1,8 @@
-@use "../settings/colors";
+@use "../settings/colors-applied";
 @use "../settings/measurements";
-@use "../settings/typography-font";
 
 html {
-  background-color: colors.$fs-canvas-background-color;
+  background-color: colors-applied.$fs-canvas-background-color;
   text-size-adjust: 100%;
   @if measurements.$fs-font-sizes-root != 16px {
     font-size: measurements.$fs-font-sizes-root;
@@ -12,5 +11,5 @@ html {
 
 body {
   margin: 0;
-  color: colors.$fs-text-color;
+  color: colors-applied.$fs-text-color;
 }
