@@ -10,12 +10,58 @@ body {
   color: #111827;
 }
 
+.fs-rule--xl {
+  margin-top: 1.875rem;
+  margin-bottom: 1.875rem;
+}
+@media screen and (min-width: 541px) {
+  .fs-rule--xl {
+    margin-top: 3.125rem;
+  }
+}
+@media screen and (min-width: 541px) {
+  .fs-rule--xl {
+    margin-bottom: 3.125rem;
+  }
+}
+.fs-rule--l {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+@media screen and (min-width: 541px) {
+  .fs-rule--l {
+    margin-top: 1.875rem;
+  }
+}
+@media screen and (min-width: 541px) {
+  .fs-rule--l {
+    margin-bottom: 1.875rem;
+  }
+}
+.fs-rule--m {
+  margin-top: 0.9375rem;
+  margin-bottom: 0.9375rem;
+}
+@media screen and (min-width: 541px) {
+  .fs-rule--m {
+    margin-top: 1.25rem;
+  }
+}
+@media screen and (min-width: 541px) {
+  .fs-rule--m {
+    margin-bottom: 1.25rem;
+  }
+}
+.fs-rule--visible {
+  border-bottom: 1px solid #d1d5db;
+}
+
 .fs-link {
-  color: #3B82F6;
+  color: #3b82f6;
   text-decoration: underline;
 }
 .fs-link:not(.fs-link--no-visited):visited {
-  color: #8B5CF6;
+  color: #8b5cf6;
 }
 .fs-link:hover {
   color: #2f68c5;
@@ -32,8 +78,8 @@ body {
 }
 @supports (margin: max(calc(0px))) {
   .fs-main-wrapper {
-    margin-right: max(0.9375rem, calc(0.9375rem + env(safe-area-inset-right)));
-    margin-left: max(0.9375rem, calc(0.9375rem + env(safe-area-inset-left)));
+    margin-right: max(0.9375rem, calc( 0.9375rem + env(safe-area-inset-right) ));
+    margin-left: max(0.9375rem, calc( 0.9375rem + env(safe-area-inset-left) ));
   }
 }
 @media screen and (min-width: 541px) {
@@ -43,8 +89,8 @@ body {
   }
   @supports (margin: max(calc(0px))) {
     .fs-main-wrapper {
-      margin-right: max(1.875rem, calc(0.9375rem + env(safe-area-inset-right)));
-      margin-left: max(1.875rem, calc(0.9375rem + env(safe-area-inset-left)));
+      margin-right: max(1.875rem, calc( 0.9375rem + env(safe-area-inset-right) ));
+      margin-left: max(1.875rem, calc( 0.9375rem + env(safe-area-inset-left) ));
     }
   }
 }
@@ -142,7 +188,7 @@ body {
 .fs-subheading-l,
 .fs-subheading-m {
   display: block;
-  color: #6B7280;
+  color: #6b7280;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-weight: 400;
 }

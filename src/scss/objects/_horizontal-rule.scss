@@ -1,0 +1,21 @@
+@use "../settings/colors";
+@use "../settings/measurements";
+@use "../settings/spacing";
+
+.fs-rule {
+  &--xl {
+    @include spacing.fs-responsive-margin(8, $direction: top);
+    @include spacing.fs-responsive-margin(8, $direction: bottom);
+  }
+  &--l {
+    @include spacing.fs-responsive-margin(6, $direction: top);
+    @include spacing.fs-responsive-margin(6, $direction: bottom);
+  }
+  &--m {
+    @include spacing.fs-responsive-margin(4, $direction: top);
+    @include spacing.fs-responsive-margin(4, $direction: bottom);
+  }
+  &--visible {
+    border-bottom: measurements.$fs-hr-width solid colors.$fs-border-color;
+  }
+}

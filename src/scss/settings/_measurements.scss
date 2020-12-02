@@ -46,9 +46,12 @@ $fs-border-width: 0.5rem !default;
 $fs-border-width-wide: 1rem !default;
 $fs-border-width-narrow: 0.25rem !default;
 
-// Form borders
+// Focus state border
+$fs-focus-width: 3px !default;
+
+// Form input borders
 $fs-border-width-form-element: 2px !default;
 $fs-border-width-form-element-error: $fs-border-width-form-element !default;
 
-// Focus state border
-$fs-focus-width: 3px !default;
+// Horizontal rule width
+$fs-hr-width: 1px !default;
