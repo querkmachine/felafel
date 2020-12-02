@@ -43,6 +43,21 @@ $fs-spacing-responsive: (
   ),
 ) !default;
 
+@function fs-spacing($spacing-point, $breakpoint: null) {
+  $actual-input-type: meta.type-of($spacing-point);
+  @if $actual-input-type != "number" {
+    @error "Expected a number (integer), but got a #{$actual-input-type}.";
+  }
+  @if not map.has-key($fs-spacing-responsive, $spacing-point) {
+    @error "Unknown spacing point `#{$spacing-point}`.";
+  }
+  $spacing-map: map.get($fs-spacing-responsive, $spacing-point);
+  @if not map.has-key($spacing-map, $breakpoint) {
+    @error "Breakpoint `#{$breakpoint}` does not exist for spacing point #{$spacing-point}.";
+  }
+  @return measurements.fs-px-to-rem(map.get($spacing-map, $breakpoint));
+}
+
 // Responsive spacing mixin
 @mixin fs-responsive-spacing(
   $spacing-point,
@@ -50,29 +65,23 @@ $fs-spacing-responsive: (
   $direction: "all",
   $important: false
 ) {
-  $actual-input-type: meta.type-of($spacing-point);
-  @if $actual-input-type != "number" {
-    @error "Expected a number (integer), but got a " + "#{$actual-input-type}.";
-  }
-  @if not map.has-key($fs-spacing-responsive, $spacing-point) {
-    @error "Unknown spacing point `#{$responsive-spacing-point}`.";
-  }
   $spacing-map: map.get($fs-spacing-responsive, $spacing-point);
   @each $breakpoint, $breakpoint-value in $spacing-map {
-    $breakpoint-value: measurements.fs-px-to-rem($breakpoint-value);
     @if ($breakpoint == null) {
       @if $direction == "all" {
-        #{$property}: $breakpoint-value if($important, !important, null);
+        #{$property}: fs-spacing($spacing-point)
+          if($important, !important, null);
       } @else {
-        #{$property}-#{$direction}: $breakpoint-value
+        #{$property}-#{$direction}: fs-spacing($spacing-point)
           if($important, !important, null);
       }
     } @else {
       @include media-queries.fs-mq($from: $breakpoint) {
         @if $direction == "all" {
-          #{$property}: $breakpoint-value if($important, !important, null);
+          #{$property}: fs-spacing($spacing-point, $breakpoint)
+            if($important, !important, null);
         } @else {
-          #{$property}-#{$direction}: $breakpoint-value
+          #{$property}-#{$direction}: fs-spacing($spacing-point, $breakpoint)
             if($important, !important, null);
         }
       }
