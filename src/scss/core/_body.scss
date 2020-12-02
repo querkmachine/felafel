@@ -1,6 +1,14 @@
 @use "../settings/colors-applied";
 @use "../settings/measurements";
 
+* {
+  box-sizing: border-box;
+}
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 html {
   background-color: colors-applied.$fs-canvas-background-color;
   text-size-adjust: 100%;
