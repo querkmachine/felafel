@@ -5,6 +5,12 @@
 @use "sass:map";
 @use "sass:math";
 
+// Common typography rules
+@mixin fs-typography-common {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 // Convert pixel line-heights into relative values
 @function _fs-line-height($line-height, $font-size) {
   @if not

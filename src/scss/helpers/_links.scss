@@ -1,0 +1,62 @@
+@use "../settings/colors-applied";
+@use "a11y";
+@use "typography";
+
+@mixin _fs-link-common {
+  @include typography.fs-typography-common;
+  &:focus {
+    @include a11y.fs-focus-ring;
+  }
+  @media only print {
+    &[href^="/"],
+    &[href^="http://"],
+    &[href^="https://"]
+    {
+      &:after {
+        content: " (" attr(href) ")";
+        font-size: 90%;
+        word-wrap: break-word;
+      }
+    }
+  }
+}
+
+@mixin fs-link($visited-style: true) {
+  @include _fs-link-common;
+  $self: &;
+  color: colors-applied.$fs-link-color;
+  text-decoration: underline;
+  @if $visited-style {
+    &:visited {
+      color: colors-applied.$fs-link-visited-color;
+    }
+  }
+  &:hover {
+    color: colors-applied.$fs-link-hover-color;
+  }
+  &:active {
+    color: colors-applied.$fs-link-active-color;
+  }
+}
+
+@mixin fs-link--text {
+  @include _fs-link-common;
+  &,
+  &:visited,
+  &:hover,
+  &:active {
+    color: colors-applied.$fs-text-color;
+    text-decoration: underline;
+  }
+}
+
+@mixin fs-link--muted {
+  @include _fs-link-common;
+  &,
+  &:visited,
+  &:hover,
+  &:active {
+    color: colors-applied.$fs-text-color-secondary;
+    text-decoration: underline;
+  }
+}

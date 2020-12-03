@@ -1,16 +1,21 @@
-@use "../settings/colors-applied";
+@use "../helpers/links";
 
+// Default link
 .fs-link {
-  $self: &;
-  color: colors-applied.$fs-link-color;
-  text-decoration: underline;
-  &:not(#{$self}--no-visited):visited {
-    color: colors-applied.$fs-link-visited-color;
-  }
-  &:hover {
-    color: colors-applied.$fs-link-hover-color;
-  }
-  &:active {
-    color: colors-applied.$fs-link-active-color;
-  }
+  @include links.fs-link;
+}
+
+// Default link without visited style
+.fs-link--no-visited {
+  @include links.fs-link($visited-style: false);
+}
+
+// Muted link
+.fs-link--muted {
+  @include links.fs-link--muted;
+}
+
+// Link styled as text
+.fs-link--text {
+  @include links.fs-link--text;
 }

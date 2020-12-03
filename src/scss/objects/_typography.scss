@@ -4,7 +4,6 @@
 @use "../helpers/typography";
 
 // Headings
-
 .fs-heading-xl,
 .fs-heading-l,
 .fs-heading-m,
@@ -34,8 +33,7 @@
   @include typography.fs-font-size(19);
 }
 
-// Subheading
-
+// Subheadings
 .fs-subheading-xl,
 .fs-subheading-l,
 .fs-subheading-m {
@@ -59,7 +57,6 @@
 }
 
 // Body copy
-
 .fs-body {
   @include typography.fs-font-size(19);
 }
@@ -70,28 +67,4 @@
 
 .fs-body-s {
   @include typography.fs-font-size(16);
-}
-
-// Lists
-
-.fs-list {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  li {
-    @include spacing.fs-responsive-margin(1, $direction: bottom);
-  }
-  &--bulleted {
-    padding-left: 1em;
-    list-style-type: disc;
-  }
-  &--numbered {
-    padding-left: 1em;
-    list-style-type: decimal;
-  }
-  &--spaced {
-    li {
-      @include spacing.fs-responsive-margin(3, $direction: bottom);
-    }
-  }
 }
