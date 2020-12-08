@@ -6,16 +6,16 @@
 }
 
 // Default link without visited style
-.fs-link--no-visited {
+.fs-link-no-visited {
   @include links.fs-link($visited-style: false);
 }
 
 // Muted link
-.fs-link--muted {
+.fs-link-muted {
   @include links.fs-link--muted;
 }
 
 // Link styled as text
-.fs-link--text {
+.fs-link-text {
   @include links.fs-link--text;
 }

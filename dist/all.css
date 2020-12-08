@@ -537,6 +537,42 @@ a:not([class]):active {
   }
 }
 
+.fs-body + .fs-heading-l, .fs-prose p + .fs-heading-l, .fs-prose .fs-body + h2, .fs-prose p + h2,
+.fs-body-l + .fs-heading-l,
+.fs-prose .fs-body-l + h2,
+.fs-body-s .fs-list + .fs-heading-l,
+.fs-body-s .fs-prose .fs-list + h2,
+.fs-prose .fs-body-s .fs-list + h2 {
+  margin-top: 0.9375rem;
+}
+@media screen and (min-width: 541px) {
+  .fs-body + .fs-heading-l, .fs-prose p + .fs-heading-l, .fs-prose .fs-body + h2, .fs-prose p + h2,
+.fs-body-l + .fs-heading-l,
+.fs-prose .fs-body-l + h2,
+.fs-body-s .fs-list + .fs-heading-l,
+.fs-body-s .fs-prose .fs-list + h2,
+.fs-prose .fs-body-s .fs-list + h2 {
+    margin-top: 1.25rem;
+  }
+}
+.fs-body + .fs-heading-m, .fs-prose p + .fs-heading-m, .fs-prose .fs-body + h3, .fs-prose p + h3,
+.fs-body + .fs-heading-s,
+.fs-prose p + .fs-heading-s,
+.fs-prose .fs-body + h4,
+.fs-prose p + h4,
+.fs-body-l + .fs-heading-m,
+.fs-prose .fs-body-l + h3,
+.fs-body-l + .fs-heading-s,
+.fs-prose .fs-body-l + h4,
+.fs-body-s .fs-list + .fs-heading-m,
+.fs-body-s .fs-prose .fs-list + h3,
+.fs-prose .fs-body-s .fs-list + h3,
+.fs-body-s .fs-list + .fs-heading-s,
+.fs-body-s .fs-prose .fs-list + h4,
+.fs-prose .fs-body-s .fs-list + h4 {
+  margin-top: 0.625rem;
+}
+
 .fs-\!-sr {
   position: absolute !important;
   width: 1px !important;
