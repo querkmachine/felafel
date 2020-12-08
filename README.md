@@ -12,24 +12,4 @@ npm install fs-felafel
 
 ## Usage
 
-### With custom Sass and JavaScript
-
 TBD.
-
-### With pre-compiled files
-
-The pre-compiled CSS and JavaScript provided can be included directly into a page by referencing the files within `node_modules`. These pre-compiled files include all styles for every component, even those that aren't being used.
-
-```
-<link rel="stylesheet" href="node_modules/fs-felafel/dist/all.css">
-<script src="node_modules/fs-felafel/dist/all.js" defer></script>
-```
-
-Certain styles can then be customised using CSS Custom Properties on browsers that support them (basically all except IE).
-
-```
-:root {
-	--font-family-body: 'Proxima Nova', Gotham, sans-serif;
-	--color-brand: #fc0;
-}
-```
