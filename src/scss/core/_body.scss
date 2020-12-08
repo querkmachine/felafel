@@ -1,12 +1,15 @@
 @use "../settings/colors-applied";
 @use "../settings/measurements";
+@use "../settings/typography-font";
+@use "../helpers/typography";
+@use "../helpers/links";
 
 * {
   box-sizing: border-box;
-}
-*::before,
-*::after {
-  box-sizing: inherit;
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
 }
 
 html {
@@ -18,6 +21,12 @@ html {
 }
 
 body {
+  @include typography.fs-font-size(19);
   margin: 0;
   color: colors-applied.$fs-text-color;
+  font-family: typography-font.$fs-font-body;
+}
+
+a:not([class]) {
+  @include links.fs-link($visited-style: true);
 }
