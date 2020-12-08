@@ -86,9 +86,9 @@ gulp.task(
   "build",
   gulp.series(
     "clean",
-    gulp.parallel("assets", "css", (cb) => cb())
+    gulp.parallel("assets", "css", "js", (cb) => cb())
   )
 );
 
-gulp.task("watch", gulp.parallel("css:watch"));
+gulp.task("watch", gulp.parallel("css:watch", "js:watch"));
 gulp.task("default", gulp.series("build", "watch"));
