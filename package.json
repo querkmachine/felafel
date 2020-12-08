@@ -5,7 +5,8 @@
   "browserslist": "last 2 versions and last 2 years and not dead",
   "main": "dist/all.js",
   "scripts": {
-    "start": "gulp default",
+    "start": "npm run serve",
+    "serve": "gulp default",
     "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
