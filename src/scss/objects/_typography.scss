@@ -8,6 +8,7 @@
 .fs-heading-l,
 .fs-heading-m,
 .fs-heading-s {
+  @include spacing.fs-responsive-margin(0, $direction: top);
   color: colors-applied.$fs-text-color-heading;
   font-family: typography-font.$fs-font-header;
   font-weight: typography-font.$fs-font-header-bold;
@@ -57,6 +58,13 @@
 }
 
 // Body copy
+.fs-body,
+.fs-body-l,
+.fs-body-s {
+  @include spacing.fs-responsive-margin(0, $direction: top);
+  @include spacing.fs-responsive-margin(3, $direction: bottom);
+}
+
 .fs-body {
   @include typography.fs-font-size(19);
 }

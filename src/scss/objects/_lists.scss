@@ -2,7 +2,8 @@
 
 // Lists
 .fs-list {
-  margin: 0;
+  @include spacing.fs-responsive-margin(0);
+  @include spacing.fs-responsive-margin(3, $direction: bottom);
   padding: 0;
   list-style-type: none;
   li + li {

@@ -1,0 +1,26 @@
+@use "../objects/lists";
+@use "../objects/typography";
+
+.fs-prose {
+  p {
+    @extend .fs-body;
+  }
+  ul {
+    @extend .fs-list--bulleted;
+  }
+  ol {
+    @extend .fs-list--numbered;
+  }
+  h1 {
+    @extend .fs-heading-xl;
+  }
+  h2 {
+    @extend .fs-heading-l;
+  }
+  h3 {
+    @extend .fs-heading-m;
+  }
+  h4 {
+    @extend .fs-heading-s;
+  }
+}
