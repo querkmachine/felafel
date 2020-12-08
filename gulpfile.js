@@ -59,6 +59,7 @@ gulp.task("js:watch", () => {
 gulp.task("js", () => {
   const b = browserify({
     entries: ["./src/js/all.js"],
+    standalone: "fs",
   });
   return b
     .transform("babelify", {
