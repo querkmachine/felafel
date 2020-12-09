@@ -2,20 +2,45 @@
 @use "../helpers/layout";
 @use "../helpers/media-queries";
 
-.fs-\!-width-one-quarter,
-.fs-\!-width-one-third,
-.fs-\!-width-one-half,
-.fs-\!-width-two-thirds,
-.fs-\!-width-three-quarters,
-.fs-\!-width-full {
+@each $width, $width-value in settings.$fs-grid {
+  .fs-\!-width-#{$width} {
+    width: layout.fs-grid-width($width) !important;
+  }
+}
+
+.tablet\:fs-\!-width-one-quarter,
+.tablet\:fs-\!-width-one-third,
+.tablet\:fs-\!-width-one-half,
+.tablet\:fs-\!-width-two-thirds,
+.tablet\:fs-\!-width-three-quarters,
+.tablet\:fs-\!-width-full {
   width: layout.fs-grid-width(full) !important;
 }
 
 @include media-queries.fs-mq($from: tablet) {
   @each $width, $width-value in settings.$fs-grid {
     @if $width != "full" {
-      .fs-\!-width-#{$width} {
-        width: $width-value !important;
+      .tablet\:fs-\!-width-#{$width} {
+        width: layout.fs-grid-width($width) !important;
+      }
+    }
+  }
+}
+
+.desktop\:fs-\!-width-one-quarter,
+.desktop\:fs-\!-width-one-third,
+.desktop\:fs-\!-width-one-half,
+.desktop\:fs-\!-width-two-thirds,
+.desktop\:fs-\!-width-three-quarters,
+.desktop\:fs-\!-width-full {
+  width: layout.fs-grid-width(full) !important;
+}
+
+@include media-queries.fs-mq($from: desktop) {
+  @each $width, $width-value in settings.$fs-grid {
+    @if $width != "full" {
+      .desktop\:fs-\!-width-#{$width} {
+        width: layout.fs-grid-width($width) !important;
       }
     }
   }

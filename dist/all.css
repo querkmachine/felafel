@@ -1567,33 +1567,87 @@ a:not([class]):active {
   font-weight: 700 !important;
 }
 
-.fs-\!-width-one-quarter,
-.fs-\!-width-one-third,
-.fs-\!-width-one-half,
-.fs-\!-width-two-thirds,
-.fs-\!-width-three-quarters,
+.fs-\!-width-one-quarter {
+  width: 25% !important;
+}
+
+.fs-\!-width-one-third {
+  width: 33.3333% !important;
+}
+
+.fs-\!-width-one-half {
+  width: 50% !important;
+}
+
+.fs-\!-width-two-thirds {
+  width: 66.6666% !important;
+}
+
+.fs-\!-width-three-quarters {
+  width: 75% !important;
+}
+
 .fs-\!-width-full {
   width: 100% !important;
 }
 
+.tablet\:fs-\!-width-one-quarter,
+.tablet\:fs-\!-width-one-third,
+.tablet\:fs-\!-width-one-half,
+.tablet\:fs-\!-width-two-thirds,
+.tablet\:fs-\!-width-three-quarters,
+.tablet\:fs-\!-width-full {
+  width: 100% !important;
+}
+
 @media screen and (min-width: 541px) {
-  .fs-\!-width-one-quarter {
+  .tablet\:fs-\!-width-one-quarter {
     width: 25% !important;
   }
 
-  .fs-\!-width-one-third {
+  .tablet\:fs-\!-width-one-third {
     width: 33.3333% !important;
   }
 
-  .fs-\!-width-one-half {
+  .tablet\:fs-\!-width-one-half {
     width: 50% !important;
   }
 
-  .fs-\!-width-two-thirds {
+  .tablet\:fs-\!-width-two-thirds {
     width: 66.6666% !important;
   }
 
-  .fs-\!-width-three-quarters {
+  .tablet\:fs-\!-width-three-quarters {
+    width: 75% !important;
+  }
+}
+.desktop\:fs-\!-width-one-quarter,
+.desktop\:fs-\!-width-one-third,
+.desktop\:fs-\!-width-one-half,
+.desktop\:fs-\!-width-two-thirds,
+.desktop\:fs-\!-width-three-quarters,
+.desktop\:fs-\!-width-full {
+  width: 100% !important;
+}
+
+@media screen and (min-width: 769px) {
+  .desktop\:fs-\!-width-one-quarter {
+    width: 25% !important;
+  }
+
+  .desktop\:fs-\!-width-one-third {
+    width: 33.3333% !important;
+  }
+
+  .desktop\:fs-\!-width-one-half {
+    width: 50% !important;
+  }
+
+  .desktop\:fs-\!-width-two-thirds {
+    width: 66.6666% !important;
+  }
+
+  .desktop\:fs-\!-width-three-quarters {
     width: 75% !important;
   }
 }
