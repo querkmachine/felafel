@@ -580,6 +580,7 @@ a:not([class]):active {
 }
 
 .fs-masthead {
+  margin-bottom: 2.5rem;
   padding-top: 0.9375rem;
   padding-bottom: 0.9375rem;
   border-width: 0;
@@ -588,6 +589,11 @@ a:not([class]):active {
   border-color: #3b82f6;
   color: black;
   background-color: #fff;
+}
+@media screen and (min-width: 541px) {
+  .fs-masthead {
+    margin-bottom: 3.75rem;
+  }
 }
 @media screen and (min-width: 541px) {
   .fs-masthead {
@@ -627,11 +633,61 @@ a:not([class]):active {
     margin-right: 30px;
   }
 }
+.fs-masthead__logo-link {
+  text-decoration: none;
+}
+.fs-masthead__content {
+  margin-top: 0.625rem;
+}
 @media screen and (min-width: 541px) {
   .fs-masthead__content {
+    margin-top: 0rem;
     width: 66.6666%;
   }
 }
+
+.fs-primary-navigation__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+@media screen and (min-width: 541px) {
+  .fs-primary-navigation__item {
+    margin-right: 0.9375rem;
+    display: inline-block;
+  }
+}
+@media screen and (min-width: 541px) and (min-width: 541px) {
+  .fs-primary-navigation__item {
+    margin-right: 1.25rem;
+  }
+}
+.fs-primary-navigation__link {
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  display: block;
+  border-bottom: 1px solid #d1d5db;
+  text-decoration: none;
+}
+@media screen and (min-width: 541px) {
+  .fs-primary-navigation__link {
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    font-size: 1.125rem;
+    line-height: 1.1111111111;
+    border-bottom: none;
+  }
+}
+@media screen and (min-width: 541px) and (min-width: 541px) {
+  .fs-primary-navigation__link {
+    font-size: 1.5rem;
+    line-height: 1.25;
+  }
+}
+.fs-primary-navigation__link[aria-current] {
+  color: #3b82f6;
+}
+
 .fs-\!-sr {
   position: absolute !important;
   width: 1px !important;

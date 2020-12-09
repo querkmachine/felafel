@@ -38,3 +38,7 @@ $fs-masthead-background-color: colors.fs-color("white") !default;
 $fs-masthead-text-color: colors.fs-contrasting-color(
   $fs-masthead-background-color
 ) !default;
+
+// Component - Primary navigation
+$fs-primary-navigation-divider: $fs-border-color !default;
+$fs-primary-navigation-current-link: $fs-brand-color !default;

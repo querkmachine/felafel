@@ -8,6 +8,7 @@
 @use "../helpers/typography";
 
 .fs-masthead {
+  @include spacing.fs-responsive-margin(9, $direction: bottom);
   @include spacing.fs-responsive-padding(4, $direction: top);
   @include spacing.fs-responsive-padding(4, $direction: bottom);
   border-width: 0;
@@ -36,11 +37,14 @@
       margin-right: measurements.$fs-gutter;
     }
   }
+  &__logo-link {
+    text-decoration: none;
+  }
   &__content {
+    @include spacing.fs-responsive-margin(2, $direction: top);
     @include media-queries.fs-mq(tablet) {
+      @include spacing.fs-responsive-margin(0, $direction: top);
       width: layout.fs-grid-width(two-thirds);
     }
-  }
-  &__section-name {
   }
 }

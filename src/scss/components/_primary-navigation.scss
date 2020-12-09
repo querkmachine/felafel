@@ -1,0 +1,37 @@
+@use "../settings/colors-applied";
+@use "../settings/measurements";
+@use "../settings/typography-font";
+@use "../helpers/media-queries";
+@use "../helpers/reset";
+@use "../helpers/spacing";
+@use "../helpers/typography";
+
+.fs-primary-navigation {
+  $self: &;
+  &__list {
+    @include reset.fs-reset-list;
+  }
+  &__item {
+    @include media-queries.fs-mq(tablet) {
+      @include spacing.fs-responsive-margin(4, $direction: right);
+      display: inline-block;
+    }
+  }
+  &__link {
+    @include spacing.fs-responsive-padding(1, $direction: top);
+    @include spacing.fs-responsive-padding(1, $direction: bottom);
+    display: block;
+    border-bottom: measurements.$fs-border-width-narrow solid
+      colors-applied.$fs-primary-navigation-divider;
+    text-decoration: none;
+    @include media-queries.fs-mq(tablet) {
+      @include spacing.fs-responsive-padding(0, $direction: top);
+      @include spacing.fs-responsive-padding(0, $direction: bottom);
+      @include typography.fs-font-size(24);
+      border-bottom: none;
+    }
+    &[aria-current] {
+      color: colors-applied.$fs-primary-navigation-current-link;
+    }
+  }
+}
