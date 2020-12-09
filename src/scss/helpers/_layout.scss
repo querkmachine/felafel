@@ -5,7 +5,7 @@
 @use "sass:string";
 
 // Main wrapper definition
-@mixin fs-main-wrapper {
+@mixin fs-width-container {
   $gutter-safe-area-right: calc(
     #{settings.$fs-gutter-half} + env(safe-area-inset-right)
   );

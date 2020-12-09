@@ -1,0 +1,5 @@
+@use "../helpers/layout";
+
+.fs-width-container {
+  @include layout.fs-width-container;
+}
