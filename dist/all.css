@@ -6,7 +6,7 @@
 }
 
 html {
-  background-color: #fff;
+  background-color: #f9fafb;
   -webkit-text-size-adjust: 100%;
      -moz-text-size-adjust: 100%;
           text-size-adjust: 100%;
@@ -17,6 +17,7 @@ body {
   line-height: 1.25;
   margin: 0;
   color: #111827;
+  background-color: #f9fafb;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 @media screen and (min-width: 541px) {
@@ -24,6 +25,11 @@ body {
     font-size: 1.1875rem;
     line-height: 1.3157894737;
   }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 a:not([class]) {
@@ -573,6 +579,59 @@ a:not([class]):active {
   }
 }
 
+.fs-masthead {
+  padding-top: 0.9375rem;
+  padding-bottom: 0.9375rem;
+  border-width: 0;
+  border-top-width: 0.5rem;
+  border-style: solid;
+  border-color: #3b82f6;
+  color: black;
+  background-color: #fff;
+}
+@media screen and (min-width: 541px) {
+  .fs-masthead {
+    padding-top: 1.25rem;
+  }
+}
+@media screen and (min-width: 541px) {
+  .fs-masthead {
+    padding-bottom: 1.25rem;
+  }
+}
+.fs-masthead__inner {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 541px) {
+  .fs-masthead__inner {
+    flex-direction: row;
+  }
+}
+.fs-masthead__logo, .fs-masthead__section-name {
+  font-size: 1.125rem;
+  line-height: 1.1111111111;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 700;
+}
+@media screen and (min-width: 541px) {
+  .fs-masthead__logo, .fs-masthead__section-name {
+    font-size: 1.5rem;
+    line-height: 1.25;
+  }
+}
+@media screen and (min-width: 541px) {
+  .fs-masthead__logo {
+    flex-grow: 1;
+    width: 33.3333%;
+    margin-right: 30px;
+  }
+}
+@media screen and (min-width: 541px) {
+  .fs-masthead__content {
+    width: 66.6666%;
+  }
+}
 .fs-\!-sr {
   position: absolute !important;
   width: 1px !important;

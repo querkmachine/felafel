@@ -1,0 +1,46 @@
+@use "../settings/colors-applied";
+@use "../settings/measurements";
+@use "../settings/typography-font";
+@use "../helpers/colors";
+@use "../helpers/layout";
+@use "../helpers/media-queries";
+@use "../helpers/spacing";
+@use "../helpers/typography";
+
+.fs-masthead {
+  @include spacing.fs-responsive-padding(4, $direction: top);
+  @include spacing.fs-responsive-padding(4, $direction: bottom);
+  border-width: 0;
+  border-top-width: measurements.$fs-border-width;
+  border-style: solid;
+  border-color: colors-applied.$fs-masthead-border-color;
+  color: colors-applied.$fs-masthead-text-color;
+  background-color: colors-applied.$fs-masthead-background-color;
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    @include media-queries.fs-mq(tablet) {
+      flex-direction: row;
+    }
+  }
+  &__logo,
+  &__section-name {
+    @include typography.fs-font-size(24);
+    font-family: typography-font.$fs-font-header;
+    font-weight: typography-font.$fs-font-header-bold;
+  }
+  &__logo {
+    @include media-queries.fs-mq(tablet) {
+      flex-grow: 1;
+      width: layout.fs-grid-width(one-third);
+      margin-right: measurements.$fs-gutter;
+    }
+  }
+  &__content {
+    @include media-queries.fs-mq(tablet) {
+      width: layout.fs-grid-width(two-thirds);
+    }
+  }
+  &__section-name {
+  }
+}
