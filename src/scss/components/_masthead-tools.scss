@@ -1,0 +1,38 @@
+@use "../settings/colors-applied";
+@use "../settings/measurements";
+@use "../helpers/reset";
+@use "../helpers/spacing";
+@use "../helpers/typography";
+
+.fs-masthead-tools {
+  @include typography.fs-font-size(14);
+  @if colors-applied.$fs-masthead-tools-background-color ==
+    colors-applied.$fs-masthead-border-color
+  {
+    border-width: 0;
+    border-top-width: measurements.$fs-border-width;
+    border-style: solid;
+    border-color: colors-applied.$fs-masthead-border-color;
+  }
+  color: colors-applied.$fs-masthead-tools-text-color;
+  background-color: colors-applied.$fs-masthead-tools-background-color;
+  &__inner {
+  }
+  &__list {
+    @include reset.fs-reset-list;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  &__item {
+    & + & {
+      @include spacing.fs-responsive-margin(3, $direction: left);
+    }
+  }
+  &__link {
+    color: currentColor;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}

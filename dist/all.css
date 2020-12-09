@@ -597,7 +597,7 @@ a:not([class]):active {
   border-width: 0;
   border-top-width: 0.5rem;
   border-style: solid;
-  border-color: #3b82f6;
+  border-color: #111827;
   color: black;
   background-color: #fff;
 }
@@ -657,6 +657,40 @@ a:not([class]):active {
   }
 }
 
+.fs-masthead-tools {
+  font-size: 0.75rem;
+  line-height: 1.25;
+  border-width: 0;
+  border-top-width: 0.5rem;
+  border-style: solid;
+  border-color: #111827;
+  color: white;
+  background-color: #111827;
+}
+@media screen and (min-width: 541px) {
+  .fs-masthead-tools {
+    font-size: 0.875rem;
+    line-height: 1.2857142857;
+  }
+}
+.fs-masthead-tools__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.fs-masthead-tools__item + .fs-masthead-tools__item {
+  margin-left: 0.9375rem;
+}
+.fs-masthead-tools__link {
+  color: currentColor;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
 .fs-primary-navigation__list {
   margin: 0;
   padding: 0;
@@ -696,13 +730,9 @@ a:not([class]):active {
   }
 }
 .fs-primary-navigation__link[aria-current] {
-  color: #3b82f6;
+  color: #111827;
 }
 
-.fs-prose {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 .fs-\!-sr {
   position: absolute !important;
   width: 1px !important;

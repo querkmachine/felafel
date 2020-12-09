@@ -1,7 +1,7 @@
 @use "../helpers/colors";
 
 // Brand accent (use sparingly)
-$fs-brand-color: colors.fs-color("blue") !default;
+$fs-brand-color: colors.fs-color("grey90") !default;
 
 // Background
 $fs-canvas-background-color: colors.fs-color("grey5") !default;
@@ -37,6 +37,12 @@ $fs-masthead-border-color: $fs-brand-color !default;
 $fs-masthead-background-color: colors.fs-color("white") !default;
 $fs-masthead-text-color: colors.fs-contrasting-color(
   $fs-masthead-background-color
+) !default;
+
+// Component - Masthead tools
+$fs-masthead-tools-background-color: $fs-masthead-border-color !default;
+$fs-masthead-tools-text-color: colors.fs-contrasting-color(
+  $fs-masthead-tools-background-color
 ) !default;
 
 // Component - Primary navigation
