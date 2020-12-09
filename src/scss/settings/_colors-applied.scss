@@ -1,17 +1,18 @@
 @use "../helpers/colors";
 
-// Usage defined colours
+// Brand accent (use sparingly)
 $fs-brand-color: colors.fs-color("blue") !default;
+
+// Background
+$fs-canvas-background-color: colors.fs-color("grey5") !default;
+$fs-body-background-color: $fs-canvas-background-color !default;
+
+// Copy text
 $fs-text-color: colors.fs-color("grey90") !default;
 $fs-text-color-heading: $fs-text-color !default;
 $fs-text-color-secondary: colors.fs-color("grey50") !default;
-$fs-canvas-background-color: colors.fs-color("white") !default;
-$fs-body-background-color: $fs-canvas-background-color !default;
-$fs-focus-color: colors.fs-color("yellow") !default;
-$fs-focus-text-color: colors.fs-color("black") !default;
-$fs-error-color: colors.fs-color("red") !default;
-$fs-success-color: colors.fs-color("green") !default;
-$fs-border-color: colors.fs-color("grey30") !default;
+
+// Links
 $fs-link-color: colors.fs-color("blue") !default;
 $fs-link-visited-color: colors.fs-color("purple") !default;
 $fs-link-hover-color: colors.fs-color-shade(
@@ -19,3 +20,21 @@ $fs-link-hover-color: colors.fs-color-shade(
   20%
 ) !default;
 $fs-link-active-color: $fs-text-color !default;
+
+// Accessibility states
+$fs-focus-color: colors.fs-color("yellow") !default;
+$fs-focus-text-color: colors.fs-color("black") !default;
+
+// Contextual states
+$fs-error-color: colors.fs-color("red") !default;
+$fs-success-color: colors.fs-color("green") !default;
+
+// Horizontal rule
+$fs-border-color: colors.fs-color("grey30") !default;
+
+// Component - Masthead
+$fs-masthead-border-color: $fs-brand-color !default;
+$fs-masthead-background-color: colors.fs-color("white") !default;
+$fs-masthead-text-color: colors.fs-contrasting-color(
+  $fs-masthead-background-color
+) !default;
