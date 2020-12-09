@@ -80,7 +80,8 @@
 // Margins between elements
 .fs-body,
 .fs-body-l,
-.fs-body-s .fs-list {
+.fs-body-s,
+.fs-list {
   + .fs-heading-l {
     @include spacing.fs-responsive-margin(4, $direction: top);
   }

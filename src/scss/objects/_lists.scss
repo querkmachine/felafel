@@ -10,11 +10,11 @@
     @include spacing.fs-responsive-margin(1, $direction: top);
   }
   &--bulleted {
-    padding-left: 1em;
+    padding-left: 2em;
     list-style-type: disc;
   }
   &--numbered {
-    padding-left: 1em;
+    padding-left: 2em;
     list-style-type: decimal;
   }
   &--spaced {

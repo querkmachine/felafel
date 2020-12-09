@@ -1,0 +1,17 @@
+@use "../settings/colors-applied";
+@use "../settings/measurements";
+@use "../helpers/spacing";
+
+.fs-blockquote {
+  @include spacing.fs-responsive-margin(0);
+  @include spacing.fs-responsive-margin(3, $direction: bottom);
+  @include spacing.fs-responsive-padding(5, $direction: left);
+  border-left: measurements.$fs-border-width solid
+    colors-applied.$fs-border-color;
+  p::before {
+    content: "\201C";
+  }
+  p:last-child::after {
+    content: "\201D";
+  }
+}

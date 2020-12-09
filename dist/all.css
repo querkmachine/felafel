@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
 }
@@ -14,7 +15,7 @@ html {
 
 body {
   font-size: 1rem;
-  line-height: 1.25;
+  line-height: 1.375;
   margin: 0;
   color: #111827;
   background-color: #f9fafb;
@@ -23,7 +24,7 @@ body {
 @media screen and (min-width: 541px) {
   body {
     font-size: 1.1875rem;
-    line-height: 1.3157894737;
+    line-height: 1.4210526316;
   }
 }
 
@@ -58,6 +59,24 @@ a:not([class]):hover {
 }
 a:not([class]):active {
   color: #111827;
+}
+
+.fs-blockquote, .fs-prose blockquote:not([class]) {
+  margin: 0rem;
+  margin-bottom: 0.9375rem;
+  padding-left: 0.9375rem;
+  border-left: 0.5rem solid #d1d5db;
+}
+@media screen and (min-width: 541px) {
+  .fs-blockquote, .fs-prose blockquote:not([class]) {
+    padding-left: 1.5625rem;
+  }
+}
+.fs-blockquote p::before, .fs-prose blockquote:not([class]) p::before {
+  content: "“";
+}
+.fs-blockquote p:last-child::after, .fs-prose blockquote:not([class]) p:last-child::after {
+  content: "”";
 }
 
 .fs-grid-row {
@@ -330,96 +349,96 @@ a:not([class]):active {
 .fs-list li + li {
   margin-top: 0.3125rem;
 }
-.fs-list--bulleted, .fs-prose ul {
-  padding-left: 1em;
+.fs-list--bulleted, .fs-prose ul:not([class]) {
+  padding-left: 2em;
   list-style-type: disc;
 }
-.fs-list--numbered, .fs-prose ol {
-  padding-left: 1em;
+.fs-list--numbered, .fs-prose ol:not([class]) {
+  padding-left: 2em;
   list-style-type: decimal;
 }
 .fs-list--spaced li + li {
   margin-top: 0.9375rem;
 }
 
-.fs-heading-xl, .fs-prose h1,
+.fs-heading-xl, .fs-prose h1:not([class]),
 .fs-heading-l,
-.fs-prose h2,
+.fs-prose h2:not([class]),
 .fs-heading-m,
-.fs-prose h3,
+.fs-prose h3:not([class]),
 .fs-heading-s,
-.fs-prose h4 {
+.fs-prose h4:not([class]) {
   margin-top: 0rem;
   color: #111827;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-weight: 700;
 }
 
-.fs-heading-xl, .fs-prose h1 {
+.fs-heading-xl, .fs-prose h1:not([class]) {
   margin-bottom: 1.875rem;
   font-size: 2rem;
   line-height: 1.09375;
 }
 @media screen and (min-width: 541px) {
-  .fs-heading-xl, .fs-prose h1 {
+  .fs-heading-xl, .fs-prose h1:not([class]) {
     margin-bottom: 3.125rem;
   }
 }
 @media screen and (min-width: 541px) {
-  .fs-heading-xl, .fs-prose h1 {
+  .fs-heading-xl, .fs-prose h1:not([class]) {
     font-size: 3rem;
     line-height: 1.0416666667;
   }
 }
 
-.fs-heading-l, .fs-prose h2 {
+.fs-heading-l, .fs-prose h2:not([class]) {
   margin-bottom: 1.25rem;
   font-size: 1.5rem;
   line-height: 1.0416666667;
 }
 @media screen and (min-width: 541px) {
-  .fs-heading-l, .fs-prose h2 {
+  .fs-heading-l, .fs-prose h2:not([class]) {
     margin-bottom: 1.875rem;
   }
 }
 @media screen and (min-width: 541px) {
-  .fs-heading-l, .fs-prose h2 {
+  .fs-heading-l, .fs-prose h2:not([class]) {
     font-size: 2.25rem;
     line-height: 1.1111111111;
   }
 }
 
-.fs-heading-m, .fs-prose h3 {
+.fs-heading-m, .fs-prose h3:not([class]) {
   margin-bottom: 0.9375rem;
   font-size: 1.125rem;
   line-height: 1.1111111111;
 }
 @media screen and (min-width: 541px) {
-  .fs-heading-m, .fs-prose h3 {
+  .fs-heading-m, .fs-prose h3:not([class]) {
     margin-bottom: 1.25rem;
   }
 }
 @media screen and (min-width: 541px) {
-  .fs-heading-m, .fs-prose h3 {
+  .fs-heading-m, .fs-prose h3:not([class]) {
     font-size: 1.5rem;
     line-height: 1.25;
   }
 }
 
-.fs-heading-s, .fs-prose h4 {
+.fs-heading-s, .fs-prose h4:not([class]) {
   margin-bottom: 0.9375rem;
   font-size: 1rem;
-  line-height: 1.25;
+  line-height: 1.375;
 }
 @media screen and (min-width: 541px) {
-  .fs-heading-s, .fs-prose h4 {
+  .fs-heading-s, .fs-prose h4:not([class]) {
     margin-bottom: 1.25rem;
   }
 }
 @media screen and (min-width: 541px) {
-  .fs-heading-s, .fs-prose h4 {
+  .fs-heading-s, .fs-prose h4:not([class]) {
     font-size: 1.1875rem;
-    line-height: 1.3157894737;
+    line-height: 1.4210526316;
   }
 }
 
@@ -457,30 +476,30 @@ a:not([class]):active {
 
 .fs-subheading-m {
   font-size: 1rem;
-  line-height: 1.25;
+  line-height: 1.375;
 }
 @media screen and (min-width: 541px) {
   .fs-subheading-m {
     font-size: 1.1875rem;
-    line-height: 1.3157894737;
+    line-height: 1.4210526316;
   }
 }
 
-.fs-body, .fs-prose p,
+.fs-body, .fs-prose p:not([class]),
 .fs-body-l,
 .fs-body-s {
   margin-top: 0rem;
   margin-bottom: 0.9375rem;
 }
 
-.fs-body, .fs-prose p {
+.fs-body, .fs-prose p:not([class]) {
   font-size: 1rem;
-  line-height: 1.25;
+  line-height: 1.375;
 }
 @media screen and (min-width: 541px) {
-  .fs-body, .fs-prose p {
+  .fs-body, .fs-prose p:not([class]) {
     font-size: 1.1875rem;
-    line-height: 1.3157894737;
+    line-height: 1.4210526316;
   }
 }
 
@@ -497,48 +516,52 @@ a:not([class]):active {
 
 .fs-body-s {
   font-size: 0.875rem;
-  line-height: 1.1428571429;
+  line-height: 1.2857142857;
 }
 @media screen and (min-width: 541px) {
   .fs-body-s {
     font-size: 1rem;
-    line-height: 1.25;
+    line-height: 1.375;
   }
 }
 
-.fs-body + .fs-heading-l, .fs-prose p + .fs-heading-l, .fs-prose .fs-body + h2, .fs-prose p + h2,
+.fs-body + .fs-heading-l, .fs-prose p:not([class]) + .fs-heading-l, .fs-prose .fs-body + h2:not([class]), .fs-prose p:not([class]) + h2:not([class]),
 .fs-body-l + .fs-heading-l,
-.fs-prose .fs-body-l + h2,
-.fs-body-s .fs-list + .fs-heading-l,
-.fs-body-s .fs-prose .fs-list + h2,
-.fs-prose .fs-body-s .fs-list + h2 {
+.fs-prose .fs-body-l + h2:not([class]),
+.fs-body-s + .fs-heading-l,
+.fs-prose .fs-body-s + h2:not([class]),
+.fs-list + .fs-heading-l,
+.fs-prose .fs-list + h2:not([class]) {
   margin-top: 0.9375rem;
 }
 @media screen and (min-width: 541px) {
-  .fs-body + .fs-heading-l, .fs-prose p + .fs-heading-l, .fs-prose .fs-body + h2, .fs-prose p + h2,
+  .fs-body + .fs-heading-l, .fs-prose p:not([class]) + .fs-heading-l, .fs-prose .fs-body + h2:not([class]), .fs-prose p:not([class]) + h2:not([class]),
 .fs-body-l + .fs-heading-l,
-.fs-prose .fs-body-l + h2,
-.fs-body-s .fs-list + .fs-heading-l,
-.fs-body-s .fs-prose .fs-list + h2,
-.fs-prose .fs-body-s .fs-list + h2 {
+.fs-prose .fs-body-l + h2:not([class]),
+.fs-body-s + .fs-heading-l,
+.fs-prose .fs-body-s + h2:not([class]),
+.fs-list + .fs-heading-l,
+.fs-prose .fs-list + h2:not([class]) {
     margin-top: 1.25rem;
   }
 }
-.fs-body + .fs-heading-m, .fs-prose p + .fs-heading-m, .fs-prose .fs-body + h3, .fs-prose p + h3,
+.fs-body + .fs-heading-m, .fs-prose p:not([class]) + .fs-heading-m, .fs-prose .fs-body + h3:not([class]), .fs-prose p:not([class]) + h3:not([class]),
 .fs-body + .fs-heading-s,
-.fs-prose p + .fs-heading-s,
-.fs-prose .fs-body + h4,
-.fs-prose p + h4,
+.fs-prose p:not([class]) + .fs-heading-s,
+.fs-prose .fs-body + h4:not([class]),
+.fs-prose p:not([class]) + h4:not([class]),
 .fs-body-l + .fs-heading-m,
-.fs-prose .fs-body-l + h3,
+.fs-prose .fs-body-l + h3:not([class]),
 .fs-body-l + .fs-heading-s,
-.fs-prose .fs-body-l + h4,
-.fs-body-s .fs-list + .fs-heading-m,
-.fs-body-s .fs-prose .fs-list + h3,
-.fs-prose .fs-body-s .fs-list + h3,
-.fs-body-s .fs-list + .fs-heading-s,
-.fs-body-s .fs-prose .fs-list + h4,
-.fs-prose .fs-body-s .fs-list + h4 {
+.fs-prose .fs-body-l + h4:not([class]),
+.fs-body-s + .fs-heading-m,
+.fs-prose .fs-body-s + h3:not([class]),
+.fs-body-s + .fs-heading-s,
+.fs-prose .fs-body-s + h4:not([class]),
+.fs-list + .fs-heading-m,
+.fs-prose .fs-list + h3:not([class]),
+.fs-list + .fs-heading-s,
+.fs-prose .fs-list + h4:not([class]) {
   margin-top: 0.625rem;
 }
 
@@ -688,6 +711,10 @@ a:not([class]):active {
   color: #3b82f6;
 }
 
+.fs-prose {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 .fs-\!-sr {
   position: absolute !important;
   width: 1px !important;
@@ -1422,29 +1449,29 @@ a:not([class]):active {
 @media screen and (min-width: 541px) {
   .fs-\!-font-size-14 {
     font-size: 0.875rem !important;
-    line-height: 1.4285714286 !important;
+    line-height: 1.2857142857 !important;
   }
 }
 
 .fs-\!-font-size-16 {
   font-size: 0.875rem !important;
-  line-height: 1.1428571429 !important;
+  line-height: 1.2857142857 !important;
 }
 @media screen and (min-width: 541px) {
   .fs-\!-font-size-16 {
     font-size: 1rem !important;
-    line-height: 1.25 !important;
+    line-height: 1.375 !important;
   }
 }
 
 .fs-\!-font-size-19 {
   font-size: 1rem !important;
-  line-height: 1.25 !important;
+  line-height: 1.375 !important;
 }
 @media screen and (min-width: 541px) {
   .fs-\!-font-size-19 {
     font-size: 1.1875rem !important;
-    line-height: 1.3157894737 !important;
+    line-height: 1.4210526316 !important;
   }
 }
 
