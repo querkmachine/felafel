@@ -2,7 +2,6 @@
 @use "../settings/measurements";
 @use "../settings/typography-font";
 @use "../helpers/typography";
-@use "../helpers/links";
 
 * {
   box-sizing: border-box;
@@ -24,9 +23,6 @@ body {
   @include typography.fs-font-size(19);
   margin: 0;
   color: colors-applied.$fs-text-color;
+  background-color: colors-applied.$fs-body-background-color;
   font-family: typography-font.$fs-font-body;
-}
-
-a:not([class]) {
-  @include links.fs-link($visited-style: true);
 }

@@ -1,0 +1,5 @@
+@use "../helpers/links";
+
+a:not([class]) {
+  @include links.fs-link($visited-style: true);
+}
