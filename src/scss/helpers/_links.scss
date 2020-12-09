@@ -1,9 +1,7 @@
 @use "../settings/colors-applied";
 @use "a11y";
-@use "typography";
 
 @mixin _fs-link-common {
-  @include typography.fs-typography-common;
   &:focus {
     @include a11y.fs-focus-ring;
   }

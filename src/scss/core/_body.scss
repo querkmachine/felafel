@@ -20,6 +20,7 @@ html {
 }
 
 body {
+  @include typography.fs-typography-common;
   @include typography.fs-font-size(19);
   margin: 0;
   color: colors-applied.$fs-text-color;

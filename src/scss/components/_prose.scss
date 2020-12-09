@@ -4,7 +4,6 @@
 @forward "../objects/typography";
 
 .fs-prose {
-  @include typography.fs-typography-common;
   p:not([class]) {
     @extend .fs-body;
   }
