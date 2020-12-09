@@ -1,21 +1,20 @@
-@use "../settings/colors-applied";
-@use "../settings/measurements";
+@use "../settings";
 @use "../helpers/reset";
 @use "../helpers/spacing";
 @use "../helpers/typography";
 
 .fs-masthead-tools {
   @include typography.fs-font-size(14);
-  @if colors-applied.$fs-masthead-tools-background-color ==
-    colors-applied.$fs-masthead-border-color
+  @if settings.$fs-masthead-tools-background-color ==
+    settings.$fs-masthead-border-color
   {
     border-width: 0;
-    border-top-width: measurements.$fs-border-width;
+    border-top-width: settings.$fs-border-width;
     border-style: solid;
-    border-color: colors-applied.$fs-masthead-border-color;
+    border-color: settings.$fs-masthead-border-color;
   }
-  color: colors-applied.$fs-masthead-tools-text-color;
-  background-color: colors-applied.$fs-masthead-tools-background-color;
+  color: settings.$fs-masthead-tools-text-color;
+  background-color: settings.$fs-masthead-tools-background-color;
   &__inner {
   }
   &__list {

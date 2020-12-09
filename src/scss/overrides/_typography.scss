@@ -1,39 +1,38 @@
-@use "../settings/typography-font" as settings-font;
-@use "../settings/typography-size" as settings-size;
+@use "../settings";
 @use "../helpers/typography" as helpers;
 
-@each $size, $map in settings-size.$fs-font-sizes-responsive {
+@each $size, $map in settings.$fs-font-sizes-responsive {
   .fs-\!-font-size-#{$size} {
     @include helpers.fs-font-size($size, $important: true);
   }
 }
 
 .fs-\!-font-body {
-  font-family: settings-font.$fs-font-body !important;
+  font-family: settings.$fs-font-body !important;
 }
 .fs-\!-font-body-regular {
-  font-weight: settings-font.$fs-font-body-regular !important;
+  font-weight: settings.$fs-font-body-regular !important;
 }
 .fs-\!-font-body-bold {
-  font-weight: settings-font.$fs-font-body-bold !important;
+  font-weight: settings.$fs-font-body-bold !important;
 }
 
 .fs-\!-font-header {
-  font-family: settings-font.$fs-font-header !important;
+  font-family: settings.$fs-font-header !important;
 }
 .fs-\!-font-header-regular {
-  font-weight: settings-font.$fs-font-header-regular !important;
+  font-weight: settings.$fs-font-header-regular !important;
 }
 .fs-\!-font-header-bold {
-  font-weight: settings-font.$fs-font-header-bold !important;
+  font-weight: settings.$fs-font-header-bold !important;
 }
 
 .fs-\!-font-code {
-  font-family: settings-font.$fs-font-code !important;
+  font-family: settings.$fs-font-code !important;
 }
 .fs-\!-font-code-regular {
-  font-weight: settings-font.$fs-font-code-regular !important;
+  font-weight: settings.$fs-font-code-regular !important;
 }
 .fs-\!-font-code-bold {
-  font-weight: settings-font.$fs-font-code-bold !important;
+  font-weight: settings.$fs-font-code-bold !important;
 }

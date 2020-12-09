@@ -1,5 +1,4 @@
-@use "../settings/typography-font";
-@use "../settings/colors-applied";
+@use "../settings";
 @use "../helpers/spacing";
 @use "../helpers/typography";
 
@@ -9,9 +8,9 @@
 .fs-heading-m,
 .fs-heading-s {
   @include spacing.fs-responsive-margin(0, $direction: top);
-  color: colors-applied.$fs-text-color-heading;
-  font-family: typography-font.$fs-font-header;
-  font-weight: typography-font.$fs-font-header-bold;
+  color: settings.$fs-text-color-heading;
+  font-family: settings.$fs-font-header;
+  font-weight: settings.$fs-font-header-bold;
 }
 
 .fs-heading-xl {
@@ -39,9 +38,9 @@
 .fs-subheading-l,
 .fs-subheading-m {
   display: block;
-  color: colors-applied.$fs-text-color-secondary;
-  font-family: typography-font.$fs-font-header;
-  font-weight: typography-font.$fs-font-header-regular;
+  color: settings.$fs-text-color-secondary;
+  font-family: settings.$fs-font-header;
+  font-weight: settings.$fs-font-header-regular;
 }
 
 .fs-subheading-xl {

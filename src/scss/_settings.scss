@@ -1,0 +1,266 @@
+@use "sass:map";
+@use "sass:color";
+
+// ====================================
+// BREAKPOINTS
+// ====================================
+
+$fs-breakpoints: (
+  mobile: 320px,
+  tablet: 541px,
+  desktop: 769px,
+) !default;
+
+// ====================================
+// COLORS
+// ====================================
+
+// Available color palette
+$fs-color-palette: (
+  "red": #ef4444,
+  "yellow": #f59e0b,
+  "green": #10b981,
+  "blue": #3b82f6,
+  "indigo": #6366f1,
+  "purple": #8b5cf6,
+  "pink": #ec4899,
+  "white": #fff,
+  "black": #000,
+  "grey5": #f9fafb,
+  "grey10": #f3f4f6,
+  "grey20": #e5e7eb,
+  "grey30": #d1d5db,
+  "grey40": #9ca3af,
+  "grey50": #6b7280,
+  "grey60": #4b5563,
+  "grey70": #374151,
+  "grey80": #1f2937,
+  "grey90": #111827,
+) !default;
+
+// Brand accent (use sparingly)
+$fs-brand-color: map.get($fs-color-palette, "grey90") !default;
+
+// Background
+$fs-canvas-background-color: map.get($fs-color-palette, "grey5") !default;
+$fs-body-background-color: $fs-canvas-background-color !default;
+
+// Copy text
+$fs-text-color: map.get($fs-color-palette, "grey90") !default;
+$fs-text-color-heading: $fs-text-color !default;
+$fs-text-color-secondary: map.get($fs-color-palette, "grey50") !default;
+
+// Links
+$fs-link-color: map.get($fs-color-palette, "blue") !default;
+$fs-link-visited-color: map.get($fs-color-palette, "purple") !default;
+$fs-link-hover-color: color.mix(
+  #000,
+  map.get($fs-color-palette, "blue"),
+  20%
+) !default;
+$fs-link-active-color: $fs-text-color !default;
+
+// Accessibility states
+$fs-focus-color: map.get($fs-color-palette, "yellow") !default;
+$fs-focus-text-color: map.get($fs-color-palette, "black") !default;
+
+// Contextual states
+$fs-error-color: map.get($fs-color-palette, "red") !default;
+$fs-success-color: map.get($fs-color-palette, "green") !default;
+
+// Horizontal rule
+$fs-border-color: map.get($fs-color-palette, "grey30") !default;
+
+// Component - Masthead
+$fs-masthead-border-color: $fs-brand-color !default;
+$fs-masthead-background-color: map.get($fs-color-palette, "white") !default;
+$fs-masthead-text-color: map.get($fs-color-palette, "grey90") !default;
+
+// Component - Masthead tools
+$fs-masthead-tools-background-color: $fs-masthead-border-color !default;
+$fs-masthead-tools-text-color: map.get($fs-color-palette, "white") !default;
+
+// Component - Primary navigation
+$fs-primary-navigation-divider: $fs-border-color !default;
+$fs-primary-navigation-current-link: $fs-brand-color !default;
+
+// ====================================
+// MEASUREMENTS
+// ====================================
+
+// Page width container
+$fs-page-width: 960px !default;
+
+// Grid system
+$fs-grid: (
+  one-quarter: 25%,
+  one-third: 33.3333%,
+  one-half: 50%,
+  two-thirds: 66.6666%,
+  three-quarters: 75%,
+  full: 100%,
+) !default;
+
+// Grid gutters
+$fs-gutter: 30px !default;
+$fs-gutter-half: $fs-gutter / 2 !default;
+
+// Generic borders
+$fs-border-width: 0.5rem !default;
+$fs-border-width-wide: 1rem !default;
+$fs-border-width-narrow: 1px !default;
+
+// Focus state border
+$fs-focus-width: 3px !default;
+
+// Form input borders
+$fs-border-width-form-element: 2px !default;
+$fs-border-width-form-element-error: $fs-border-width-form-element !default;
+
+// Horizontal rule width
+$fs-hr-width: 1px !default;
+
+// ====================================
+// SPACING
+// ====================================
+
+$fs-spacing-responsive: (
+  0: (
+    null: 0,
+  ),
+  1: (
+    null: 5px,
+  ),
+  2: (
+    null: 10px,
+  ),
+  3: (
+    null: 15px,
+  ),
+  4: (
+    null: 15px,
+    tablet: 20px,
+  ),
+  5: (
+    null: 15px,
+    tablet: 25px,
+  ),
+  6: (
+    null: 20px,
+    tablet: 30px,
+  ),
+  7: (
+    null: 26px,
+    tablet: 40px,
+  ),
+  8: (
+    null: 30px,
+    tablet: 50px,
+  ),
+  9: (
+    null: 40px,
+    tablet: 60px,
+  ),
+) !default;
+
+// ====================================
+// TYPOGRAPHY
+// ====================================
+
+// Root font size
+//
+// Used to calculate rem sizes for typography, and used as the basis for a
+// bunch of other calculations. 16px is the default in virtually all browsers,
+// however the user is free to scale this up and down according to their needs.
+$fs-font-sizes-root: 16px !default;
+
+// Body fonts
+$fs-font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !default;
+$fs-font-body-regular: 400 !default;
+$fs-font-body-bold: 700 !default;
+
+// Heading/brand fonts
+$fs-font-header: $fs-font-body !default;
+$fs-font-header-regular: $fs-font-body-regular !default;
+$fs-font-header-bold: $fs-font-body-bold !default;
+
+// Monospace/code fonts
+$fs-font-code: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+  "Courier New", monospace !default;
+$fs-font-code-regular: $fs-font-body-regular !default;
+$fs-font-code-bold: $fs-font-body-bold !default;
+
+// Font sizes / line heights
+$fs-font-sizes-responsive: (
+  14: (
+    null: (
+      font-size: 12px,
+      line-height: 15px,
+    ),
+    tablet: (
+      font-size: 14px,
+      line-height: 18px,
+    ),
+  ),
+  16: (
+    null: (
+      font-size: 14px,
+      line-height: 18px,
+    ),
+    tablet: (
+      font-size: 16px,
+      line-height: 22px,
+    ),
+  ),
+  19: (
+    null: (
+      font-size: 16px,
+      line-height: 22px,
+    ),
+    tablet: (
+      font-size: 19px,
+      line-height: 27px,
+    ),
+  ),
+  24: (
+    null: (
+      font-size: 18px,
+      line-height: 20px,
+    ),
+    tablet: (
+      font-size: 24px,
+      line-height: 30px,
+    ),
+  ),
+  36: (
+    null: (
+      font-size: 24px,
+      line-height: 25px,
+    ),
+    tablet: (
+      font-size: 36px,
+      line-height: 40px,
+    ),
+  ),
+  48: (
+    null: (
+      font-size: 32px,
+      line-height: 35px,
+    ),
+    tablet: (
+      font-size: 48px,
+      line-height: 50px,
+    ),
+  ),
+  80: (
+    null: (
+      font-size: 53px,
+      line-height: 55px,
+    ),
+    tablet: (
+      font-size: 80px,
+      line-height: 80px,
+    ),
+  ),
+) !default;

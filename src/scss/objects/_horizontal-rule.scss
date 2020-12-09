@@ -1,5 +1,4 @@
-@use "../settings/colors-applied";
-@use "../settings/measurements";
+@use "../settings";
 @use "../helpers/spacing";
 
 .fs-rule {
@@ -16,7 +15,6 @@
     @include spacing.fs-responsive-margin(4, $direction: bottom);
   }
   &--visible {
-    border-bottom: measurements.$fs-hr-width solid
-      colors-applied.$fs-border-color;
+    border-bottom: settings.$fs-hr-width solid settings.$fs-border-color;
   }
 }

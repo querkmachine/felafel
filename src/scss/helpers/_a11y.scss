@@ -1,11 +1,10 @@
-@use "../settings/colors-applied";
-@use "../settings/measurements";
+@use "../settings";
 
 // Keyboard focus style
 @mixin fs-focus-ring {
-  outline: measurements.$fs-focus-width solid colors-applied.$fs-focus-color;
-  color: colors-applied.$fs-focus-color;
-  background-color: colors-applied.$fs-focus-color;
+  outline: settings.$fs-focus-width solid settings.$fs-focus-color;
+  color: settings.$fs-focus-color;
+  background-color: settings.$fs-focus-color;
 }
 
 // Hide elements while keeping them available to screen readers

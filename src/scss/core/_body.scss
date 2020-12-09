@@ -1,6 +1,4 @@
-@use "../settings/colors-applied";
-@use "../settings/measurements";
-@use "../settings/typography-font";
+@use "../settings";
 @use "../helpers/typography";
 
 * {
@@ -12,10 +10,10 @@
 }
 
 html {
-  background-color: colors-applied.$fs-canvas-background-color;
+  background-color: settings.$fs-canvas-background-color;
   text-size-adjust: 100%;
-  @if measurements.$fs-font-sizes-root != 16px {
-    font-size: measurements.$fs-font-sizes-root;
+  @if settings.$fs-font-sizes-root != 16px {
+    font-size: settings.$fs-font-sizes-root;
   }
 }
 
@@ -23,7 +21,7 @@ body {
   @include typography.fs-typography-common;
   @include typography.fs-font-size(19);
   margin: 0;
-  color: colors-applied.$fs-text-color;
-  background-color: colors-applied.$fs-body-background-color;
-  font-family: typography-font.$fs-font-body;
+  color: settings.$fs-text-color;
+  background-color: settings.$fs-body-background-color;
+  font-family: settings.$fs-font-body;
 }

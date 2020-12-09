@@ -1,6 +1,4 @@
-@use "../settings/colors-applied";
-@use "../settings/measurements";
-@use "../settings/typography-font";
+@use "../settings";
 @use "../helpers/colors";
 @use "../helpers/layout";
 @use "../helpers/media-queries";
@@ -12,18 +10,18 @@
   @include spacing.fs-responsive-padding(4, $direction: top);
   @include spacing.fs-responsive-padding(4, $direction: bottom);
   border-width: 0;
-  border-top-width: measurements.$fs-border-width;
+  border-top-width: settings.$fs-border-width;
   border-style: solid;
-  border-color: colors-applied.$fs-masthead-border-color;
-  color: colors-applied.$fs-masthead-text-color;
-  background-color: colors-applied.$fs-masthead-background-color;
+  border-color: settings.$fs-masthead-border-color;
+  color: settings.$fs-masthead-text-color;
+  background-color: settings.$fs-masthead-background-color;
   &__inner {
   }
   &__logo,
   &__section-name {
     @include typography.fs-font-size(24);
-    font-family: typography-font.$fs-font-header;
-    font-weight: typography-font.$fs-font-header-bold;
+    font-family: settings.$fs-font-header;
+    font-weight: settings.$fs-font-header-bold;
   }
   &__logo {
     @include media-queries.fs-mq(tablet) {
