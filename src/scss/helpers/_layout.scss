@@ -48,6 +48,13 @@
   @return map.get(settings.$fs-grid, $width);
 }
 
+// Grid row
+@mixin fs-grid-row {
+  @include fs-clearfix;
+  margin-right: 0 - settings.$fs-gutter-half;
+  margin-left: 0 - settings.$fs-gutter-half;
+}
+
 // Grid column mixin
 @mixin fs-grid-column($width: full, $float: left, $at: tablet) {
   @if $at != desktop {

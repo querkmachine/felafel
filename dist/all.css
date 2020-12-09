@@ -616,15 +616,6 @@ a:not([class]):active {
     padding-bottom: 1.25rem;
   }
 }
-.fs-masthead__inner {
-  display: flex;
-  flex-direction: column;
-}
-@media screen and (min-width: 541px) {
-  .fs-masthead__inner {
-    flex-direction: row;
-  }
-}
 .fs-masthead__logo, .fs-masthead__section-name {
   font-size: 1.125rem;
   line-height: 1.1111111111;
@@ -640,8 +631,6 @@ a:not([class]):active {
 @media screen and (min-width: 541px) {
   .fs-masthead__logo {
     flex-grow: 1;
-    width: 33.3333%;
-    margin-right: 30px;
   }
 }
 .fs-masthead__logo-link {
@@ -653,7 +642,6 @@ a:not([class]):active {
 @media screen and (min-width: 541px) {
   .fs-masthead__content {
     margin-top: 0rem;
-    width: 66.6666%;
   }
 }
 

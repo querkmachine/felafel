@@ -18,11 +18,6 @@
   color: colors-applied.$fs-masthead-text-color;
   background-color: colors-applied.$fs-masthead-background-color;
   &__inner {
-    display: flex;
-    flex-direction: column;
-    @include media-queries.fs-mq(tablet) {
-      flex-direction: row;
-    }
   }
   &__logo,
   &__section-name {
@@ -33,8 +28,6 @@
   &__logo {
     @include media-queries.fs-mq(tablet) {
       flex-grow: 1;
-      width: layout.fs-grid-width(one-third);
-      margin-right: measurements.$fs-gutter;
     }
   }
   &__logo-link {
@@ -44,7 +37,6 @@
     @include spacing.fs-responsive-margin(2, $direction: top);
     @include media-queries.fs-mq(tablet) {
       @include spacing.fs-responsive-margin(0, $direction: top);
-      width: layout.fs-grid-width(two-thirds);
     }
   }
 }
