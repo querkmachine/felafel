@@ -16,12 +16,12 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-size: 1rem;
   line-height: 1.375;
   margin: 0;
   color: #111827;
   background-color: #f9fafb;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 @media screen and (min-width: 541px) {
   body {
@@ -357,9 +357,9 @@ a:not([class]):active {
 .fs-heading-s,
 .fs-prose h4:not([class]) {
   margin-top: 0rem;
-  color: #111827;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-weight: 700;
+  color: #111827;
 }
 
 .fs-heading-xl, .fs-prose h1:not([class]) {
@@ -433,10 +433,10 @@ a:not([class]):active {
 .fs-subheading-xl,
 .fs-subheading-l,
 .fs-subheading-m {
-  display: block;
-  color: #6b7280;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-weight: 400;
+  display: block;
+  color: #6b7280;
 }
 
 .fs-subheading-xl {
@@ -1530,10 +1530,12 @@ a:not([class]):active {
 }
 
 .fs-\!-font-body-regular {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
   font-weight: 400 !important;
 }
 
 .fs-\!-font-body-bold {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
   font-weight: 700 !important;
 }
 
@@ -1542,10 +1544,12 @@ a:not([class]):active {
 }
 
 .fs-\!-font-header-regular {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
   font-weight: 400 !important;
 }
 
 .fs-\!-font-header-bold {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
   font-weight: 700 !important;
 }
 
@@ -1554,10 +1558,12 @@ a:not([class]):active {
 }
 
 .fs-\!-font-code-regular {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
   font-weight: 400 !important;
 }
 
 .fs-\!-font-code-bold {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
   font-weight: 700 !important;
 }
 

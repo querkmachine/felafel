@@ -8,9 +8,8 @@
 .fs-heading-m,
 .fs-heading-s {
   @include spacing.fs-responsive-margin(0, $direction: top);
+  @include typography.fs-font-stack(header, $weight: bold);
   color: settings.$fs-text-color-heading;
-  font-family: settings.$fs-font-header;
-  font-weight: settings.$fs-font-header-bold;
 }
 
 .fs-heading-xl {
@@ -37,10 +36,9 @@
 .fs-subheading-xl,
 .fs-subheading-l,
 .fs-subheading-m {
+  @include typography.fs-font-stack(header, $weight: regular);
   display: block;
   color: settings.$fs-text-color-secondary;
-  font-family: settings.$fs-font-header;
-  font-weight: settings.$fs-font-header-regular;
 }
 
 .fs-subheading-xl {

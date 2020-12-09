@@ -4,6 +4,7 @@
 
 @use "sass:map";
 @use "sass:math";
+@use "sass:string";
 
 // Common typography rules
 @mixin fs-typography-common {
@@ -21,6 +22,24 @@
     $line-height: $line-height / $font-size;
   }
   @return $line-height;
+}
+
+// Font family
+@mixin fs-font-stack($stack, $weight: false, $important: false) {
+  @if not map.has-key(settings.$fs-font-stacks, $stack) {
+    @error "Unknown font stack `#{$stack}` - expected a family from the font families map.";
+  }
+  $stack-map: map.get(settings.$fs-font-stacks, $stack);
+  font-family: string.unquote(map.get($stack-map, "stack"))
+    if($important, !important, null);
+  @if $weight {
+    @if map.has-key($stack-map, $weight) {
+      font-weight: map.get($stack-map, $weight)
+        if($important, !important, null);
+    } @else {
+      font-weight: $weight if($important, !important, null);
+    }
+  }
 }
 
 // Responsive font-size mixin

@@ -174,22 +174,27 @@ $fs-spacing-responsive: (
 // however the user is free to scale this up and down according to their needs.
 $fs-font-sizes-root: 16px !default;
 
-// Body fonts
-$fs-font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-  Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !default;
-$fs-font-body-regular: 400 !default;
-$fs-font-body-bold: 700 !default;
-
-// Heading/brand fonts
-$fs-font-header: $fs-font-body !default;
-$fs-font-header-regular: $fs-font-body-regular !default;
-$fs-font-header-bold: $fs-font-body-bold !default;
-
-// Monospace/code fonts
-$fs-font-code: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-  "Courier New", monospace !default;
-$fs-font-code-regular: $fs-font-body-regular !default;
-$fs-font-code-bold: $fs-font-body-bold !default;
+// Font family stacks
+$fs-font-stacks: (
+  body: (
+    stack:
+      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
+    regular: 400,
+    bold: 700,
+  ),
+  header: (
+    stack:
+      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
+    regular: 400,
+    bold: 700,
+  ),
+  code: (
+    stack:
+      'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+    regular: 400,
+    bold: 700,
+  ),
+) !default;
 
 // Font sizes / line heights
 $fs-font-sizes-responsive: (

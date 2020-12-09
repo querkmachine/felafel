@@ -1,38 +1,38 @@
 @use "../settings";
-@use "../helpers/typography" as helpers;
+@use "../helpers/typography";
 
 @each $size, $map in settings.$fs-font-sizes-responsive {
   .fs-\!-font-size-#{$size} {
-    @include helpers.fs-font-size($size, $important: true);
+    @include typography.fs-font-size($size, $important: true);
   }
 }
 
 .fs-\!-font-body {
-  font-family: settings.$fs-font-body !important;
+  @include typography.fs-font-stack(body, $important: true);
 }
 .fs-\!-font-body-regular {
-  font-weight: settings.$fs-font-body-regular !important;
+  @include typography.fs-font-stack(body, $weight: regular, $important: true);
 }
 .fs-\!-font-body-bold {
-  font-weight: settings.$fs-font-body-bold !important;
+  @include typography.fs-font-stack(body, $weight: bold, $important: true);
 }
 
 .fs-\!-font-header {
-  font-family: settings.$fs-font-header !important;
+  @include typography.fs-font-stack(header, $important: true);
 }
 .fs-\!-font-header-regular {
-  font-weight: settings.$fs-font-header-regular !important;
+  @include typography.fs-font-stack(header, $weight: regular, $important: true);
 }
 .fs-\!-font-header-bold {
-  font-weight: settings.$fs-font-header-bold !important;
+  @include typography.fs-font-stack(header, $weight: bold, $important: true);
 }
 
 .fs-\!-font-code {
-  font-family: settings.$fs-font-code !important;
+  @include typography.fs-font-stack(code, $important: true);
 }
 .fs-\!-font-code-regular {
-  font-weight: settings.$fs-font-code-regular !important;
+  @include typography.fs-font-stack(code, $weight: regular, $important: true);
 }
 .fs-\!-font-code-bold {
-  font-weight: settings.$fs-font-code-bold !important;
+  @include typography.fs-font-stack(code, $weight: bold, $important: true);
 }

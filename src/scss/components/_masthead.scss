@@ -20,8 +20,7 @@
   &__logo,
   &__section-name {
     @include typography.fs-font-size(24);
-    font-family: settings.$fs-font-header;
-    font-weight: settings.$fs-font-header-bold;
+    @include typography.fs-font-stack(header, $weight: bold);
   }
   &__logo {
     @include media-queries.fs-mq(tablet) {
