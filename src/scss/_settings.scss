@@ -6,7 +6,6 @@
 // ====================================
 
 $fs-breakpoints: (
-  mobile: 320px,
   tablet: 541px,
   desktop: 769px,
 ) !default;
@@ -15,8 +14,8 @@ $fs-breakpoints: (
 // COLORS
 // ====================================
 
-// Available color palette
-$fs-color-palette: (
+// Default color palette
+$fs-default-color-palette: (
   "red": #ef4444,
   "yellow": #f59e0b,
   "green": #10b981,
@@ -36,49 +35,58 @@ $fs-color-palette: (
   "grey70": #374151,
   "grey80": #1f2937,
   "grey90": #111827,
-) !default;
+);
 
 // Brand accent (use sparingly)
-$fs-brand-color: map.get($fs-color-palette, "grey90") !default;
+$fs-brand-color: map.get($fs-default-color-palette, "grey90") !default;
 
 // Background
-$fs-canvas-background-color: map.get($fs-color-palette, "grey5") !default;
+$fs-canvas-background-color: map.get(
+  $fs-default-color-palette,
+  "grey5"
+) !default;
 $fs-body-background-color: $fs-canvas-background-color !default;
 
 // Copy text
-$fs-text-color: map.get($fs-color-palette, "grey90") !default;
+$fs-text-color: map.get($fs-default-color-palette, "grey90") !default;
 $fs-text-color-heading: $fs-text-color !default;
-$fs-text-color-secondary: map.get($fs-color-palette, "grey50") !default;
+$fs-text-color-secondary: map.get($fs-default-color-palette, "grey50") !default;
 
 // Links
-$fs-link-color: map.get($fs-color-palette, "blue") !default;
-$fs-link-visited-color: map.get($fs-color-palette, "purple") !default;
+$fs-link-color: map.get($fs-default-color-palette, "blue") !default;
+$fs-link-visited-color: map.get($fs-default-color-palette, "purple") !default;
 $fs-link-hover-color: color.mix(
   #000,
-  map.get($fs-color-palette, "blue"),
+  map.get($fs-default-color-palette, "blue"),
   20%
 ) !default;
 $fs-link-active-color: $fs-text-color !default;
 
 // Accessibility states
-$fs-focus-color: map.get($fs-color-palette, "yellow") !default;
-$fs-focus-text-color: map.get($fs-color-palette, "black") !default;
+$fs-focus-color: map.get($fs-default-color-palette, "yellow") !default;
+$fs-focus-text-color: map.get($fs-default-color-palette, "black") !default;
 
 // Contextual states
-$fs-error-color: map.get($fs-color-palette, "red") !default;
-$fs-success-color: map.get($fs-color-palette, "green") !default;
+$fs-error-color: map.get($fs-default-color-palette, "red") !default;
+$fs-success-color: map.get($fs-default-color-palette, "green") !default;
 
 // Horizontal rule
-$fs-border-color: map.get($fs-color-palette, "grey30") !default;
+$fs-border-color: map.get($fs-default-color-palette, "grey30") !default;
 
 // Component - Masthead
 $fs-masthead-border-color: $fs-brand-color !default;
-$fs-masthead-background-color: map.get($fs-color-palette, "white") !default;
-$fs-masthead-text-color: map.get($fs-color-palette, "grey90") !default;
+$fs-masthead-background-color: map.get(
+  $fs-default-color-palette,
+  "white"
+) !default;
+$fs-masthead-text-color: map.get($fs-default-color-palette, "grey90") !default;
 
 // Component - Masthead tools
 $fs-masthead-tools-background-color: $fs-masthead-border-color !default;
-$fs-masthead-tools-text-color: map.get($fs-color-palette, "white") !default;
+$fs-masthead-tools-text-color: map.get(
+  $fs-default-color-palette,
+  "white"
+) !default;
 
 // Component - Primary navigation
 $fs-primary-navigation-divider: $fs-border-color !default;
