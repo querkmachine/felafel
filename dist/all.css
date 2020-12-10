@@ -1,19 +1,12 @@
 @charset "UTF-8";
-* {
-  box-sizing: border-box;
-}
-*::before, *::after {
-  box-sizing: inherit;
-}
-
-html {
+.fs-template, html {
   background-color: #f9fafb;
   -webkit-text-size-adjust: 100%;
      -moz-text-size-adjust: 100%;
           text-size-adjust: 100%;
 }
 
-body {
+.fs-template__body, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -24,10 +17,17 @@ body {
   background-color: #f9fafb;
 }
 @media screen and (min-width: 541px) {
-  body {
+  .fs-template__body, body {
     font-size: 1.1875rem;
     line-height: 1.4210526316;
   }
+}
+
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
 }
 
 img {
