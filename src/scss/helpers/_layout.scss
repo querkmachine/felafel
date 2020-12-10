@@ -69,12 +69,9 @@
 
 // Non-overflow based clearfix
 @mixin fs-clearfix {
-  &:before,
-  &:after {
-    display: table;
-    content: " ";
-  }
-  &:after {
+  &::after {
+    content: "";
+    display: block;
     clear: both;
   }
 }

@@ -1,0 +1,58 @@
+@use "../settings";
+@use "../helpers/reset";
+@use "../helpers/spacing";
+@use "../helpers/typography";
+
+.fs-form-row {
+  @include spacing.fs-responsive-margin(6, $direction: bottom);
+}
+
+.fs-fieldset {
+  @include reset.fs-reset-fieldset;
+  &__legend {
+    @include typography.fs-font-stack(body, $weight: regular);
+    @include typography.fs-font-size(19);
+    display: table;
+    max-width: 100%;
+    padding: 0;
+    white-space: normal;
+    &--xl,
+    &--l,
+    &--m,
+    &--s {
+      @include spacing.fs-responsive-margin(3, $direction: bottom);
+      @include typography.fs-font-stack(header, $weight: bold);
+    }
+    &--xl {
+      @include typography.fs-font-size(48);
+    }
+    &--l {
+      @include typography.fs-font-size(36);
+    }
+    &--m {
+      @include typography.fs-font-size(24);
+    }
+  }
+}
+
+.fs-label {
+  @include spacing.fs-responsive-margin(1, $direction: bottom);
+  @include typography.fs-font-stack(body, $weight: regular);
+  @include typography.fs-font-size(19);
+  display: block;
+}
+
+.fs-hint {
+  @include spacing.fs-responsive-margin(2, $direction: bottom);
+  @include typography.fs-font-stack(body, $weight: regular);
+  @include typography.fs-font-size(19);
+  display: block;
+  color: settings.$fs-text-color-secondary;
+}
+
+.fs-error {
+  @include spacing.fs-responsive-margin(2, $direction: bottom);
+  @include typography.fs-font-stack(body, $weight: bold);
+  @include typography.fs-font-size(19);
+  display: block;
+}
