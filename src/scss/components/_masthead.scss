@@ -6,7 +6,6 @@
 @use "../helpers/typography";
 
 .fs-masthead {
-  @include spacing.fs-responsive-margin(9, $direction: bottom);
   @include spacing.fs-responsive-padding(4, $direction: top);
   @include spacing.fs-responsive-padding(4, $direction: bottom);
   border-width: 0;
