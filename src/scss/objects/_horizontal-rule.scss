@@ -2,6 +2,8 @@
 @use "../helpers/spacing";
 
 .fs-rule {
+  margin: 0;
+  border: 0;
   &--xl {
     @include spacing.fs-responsive-margin(8, $direction: top);
     @include spacing.fs-responsive-margin(8, $direction: bottom);

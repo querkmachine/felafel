@@ -200,6 +200,10 @@ a:not([class]):active {
   }
 }
 
+.fs-rule {
+  margin: 0;
+  border: 0;
+}
 .fs-rule--xl {
   margin-top: 1.875rem;
   margin-bottom: 1.875rem;
