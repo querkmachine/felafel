@@ -66,6 +66,7 @@ a:not([class]):active {
   margin-bottom: 0.9375rem;
   padding-left: 0.9375rem;
   border-left: 0.5rem solid #d1d5db;
+  hanging-punctuation: first;
 }
 @media screen and (min-width: 541px) {
   .fs-blockquote, .fs-prose blockquote:not([class]) {

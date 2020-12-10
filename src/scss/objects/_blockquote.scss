@@ -6,6 +6,7 @@
   @include spacing.fs-responsive-margin(3, $direction: bottom);
   @include spacing.fs-responsive-padding(5, $direction: left);
   border-left: settings.$fs-border-width solid settings.$fs-border-color;
+  hanging-punctuation: first;
   p::before {
     content: "\201C";
   }
