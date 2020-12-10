@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/all.css" />
+    <title>Grid</title>
+    <style>
+      .fs-grid-row {
+        margin-bottom: 1rem;
+        border: 1px solid blue;
+      }
+      [class^="fs-grid-column-"] {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fs-grid-row">
+      <div class="fs-grid-column-full">fs-grid-column-full</div>
+    </div>
+    <div class="fs-grid-row">
+      <div class="fs-grid-column-one-half">fs-grid-column-one-half</div>
+      <div class="fs-grid-column-one-half">fs-grid-column-one-half</div>
+    </div>
+    <div class="fs-grid-row">
+      <div class="fs-grid-column-one-third">fs-grid-column-one-third</div>
+      <div class="fs-grid-column-one-third">fs-grid-column-one-third</div>
+      <div class="fs-grid-column-one-third">fs-grid-column-one-third</div>
+    </div>
+    <div class="fs-grid-row">
+      <div class="fs-grid-column-one-quarter">fs-grid-column-one-quarter</div>
+      <div class="fs-grid-column-one-quarter">fs-grid-column-one-quarter</div>
+      <div class="fs-grid-column-one-quarter">fs-grid-column-one-quarter</div>
+      <div class="fs-grid-column-one-quarter">fs-grid-column-one-quarter</div>
+    </div>
+    <div class="fs-grid-row">
+      <div class="fs-grid-column-one-third">fs-grid-column-one-third</div>
+      <div class="fs-grid-column-two-thirds">fs-grid-column-two-thirds</div>
+    </div>
+    <div class="fs-grid-row">
+      <div class="fs-grid-column-two-thirds">fs-grid-column-two-thirds</div>
+      <div class="fs-grid-column-one-third">fs-grid-column-one-third</div>
+    </div>
+    <div class="fs-grid-row">
+      <div class="fs-grid-column-one-quarter">fs-grid-column-one-quarter</div>
+      <div class="fs-grid-column-one-quarter">fs-grid-column-one-quarter</div>
+      <div class="fs-grid-column-one-half">fs-grid-column-one-half</div>
+    </div>
+
+    <div class="fs-grid-row">
+      <div class="fs-grid-column-one-half desktop:fs-grid-column-one-third">
+        fs-grid-column-one-half<br />desktop:fs-grid-column-one-third
+      </div>
+      <div class="fs-grid-column-one-half desktop:fs-grid-column-one-third">
+        fs-grid-column-one-half<br />desktop:fs-grid-column-one-third
+      </div>
+      <div class="fs-grid-column-one-half desktop:fs-grid-column-one-third">
+        fs-grid-column-one-half<br />desktop:fs-grid-column-one-third
+      </div>
+    </div>
+
+    <script src="../dist/all.js"></script>
+    <script>
+      window.fs.initAll();
+    </script>
+  </body>
+</html>
