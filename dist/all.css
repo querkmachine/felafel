@@ -1732,15 +1732,6 @@ a:not([class]):active {
   width: 100% !important;
 }
 
-.tablet\:fs-\!-width-one-quarter,
-.tablet\:fs-\!-width-one-third,
-.tablet\:fs-\!-width-one-half,
-.tablet\:fs-\!-width-two-thirds,
-.tablet\:fs-\!-width-three-quarters,
-.tablet\:fs-\!-width-full {
-  width: 100% !important;
-}
-
 @media screen and (min-width: 541px) {
   .tablet\:fs-\!-width-one-quarter {
     width: 25% !important;
@@ -1761,16 +1752,11 @@ a:not([class]):active {
   .tablet\:fs-\!-width-three-quarters {
     width: 75% !important;
   }
-}
-.desktop\:fs-\!-width-one-quarter,
-.desktop\:fs-\!-width-one-third,
-.desktop\:fs-\!-width-one-half,
-.desktop\:fs-\!-width-two-thirds,
-.desktop\:fs-\!-width-three-quarters,
-.desktop\:fs-\!-width-full {
-  width: 100% !important;
-}
 
+  .tablet\:fs-\!-width-full {
+    width: 100% !important;
+  }
+}
 @media screen and (min-width: 769px) {
   .desktop\:fs-\!-width-one-quarter {
     width: 25% !important;
@@ -1790,6 +1776,10 @@ a:not([class]):active {
 
   .desktop\:fs-\!-width-three-quarters {
     width: 75% !important;
+  }
+
+  .desktop\:fs-\!-width-full {
+    width: 100% !important;
   }
 }
 /*# sourceMappingURL=all.css.map */
