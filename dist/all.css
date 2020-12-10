@@ -1567,6 +1567,18 @@ a:not([class]):active {
   font-weight: 700 !important;
 }
 
+.fs-\!-text-align-left {
+  text-align: left !important;
+}
+
+.fs-\!-text-align-center {
+  text-align: center !important;
+}
+
+.fs-\!-text-align-right {
+  text-align: right !important;
+}
+
 .fs-\!-width-one-quarter {
   width: 25% !important;
 }

@@ -1,12 +1,14 @@
 @use "../settings";
 @use "../helpers/typography";
 
+// Font size
 @each $size, $map in settings.$fs-font-sizes-responsive {
   .fs-\!-font-size-#{$size} {
     @include typography.fs-font-size($size, $important: true);
   }
 }
 
+// Font stacks
 .fs-\!-font-body {
   @include typography.fs-font-stack(body, $important: true);
 }
@@ -35,4 +37,17 @@
 }
 .fs-\!-font-code-bold {
   @include typography.fs-font-stack(code, $weight: bold, $important: true);
+}
+
+// Text alignment
+.fs-\!-text-align-left {
+  text-align: left !important;
+}
+
+.fs-\!-text-align-center {
+  text-align: center !important;
+}
+
+.fs-\!-text-align-right {
+  text-align: right !important;
 }
