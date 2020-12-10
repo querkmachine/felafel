@@ -23,7 +23,7 @@
     @include typography.fs-font-stack(header, $weight: bold);
   }
   &__logo {
-    @include media-queries.fs-mq(tablet) {
+    @include media-queries.fs-mq($from: tablet) {
       flex-grow: 1;
     }
   }
@@ -32,7 +32,7 @@
   }
   &__content {
     @include spacing.fs-responsive-margin(2, $direction: top);
-    @include media-queries.fs-mq(tablet) {
+    @include media-queries.fs-mq($from: tablet) {
       @include spacing.fs-responsive-margin(0, $direction: top);
     }
   }
