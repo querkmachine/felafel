@@ -590,6 +590,45 @@ a:not([class]):active {
   }
 }
 
+.fs-footer {
+  padding-top: 0.9375rem;
+  padding-bottom: 0.9375rem;
+  font-size: 0.75rem;
+  line-height: 1.25;
+  color: #6b7280;
+  background-color: #f9fafb;
+}
+@media screen and (min-width: 541px) {
+  .fs-footer {
+    font-size: 0.875rem;
+    line-height: 1.2857142857;
+  }
+}
+.fs-footer__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  margin-top: 0.9375rem;
+}
+@media screen and (min-width: 769px) {
+  .fs-footer__list {
+    margin-top: 0rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}
+@media screen and (min-width: 769px) {
+  .fs-footer__item + .fs-footer__item {
+    margin-left: 0.9375rem;
+  }
+}
+.fs-footer__link {
+  color: currentColor;
+  text-decoration: none;
+}
+
 .fs-masthead {
   margin-bottom: 2.5rem;
   padding-top: 0.9375rem;

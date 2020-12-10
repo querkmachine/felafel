@@ -73,25 +73,6 @@ $fs-success-color: map.get($fs-default-color-palette, "green") !default;
 // Horizontal rule
 $fs-border-color: map.get($fs-default-color-palette, "grey30") !default;
 
-// Component - Masthead
-$fs-masthead-border-color: $fs-brand-color !default;
-$fs-masthead-background-color: map.get(
-  $fs-default-color-palette,
-  "white"
-) !default;
-$fs-masthead-text-color: map.get($fs-default-color-palette, "grey90") !default;
-
-// Component - Masthead tools
-$fs-masthead-tools-background-color: $fs-masthead-border-color !default;
-$fs-masthead-tools-text-color: map.get(
-  $fs-default-color-palette,
-  "white"
-) !default;
-
-// Component - Primary navigation
-$fs-primary-navigation-divider: $fs-border-color !default;
-$fs-primary-navigation-current-link: $fs-brand-color !default;
-
 // ====================================
 // MEASUREMENTS
 // ====================================
@@ -277,3 +258,30 @@ $fs-font-sizes-responsive: (
     ),
   ),
 ) !default;
+
+// ====================================
+// COMPONENT SETTINGS
+// ====================================
+
+// Footer
+$fs-footer-background-color: $fs-canvas-background-color !default;
+$fs-footer-text-color: $fs-text-color-secondary !default;
+
+// Masthead
+$fs-masthead-border-color: $fs-brand-color !default;
+$fs-masthead-background-color: map.get(
+  $fs-default-color-palette,
+  "white"
+) !default;
+$fs-masthead-text-color: map.get($fs-default-color-palette, "grey90") !default;
+
+// Masthead tools
+$fs-masthead-tools-background-color: $fs-masthead-border-color !default;
+$fs-masthead-tools-text-color: map.get(
+  $fs-default-color-palette,
+  "white"
+) !default;
+
+// Primary navigation
+$fs-primary-navigation-divider: $fs-border-color !default;
+$fs-primary-navigation-current-link: $fs-brand-color !default;

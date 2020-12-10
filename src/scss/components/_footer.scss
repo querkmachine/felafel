@@ -1,0 +1,41 @@
+@use "../settings";
+@use "../helpers/media-queries";
+@use "../helpers/reset";
+@use "../helpers/spacing";
+@use "../helpers/typography";
+
+.fs-footer {
+  @include spacing.fs-responsive-padding(3, $direction: top);
+  @include spacing.fs-responsive-padding(3, $direction: bottom);
+  @include typography.fs-font-size(14);
+  color: settings.$fs-footer-text-color;
+  background-color: settings.$fs-footer-background-color;
+  &__inner {
+  }
+  &__legal {
+  }
+  &__links {
+  }
+  &__list {
+    @include reset.fs-reset-list;
+    @include spacing.fs-responsive-margin(3, $direction: top);
+    @include media-queries.fs-mq($from: desktop) {
+      @include spacing.fs-responsive-margin(0, $direction: top);
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+  }
+  &__item {
+    @include media-queries.fs-mq($from: desktop) {
+      & + & {
+        @include spacing.fs-responsive-margin(3, $direction: left);
+      }
+    }
+  }
+  &__link {
+    color: currentColor;
+    text-decoration: none;
+  }
+}
