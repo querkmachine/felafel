@@ -2,6 +2,12 @@
 @use "sass:color";
 
 // ====================================
+// FEATURE TOGGLES
+// ====================================
+
+$fs-enable-rounded-corners: true !default;
+
+// ====================================
 // BREAKPOINTS
 // ====================================
 
@@ -38,7 +44,7 @@ $fs-default-color-palette: (
 );
 
 // Brand accent (use sparingly)
-$fs-brand-color: hsl(31, 31%, 70%) !default;
+$fs-brand-color: map.get($fs-default-color-palette, "grey90") !default;
 
 // Background
 $fs-canvas-background-color: map.get(
@@ -108,6 +114,9 @@ $fs-border-width-form-element-error: $fs-border-width-form-element !default;
 
 // Horizontal rule width
 $fs-hr-width: 1px !default;
+
+// Default corner rounding
+$fs-border-radius: 0.75rem;
 
 // ====================================
 // SPACING
@@ -262,6 +271,40 @@ $fs-font-sizes-responsive: (
 // ====================================
 // COMPONENT SETTINGS
 // ====================================
+
+// Button - Generic
+$fs-button-border-width: $fs-border-width-narrow !default;
+$fs-button-border-radius: if(
+  $fs-enable-rounded-corners,
+  $fs-border-radius,
+  0
+) !default;
+$fs-button-all-caps: false !default;
+
+// Button - Default
+$fs-button-background-color: map.get(
+  $fs-default-color-palette,
+  "grey20"
+) !default;
+$fs-button-background-hover-color: map.get(
+  $fs-default-color-palette,
+  "grey30"
+) !default;
+$fs-button-text-color: false !default;
+
+// Button - Primary
+$fs-button-primary-background-color: $fs-brand-color !default;
+$fs-button-primary-background-hover-color: color.mix(
+  #000,
+  $fs-button-primary-background-color,
+  20%
+) !default;
+$fs-button-primary-text-color: false !default;
+
+// Button - Ghost
+$fs-button-ghost-background-color: transparent !default;
+$fs-button-ghost-background-hover-color: false !default;
+$fs-button-ghost-text-color: inherit !default;
 
 // Footer
 $fs-footer-background-color: $fs-canvas-background-color !default;

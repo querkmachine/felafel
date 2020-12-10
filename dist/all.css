@@ -590,6 +590,101 @@ a:not([class]):active {
   }
 }
 
+.fs-button {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  color: inherit;
+  background: none;
+  font: inherit;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  padding-right: 0.9375rem;
+  padding-left: 0.9375rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.2857142857;
+  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid currentColor;
+  border-radius: 0.75rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  line-height: inherit;
+  vertical-align: middle;
+}
+.fs-button:not([disabled]) {
+  cursor: pointer;
+}
+.fs-button:focus {
+  outline: 3px solid #f59e0b;
+  color: #f59e0b;
+  background-color: #f59e0b;
+}
+@media screen and (min-width: 541px) {
+  .fs-button {
+    font-size: 1rem;
+    line-height: 1.375;
+  }
+}
+.fs-button:not([data-appearance]) {
+  border-color: #e5e7eb;
+  color: black;
+  background-color: #e5e7eb;
+}
+.fs-button:not([data-appearance]):hover, .fs-button:not([data-appearance]):active {
+  border-color: #d1d5db;
+  background-color: #d1d5db;
+}
+.fs-button[data-appearance=primary] {
+  border-color: #111827;
+  color: white;
+  background-color: #111827;
+}
+.fs-button[data-appearance=primary]:hover, .fs-button[data-appearance=primary]:active {
+  border-color: #0e131f;
+  background-color: #0e131f;
+}
+.fs-button[data-appearance=ghost] {
+  color: inherit;
+  background-color: transparent;
+}
+.fs-button[data-appearance=ghost]:hover, .fs-button[data-appearance=ghost]:active {
+  background-color: rgba(14, 19, 31, 0.15);
+}
+.fs-button[data-appearance=destructive] {
+  border-color: #ef4444;
+  color: white;
+  background-color: #ef4444;
+}
+.fs-button[data-appearance=destructive]:hover, .fs-button[data-appearance=destructive]:active {
+  border-color: #bf3636;
+  background-color: #bf3636;
+}
+.fs-button[data-layout=block] {
+  width: 100%;
+}
+.fs-button[data-layout=elastic] {
+  width: 100%;
+}
+@media screen and (min-width: 541px) {
+  .fs-button[data-layout=elastic] {
+    width: auto;
+  }
+}
+.fs-button:disabled {
+  opacity: 0.3;
+  pointer-events: none;
+  cursor: default;
+}
+
 .fs-footer {
   padding-top: 0.9375rem;
   padding-bottom: 0.9375rem;
@@ -630,20 +725,14 @@ a:not([class]):active {
 }
 
 .fs-masthead {
-  margin-bottom: 2.5rem;
   padding-top: 0.9375rem;
   padding-bottom: 0.9375rem;
   border-width: 0;
   border-top-width: 0.5rem;
   border-style: solid;
-  border-color: #cab39b;
+  border-color: #111827;
   color: #111827;
   background-color: #fff;
-}
-@media screen and (min-width: 541px) {
-  .fs-masthead {
-    margin-bottom: 3.75rem;
-  }
 }
 @media screen and (min-width: 541px) {
   .fs-masthead {
@@ -690,9 +779,9 @@ a:not([class]):active {
   border-width: 0;
   border-top-width: 0.5rem;
   border-style: solid;
-  border-color: #cab39b;
+  border-color: #111827;
   color: #fff;
-  background-color: #cab39b;
+  background-color: #111827;
 }
 @media screen and (min-width: 541px) {
   .fs-masthead-tools {
@@ -757,7 +846,7 @@ a:not([class]):active {
   }
 }
 .fs-primary-navigation__link[aria-current] {
-  color: #cab39b;
+  color: #111827;
 }
 
 .fs-\!-sr {

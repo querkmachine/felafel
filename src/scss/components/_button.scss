@@ -1,0 +1,104 @@
+@use "../settings";
+@use "../helpers/colors";
+@use "../helpers/media-queries";
+@use "../helpers/reset";
+@use "../helpers/spacing";
+@use "../helpers/typography";
+
+@use "sass:color";
+
+.fs-button {
+  @include reset.fs-reset-button;
+  @include spacing.fs-responsive-padding(2, $direction: top);
+  @include spacing.fs-responsive-padding(2, $direction: bottom);
+  @include spacing.fs-responsive-padding(3, $direction: right);
+  @include spacing.fs-responsive-padding(3, $direction: left);
+  @include typography.fs-font-stack(body, $weight: bold);
+  @include typography.fs-font-size(16);
+  display: inline-block; // fallback for browsers that don't allow buttons to be flexboxes
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  border: settings.$fs-button-border-width solid currentColor;
+  border-radius: settings.$fs-button-border-radius;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  line-height: inherit;
+  vertical-align: middle;
+  @if settings.$fs-button-all-caps {
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+  }
+  &:not([data-appearance]) {
+    border-color: settings.$fs-button-background-color;
+    color: if(
+      settings.$fs-button-text-color,
+      settings.$fs-button-text-color,
+      colors.fs-contrasting-color(settings.$fs-button-background-color)
+    );
+    background-color: settings.$fs-button-background-color;
+    &:hover,
+    &:active {
+      border-color: settings.$fs-button-background-hover-color;
+      background-color: settings.$fs-button-background-hover-color;
+    }
+  }
+  &[data-appearance="primary"] {
+    border-color: settings.$fs-button-primary-background-color;
+    color: if(
+      settings.$fs-button-primary-text-color,
+      settings.$fs-button-primary-text-color,
+      colors.fs-contrasting-color(settings.$fs-button-primary-background-color)
+    );
+    background-color: settings.$fs-button-primary-background-color;
+    &:hover,
+    &:active {
+      border-color: settings.$fs-button-primary-background-hover-color;
+      background-color: settings.$fs-button-primary-background-hover-color;
+    }
+  }
+  &[data-appearance="ghost"] {
+    color: settings.$fs-button-ghost-text-color;
+    background-color: settings.$fs-button-ghost-background-color;
+    &:hover,
+    &:active {
+      background-color: if(
+        settings.$fs-button-ghost-background-hover-color,
+        settings.$fs-button-ghost-background-hover-color,
+        color.change(
+          settings.$fs-button-primary-background-hover-color,
+          $alpha: 0.15
+        )
+      );
+    }
+  }
+  &[data-appearance="destructive"] {
+    border-color: settings.$fs-error-color;
+    color: colors.fs-contrasting-color(
+      settings.$fs-button-primary-background-color
+    );
+    background-color: settings.$fs-error-color;
+    &:hover,
+    &:active {
+      $hover-color: color.mix(#000, settings.$fs-error-color, 20%);
+      border-color: $hover-color;
+      background-color: $hover-color;
+    }
+  }
+  &[data-layout="block"] {
+    width: 100%;
+  }
+  &[data-layout="elastic"] {
+    width: 100%;
+    @include media-queries.fs-mq($from: tablet) {
+      width: auto;
+    }
+  }
+  &:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+    cursor: default;
+  }
+}
