@@ -597,7 +597,7 @@ a:not([class]):active {
   border-width: 0;
   border-top-width: 0.5rem;
   border-style: solid;
-  border-color: #111827;
+  border-color: #cab39b;
   color: #111827;
   background-color: #fff;
 }
@@ -651,9 +651,9 @@ a:not([class]):active {
   border-width: 0;
   border-top-width: 0.5rem;
   border-style: solid;
-  border-color: #111827;
+  border-color: #cab39b;
   color: #fff;
-  background-color: #111827;
+  background-color: #cab39b;
 }
 @media screen and (min-width: 541px) {
   .fs-masthead-tools {
@@ -718,7 +718,7 @@ a:not([class]):active {
   }
 }
 .fs-primary-navigation__link[aria-current] {
-  color: #111827;
+  color: #cab39b;
 }
 
 .fs-\!-sr {

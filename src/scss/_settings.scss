@@ -38,7 +38,7 @@ $fs-default-color-palette: (
 );
 
 // Brand accent (use sparingly)
-$fs-brand-color: map.get($fs-default-color-palette, "grey90") !default;
+$fs-brand-color: hsl(31, 31%, 70%) !default;
 
 // Background
 $fs-canvas-background-color: map.get(
