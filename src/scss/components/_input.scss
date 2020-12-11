@@ -1,0 +1,30 @@
+@use "../settings";
+@use "../helpers/forms";
+
+.fs-input {
+  @include forms.fs-input-text;
+  @each $length in (20, 10, 8, 5, 4, 3, 2) {
+    &--length-#{$length} {
+      max-width: ($length + 1) * 1em;
+    }
+  }
+}
+
+.fs-input-mask {
+  display: flex;
+  flex-direction: row;
+  &__prefix,
+  &__suffix {
+    @include forms.fs-input-mask;
+    flex-shrink: 0;
+    color: settings.$fs-input-mask-text-color;
+    background-color: settings.$fs-input-mask-background-color;
+    white-space: nowrap;
+  }
+  &__prefix {
+    border-right-width: 0;
+  }
+  &__suffix {
+    border-left-width: 0;
+  }
+}

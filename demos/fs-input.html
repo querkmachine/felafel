@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/all.css" />
+    <title>Input</title>
+  </head>
+  <body>
+    <input class="fs-input" type="text" placeholder="text" />
+    <input class="fs-input" type="search" placeholder="search" />
+    <input class="fs-input" type="password" placeholder="password" />
+    <input class="fs-input" type="email" placeholder="email" />
+    <input class="fs-input" type="url" placeholder="url" />
+    <input class="fs-input" type="tel" placeholder="tel" />
+    <input class="fs-input" type="number" placeholder="number" />
+    <input class="fs-input" type="date" placeholder="date" />
+    <input
+      class="fs-input"
+      type="datetime-local"
+      placeholder="datetime-local"
+    />
+    <input class="fs-input" type="week" placeholder="week" />
+    <input class="fs-input" type="time" placeholder="time" />
+
+    <br /><br />
+
+    <input
+      class="fs-input fs-input--length-20"
+      type="text"
+      placeholder="20 chars"
+    />
+    <input
+      class="fs-input fs-input--length-10"
+      type="text"
+      placeholder="10 chars"
+    />
+    <input
+      class="fs-input fs-input--length-8"
+      type="text"
+      placeholder="8 chars"
+    />
+    <input
+      class="fs-input fs-input--length-5"
+      type="text"
+      placeholder="5 chars"
+    />
+    <input
+      class="fs-input fs-input--length-4"
+      type="text"
+      placeholder="4 chars"
+    />
+    <input
+      class="fs-input fs-input--length-3"
+      type="text"
+      placeholder="3 chars"
+    />
+    <input
+      class="fs-input fs-input--length-2"
+      type="text"
+      placeholder="2 chars"
+    />
+
+    <br /><br />
+
+    <div class="fs-input-mask">
+      <div class="fs-input-mask__prefix" aria-hidden="true">Search:</div>
+      <input class="fs-input" type="search" />
+    </div>
+
+    <div class="fs-input-mask">
+      <div class="fs-input-mask__prefix" aria-hidden="true">£</div>
+      <input
+        class="fs-input fs-input--length-5"
+        type="number"
+        min="0"
+        step="0.01"
+      />
+    </div>
+
+    <div class="fs-input-mask">
+      <input
+        class="fs-input fs-input--length-8"
+        type="number"
+        min="0"
+        step="1"
+      />
+      <div class="fs-input-mask__suffix" aria-hidden="true">units</div>
+    </div>
+
+    <div class="fs-input-mask">
+      <div class="fs-input-mask__prefix" aria-hidden="true">£</div>
+      <input
+        class="fs-input fs-input--length-5"
+        type="number"
+        min="0"
+        step="0.01"
+      />
+      <div class="fs-input-mask__suffix" aria-hidden="true">per unit</div>
+    </div>
+
+    <script src="../dist/all.js"></script>
+    <script>
+      window.fs.initAll();
+    </script>
+  </body>
+</html>

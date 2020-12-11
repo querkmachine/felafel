@@ -6,7 +6,7 @@
 // ====================================
 
 $fs-enable-core-styles: true !default;
-$fs-enable-rounded-corners: true !default;
+$fs-enable-rounded-corners: false !default;
 
 // ====================================
 // BREAKPOINTS
@@ -111,7 +111,7 @@ $fs-focus-width: 3px !default;
 
 // Form input borders
 $fs-border-width-form-element: 2px !default;
-$fs-border-width-form-element-error: $fs-border-width-form-element !default;
+$fs-border-width-form-element-error: 4px !default;
 
 // Horizontal rule width
 $fs-hr-width: 1px !default;
@@ -274,7 +274,7 @@ $fs-font-sizes-responsive: (
 // ====================================
 
 // Button - Generic
-$fs-button-border-width: $fs-border-width-narrow !default;
+$fs-button-border-width: $fs-border-width-form-element !default;
 $fs-button-border-radius: if(
   $fs-enable-rounded-corners,
   $fs-border-radius,
@@ -310,6 +310,26 @@ $fs-button-ghost-text-color: inherit !default;
 // Footer
 $fs-footer-background-color: $fs-canvas-background-color !default;
 $fs-footer-text-color: $fs-text-color-secondary !default;
+
+// Input
+$fs-input-text-color: map.get($fs-default-color-palette, "grey90") !default;
+$fs-input-background-color: map.get(
+  $fs-default-color-palette,
+  "white"
+) !default;
+$fs-input-border-color: $fs-input-text-color !default;
+$fs-input-border-radius: if(
+  $fs-enable-rounded-corners,
+  $fs-border-radius,
+  0
+) !default;
+
+// Input masks
+$fs-input-mask-text-color: $fs-input-text-color !default;
+$fs-input-mask-background-color: map.get(
+  $fs-default-color-palette,
+  "grey20"
+) !default;
 
 // Masthead
 $fs-masthead-border-color: $fs-brand-color !default;

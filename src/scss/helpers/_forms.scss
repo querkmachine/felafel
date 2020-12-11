@@ -1,0 +1,49 @@
+@use "../settings";
+@use "a11y";
+@use "spacing";
+
+@mixin _fs-input-base {
+  border: settings.$fs-border-width-form-element solid
+    settings.$fs-input-border-color;
+  border-radius: settings.$fs-input-border-radius;
+  color: settings.$fs-input-text-color;
+  background-color: settings.$fs-input-background-color;
+  box-shadow: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  line-height: inherit;
+}
+
+@mixin fs-input-mask {
+  @include _fs-input-base;
+  @include spacing.fs-responsive-margin(0, $direction: all);
+  @include spacing.fs-responsive-padding(2, $direction: all);
+}
+
+@mixin fs-input-text {
+  @include fs-input-mask;
+  width: 100%;
+  appearance: textfield;
+  &[type="number"] {
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      appearance: none;
+      margin: 0;
+    }
+  }
+  &[type="search"] {
+    appearance: none;
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-decoration {
+      appearance: none;
+    }
+  }
+  &[aria-invalid="true"] {
+    border-width: settings.$fs-border-width-form-element-error;
+    border-color: settings.$fs-error-color;
+  }
+  &:focus {
+    @include a11y.fs-focus-ring;
+  }
+}

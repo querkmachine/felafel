@@ -55,4 +55,5 @@
   @include typography.fs-font-stack(body, $weight: bold);
   @include typography.fs-font-size(19);
   display: block;
+  color: settings.$fs-error-color;
 }

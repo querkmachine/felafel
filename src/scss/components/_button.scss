@@ -9,6 +9,7 @@
 
 .fs-button {
   @include reset.fs-reset-button;
+  @include spacing.fs-responsive-margin(0, $direction: all);
   @include spacing.fs-responsive-padding(2, $direction: top);
   @include spacing.fs-responsive-padding(2, $direction: bottom);
   @include spacing.fs-responsive-padding(3, $direction: right);
@@ -19,7 +20,6 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 0.75rem 1.25rem;
   border: settings.$fs-button-border-width solid currentColor;
   border-radius: settings.$fs-button-border-radius;
   position: relative;
