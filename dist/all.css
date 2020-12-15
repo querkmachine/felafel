@@ -707,6 +707,25 @@ a:not([class]):active {
   }
 }
 
+.fs-alert {
+  padding: 0.9375rem;
+  border: 0.5rem solid;
+  border-radius: 0;
+}
+.fs-alert__heading {
+  margin: 0rem;
+  margin-bottom: 0.9375rem;
+}
+.fs-alert__body > :last-child {
+  margin-bottom: 0rem;
+}
+.fs-alert--success {
+  border-color: #10b981;
+}
+.fs-alert--error {
+  border-color: #ef4444;
+}
+
 .fs-button {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -274,6 +274,14 @@ $fs-font-sizes-responsive: (
 // COMPONENT SETTINGS
 // ====================================
 
+// Alert
+$fs-alert-border-width: $fs-border-width !default;
+$fs-alert-border-radius: if(
+  $fs-enable-rounded-corners,
+  $fs-border-radius,
+  0
+) !default;
+
 // Button - Generic
 $fs-button-border-width: $fs-border-width-form-element !default;
 $fs-button-border-radius: if(
