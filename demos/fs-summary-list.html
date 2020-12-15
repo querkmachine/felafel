@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/all.css" />
+    <title>Summary list</title>
+  </head>
+  <body>
+    <dl class="fs-summary-list">
+      <div class="fs-summary-list__item">
+        <dt class="fs-summary-list__key">Name</dt>
+        <dd class="fs-summary-list__value">Kimberly Grey</dd>
+        <dd class="fs-summary-list__actions">
+          <a href="#">edit</a>
+        </dd>
+      </div>
+      <div class="fs-summary-list__item">
+        <dt class="fs-summary-list__key">Delivery address</dt>
+        <dd class="fs-summary-list__value">
+          123 Fake Street<br />
+          Testville<br />
+          Exampleshire<br />
+          BE57 1NG
+        </dd>
+        <dd class="fs-summary-list__actions">
+          <a href="#">edit</a>
+        </dd>
+      </div>
+      <div class="fs-summary-list__item">
+        <dt class="fs-summary-list__key">Cart products</dt>
+        <dd class="fs-summary-list__value">
+          <ul class="fs-list">
+            <li>1&times; Tiger loaf</li>
+            <li>3&times; Sourdough loaf</li>
+            <li>4&times; Crusty rolls</li>
+          </ul>
+        </dd>
+        <dd class="fs-summary-list__actions">
+          <a href="#">edit</a>
+        </dd>
+      </div>
+    </dl>
+
+    <dl class="fs-summary-list">
+      <div class="fs-summary-list__item">
+        <dt class="fs-summary-list__key">Name</dt>
+        <dd class="fs-summary-list__value">Kimberly Grey</dd>
+      </div>
+      <div class="fs-summary-list__item">
+        <dt class="fs-summary-list__key">Delivery address</dt>
+        <dd class="fs-summary-list__value">
+          123 Fake Street<br />
+          Testville<br />
+          Exampleshire<br />
+          BE57 1NG
+        </dd>
+      </div>
+      <div class="fs-summary-list__item">
+        <dt class="fs-summary-list__key">Cart products</dt>
+        <dd class="fs-summary-list__value">
+          <ul class="fs-list">
+            <li>1&times; Tiger loaf</li>
+            <li>3&times; Sourdough loaf</li>
+            <li>4&times; Crusty rolls</li>
+          </ul>
+        </dd>
+      </div>
+    </dl>
+
+    <script src="../dist/all.js"></script>
+    <script>
+      window.fs.initAll();
+    </script>
+  </body>
+</html>

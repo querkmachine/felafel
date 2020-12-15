@@ -1090,6 +1090,83 @@ a:not([class]):active {
   color: #111827;
 }
 
+.fs-summary-list {
+  margin: 0rem;
+  margin-bottom: 1.875rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 400;
+}
+@media screen and (min-width: 541px) {
+  .fs-summary-list {
+    margin-bottom: 3.125rem;
+  }
+}
+.fs-summary-list__item {
+  border-bottom: 1px solid #d1d5db;
+}
+.fs-summary-list__item + .fs-summary-list__item {
+  padding-top: 0.9375rem;
+}
+.fs-summary-list__key {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  margin-bottom: 0.3125rem;
+}
+.fs-summary-list__value, .fs-summary-list__actions {
+  margin: 0rem;
+  margin-bottom: 0.9375rem;
+}
+.fs-summary-list__value > :last-child, .fs-summary-list__actions > :last-child {
+  margin-bottom: 0rem;
+}
+@media screen and (min-width: 541px) {
+  .fs-summary-list .fs-summary-list__item {
+    display: flex;
+    flex-direction: row;
+  }
+  .fs-summary-list .fs-summary-list__item + .fs-summary-list__item {
+    padding-top: 0rem;
+  }
+  .fs-summary-list .fs-summary-list__key,
+.fs-summary-list .fs-summary-list__value,
+.fs-summary-list .fs-summary-list__actions {
+    margin-bottom: 0rem;
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+    padding-right: 0.9375rem;
+    display: table-cell;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+@media screen and (min-width: 541px) and (min-width: 541px) {
+  .fs-summary-list .fs-summary-list__key,
+.fs-summary-list .fs-summary-list__value,
+.fs-summary-list .fs-summary-list__actions {
+    padding-right: 1.25rem;
+  }
+}
+@media screen and (min-width: 541px) {
+  .fs-summary-list .fs-summary-list__key {
+    flex: 0 0 30%;
+  }
+}
+@media screen and (min-width: 541px) {
+  .fs-summary-list .fs-summary-list__value {
+    flex: 0 0 50%;
+  }
+  .fs-summary-list .fs-summary-list__value:last-child {
+    flex-basis: 70%;
+  }
+}
+@media screen and (min-width: 541px) {
+  .fs-summary-list .fs-summary-list__actions {
+    padding-right: 0rem;
+    flex: 0 0 20%;
+    text-align: right;
+  }
+}
+
 .fs-textarea {
   border: 2px solid #111827;
   border-radius: 0;
