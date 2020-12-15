@@ -1132,6 +1132,22 @@ a:not([class]):active {
   outline-offset: 3px;
 }
 
+.fs-textarea-counter__counter {
+  font-size: 0.75rem;
+  line-height: 1.25;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+@media screen and (min-width: 541px) {
+  .fs-textarea-counter__counter {
+    font-size: 0.875rem;
+    line-height: 1.2857142857;
+  }
+}
+.fs-textarea-counter__counter[role=alert] {
+  color: #ef4444;
+}
+
 .fs-\!-sr {
   position: absolute !important;
   width: 1px !important;

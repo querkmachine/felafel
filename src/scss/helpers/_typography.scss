@@ -71,3 +71,9 @@
     }
   }
 }
+
+// Activate tabular figures (only works if the font supports it)
+@mixin tabular-figures {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
