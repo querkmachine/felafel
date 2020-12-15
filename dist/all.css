@@ -1090,6 +1090,48 @@ a:not([class]):active {
   color: #111827;
 }
 
+.fs-textarea {
+  border: 2px solid #111827;
+  border-radius: 0;
+  color: #111827;
+  background-color: #fff;
+  box-shadow: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  line-height: inherit;
+  margin: 0rem;
+  padding: 0.625rem;
+  width: 100%;
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+  min-height: 6.5rem;
+  resize: vertical;
+}
+.fs-textarea[type=number]::-webkit-inner-spin-button, .fs-textarea[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+  margin: 0;
+}
+.fs-textarea[type=search] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.fs-textarea[type=search]::-webkit-search-cancel-button, .fs-textarea[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+          appearance: none;
+}
+.fs-textarea[aria-invalid=true] {
+  border-width: 4px;
+  border-color: #ef4444;
+}
+.fs-textarea:focus {
+  outline: 3px solid #f59e0b;
+  outline-offset: 3px;
+}
+
 .fs-\!-sr {
   position: absolute !important;
   width: 1px !important;

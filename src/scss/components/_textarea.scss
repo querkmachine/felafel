@@ -1,0 +1,8 @@
+@use "../settings";
+@use "../helpers/forms";
+
+.fs-textarea {
+  @include forms.fs-input-text;
+  min-height: 6.5rem;
+  resize: vertical;
+}
