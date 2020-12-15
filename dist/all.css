@@ -708,9 +708,15 @@ a:not([class]):active {
 }
 
 .fs-alert {
+  margin-bottom: 1.875rem;
   padding: 0.9375rem;
   border: 0.5rem solid;
   border-radius: 0;
+}
+@media screen and (min-width: 541px) {
+  .fs-alert {
+    margin-bottom: 3.125rem;
+  }
 }
 .fs-alert__heading {
   margin: 0rem;
