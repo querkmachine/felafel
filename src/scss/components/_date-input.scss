@@ -1,0 +1,12 @@
+@use "../helpers/spacing";
+
+.fs-date-input {
+  display: flex;
+  flex-direction: row;
+  &__group {
+    @include spacing.fs-responsive-margin(0, $direction: bottom);
+    & + & {
+      @include spacing.fs-responsive-margin(2, $direction: left);
+    }
+  }
+}

@@ -820,6 +820,17 @@ a:not([class]):active {
   cursor: default;
 }
 
+.fs-date-input {
+  display: flex;
+  flex-direction: row;
+}
+.fs-date-input__group {
+  margin-bottom: 0rem;
+}
+.fs-date-input__group + .fs-date-input__group {
+  margin-left: 0.625rem;
+}
+
 .fs-footer {
   padding-top: 0.9375rem;
   padding-bottom: 0.9375rem;
