@@ -2,7 +2,6 @@
 
 @use "sass:color";
 @use "sass:math";
-@use "sass:string";
 
 // Color tweaking functions
 @function fs-color-shade($color, $percentage) {
@@ -33,9 +32,17 @@
 }
 
 @function _fs-color-contrast($col1, $col2) {
-  $col1-lum: _fs-color-luminance($col1) + 0.05;
-  $col2-lum: _fs-color-luminance($col2) + 0.05;
-  @return math.max($col1-lum, $col2-lum) / math.min($col1-lum, $col2-lum);
+  $col1-lum: _fs-color-luminance($col1);
+  $col2-lum: _fs-color-luminance($col2);
+  @if settings.$fs-enable-weber-contrast {
+    // Huang/Peli modified Weber perceptual contrast calculation
+    @return (math.max($col1-lum, $col2-lum) - math.min($col1-lum, $col2-lum)) /
+      (math.max($col1-lum, $col2-lum) + 0.05);
+  } @else {
+    // WCAG linear contrast ratio calculation
+    @return (math.max($col1-lum, $col2-lum) + 0.05) /
+      (math.min($col1-lum, $col2-lum) + 0.05);
+  }
 }
 
 @function fs-contrasting-color(
