@@ -100,6 +100,7 @@ a:not([class]):active {
   clear: both;
 }
 .fs-fieldset__legend {
+  margin-bottom: 0.3125rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-weight: 400;
   font-size: 1rem;
@@ -826,6 +827,62 @@ a:not([class]):active {
   cursor: default;
 }
 
+.fs-checkbox {
+  margin-bottom: 0.9375rem;
+  padding-left: calc(1.5rem + 0.9375rem);
+}
+.fs-checkbox__input {
+  margin: 0rem;
+  border: 2px solid #111827;
+  border-radius: 0;
+  color: #111827;
+  background-color: #fff;
+  box-shadow: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  line-height: inherit;
+  box-sizing: content-box;
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: relative;
+  line-height: 1;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 0;
+  margin-left: calc(0px - (1.5rem + 0.9375rem));
+  float: left;
+}
+.fs-checkbox__input::after {
+  display: block;
+  width: 0.9rem;
+  height: 0.36rem;
+  border-width: 0 0 2px 2px;
+  border-style: solid;
+  border-color: #111827;
+  position: absolute;
+  top: calc(0.456rem - 1px);
+  left: calc(0.3rem - 1px);
+  transform: rotate(-45deg);
+}
+.fs-checkbox__input[aria-invalid=true] {
+  outline: 4px solid #ef4444;
+}
+.fs-checkbox__input:checked::after {
+  content: "";
+}
+.fs-checkbox__input:focus {
+  outline: 3px solid #f59e0b;
+  outline-offset: 3px;
+}
+.fs-checkbox__input:disabled {
+  filter: grayscale(100%);
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
+}
 .fs-date-input {
   display: flex;
   flex-direction: row;
@@ -908,12 +965,17 @@ a:not([class]):active {
           appearance: none;
 }
 .fs-input[aria-invalid=true] {
-  border-width: 4px;
-  border-color: #ef4444;
+  outline: 4px solid #ef4444;
 }
 .fs-input:focus {
   outline: 3px solid #f59e0b;
   outline-offset: 3px;
+}
+.fs-input:disabled {
+  filter: grayscale(100%);
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
 }
 .fs-input--length-20 {
   max-width: 21em;
@@ -1090,6 +1152,60 @@ a:not([class]):active {
   color: #111827;
 }
 
+.fs-radio {
+  margin-bottom: 0.9375rem;
+  padding-left: calc(1.5rem + 0.9375rem);
+}
+.fs-radio__input {
+  margin: 0rem;
+  border: 2px solid #111827;
+  border-radius: 0;
+  color: #111827;
+  background-color: #fff;
+  box-shadow: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  line-height: inherit;
+  box-sizing: content-box;
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: relative;
+  line-height: 1;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 1.5rem;
+  margin-left: calc(0px - (1.5rem + 0.9375rem));
+  float: left;
+}
+.fs-radio__input::after {
+  display: block;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 0.9rem;
+  position: absolute;
+  top: calc(50% - 0.45rem);
+  left: calc(50% - 0.45rem);
+  background-color: #111827;
+}
+.fs-radio__input[aria-invalid=true] {
+  outline: 4px solid #ef4444;
+}
+.fs-radio__input:checked::after {
+  content: "";
+}
+.fs-radio__input:focus {
+  outline: 3px solid #f59e0b;
+  outline-offset: 3px;
+}
+.fs-radio__input:disabled {
+  filter: grayscale(100%);
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
+}
 .fs-select {
   margin: 0rem;
   border: 2px solid #111827;
@@ -1113,12 +1229,17 @@ a:not([class]):active {
           appearance: none;
 }
 .fs-select[aria-invalid=true] {
-  border-width: 4px;
-  border-color: #ef4444;
+  outline: 4px solid #ef4444;
 }
 .fs-select:focus {
   outline: 3px solid #f59e0b;
   outline-offset: 3px;
+}
+.fs-select:disabled {
+  filter: grayscale(100%);
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
 }
 .fs-select--length-20 {
   max-width: 21em;
@@ -1253,12 +1374,17 @@ a:not([class]):active {
           appearance: none;
 }
 .fs-textarea[aria-invalid=true] {
-  border-width: 4px;
-  border-color: #ef4444;
+  outline: 4px solid #ef4444;
 }
 .fs-textarea:focus {
   outline: 3px solid #f59e0b;
   outline-offset: 3px;
+}
+.fs-textarea:disabled {
+  filter: grayscale(100%);
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
 }
 
 .fs-textarea-counter__counter {

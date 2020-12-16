@@ -118,7 +118,10 @@ $fs-border-width-form-element-error: 4px !default;
 $fs-hr-width: 1px !default;
 
 // Default corner rounding
-$fs-border-radius: 0.75rem;
+$fs-border-radius: 0.75rem !default;
+
+// Radios/checkboxes
+$fs-check-radio-size: 1.5rem !default;
 
 // ====================================
 // SPACING
@@ -316,6 +319,15 @@ $fs-button-ghost-background-color: transparent !default;
 $fs-button-ghost-background-hover-color: false !default;
 $fs-button-ghost-text-color: inherit !default;
 
+// Checkbox
+$fs-checkbox-size: $fs-check-radio-size !default;
+$fs-checkbox-check-color: map.get($fs-default-color-palette, "grey90") !default;
+$fs-checkbox-border-radius: if(
+  $fs-enable-rounded-corners,
+  $fs-border-radius,
+  0
+) !default;
+
 // Footer
 $fs-footer-background-color: $fs-canvas-background-color !default;
 $fs-footer-text-color: $fs-text-color-secondary !default;
@@ -358,3 +370,7 @@ $fs-masthead-tools-text-color: map.get(
 // Primary navigation
 $fs-primary-navigation-divider: $fs-border-color !default;
 $fs-primary-navigation-current-link: $fs-brand-color !default;
+
+// Radio
+$fs-radio-size: $fs-check-radio-size !default;
+$fs-radio-check-color: map.get($fs-default-color-palette, "grey90") !default;

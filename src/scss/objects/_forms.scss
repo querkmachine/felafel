@@ -10,6 +10,7 @@
 .fs-fieldset {
   @include reset.fs-reset-fieldset;
   &__legend {
+    @include spacing.fs-responsive-margin(1, $direction: bottom);
     @include typography.fs-font-stack(body, $weight: regular);
     @include typography.fs-font-size(19);
     display: table;

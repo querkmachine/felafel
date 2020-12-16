@@ -16,6 +16,32 @@
   line-height: inherit;
 }
 
+@mixin _fs-input-checkradio($size, $vertical-offset) {
+  @include _fs-input-base;
+  box-sizing: content-box;
+  display: inline-block;
+  width: $size;
+  height: $size;
+  position: relative;
+  @if $vertical-offset != 0 {
+    top: $vertical-offset;
+  }
+  line-height: 1;
+  appearance: none;
+}
+
+@mixin _fs-input-disabled {
+  filter: grayscale(100%);
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
+}
+
+@mixin _fs-input-error {
+  outline: settings.$fs-border-width-form-element-error solid
+    settings.$fs-error-color;
+}
+
 @mixin fs-input-mask {
   @include _fs-input-base;
   @include spacing.fs-responsive-padding(2, $direction: all);
@@ -41,11 +67,13 @@
     }
   }
   &[aria-invalid="true"] {
-    border-width: settings.$fs-border-width-form-element-error;
-    border-color: settings.$fs-error-color;
+    @include _fs-input-error;
   }
   &:focus {
     @include a11y.fs-focus-ring;
+  }
+  &:disabled {
+    @include _fs-input-disabled;
   }
 }
 
@@ -61,10 +89,92 @@
   background-repeat: no-repeat;
   appearance: none;
   &[aria-invalid="true"] {
-    border-width: settings.$fs-border-width-form-element-error;
-    border-color: settings.$fs-error-color;
+    @include _fs-input-error;
   }
   &:focus {
     @include a11y.fs-focus-ring;
+  }
+  &:disabled {
+    @include _fs-input-disabled;
+  }
+}
+
+@mixin fs-input-checkbox(
+  $size: settings.$fs-checkbox-size,
+  $vertical-offset: 0,
+  $check-ratio: 0.6,
+  $check-stroke: settings.$fs-border-width-form-element,
+  $check-color: settings.$fs-checkbox-check-color
+) {
+  @include _fs-input-checkradio(
+    $size: $size,
+    $vertical-offset: $vertical-offset
+  );
+  border-radius: settings.$fs-checkbox-border-radius;
+  &::after {
+    $check-width: $size * $check-ratio;
+    $check-height: $check-width * 0.4;
+    display: block;
+    width: $check-width;
+    height: $check-height;
+    border-width: 0 0 $check-stroke $check-stroke;
+    border-style: solid;
+    border-color: $check-color;
+    position: absolute;
+    top: calc(#{($size - $check-height) / 2.5} - 1px);
+    left: calc(#{($size - $check-width) / 2} - 1px);
+    transform: rotate(-45deg);
+  }
+  &[aria-invalid="true"] {
+    @include _fs-input-error;
+  }
+  &:checked {
+    &::after {
+      content: "";
+    }
+  }
+  &:focus {
+    @include a11y.fs-focus-ring;
+  }
+  &:disabled {
+    @include _fs-input-disabled;
+  }
+}
+
+@mixin fs-input-radio(
+  $size: settings.$fs-radio-size,
+  $vertical-offset: 0,
+  $check-ratio: 0.6,
+  $check-color: settings.$fs-radio-check-color
+) {
+  @include _fs-input-checkradio(
+    $size: $size,
+    $vertical-offset: $vertical-offset
+  );
+  border-radius: $size;
+  &::after {
+    $check-size: $size * $check-ratio;
+    display: block;
+    width: $check-size;
+    height: $check-size;
+    border-radius: $check-size;
+    position: absolute;
+    top: calc(50% - #{$check-size / 2});
+    left: calc(50% - #{$check-size / 2});
+    background-color: $check-color;
+  }
+  &[aria-invalid="true"] {
+    @include _fs-input-error;
+  }
+  &:checked {
+    &::after {
+      content: "";
+    }
+  }
+  &:focus {
+    @include a11y.fs-focus-ring;
+  }
+  &:disabled {
+    @include _fs-input-disabled;
   }
 }
