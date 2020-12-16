@@ -894,6 +894,19 @@ a:not([class]):active {
   margin-left: 0.625rem;
 }
 
+.fs-file-upload {
+  margin: 0rem;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  max-width: 100%;
+  color: #111827;
+  box-shadow: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  line-height: inherit;
+}
+
 .fs-footer {
   padding-top: 0.9375rem;
   padding-bottom: 0.9375rem;

@@ -1,0 +1,7 @@
+@use "../settings";
+
+@use "../helpers/forms";
+
+.fs-file-upload {
+  @include forms.fs-input-file;
+}
