@@ -3,6 +3,7 @@
 @use "spacing";
 
 @mixin _fs-input-base {
+  @include spacing.fs-responsive-margin(0, $direction: all);
   border: settings.$fs-border-width-form-element solid
     settings.$fs-input-border-color;
   border-radius: settings.$fs-input-border-radius;
@@ -17,12 +18,12 @@
 
 @mixin fs-input-mask {
   @include _fs-input-base;
-  @include spacing.fs-responsive-margin(0, $direction: all);
   @include spacing.fs-responsive-padding(2, $direction: all);
 }
 
 @mixin fs-input-text {
-  @include fs-input-mask;
+  @include _fs-input-base;
+  @include spacing.fs-responsive-padding(2, $direction: all);
   width: 100%;
   appearance: textfield;
   &[type="number"] {
@@ -39,6 +40,26 @@
       appearance: none;
     }
   }
+  &[aria-invalid="true"] {
+    border-width: settings.$fs-border-width-form-element-error;
+    border-color: settings.$fs-error-color;
+  }
+  &:focus {
+    @include a11y.fs-focus-ring;
+  }
+}
+
+@mixin fs-input-select {
+  $arrow-size: spacing.fs-spacing(2);
+  @include _fs-input-base;
+  @include spacing.fs-responsive-padding(2, $direction: all);
+  width: 100%;
+  padding-right: (spacing.fs-spacing(2) * 2) + $arrow-size;
+  background-image: url("assets/select-arrow.svg");
+  background-size: $arrow-size auto;
+  background-position: right $arrow-size top 50%;
+  background-repeat: no-repeat;
+  appearance: none;
   &[aria-invalid="true"] {
     border-width: settings.$fs-border-width-form-element-error;
     border-color: settings.$fs-error-color;

@@ -877,6 +877,7 @@ a:not([class]):active {
 }
 
 .fs-input {
+  margin: 0rem;
   border: 2px solid #111827;
   border-radius: 0;
   color: #111827;
@@ -886,7 +887,6 @@ a:not([class]):active {
   font-size: inherit;
   font-style: inherit;
   line-height: inherit;
-  margin: 0rem;
   padding: 0.625rem;
   width: 100%;
   -webkit-appearance: textfield;
@@ -942,6 +942,7 @@ a:not([class]):active {
   flex-direction: row;
 }
 .fs-input-mask__prefix, .fs-input-mask__suffix {
+  margin: 0rem;
   border: 2px solid #111827;
   border-radius: 0;
   color: #111827;
@@ -951,7 +952,6 @@ a:not([class]):active {
   font-size: inherit;
   font-style: inherit;
   line-height: inherit;
-  margin: 0rem;
   padding: 0.625rem;
   flex-shrink: 0;
   color: #111827;
@@ -1090,6 +1090,58 @@ a:not([class]):active {
   color: #111827;
 }
 
+.fs-select {
+  margin: 0rem;
+  border: 2px solid #111827;
+  border-radius: 0;
+  color: #111827;
+  background-color: #fff;
+  box-shadow: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  line-height: inherit;
+  padding: 0.625rem;
+  width: 100%;
+  padding-right: 1.875rem;
+  background-image: url("assets/select-arrow.svg");
+  background-size: 0.625rem auto;
+  background-position: right 0.625rem top 50%;
+  background-repeat: no-repeat;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.fs-select[aria-invalid=true] {
+  border-width: 4px;
+  border-color: #ef4444;
+}
+.fs-select:focus {
+  outline: 3px solid #f59e0b;
+  outline-offset: 3px;
+}
+.fs-select--length-20 {
+  max-width: 21em;
+}
+.fs-select--length-10 {
+  max-width: 11em;
+}
+.fs-select--length-8 {
+  max-width: 9em;
+}
+.fs-select--length-5 {
+  max-width: 6em;
+}
+.fs-select--length-4 {
+  max-width: 5em;
+}
+.fs-select--length-3 {
+  max-width: 4em;
+}
+.fs-select--length-2 {
+  max-width: 3em;
+}
+
 .fs-summary-list {
   margin: 0rem;
   margin-bottom: 1.875rem;
@@ -1168,6 +1220,7 @@ a:not([class]):active {
 }
 
 .fs-textarea {
+  margin: 0rem;
   border: 2px solid #111827;
   border-radius: 0;
   color: #111827;
@@ -1177,7 +1230,6 @@ a:not([class]):active {
   font-size: inherit;
   font-style: inherit;
   line-height: inherit;
-  margin: 0rem;
   padding: 0.625rem;
   width: 100%;
   -webkit-appearance: textfield;

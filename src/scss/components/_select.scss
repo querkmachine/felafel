@@ -1,0 +1,11 @@
+@use "../settings";
+@use "../helpers/forms";
+
+.fs-select {
+  @include forms.fs-input-select;
+  @each $length in (20, 10, 8, 5, 4, 3, 2) {
+    &--length-#{$length} {
+      max-width: ($length + 1) * 1em;
+    }
+  }
+}
