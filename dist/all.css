@@ -956,6 +956,7 @@ a:not([class]):active {
 }
 .fs-file-list__filename {
   margin-bottom: 0.3125rem;
+  word-break: break-word;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
@@ -992,6 +993,9 @@ a:not([class]):active {
 @media screen and (min-width: 541px) {
   .fs-file-list .fs-file-list__filename {
     flex: 0 0 60%;
+  }
+  .fs-file-list .fs-file-list__filename:last-child {
+    flex-basis: 100%;
   }
 }
 @media screen and (min-width: 541px) {

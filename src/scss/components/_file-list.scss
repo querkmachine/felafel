@@ -23,6 +23,7 @@
   }
   &__filename {
     @include spacing.fs-responsive-margin(1, $direction: bottom);
+    word-break: break-word;
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
@@ -51,6 +52,9 @@
     }
     #{$self}__filename {
       flex: 0 0 60%;
+      &:last-child {
+        flex-basis: 100%;
+      }
     }
     #{$self}__size {
       flex: 0 0 20%;
