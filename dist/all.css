@@ -39,9 +39,11 @@ a:not([class]) {
   color: #3b82f6;
   text-decoration: underline;
 }
-a:not([class]):focus {
+a:not([class]):focus:focus {
   outline: 3px solid #f59e0b;
-  outline-offset: 3px;
+  outline-offset: 0;
+  background-color: #f59e0b;
+  color: #000;
 }
 @media only print {
   a:not([class])[href^="/"]:after, a:not([class])[href^="http://"]:after, a:not([class])[href^="https://"]:after {
@@ -371,9 +373,11 @@ a:not([class]):active {
   color: #3b82f6;
   text-decoration: underline;
 }
-.fs-link:focus {
+.fs-link:focus:focus {
   outline: 3px solid #f59e0b;
-  outline-offset: 3px;
+  outline-offset: 0;
+  background-color: #f59e0b;
+  color: #000;
 }
 @media only print {
   .fs-link[href^="/"]:after, .fs-link[href^="http://"]:after, .fs-link[href^="https://"]:after {
@@ -396,9 +400,11 @@ a:not([class]):active {
   color: #3b82f6;
   text-decoration: underline;
 }
-.fs-link-no-visited:focus {
+.fs-link-no-visited:focus:focus {
   outline: 3px solid #f59e0b;
-  outline-offset: 3px;
+  outline-offset: 0;
+  background-color: #f59e0b;
+  color: #000;
 }
 @media only print {
   .fs-link-no-visited[href^="/"]:after, .fs-link-no-visited[href^="http://"]:after, .fs-link-no-visited[href^="https://"]:after {
@@ -414,9 +420,11 @@ a:not([class]):active {
   color: #111827;
 }
 
-.fs-link-muted:focus {
+.fs-link-muted:focus:focus {
   outline: 3px solid #f59e0b;
-  outline-offset: 3px;
+  outline-offset: 0;
+  background-color: #f59e0b;
+  color: #000;
 }
 @media only print {
   .fs-link-muted[href^="/"]:after, .fs-link-muted[href^="http://"]:after, .fs-link-muted[href^="https://"]:after {
@@ -430,9 +438,11 @@ a:not([class]):active {
   text-decoration: underline;
 }
 
-.fs-link-text:focus {
+.fs-link-text:focus:focus {
   outline: 3px solid #f59e0b;
-  outline-offset: 3px;
+  outline-offset: 0;
+  background-color: #f59e0b;
+  color: #000;
 }
 @media only print {
   .fs-link-text[href^="/"]:after, .fs-link-text[href^="http://"]:after, .fs-link-text[href^="https://"]:after {
@@ -452,9 +462,11 @@ a:not([class]):active {
   display: inline-flex;
   align-items: center;
 }
-.fs-back-link:focus {
+.fs-back-link:focus:focus {
   outline: 3px solid #f59e0b;
-  outline-offset: 3px;
+  outline-offset: 0;
+  background-color: #f59e0b;
+  color: #000;
 }
 @media only print {
   .fs-back-link[href^="/"]:after, .fs-back-link[href^="http://"]:after, .fs-back-link[href^="https://"]:after {
@@ -806,7 +818,7 @@ a:not([class]):active {
 }
 .fs-button:focus {
   outline: 3px solid #f59e0b;
-  outline-offset: 3px;
+  outline-offset: 0;
 }
 @media screen and (min-width: 541px) {
   .fs-button {
@@ -913,7 +925,7 @@ a:not([class]):active {
 }
 .fs-checkbox__input:focus {
   outline: 3px solid #f59e0b;
-  outline-offset: 3px;
+  outline-offset: 0;
 }
 .fs-checkbox__input:disabled {
   filter: grayscale(100%);
@@ -1108,7 +1120,7 @@ a:not([class]):active {
 }
 .fs-input:focus {
   outline: 3px solid #f59e0b;
-  outline-offset: 3px;
+  outline-offset: 0;
 }
 .fs-input:disabled {
   filter: grayscale(100%);
@@ -1337,7 +1349,7 @@ a:not([class]):active {
 }
 .fs-radio__input:focus {
   outline: 3px solid #f59e0b;
-  outline-offset: 3px;
+  outline-offset: 0;
 }
 .fs-radio__input:disabled {
   filter: grayscale(100%);
@@ -1372,7 +1384,7 @@ a:not([class]):active {
 }
 .fs-select:focus {
   outline: 3px solid #f59e0b;
-  outline-offset: 3px;
+  outline-offset: 0;
 }
 .fs-select:disabled {
   filter: grayscale(100%);
@@ -1422,9 +1434,11 @@ a:not([class]):active {
   border-left: 0.25rem solid transparent;
   text-decoration: none;
 }
-.fs-sidebar-navigation__link:focus {
+.fs-sidebar-navigation__link:focus:focus {
   outline: 3px solid #f59e0b;
-  outline-offset: 3px;
+  outline-offset: 0;
+  background-color: #f59e0b;
+  color: #000;
 }
 @media only print {
   .fs-sidebar-navigation__link[href^="/"]:after, .fs-sidebar-navigation__link[href^="http://"]:after, .fs-sidebar-navigation__link[href^="https://"]:after {
@@ -1449,6 +1463,31 @@ a:not([class]):active {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-weight: 700;
   border-left-color: #111827;
+}
+
+.fs-skiplink {
+  outline: 3px solid #f59e0b;
+  outline-offset: 0;
+  background-color: #f59e0b;
+  color: #000;
+  padding: 0.625rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.2857142857;
+  display: inline-block;
+  position: absolute;
+  top: -9999em;
+  left: -9999em;
+}
+@media screen and (min-width: 541px) {
+  .fs-skiplink {
+    font-size: 1rem;
+    line-height: 1.375;
+  }
+}
+.fs-skiplink:focus {
+  position: static;
 }
 
 .fs-step-indicator {
@@ -1748,7 +1787,7 @@ a:not([class]):active {
 }
 .fs-textarea:focus {
   outline: 3px solid #f59e0b;
-  outline-offset: 3px;
+  outline-offset: 0;
 }
 .fs-textarea:disabled {
   filter: grayscale(100%);

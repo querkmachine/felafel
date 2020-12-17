@@ -1,9 +1,13 @@
 @use "../settings";
 
 // Keyboard focus style
-@mixin fs-focus-ring {
+@mixin fs-focus-ring($fill: false) {
   outline: settings.$fs-focus-width solid settings.$fs-focus-color;
-  outline-offset: settings.$fs-focus-width;
+  outline-offset: 0;
+  @if $fill {
+    background-color: settings.$fs-focus-color;
+    color: settings.$fs-focus-text-color;
+  }
 }
 
 // Hide elements while keeping them available to screen readers

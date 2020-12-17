@@ -1,0 +1,19 @@
+@use "../settings";
+
+@use "../helpers/a11y";
+@use "../helpers/spacing";
+@use "../helpers/typography";
+
+.fs-skiplink {
+  @include a11y.fs-focus-ring($fill: true);
+  @include spacing.fs-responsive-padding(2, $direction: all);
+  @include typography.fs-font-stack(body, $weight: bold);
+  @include typography.fs-font-size(16);
+  display: inline-block;
+  position: absolute;
+  top: -9999em;
+  left: -9999em;
+  &:focus {
+    position: static;
+  }
+}

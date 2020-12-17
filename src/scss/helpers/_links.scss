@@ -2,8 +2,9 @@
 @use "a11y";
 
 @mixin _fs-link-common {
-  &:focus {
-    @include a11y.fs-focus-ring;
+  // Double :focus so that these styles are higher specificity than :visited, :active, et al.
+  &:focus:focus {
+    @include a11y.fs-focus-ring($fill: true);
   }
   @media only print {
     &[href^="/"],
