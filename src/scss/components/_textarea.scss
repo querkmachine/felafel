@@ -11,7 +11,7 @@
 .fs-textarea-counter {
   &__counter {
     @include typography.fs-font-size(14);
-    @include typography.tabular-figures;
+    @include typography.fs-tabular-figures;
     &[role="alert"] {
       color: settings.$fs-error-color;
     }

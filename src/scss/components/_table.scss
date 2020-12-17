@@ -1,0 +1,43 @@
+@use "../settings";
+
+@use "../helpers/typography";
+@use "../helpers/spacing";
+
+.fs-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  caption {
+    @include typography.fs-font-stack(body, $weight: bold);
+    caption-side: top;
+    text-align: left;
+  }
+  th,
+  td {
+    @include spacing.fs-responsive-padding(2, $direction: top);
+    @include spacing.fs-responsive-padding(2, $direction: bottom);
+    @include spacing.fs-responsive-padding(4, $direction: right);
+    border-bottom: settings.$fs-hr-width solid settings.$fs-border-color;
+    text-align: left;
+    vertical-align: top;
+    &:last-child {
+      @include spacing.fs-responsive-padding(0, $direction: right);
+    }
+    &[data-type="numeric"] {
+      @include typography.fs-tabular-figures;
+      text-align: right;
+    }
+  }
+  th {
+    @include typography.fs-font-stack(body, $weight: bold);
+  }
+  td {
+    @include typography.fs-font-stack(body, $weight: regular);
+  }
+  thead {
+    th,
+    td {
+      vertical-align: bottom;
+    }
+  }
+}
