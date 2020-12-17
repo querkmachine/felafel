@@ -1363,6 +1363,139 @@ a:not([class]):active {
   border-left-color: #111827;
 }
 
+.fs-step-indicator {
+  margin-bottom: 0.9375rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.2857142857;
+}
+@media screen and (min-width: 541px) {
+  .fs-step-indicator {
+    margin-bottom: 1.5625rem;
+  }
+}
+@media screen and (min-width: 541px) {
+  .fs-step-indicator {
+    font-size: 1rem;
+    line-height: 1.375;
+  }
+}
+.fs-step-indicator__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  counter-reset: stepIndicator;
+}
+.fs-step-indicator__item {
+  counter-increment: stepIndicator;
+  border-width: 0;
+  border-style: solid;
+  border-color: #d1d5db;
+  position: relative;
+}
+.fs-step-indicator__item .fs-step-indicator__label {
+  color: #6b7280;
+}
+.fs-step-indicator__item--complete {
+  border-color: #2f68c5;
+}
+.fs-step-indicator__item--complete .fs-step-indicator__label {
+  color: #2f68c5;
+}
+.fs-step-indicator__item--current {
+  border-color: #3b82f6;
+}
+.fs-step-indicator__item--current .fs-step-indicator__label {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  color: #3b82f6;
+}
+.fs-step-indicator__label {
+  display: block;
+  text-align: left;
+}
+.fs-step-indicator[data-counters] .fs-step-indicator__item::before {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  flex-shrink: 0;
+  content: counter(stepIndicator);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 2rem;
+  color: #6b7280;
+  background-color: #d1d5db;
+}
+.fs-step-indicator[data-counters] .fs-step-indicator__item--complete::before {
+  color: #fff;
+  background-color: #2f68c5;
+}
+.fs-step-indicator[data-counters] .fs-step-indicator__item--current::before {
+  color: #fff;
+  background-color: #3b82f6;
+}
+.fs-step-indicator[data-orientation=vertical] .fs-step-indicator__item {
+  margin-top: 0.3125rem;
+  margin-bottom: 0.3125rem;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  padding-right: 0.3125rem;
+  padding-left: 0.9375rem;
+  border-left-width: 0.5rem;
+}
+.fs-step-indicator[data-orientation=vertical][data-counters] .fs-step-indicator__item::before {
+  margin-bottom: 0.3125rem;
+}
+.fs-step-indicator[data-orientation=horizontal] .fs-step-indicator__list {
+  display: flex;
+  flex-direction: row;
+}
+.fs-step-indicator[data-orientation=horizontal] .fs-step-indicator__item {
+  flex: 1 1 1px;
+  border-top-width: 0.5rem;
+}
+.fs-step-indicator[data-orientation=horizontal] .fs-step-indicator__item + .fs-step-indicator__item {
+  margin-left: 0.3125rem;
+}
+.fs-step-indicator[data-orientation=horizontal] .fs-step-indicator__label {
+  padding-top: 0.3125rem;
+}
+@media screen and (max-width: 540px) {
+  .fs-step-indicator[data-orientation=horizontal] .fs-step-indicator__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+}
+.fs-step-indicator[data-orientation=horizontal][data-counters] .fs-step-indicator__item::before {
+  position: absolute;
+  top: calc(0px - 1rem - 0.25rem);
+  left: -1px;
+}
+.fs-step-indicator[data-orientation=horizontal][data-counters] .fs-step-indicator__label {
+  padding-top: 0.9375rem;
+}
+@media screen and (max-width: 540px) {
+  .fs-step-indicator[data-orientation=horizontal][data-counters] .fs-step-indicator__item::before {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+}
+
 .fs-summary-list {
   margin: 0rem;
   margin-bottom: 1.875rem;

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/all.css" />
+    <title>Step indicator</title>
+  </head>
+  <body>
+    <p>Vertical step indicator</p>
+    <div
+      class="fs-step-indicator"
+      data-orientation="vertical"
+      aria-label="Progress"
+    >
+      <ol class="fs-step-indicator__list">
+        <li class="fs-step-indicator__item fs-step-indicator__item--complete">
+          <span class="fs-step-indicator__label">
+            Applicant details <span class="fs-!-sr">(completed)</span>
+          </span>
+        </li>
+        <li class="fs-step-indicator__item fs-step-indicator__item--current">
+          <span class="fs-step-indicator__label">
+            Financial information <span class="fs-!-sr">(current step)</span>
+          </span>
+        </li>
+        <li class="fs-step-indicator__item">
+          <span class="fs-step-indicator__label"> Summary of request </span>
+        </li>
+      </ol>
+    </div>
+
+    <br /><br />
+
+    <p>Vertical step indicator with step numbers</p>
+    <div
+      class="fs-step-indicator"
+      data-orientation="vertical"
+      data-counters
+      aria-label="Progress"
+    >
+      <ol class="fs-step-indicator__list">
+        <li class="fs-step-indicator__item fs-step-indicator__item--complete">
+          <span class="fs-step-indicator__label">
+            Applicant details <span class="fs-!-sr">(completed)</span>
+          </span>
+        </li>
+        <li class="fs-step-indicator__item fs-step-indicator__item--current">
+          <span class="fs-step-indicator__label">
+            Financial information <span class="fs-!-sr">(current step)</span>
+          </span>
+        </li>
+        <li class="fs-step-indicator__item">
+          <span class="fs-step-indicator__label"> Summary of request </span>
+        </li>
+      </ol>
+    </div>
+
+    <br /><br />
+
+    <p>Horizontal step indicator</p>
+    <div
+      class="fs-step-indicator"
+      data-orientation="horizontal"
+      aria-label="Progress"
+    >
+      <ol class="fs-step-indicator__list">
+        <li class="fs-step-indicator__item fs-step-indicator__item--complete">
+          <span class="fs-step-indicator__label">
+            Applicant details <span class="fs-!-sr">(completed)</span>
+          </span>
+        </li>
+        <li class="fs-step-indicator__item fs-step-indicator__item--current">
+          <span class="fs-step-indicator__label">
+            Financial information <span class="fs-!-sr">(current step)</span>
+          </span>
+        </li>
+        <li class="fs-step-indicator__item">
+          <span class="fs-step-indicator__label"> Summary of request </span>
+        </li>
+      </ol>
+    </div>
+
+    <br /><br />
+
+    <p>Horizontal step indicator with step numbers</p>
+    <div
+      class="fs-step-indicator"
+      data-orientation="horizontal"
+      data-counters
+      aria-label="Progress"
+    >
+      <ol class="fs-step-indicator__list">
+        <li class="fs-step-indicator__item fs-step-indicator__item--complete">
+          <span class="fs-step-indicator__label">
+            Applicant details <span class="fs-!-sr">(completed)</span>
+          </span>
+        </li>
+        <li class="fs-step-indicator__item fs-step-indicator__item--current">
+          <span class="fs-step-indicator__label">
+            Financial information <span class="fs-!-sr">(current step)</span>
+          </span>
+        </li>
+        <li class="fs-step-indicator__item">
+          <span class="fs-step-indicator__label"> Summary of request </span>
+        </li>
+      </ol>
+    </div>
+
+    <script src="../dist/all.js"></script>
+    <script>
+      window.fs.initAll();
+    </script>
+  </body>
+</html>

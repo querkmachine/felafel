@@ -378,3 +378,25 @@ $fs-radio-check-color: map.get($fs-default-color-palette, "grey90") !default;
 // Sidebar navigation
 $fs-sidebar-navigation-border-width: $fs-border-width !default;
 $fs-sidebar-navigation-border-color: $fs-brand-color !default;
+
+// Step indicator
+$fs-step-indicator-border-width: $fs-border-width !default;
+$fs-step-indicator-counter-size: 2rem !default;
+$fs-step-indicator-segment-color: map.get(
+  $fs-default-color-palette,
+  "grey30"
+) !default;
+$fs-step-indicator-segment-counter-text-color: $fs-text-color-secondary !default;
+$fs-step-indicator-segment-label-text-color: $fs-text-color-secondary !default;
+$fs-step-indicator-current-segment-color: $fs-link-color !default;
+$fs-step-indicator-current-segment-counter-text-color: map.get(
+  $fs-default-color-palette,
+  "white"
+) !default;
+$fs-step-indicator-current-segment-label-text-color: $fs-step-indicator-current-segment-color !default;
+$fs-step-indicator-complete-segment-color: $fs-link-hover-color !default;
+$fs-step-indicator-complete-segment-counter-text-color: map.get(
+  $fs-default-color-palette,
+  "white"
+) !default;
+$fs-step-indicator-complete-segment-label-text-color: $fs-step-indicator-complete-segment-color !default;
