@@ -14,7 +14,7 @@ $fs-enable-weber-contrast: true !default;
 // ====================================
 
 $fs-breakpoints: (
-  tablet: 541px,
+  tablet: 599px,
   desktop: 769px,
 ) !default;
 
@@ -371,14 +371,17 @@ $fs-masthead-text-color: map.get($fs-default-color-palette, "grey90") !default;
 
 // Masthead tools
 $fs-masthead-tools-background-color: $fs-masthead-border-color !default;
-$fs-masthead-tools-text-color: map.get(
-  $fs-default-color-palette,
-  "white"
-) !default;
+$fs-masthead-tools-text-color: false !default;
 
 // Primary navigation
 $fs-primary-navigation-divider: $fs-border-color !default;
-$fs-primary-navigation-current-link: $fs-brand-color !default;
+$fs-primary-navigation-current-link-background-color: $fs-brand-color !default;
+$fs-primary-navigation-current-link-text-color: false !default;
+$fs-primary-navigation-border-radius: if(
+  $fs-enable-rounded-corners,
+  $fs-border-radius,
+  0
+) !default;
 
 // Radio
 $fs-radio-size: $fs-check-radio-size !default;

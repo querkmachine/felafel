@@ -1,0 +1,25 @@
+@use "../settings";
+
+@use "../helpers/colors";
+
+::-moz-selection {
+  color: if(
+    settings.$fs-primary-navigation-current-link-text-color,
+    settings.$fs-primary-navigation-current-link-text-color,
+    colors.fs-contrasting-color(
+      settings.$fs-primary-navigation-current-link-background-color
+    )
+  );
+  background-color: settings.$fs-primary-navigation-current-link-background-color;
+}
+
+::selection {
+  color: if(
+    settings.$fs-primary-navigation-current-link-text-color,
+    settings.$fs-primary-navigation-current-link-text-color,
+    colors.fs-contrasting-color(
+      settings.$fs-primary-navigation-current-link-background-color
+    )
+  );
+  background-color: settings.$fs-primary-navigation-current-link-background-color;
+}

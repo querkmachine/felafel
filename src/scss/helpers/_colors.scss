@@ -58,3 +58,9 @@
     @return $dark-color;
   }
 }
+
+// Text selection highlight colour
+@mixin fs-selection-highlight {
+  color: fs-contrasting-color(settings.$fs-brand-color);
+  background-color: settings.$fs-brand-color;
+}
