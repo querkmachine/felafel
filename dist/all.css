@@ -932,6 +932,90 @@ a:not([class]):active {
   margin-left: 0.625rem;
 }
 
+.fs-file-list {
+  margin: 0rem;
+  margin-bottom: 1.875rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 400;
+}
+@media screen and (min-width: 541px) {
+  .fs-file-list {
+    margin-bottom: 3.125rem;
+  }
+}
+.fs-file-list__item {
+  padding: 0.9375rem;
+  border: #d1d5db solid 0.5rem;
+  border-radius: 0;
+}
+.fs-file-list__item + .fs-file-list__item {
+  margin-top: 0.9375rem;
+}
+.fs-file-list__item--error {
+  border-color: #ef4444;
+}
+.fs-file-list__filename {
+  margin-bottom: 0.3125rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+.fs-file-list__size, .fs-file-list__actions, .fs-file-list__error {
+  margin: 0rem;
+  margin-bottom: 0.9375rem;
+}
+.fs-file-list__size > :last-child, .fs-file-list__actions > :last-child, .fs-file-list__error > :last-child {
+  margin-bottom: 0rem;
+}
+@media screen and (min-width: 541px) {
+  .fs-file-list .fs-file-list__item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .fs-file-list .fs-file-list__filename,
+.fs-file-list .fs-file-list__size,
+.fs-file-list .fs-file-list__actions,
+.fs-file-list .fs-file-list__error {
+    margin-bottom: 0rem;
+    padding-right: 0.9375rem;
+    display: table-cell;
+  }
+}
+@media screen and (min-width: 541px) and (min-width: 541px) {
+  .fs-file-list .fs-file-list__filename,
+.fs-file-list .fs-file-list__size,
+.fs-file-list .fs-file-list__actions,
+.fs-file-list .fs-file-list__error {
+    padding-right: 1.25rem;
+  }
+}
+@media screen and (min-width: 541px) {
+  .fs-file-list .fs-file-list__filename {
+    flex: 0 0 60%;
+  }
+}
+@media screen and (min-width: 541px) {
+  .fs-file-list .fs-file-list__size {
+    flex: 0 0 20%;
+  }
+  .fs-file-list .fs-file-list__size:last-child {
+    flex-basis: 40%;
+  }
+}
+@media screen and (min-width: 541px) {
+  .fs-file-list .fs-file-list__actions {
+    padding-right: 0rem;
+    flex: 0 0 20%;
+    text-align: right;
+  }
+}
+@media screen and (min-width: 541px) {
+  .fs-file-list .fs-file-list__error {
+    margin-top: 0.625rem;
+    flex-basis: 100%;
+  }
+}
+
 .fs-file-upload {
   margin: 0rem;
   padding-top: 0.625rem;
@@ -1477,7 +1561,7 @@ a:not([class]):active {
 }
 .fs-step-indicator[data-orientation=horizontal][data-counters] .fs-step-indicator__item::before {
   position: absolute;
-  top: calc(0px - 1rem - 0.25rem);
+  top: calc( 0px - 1rem - 0.25rem );
   left: -1px;
 }
 .fs-step-indicator[data-orientation=horizontal][data-counters] .fs-step-indicator__label {

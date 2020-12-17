@@ -328,6 +328,13 @@ $fs-checkbox-border-radius: if(
   0
 ) !default;
 
+// File list
+$fs-file-list-border-radius: if(
+  $fs-enable-rounded-corners,
+  $fs-border-radius,
+  0
+) !default;
+
 // Footer
 $fs-footer-background-color: $fs-canvas-background-color !default;
 $fs-footer-text-color: $fs-text-color-secondary !default;
