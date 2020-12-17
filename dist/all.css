@@ -446,6 +446,44 @@ a:not([class]):active {
   text-decoration: underline;
 }
 
+.fs-back-link {
+  font-size: 0.875rem;
+  line-height: 1.2857142857;
+  display: inline-flex;
+  align-items: center;
+}
+.fs-back-link:focus {
+  outline: 3px solid #f59e0b;
+  outline-offset: 3px;
+}
+@media only print {
+  .fs-back-link[href^="/"]:after, .fs-back-link[href^="http://"]:after, .fs-back-link[href^="https://"]:after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+    word-wrap: break-word;
+  }
+}
+.fs-back-link, .fs-back-link:visited, .fs-back-link:hover, .fs-back-link:active {
+  color: #111827;
+  text-decoration: underline;
+}
+@media screen and (min-width: 541px) {
+  .fs-back-link {
+    font-size: 1rem;
+    line-height: 1.375;
+  }
+}
+.fs-back-link::before {
+  content: "";
+  display: inline-block;
+  width: 0.35em;
+  height: 0.7em;
+  margin-right: 0.625rem;
+  background-color: currentColor;
+  -webkit-clip-path: polygon(0 50%, 100% 0, 100% 100%);
+          clip-path: polygon(0 50%, 100% 0, 100% 100%);
+}
+
 .fs-list {
   margin: 0rem;
   margin-bottom: 0.9375rem;
