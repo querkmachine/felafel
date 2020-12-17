@@ -374,3 +374,7 @@ $fs-primary-navigation-current-link: $fs-brand-color !default;
 // Radio
 $fs-radio-size: $fs-check-radio-size !default;
 $fs-radio-check-color: map.get($fs-default-color-palette, "grey90") !default;
+
+// Sidebar navigation
+$fs-sidebar-navigation-border-width: $fs-border-width !default;
+$fs-sidebar-navigation-border-color: $fs-brand-color !default;
