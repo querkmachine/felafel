@@ -1,0 +1,10 @@
+@use "../settings";
+
+@each $name, $color in settings.$fs-default-color-palette {
+  .fs-\!-text-color-#{$name} {
+    color: $color !important;
+  }
+  .fs-\!-background-color-#{$name} {
+    background-color: $color !important;
+  }
+}
