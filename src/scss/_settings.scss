@@ -105,7 +105,7 @@ $fs-gutter-half: $fs-gutter / 2 !default;
 // Generic borders
 $fs-border-width: 0.5rem !default;
 $fs-border-width-wide: 1rem !default;
-$fs-border-width-narrow: 1px !default;
+$fs-border-width-narrow: 0.25rem !default;
 
 // Focus state border
 $fs-focus-width: 3px !default;
@@ -278,7 +278,7 @@ $fs-font-sizes-responsive: (
 // ====================================
 
 // Alert
-$fs-alert-border-width: $fs-border-width !default;
+$fs-alert-border-width: $fs-border-width-narrow !default;
 $fs-alert-border-radius: if(
   $fs-enable-rounded-corners,
   $fs-border-radius,
@@ -329,6 +329,8 @@ $fs-checkbox-border-radius: if(
 ) !default;
 
 // File list
+$fs-file-list-border-color: $fs-border-color !default;
+$fs-file-list-border-width: $fs-border-width-narrow !default;
 $fs-file-list-border-radius: if(
   $fs-enable-rounded-corners,
   $fs-border-radius,
@@ -383,11 +385,11 @@ $fs-radio-size: $fs-check-radio-size !default;
 $fs-radio-check-color: map.get($fs-default-color-palette, "grey90") !default;
 
 // Sidebar navigation
-$fs-sidebar-navigation-border-width: $fs-border-width !default;
+$fs-sidebar-navigation-border-width: $fs-border-width-narrow !default;
 $fs-sidebar-navigation-border-color: $fs-brand-color !default;
 
 // Step indicator
-$fs-step-indicator-border-width: $fs-border-width !default;
+$fs-step-indicator-border-width: $fs-border-width-narrow !default;
 $fs-step-indicator-counter-size: 2rem !default;
 $fs-step-indicator-segment-color: map.get(
   $fs-default-color-palette,

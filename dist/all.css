@@ -749,7 +749,7 @@ a:not([class]):active {
 .fs-alert {
   margin-bottom: 1.875rem;
   padding: 0.9375rem;
-  border: 0.5rem solid;
+  border: 0.25rem solid;
   border-radius: 0;
 }
 @media screen and (min-width: 541px) {
@@ -945,7 +945,7 @@ a:not([class]):active {
 }
 .fs-file-list__item {
   padding: 0.9375rem;
-  border: #d1d5db solid 0.5rem;
+  border: #d1d5db solid 0.25rem;
   border-radius: 0;
 }
 .fs-file-list__item + .fs-file-list__item {
@@ -1415,7 +1415,7 @@ a:not([class]):active {
   font-size: 0.875rem;
   line-height: 1.2857142857;
   display: block;
-  border-left: 0.5rem solid transparent;
+  border-left: 0.25rem solid transparent;
   text-decoration: none;
 }
 .fs-sidebar-navigation__link:focus {
@@ -1528,7 +1528,7 @@ a:not([class]):active {
   padding-bottom: 0.3125rem;
   padding-right: 0.3125rem;
   padding-left: 0.9375rem;
-  border-left-width: 0.5rem;
+  border-left-width: 0.25rem;
 }
 .fs-step-indicator[data-orientation=vertical][data-counters] .fs-step-indicator__item::before {
   margin-bottom: 0.3125rem;
@@ -1539,7 +1539,7 @@ a:not([class]):active {
 }
 .fs-step-indicator[data-orientation=horizontal] .fs-step-indicator__item {
   flex: 1 1 1px;
-  border-top-width: 0.5rem;
+  border-top-width: 0.25rem;
 }
 .fs-step-indicator[data-orientation=horizontal] .fs-step-indicator__item + .fs-step-indicator__item {
   margin-left: 0.3125rem;
@@ -1561,7 +1561,7 @@ a:not([class]):active {
 }
 .fs-step-indicator[data-orientation=horizontal][data-counters] .fs-step-indicator__item::before {
   position: absolute;
-  top: calc( 0px - 1rem - 0.25rem );
+  top: calc( 0px - 1rem - 0.125rem );
   left: -1px;
 }
 .fs-step-indicator[data-orientation=horizontal][data-counters] .fs-step-indicator__label {

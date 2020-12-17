@@ -19,7 +19,7 @@
     @include spacing.fs-responsive-padding(1, $direction: top);
     @include spacing.fs-responsive-padding(1, $direction: bottom);
     display: block;
-    border-bottom: settings.$fs-border-width-narrow solid
+    border-bottom: settings.$fs-hr-width solid
       settings.$fs-primary-navigation-divider;
     text-decoration: none;
     @include media-queries.fs-mq(tablet) {
