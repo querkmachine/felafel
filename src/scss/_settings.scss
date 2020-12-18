@@ -43,7 +43,7 @@ $fs-default-color-palette: (
   "grey70": #374151,
   "grey80": #1f2937,
   "grey90": #111827,
-);
+) !default;
 
 // Brand accent (use sparingly)
 $fs-brand-color: map.get($fs-default-color-palette, "grey90") !default;
