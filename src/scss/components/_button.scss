@@ -76,9 +76,7 @@
   }
   &[data-appearance="destructive"] {
     border-color: settings.$fs-error-color;
-    color: colors.fs-contrasting-color(
-      settings.$fs-button-primary-background-color
-    );
+    color: colors.fs-contrasting-color(settings.$fs-error-color);
     background-color: settings.$fs-error-color;
     &:hover,
     &:active {

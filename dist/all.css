@@ -858,7 +858,7 @@ a:not([class]):active {
 }
 .fs-button[data-appearance=destructive] {
   border-color: #ef4444;
-  color: white;
+  color: black;
   background-color: #ef4444;
 }
 .fs-button[data-appearance=destructive]:hover, .fs-button[data-appearance=destructive]:active {
