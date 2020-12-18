@@ -11,7 +11,7 @@
 }
 
 .fs-input-mask {
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   &__prefix,
   &__suffix {
