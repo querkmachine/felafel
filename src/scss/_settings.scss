@@ -412,3 +412,20 @@ $fs-step-indicator-complete-segment-counter-text-color: map.get(
   "white"
 ) !default;
 $fs-step-indicator-complete-segment-label-text-color: $fs-step-indicator-complete-segment-color !default;
+
+// Tabs
+$fs-tabs-tab-border-width: $fs-border-width-narrow !default;
+$fs-tabs-tab-spacing: $fs-tabs-tab-border-width !default;
+$fs-tabs-tab-text-color: false !default;
+$fs-tabs-tab-background-color: map.get(
+  $fs-default-color-palette,
+  "grey20"
+) !default;
+$fs-tabs-tab-selected-text-color: false !default;
+$fs-tabs-tab-selected-background-color: map.get(
+  $fs-default-color-palette,
+  "grey10"
+) !default;
+$fs-tabs-tab-selected-border-color: $fs-brand-color !default;
+$fs-tabs-panel-text-color: false !default;
+$fs-tabs-panel-background-color: $fs-tabs-tab-selected-background-color !default;

@@ -20,11 +20,15 @@
   }
 }
 
-@mixin fs-link($visited-style: true) {
+@mixin fs-link($visited-style: true, $underline: true) {
   @include _fs-link-common;
   $self: &;
   color: settings.$fs-link-color;
-  text-decoration: underline;
+  @if $underline {
+    text-decoration: underline;
+  } @else {
+    text-decoration: none;
+  }
   @if $visited-style {
     &:visited {
       color: settings.$fs-link-visited-color;
@@ -38,24 +42,32 @@
   }
 }
 
-@mixin fs-link--text {
+@mixin fs-link--text($color: settings.$fs-text-color, $underline: true) {
   @include _fs-link-common;
   &,
   &:visited,
   &:hover,
   &:active {
-    color: settings.$fs-text-color;
-    text-decoration: underline;
+    color: $color;
+    @if $underline {
+      text-decoration: underline;
+    } @else {
+      text-decoration: none;
+    }
   }
 }
 
-@mixin fs-link--muted {
+@mixin fs-link--muted($underline: true) {
   @include _fs-link-common;
   &,
   &:visited,
   &:hover,
   &:active {
     color: settings.$fs-text-color-secondary;
-    text-decoration: underline;
+    @if $underline {
+      text-decoration: underline;
+    } @else {
+      text-decoration: none;
+    }
   }
 }

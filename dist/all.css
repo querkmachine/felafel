@@ -1770,6 +1770,70 @@ a:not([class]):active {
   vertical-align: bottom;
 }
 
+.fs-tabs__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.fs-tabs__item {
+  padding: 0.625rem;
+  box-sizing: content-box;
+  position: relative;
+  margin-right: 0.25rem;
+  color: black;
+  background-color: #e5e7eb;
+}
+.fs-tabs__item--current {
+  color: black;
+  background-color: #f3f4f6;
+  border-top: 0.25rem solid #111827;
+}
+.fs-tabs__tab:focus:focus {
+  outline: 3px solid #f59e0b;
+  outline-offset: 0;
+  background-color: #f59e0b;
+  color: #000;
+}
+@media only print {
+  .fs-tabs__tab[href^="/"]:after, .fs-tabs__tab[href^="http://"]:after, .fs-tabs__tab[href^="https://"]:after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+    word-wrap: break-word;
+  }
+}
+.fs-tabs__tab, .fs-tabs__tab:visited, .fs-tabs__tab:hover, .fs-tabs__tab:active {
+  color: currentColor;
+  text-decoration: none;
+}
+.fs-tabs__tab::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.fs-tabs__panel {
+  margin-bottom: 1.25rem;
+  padding: 0.9375rem;
+  color: black;
+  background-color: #f3f4f6;
+}
+@media screen and (min-width: 650px) {
+  .fs-tabs__panel {
+    margin-bottom: 1.875rem;
+  }
+}
+html.js .fs-tabs__panel {
+  margin-bottom: 0rem;
+}
+.fs-tabs__panel--hidden {
+  display: none;
+}
+
 .fs-textarea {
   margin: 0rem;
   border: 2px solid #111827;
