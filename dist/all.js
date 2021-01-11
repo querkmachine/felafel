@@ -421,7 +421,7 @@ class Tooltip {
   constructor($module) {
     this.$module = $module;
     this.$trigger = $module.firstElementChild;
-    this.$tooltip = $module.querySelector('.fs-tooltip__tip');
+    this.$tooltip = $module.querySelector(".fs-tooltip__tip");
     this.timeoutId = null;
     this.timeoutLength = 500; // milliseconds
 
@@ -437,35 +437,35 @@ class Tooltip {
 
   create() {
     // Tooltip a11y
-    this.$tooltip.setAttribute('id', this.tooltipId);
-    this.$tooltip.setAttribute('aria-hidden', 'true'); // Trigger events
+    this.$tooltip.setAttribute("id", this.tooltipId);
+    this.$tooltip.setAttribute("aria-hidden", "true"); // Trigger events
 
     this.$trigger.boundMouseEnter = this.onFocus.bind(this);
     this.$trigger.boundMouseLeave = this.onMouseLeave.bind(this);
     this.$trigger.boundFocus = this.onFocus.bind(this);
     this.$trigger.boundBlur = this.onBlur.bind(this);
     this.$trigger.boundEscape = this.onEscape.bind(this);
-    this.$trigger.addEventListener('mouseenter', this.$trigger.boundMouseEnter, true);
-    this.$trigger.addEventListener('mouseleave', this.$trigger.boundMouseLeave, true);
-    this.$trigger.addEventListener('focus', this.$trigger.boundFocus, true);
-    this.$trigger.addEventListener('blur', this.$trigger.boundBlur, true);
-    this.$trigger.addEventListener('keydown', this.$trigger.boundEscape, true);
+    this.$trigger.addEventListener("mouseenter", this.$trigger.boundMouseEnter, true);
+    this.$trigger.addEventListener("mouseleave", this.$trigger.boundMouseLeave, true);
+    this.$trigger.addEventListener("focus", this.$trigger.boundFocus, true);
+    this.$trigger.addEventListener("blur", this.$trigger.boundBlur, true);
+    this.$trigger.addEventListener("keydown", this.$trigger.boundEscape, true);
     this.hideTooltip();
   }
 
   destroy() {
     if (this.tooltipOriginalId) {
-      this.$tooltip.setAttribute('id', this.tooltipOriginalId);
+      this.$tooltip.setAttribute("id", this.tooltipOriginalId);
     } else {
-      this.$tooltip.removeAttribute('id');
+      this.$tooltip.removeAttribute("id");
     }
 
-    this.$tooltip.removeAttribute('aria-hidden');
-    this.$trigger.removeEventListener('mouseenter', this.$trigger.boundMouseEnter, true);
-    this.$trigger.removeEventListener('mouseleave', this.$trigger.boundMouseLeave, true);
-    this.$trigger.removeEventListener('focus', this.$trigger.boundFocus, true);
-    this.$trigger.removeEventListener('blur', this.$trigger.boundBlur, true);
-    this.$trigger.removeEventListener('keydown', this.$trigger.boundEscape, true);
+    this.$tooltip.removeAttribute("aria-hidden");
+    this.$trigger.removeEventListener("mouseenter", this.$trigger.boundMouseEnter, true);
+    this.$trigger.removeEventListener("mouseleave", this.$trigger.boundMouseLeave, true);
+    this.$trigger.removeEventListener("focus", this.$trigger.boundFocus, true);
+    this.$trigger.removeEventListener("blur", this.$trigger.boundBlur, true);
+    this.$trigger.removeEventListener("keydown", this.$trigger.boundEscape, true);
   }
 
   onFocus() {
@@ -500,13 +500,13 @@ class Tooltip {
 
   showTooltip() {
     this.determinePosition();
-    this.$tooltip.classList.remove('fs-tooltip__tip--hidden');
-    this.$tooltip.setAttribute('aria-hidden', 'false');
+    this.$tooltip.classList.remove("fs-tooltip__tip--hidden");
+    this.$tooltip.setAttribute("aria-hidden", "false");
   }
 
   hideTooltip() {
-    this.$tooltip.classList.add('fs-tooltip__tip--hidden');
-    this.$tooltip.setAttribute('aria-hidden', 'true');
+    this.$tooltip.classList.add("fs-tooltip__tip--hidden");
+    this.$tooltip.setAttribute("aria-hidden", "true");
   }
 
   determinePosition() {
@@ -527,7 +527,7 @@ class Tooltip {
         largestKey = key;
       }
     });
-    this.$tooltip.dataset.side = largestKey || 'bottom';
+    this.$tooltip.dataset.side = largestKey || "bottom";
   }
 
 }
