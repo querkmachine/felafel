@@ -1,0 +1,38 @@
+{
+  "name": "fs-felafel",
+  "version": "1.0.0",
+  "description": "The Felinesoft Agile Front-End Library.",
+  "browserslist": "last 2 versions and last 2 years and not dead",
+  "main": "dist/all.js",
+  "scripts": {
+    "start": "npm run serve",
+    "serve": "gulp default",
+    "build": "gulp build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kimberly Grey <kimberly.grey@felinesoft.com>",
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-dart-sass": "^1.0.2",
+    "gulp-if": "^3.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "husky": "^4.3.0",
+    "prettier": "^2.2.0",
+    "pretty-quick": "^3.1.0",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0",
+    "yargs": "^16.1.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@use "../helpers/spacing";
+
+// Lists
+.fs-list {
+  @include spacing.fs-responsive-margin(0);
+  @include spacing.fs-responsive-margin(3, $direction: bottom);
+  padding: 0;
+  list-style-type: none;
+  li + li {
+    @include spacing.fs-responsive-margin(1, $direction: top);
+  }
+  &--bulleted {
+    padding-left: 2em;
+    list-style-type: disc;
+  }
+  &--numbered {
+    padding-left: 2em;
+    list-style-type: decimal;
+  }
+  &--spaced {
+    li + li {
+      @include spacing.fs-responsive-margin(3, $direction: top);
+    }
+  }
+}

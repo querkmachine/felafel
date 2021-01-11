@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/all.css" />
+    <title>Checkbox</title>
+  </head>
+  <body>
+    <div class="fs-form-row">
+      <div class="fs-checkbox">
+        <input class="fs-checkbox__input" type="checkbox" id="Checkbox1" />
+        <label
+          class="fs-label fs-checkbox__label"
+          for="Checkbox1"
+          aria-describedby="Checkbox1-Hint"
+          >Form label</label
+        >
+        <div class="fs-hint fs-checkbox__hint" id="Checkbox1-Hint">
+          Form hint
+        </div>
+      </div>
+    </div>
+
+    <div class="fs-form-row">
+      <fieldset class="fs-fieldset">
+        <legend class="fs-fieldset__legend">Standard fieldset legend</legend>
+        <div class="fs-checkbox">
+          <input class="fs-checkbox__input" type="checkbox" id="checkbox2" />
+          <label class="fs-label fs-checkbox__label" for="checkbox2"
+            >Form label</label
+          >
+        </div>
+        <div class="fs-checkbox">
+          <input class="fs-checkbox__input" type="checkbox" id="checkbox3" />
+          <label class="fs-label fs-checkbox__label" for="checkbox3"
+            >Form label</label
+          >
+        </div>
+        <div class="fs-checkbox">
+          <input class="fs-checkbox__input" type="checkbox" id="checkbox4" />
+          <label class="fs-label fs-checkbox__label" for="checkbox4"
+            >Form label</label
+          >
+        </div>
+      </fieldset>
+    </div>
+
+    <script src="../dist/all.js"></script>
+    <script>
+      window.fs.initAll();
+    </script>
+  </body>
+</html>

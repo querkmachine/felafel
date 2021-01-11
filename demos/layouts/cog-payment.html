@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" class="fs-template">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../dist/all.css" />
+    <title>Example COG payment</title>
+  </head>
+  <body class="fs-template__body">
+    <a class="fs-skiplink" href="#navigation">Skip to navigation</a>
+    <a class="fs-skiplink" href="#content">Skip to content</a>
+
+    <nav class="fs-masthead-tools" aria-label="Utilities">
+      <div class="fs-width-container fs-masthead-tools__inner">
+        <ul class="fs-masthead-tools__list">
+          <li class="fs-masthead-tools__item">
+            <a class="fs-masthead-tools__link" href="#"> Login or register </a>
+          </li>
+          <li class="fs-masthead-tools__item">
+            <a class="fs-masthead-tools__link" href="#"> Basket (0) </a>
+          </li>
+          <li class="fs-masthead-tools__item">
+            <a class="fs-masthead-tools__link" href="#"> Search </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <header class="fs-masthead">
+      <div class="fs-width-container fs-masthead__inner">
+        <div class="fs-grid-row">
+          <div class="fs-grid-column-one-third fs-masthead__logo">
+            <a class="fs-link-text fs-masthead__logo-link" href="#">
+              The Bread Club
+            </a>
+          </div>
+          <div class="fs-grid-column-two-thirds fs-masthead__content">
+            <nav
+              class="fs-primary-navigation"
+              id="navigation"
+              aria-label="Main navigation"
+            >
+              <ul class="fs-primary-navigation__list">
+                <li class="fs-primary-navigation__item">
+                  <a class="fs-link-text fs-primary-navigation__link" href="#">
+                    Loaves
+                  </a>
+                </li>
+                <li class="fs-primary-navigation__item">
+                  <a
+                    class="fs-link-text fs-primary-navigation__link"
+                    href="#"
+                    aria-current="true"
+                  >
+                    Rolls
+                  </a>
+                </li>
+                <li class="fs-primary-navigation__item">
+                  <a class="fs-link-text fs-primary-navigation__link" href="#">
+                    Pastries
+                  </a>
+                </li>
+                <li class="fs-primary-navigation__item">
+                  <a class="fs-link-text fs-primary-navigation__link" href="#">
+                    Crumpets
+                  </a>
+                </li>
+                <li class="fs-primary-navigation__item">
+                  <a class="fs-link-text fs-primary-navigation__link" href="#">
+                    Treats
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main
+      class="fs-width-container fs-!-margin-top-8 fs-!-margin-bottom-8"
+      id="content"
+    >
+      <div class="fs-grid-row">
+        <div class="fs-grid-column-one-third">&nbsp;</div>
+        <div class="fs-grid-column-two-thirds">
+          <a class="fs-back-link fs-!-margin-bottom-5" href="#"
+            >Back
+            <span class="fs-!-sr">to conditions of grants listing</span></a
+          >
+          <h1 class="fs-heading-xl">
+            <div class="fs-subheading-xl">Conditions of grant</div>
+            BC0017559
+          </h1>
+          <dl class="fs-summary-list">
+            <div class="fs-summary-list__item">
+              <dt class="fs-summary-list__key">Date due</dt>
+              <dd class="fs-summary-list__value">22 December 2021</dd>
+            </div>
+            <div class="fs-summary-list__item">
+              <dt class="fs-summary-list__key">Condition type</dt>
+              <dd class="fs-summary-list__value">Request for payment</dd>
+            </div>
+            <div class="fs-summary-list__item">
+              <dt class="fs-summary-list__key">Condition name</dt>
+              <dd class="fs-summary-list__value">Bread Flour Subsidy 2021</dd>
+            </div>
+            <div class="fs-summary-list__item">
+              <dt class="fs-summary-list__key">Condition</dt>
+              <dd class="fs-summary-list__value">
+                <p class="fs-body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quaerat beatae eos quae quos voluptatibus, vel unde dolorem,
+                  mollitia est natus! Consequuntur maxime ad laborum
+                  necessitatibus blanditiis ipsum dolores quidem non?
+                </p>
+              </dd>
+            </div>
+          </dl>
+          <form>
+            <fieldset class="fs-fieldset">
+              <legend class="fs-fieldset__legend fs-fieldset__legend--l">
+                <h2 class="fs-heading-l">Make a request for payment</h2>
+              </legend>
+              <table class="fs-table">
+                <thead>
+                  <tr>
+                    <th class="fs-!-width-one-half" scope="col">
+                      Item requested
+                    </th>
+                    <th
+                      class="fs-!-width-one-quarter"
+                      scope="col"
+                      data-type="numeric"
+                    >
+                      Expected cost
+                    </th>
+                    <th
+                      class="fs-!-width-one-quarter"
+                      scope="col"
+                      data-type="numeric"
+                    >
+                      Actual cost
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">BAKE Group Whole Wheatgerm Flour - 4 kg</th>
+                    <td data-type="numeric">&pound;189.65</td>
+                    <td data-type="numeric">
+                      <label class="fs-label fs-!-sr" for="Price1"
+                        >Actual cost of BAKE Group Whole Wheatgerm Flour - 4
+                        kg</label
+                      >
+                      <div class="fs-input-mask">
+                        <div class="fs-input-mask__prefix" aria-hidden="true">
+                          &pound;
+                        </div>
+                        <input
+                          class="fs-input fs-input--length-5 fs-!-text-align-right"
+                          id="Price1"
+                          type="number"
+                          min="0"
+                          step="0.01"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">BAKE Group Self-Raising Flour - 10 kg</th>
+                    <td data-type="numeric">&pound;216.36</td>
+                    <td data-type="numeric">
+                      <label class="fs-label fs-!-sr" for="Price2"
+                        >Actual cost of BAKE Group Self-Raising Flour - 10
+                        kg</label
+                      >
+                      <div class="fs-input-mask">
+                        <div class="fs-input-mask__prefix" aria-hidden="true">
+                          &pound;
+                        </div>
+                        <input
+                          class="fs-input fs-input--length-5 fs-!-text-align-right"
+                          id="Price2"
+                          type="number"
+                          min="0"
+                          step="0.01"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </fieldset>
+            <fieldset class="fs-fieldset">
+              <legend class="fs-fieldset__legend fs-fieldset__legend--l">
+                <h2 class="fs-heading-l">Supporting files</h2>
+              </legend>
+              <div class="fs-form-row">
+                <label class="fs-label" for="UploadFile"
+                  >Upload supporting files</label
+                >
+                <div class="fs-hint" id="UploadFile-Hint">
+                  Accepts pdf, doc, docx, jpg and jpeg files less than 5 MB.
+                </div>
+                <input
+                  class="fs-file-upload"
+                  type="file"
+                  id="UploadFile"
+                  aria-describedby="UploadFile-Hint"
+                  accept="application/pdf,application/x-pdf,application/x-bzpdf,application/x-gzpdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/jpeg"
+                />
+              </div>
+              <div class="fs-form-row">
+                <dl class="fs-file-list">
+                  <div class="fs-file-list__item">
+                    <dt class="fs-file-list__filename">
+                      713d5604-94e9-468b-8eaa-6795ad761b9e.pdf
+                    </dt>
+                    <dd class="fs-file-list__size">13 KB</dd>
+                    <dd class="fs-file-list__actions">
+                      <a class="fs-link-no-visited" href="#"
+                        >Remove <span class="fs-!-sr">[filename]</span></a
+                      >
+                    </dd>
+                  </div>
+                  <div class="fs-file-list__item fs-file-list__item--error">
+                    <dt class="fs-file-list__filename">
+                      Black Dresses - 888db Cloud (100 gecs Cover).mp3
+                    </dt>
+                    <dd class="fs-file-list__size">2.9 MB</dd>
+                    <dd class="fs-file-list__actions">
+                      <a class="fs-link-no-visited" href="#"
+                        >Remove <span class="fs-!-sr">[filename]</span></a
+                      >
+                    </dd>
+                    <dd class="fs-file-list__error">
+                      <div class="fs-error">
+                        File must be a pdf, doc, docx, jpg or jpeg.
+                      </div>
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </fieldset>
+            <div class="fs-form-row">
+              <button
+                class="fs-button"
+                type="submit"
+                data-appearance="primary"
+                data-layout="elastic"
+              >
+                Submit request for payment
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="fs-footer">
+      <div class="fs-width-container fs-footer__inner">
+        <div class="fs-grid-row">
+          <div
+            class="fs-grid-column-full desktop:fs-grid-column-one-half fs-footer__legal"
+          >
+            &copy; 2020 The Bread Club. All rights reserved.
+          </div>
+          <div
+            class="fs-grid-column-full desktop:fs-grid-column-one-half fs-footer__links"
+          >
+            <ul class="fs-footer__list">
+              <li class="fs-footer__item">
+                <a class="fs-footer__link" href="#"> Terms and conditions </a>
+              </li>
+              <li class="fs-footer__item">
+                <a class="fs-footer__link" href="#"> Privacy policy </a>
+              </li>
+              <li class="fs-footer__item">
+                <a class="fs-footer__link" href="#"> Contact us </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../../dist/all.js"></script>
+    <script>
+      window.fs.initAll();
+    </script>
+  </body>
+</html>

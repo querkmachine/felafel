@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/all.css" />
+    <title>Alert</title>
+  </head>
+  <body>
+    <div class="fs-alert" role="region" aria-labelledby="fs-alert-title">
+      <h2 class="fs-heading-m fs-alert__heading" id="fs-alert-title">
+        This service will be temporarily unavailable on 15th December from 8pm.
+      </h2>
+      <div class="fs-alert__body">
+        <p class="fs-body">
+          We expect maintenance to take one hour. The service will be
+          unavailable during this time.
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="fs-alert fs-alert--error"
+      role="alert"
+      aria-labelledby="fs-alert-title"
+    >
+      <h2 class="fs-heading-m fs-alert__heading" id="fs-alert-title">
+        You&rsquo;ve got errors.
+      </h2>
+      <div class="fs-alert__body">
+        <ul class="fs-list">
+          <li><a href="#">Your date of birth must be in the past</a></li>
+          <li><a href="#">Select a nationality</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="fs-alert fs-alert--success"
+      role="alert"
+      aria-labelledby="fs-alert-title"
+    >
+      <h2 class="fs-heading-m fs-alert__heading" id="fs-alert-title">
+        Your application has been submitted.
+      </h2>
+      <div class="fs-alert__body">
+        <p class="fs-body">
+          You can <a href="#">review and amend your application</a> at any time.
+        </p>
+      </div>
+    </div>
+
+    <script src="../dist/all.js"></script>
+    <script>
+      window.fs.initAll();
+    </script>
+  </body>
+</html>

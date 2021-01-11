@@ -1,0 +1,8 @@
+@use "../settings";
+
+@if settings.$fs-enable-core-styles {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

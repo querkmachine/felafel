@@ -1,0 +1,19 @@
+@use "../settings";
+@use "../helpers/forms";
+@use "../helpers/typography";
+
+.fs-textarea {
+  @include forms.fs-input-text;
+  min-height: 6.5rem;
+  resize: vertical;
+}
+
+.fs-textarea-counter {
+  &__counter {
+    @include typography.fs-font-size(14);
+    @include typography.fs-tabular-figures;
+    &[role="alert"] {
+      color: settings.$fs-error-color;
+    }
+  }
+}

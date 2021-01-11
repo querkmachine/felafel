@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/all.css" />
+    <title>Table</title>
+  </head>
+  <body>
+    <table class="fs-table">
+      <caption>
+        A pretty default table
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Date of birth</th>
+          <th scope="col">Favourite colour</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Kimberly Grey</th>
+          <td>22 September 1991</td>
+          <td>orange-y yellow</td>
+        </tr>
+        <tr>
+          <th scope="row">Mariela Alegre</th>
+          <td>11 December 2010</td>
+          <td>beige</td>
+        </tr>
+        <tr>
+          <th scope="row">Chandra Maccabe</th>
+          <td>8 June 2019</td>
+          <td>dark purple</td>
+        </tr>
+        <tr>
+          <th scope="row">Karen Starowicz</th>
+          <td>2 July 2023</td>
+          <td>pine</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br /><br />
+
+    <table class="fs-table">
+      <caption>
+        Table with custom column proportions and numeric data
+      </caption>
+      <thead>
+        <tr>
+          <th class="fs-!-width-one-half" scope="col">Name</th>
+          <th class="fs-!-width-one-quarter" data-type="numeric" scope="col">
+            Cost to buy
+          </th>
+          <th class="fs-!-width-one-quarter" data-type="numeric" scope="col">
+            Cost to sell
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Joi Stoss</th>
+          <td data-type="numeric">£16.89</td>
+          <td data-type="numeric">£93.50</td>
+        </tr>
+        <tr>
+          <th scope="row">Enedina Dungey</th>
+          <td data-type="numeric">£66.89</td>
+          <td data-type="numeric">£31.10</td>
+        </tr>
+        <tr>
+          <th scope="row">Sherly Chehab</th>
+          <td data-type="numeric">£10.40</td>
+          <td data-type="numeric">£94.58</td>
+        </tr>
+        <tr>
+          <th scope="row">Elisa Alvara</th>
+          <td data-type="numeric">£30.32</td>
+          <td data-type="numeric">£34.65</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script src="../dist/all.js"></script>
+    <script>
+      window.fs.initAll();
+    </script>
+  </body>
+</html>

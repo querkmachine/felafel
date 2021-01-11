@@ -1,0 +1,23 @@
+@use "../settings";
+
+// Keyboard focus style
+@mixin fs-focus-ring($fill: false) {
+  outline: settings.$fs-focus-width solid settings.$fs-focus-color;
+  outline-offset: 0;
+  @if $fill {
+    background-color: settings.$fs-focus-color;
+    color: settings.$fs-focus-text-color;
+  }
+}
+
+// Hide elements while keeping them available to screen readers
+@mixin fs-visually-hidden($important: false) {
+  position: absolute if($important, !important, null);
+  width: 1px if($important, !important, null);
+  height: 1px if($important, !important, null);
+  margin: -1px if($important, !important, null);
+  padding: 0 if($important, !important, null);
+  border: 0 if($important, !important, null);
+  overflow: hidden if($important, !important, null);
+  clip: rect(0 0 0 0) if($important, !important, null);
+}

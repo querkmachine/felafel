@@ -1,0 +1,77 @@
+@use "../settings";
+@use "media-queries";
+
+@use "sass:map";
+@use "sass:string";
+
+// Main wrapper definition
+@mixin fs-width-container {
+  $gutter-safe-area-right: calc(
+    #{settings.$fs-gutter-half} + env(safe-area-inset-right)
+  );
+  $gutter-safe-area-left: calc(
+    #{settings.$fs-gutter-half} + env(safe-area-inset-left)
+  );
+  display: block;
+  max-width: settings.$fs-page-width;
+  margin-right: settings.$fs-gutter-half;
+  margin-left: settings.$fs-gutter-half;
+  @supports (margin: max(calc(0px))) {
+    margin-right: max(#{settings.$fs-gutter-half}, #{$gutter-safe-area-right});
+    margin-left: max(#{settings.$fs-gutter-half}, #{$gutter-safe-area-left});
+  }
+  @include media-queries.fs-mq($from: tablet) {
+    margin-right: settings.$fs-gutter;
+    margin-left: settings.$fs-gutter;
+    @supports (margin: max(calc(0px))) {
+      margin-right: max(#{settings.$fs-gutter}, #{$gutter-safe-area-right});
+      margin-left: max(#{settings.$fs-gutter}, #{$gutter-safe-area-left});
+    }
+  }
+  @include media-queries.fs-mq(
+    $and: "(min-width: #{(settings.$fs-page-width + settings.$fs-gutter * 2)})"
+  ) {
+    margin-right: auto;
+    margin-left: auto;
+    @supports (margin: max(calc(0px))) {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}
+
+// Grid column function
+@function fs-grid-width($width) {
+  @if not map.has-key(settings.$fs-grid, $width) {
+    @error "Unknown width `#{$width}`.";
+  }
+  @return map.get(settings.$fs-grid, $width);
+}
+
+// Grid row
+@mixin fs-grid-row {
+  @include fs-clearfix;
+  margin-right: 0 - settings.$fs-gutter-half;
+  margin-left: 0 - settings.$fs-gutter-half;
+}
+
+// Grid column mixin
+@mixin fs-grid-column($width: full, $float: left, $at: tablet) {
+  @if $at != desktop {
+    width: 100%;
+    padding: 0 settings.$fs-gutter-half;
+  }
+  @include media-queries.fs-mq($from: $at) {
+    width: fs-grid-width($width);
+    float: $float;
+  }
+}
+
+// Non-overflow based clearfix
+@mixin fs-clearfix {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}

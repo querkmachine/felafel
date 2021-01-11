@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/all.css" />
+    <title>Form row</title>
+  </head>
+  <body>
+    <div class="fs-form-row">
+      <label class="fs-label" for="Name">Full name</label>
+      <input class="fs-input" type="text" id="Name" />
+    </div>
+    <div class="fs-form-row">
+      <label class="fs-label" for="Price">Price</label>
+      <div class="fs-hint" id="Price-Hint">
+        This is how much the product costs.
+      </div>
+      <input
+        class="fs-input"
+        type="number"
+        id="Price"
+        min="0"
+        step="1"
+        aria-describedby="Price-Hint"
+      />
+    </div>
+    <div class="fs-form-row">
+      <label class="fs-label" for="Postcode">Postcode</label>
+      <div class="fs-hint" id="Postcode-Hint">Where we sending this?</div>
+      <div class="fs-error" id="Postcode-Error">
+        That is not a valid postcode.
+      </div>
+      <input
+        class="fs-input"
+        type="text"
+        id="Postcode"
+        min="0"
+        step="1"
+        aria-describedby="Postcode-Hint Postcode-Error"
+      />
+    </div>
+    <script src="../dist/all.js"></script>
+    <script>
+      window.fs.initAll();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/all.css" />
+    <title>Date input</title>
+  </head>
+  <body>
+    <div class="fs-form-row">
+      <fieldset class="fs-fieldset" aria-describedby="DateOfBirth-Hint">
+        <legend class="fs-fieldset__legend">Date of birth</legend>
+        <div class="fs-hint" id="DateOfBirth-Hint">
+          For example, 22 09 1991.
+        </div>
+        <div class="fs-date-input">
+          <div class="fs-form-row fs-date-input__group">
+            <label class="fs-label" for="DateOfBirth-Day">Day</label>
+            <input
+              class="fs-input fs-input--length-2"
+              type="text"
+              id="DateOfBirth-Day"
+              autocomplete="bday-day"
+              inputmode="numeric"
+              pattern="[0-9]*"
+            />
+          </div>
+          <div class="fs-form-row fs-date-input__group">
+            <label class="fs-label" for="DateOfBirth-Month">Month</label>
+            <input
+              class="fs-input fs-input--length-2"
+              type="text"
+              id="DateOfBirth-Month"
+              autocomplete="bday-month"
+              inputmode="numeric"
+              pattern="[0-9]*"
+            />
+          </div>
+          <div class="fs-form-row fs-date-input__group">
+            <label class="fs-label" for="DateOfBirth-Year">Year</label>
+            <input
+              class="fs-input fs-input--length-4"
+              type="text"
+              id="DateOfBirth-Year"
+              autocomplete="bday-year"
+              inputmode="numeric"
+              pattern="[0-9]*"
+            />
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <script src="../dist/all.js"></script>
+    <script>
+      window.fs.initAll();
+    </script>
+  </body>
+</html>

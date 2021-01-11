@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/all.css" />
+    <title>Tabs</title>
+  </head>
+  <body>
+    <!-- Standalone tabs (no data-module attr) -->
+    <div class="fs-tabs">
+      <ul class="fs-tabs__list" aria-label="Table of contents">
+        <li class="fs-tabs__item">
+          <a class="fs-tabs__tab" href="/"> Applicant details </a>
+        </li>
+        <li class="fs-tabs__item fs-tabs__item--current">
+          <a class="fs-tabs__tab" href="/"> Financial information </a>
+        </li>
+        <li class="fs-tabs__item">
+          <a class="fs-tabs__tab" href="/"> Summary of request </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Tabs w/ in-page JS functionality (add data-module attr) -->
+    <div class="fs-tabs" data-module="fs-tabs">
+      <ul class="fs-tabs__list" aria-label="Table of contents">
+        <li class="fs-tabs__item">
+          <a class="fs-tabs__tab" href="#applicant"> Applicant details </a>
+        </li>
+        <li class="fs-tabs__item">
+          <a class="fs-tabs__tab" href="#financial"> Financial information </a>
+        </li>
+        <li class="fs-tabs__item">
+          <a class="fs-tabs__tab" href="#summary"> Summary of request </a>
+        </li>
+      </ul>
+      <div class="fs-tabs__panel" id="applicant">
+        <p>Applicant details tab</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+          laudantium tempore adipisci, a. Libero dicta quod, iste, eaque quam
+          voluptatum? Iste repellendus assumenda aliquid ipsum animi. Aperiam
+          fugit alias veritatis.
+        </p>
+      </div>
+      <div class="fs-tabs__panel" id="financial">
+        <p>Financial information tab</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta
+          iusto, iure autem quisquam maiores ipsum sequi modi eius expedita
+          fugiat voluptates qui neque, voluptas recusandae hic dolores earum
+          inventore ex.
+        </p>
+      </div>
+      <div class="fs-tabs__panel" id="summary">
+        <p>Summary of request tab</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit
+          repudiandae possimus expedita impedit unde, necessitatibus vero
+          doloribus voluptas, ea minima ratione corporis id nemo. Cum impedit
+          ducimus ex deleniti a.
+        </p>
+      </div>
+    </div>
+
+    <script src="../dist/all.js"></script>
+    <script>
+      window.fs.initAll();
+    </script>
+  </body>
+</html>

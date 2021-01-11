@@ -1,0 +1,51 @@
+@use "../settings";
+
+@use "../helpers/colors";
+@use "../helpers/media-queries";
+@use "../helpers/reset";
+@use "../helpers/spacing";
+@use "../helpers/typography";
+
+.fs-primary-navigation {
+  $self: &;
+  &__list {
+    @include reset.fs-reset-list;
+  }
+  &__item {
+    border-bottom: settings.$fs-hr-width solid
+      settings.$fs-primary-navigation-divider;
+    @include media-queries.fs-mq($from: tablet) {
+      @include spacing.fs-responsive-margin(3, $direction: right);
+      display: inline-block;
+      border-bottom: none;
+    }
+  }
+  &__link {
+    @include spacing.fs-responsive-padding(1, $direction: top);
+    @include spacing.fs-responsive-padding(1, $direction: bottom);
+    display: inline-block;
+    text-decoration: none;
+    @include media-queries.fs-mq($from: tablet) {
+      @include spacing.fs-responsive-padding(0, $direction: top);
+      @include spacing.fs-responsive-padding(0, $direction: bottom);
+      @include spacing.fs-responsive-padding(2, $direction: right);
+      @include spacing.fs-responsive-padding(2, $direction: left);
+      @include typography.fs-font-size(24);
+    }
+    &[aria-current] {
+      @include spacing.fs-responsive-padding(2, $direction: left);
+      $background-color: settings.$fs-primary-navigation-current-link-background-color;
+      border-left: settings.$fs-border-width-narrow solid $background-color;
+      @include media-queries.fs-mq($from: tablet) {
+        border-left: 0;
+        border-radius: settings.$fs-primary-navigation-border-radius;
+        color: if(
+          settings.$fs-primary-navigation-current-link-text-color,
+          settings.$fs-primary-navigation-current-link-text-color,
+          colors.fs-contrasting-color($background-color)
+        );
+        background-color: $background-color;
+      }
+    }
+  }
+}

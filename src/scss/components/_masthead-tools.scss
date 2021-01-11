@@ -1,0 +1,43 @@
+@use "../settings";
+
+@use "../helpers/colors";
+@use "../helpers/reset";
+@use "../helpers/spacing";
+@use "../helpers/typography";
+
+.fs-masthead-tools {
+  @include typography.fs-font-size(14);
+  @if settings.$fs-masthead-tools-background-color ==
+    settings.$fs-masthead-border-color
+  {
+    border-width: 0;
+    border-top-width: settings.$fs-border-width;
+    border-style: solid;
+    border-color: settings.$fs-masthead-border-color;
+  }
+  color: if(
+    settings.$fs-masthead-tools-text-color,
+    settings.$fs-masthead-tools-text-color,
+    colors.fs-contrasting-color(settings.$fs-masthead-tools-background-color)
+  );
+  background-color: settings.$fs-masthead-tools-background-color;
+  &__inner {
+  }
+  &__list {
+    @include reset.fs-reset-list;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  &__item {
+    & + & {
+      @include spacing.fs-responsive-margin(3, $direction: left);
+    }
+  }
+  &__link {
+    color: currentColor;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}

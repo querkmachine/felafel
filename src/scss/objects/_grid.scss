@@ -1,0 +1,24 @@
+@use "../settings";
+@use "../helpers/layout";
+
+@use "sass:map";
+
+.fs-grid-row {
+  @include layout.fs-grid-row;
+}
+
+@each $width in map.keys(settings.$fs-grid) {
+  .fs-grid-column-#{$width} {
+    @include layout.fs-grid-column($width);
+  }
+}
+
+@each $breakpoint in map.keys(settings.$fs-breakpoints) {
+  @if $breakpoint != tablet {
+    @each $width in map.keys(settings.$fs-grid) {
+      .#{$breakpoint}\:fs-grid-column-#{$width} {
+        @include layout.fs-grid-column($width, $at: $breakpoint);
+      }
+    }
+  }
+}

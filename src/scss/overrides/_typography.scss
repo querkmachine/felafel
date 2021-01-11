@@ -1,0 +1,53 @@
+@use "../settings";
+@use "../helpers/typography";
+
+// Font size
+@each $size, $map in settings.$fs-font-sizes-responsive {
+  .fs-\!-font-size-#{$size} {
+    @include typography.fs-font-size($size, $important: true);
+  }
+}
+
+// Font stacks
+.fs-\!-font-body {
+  @include typography.fs-font-stack(body, $important: true);
+}
+.fs-\!-font-body-regular {
+  @include typography.fs-font-stack(body, $weight: regular, $important: true);
+}
+.fs-\!-font-body-bold {
+  @include typography.fs-font-stack(body, $weight: bold, $important: true);
+}
+
+.fs-\!-font-header {
+  @include typography.fs-font-stack(header, $important: true);
+}
+.fs-\!-font-header-regular {
+  @include typography.fs-font-stack(header, $weight: regular, $important: true);
+}
+.fs-\!-font-header-bold {
+  @include typography.fs-font-stack(header, $weight: bold, $important: true);
+}
+
+.fs-\!-font-code {
+  @include typography.fs-font-stack(code, $important: true);
+}
+.fs-\!-font-code-regular {
+  @include typography.fs-font-stack(code, $weight: regular, $important: true);
+}
+.fs-\!-font-code-bold {
+  @include typography.fs-font-stack(code, $weight: bold, $important: true);
+}
+
+// Text alignment
+.fs-\!-text-align-left {
+  text-align: left !important;
+}
+
+.fs-\!-text-align-center {
+  text-align: center !important;
+}
+
+.fs-\!-text-align-right {
+  text-align: right !important;
+}

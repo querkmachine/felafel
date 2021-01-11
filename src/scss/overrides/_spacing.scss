@@ -1,0 +1,21 @@
+@use "../settings";
+@use "../helpers/spacing";
+
+@each $size, $map in settings.$fs-spacing-responsive {
+  @each $dir in (all, top, right, bottom, left) {
+    .fs-\!-margin#{if($dir != "all", "-" + $dir, null)}-#{$size} {
+      @include spacing.fs-responsive-margin(
+        $spacing-point: $size,
+        $direction: $dir,
+        $important: true
+      );
+    }
+    .fs-\!-padding#{if($dir != "all", "-" + $dir, null)}-#{$size} {
+      @include spacing.fs-responsive-padding(
+        $spacing-point: $size,
+        $direction: $dir,
+        $important: true
+      );
+    }
+  }
+}

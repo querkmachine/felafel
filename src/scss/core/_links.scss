@@ -1,0 +1,8 @@
+@use "../settings";
+@use "../helpers/links";
+
+@if settings.$fs-enable-core-styles {
+  a:not([class]) {
+    @include links.fs-link($visited-style: true);
+  }
+}

@@ -1,0 +1,66 @@
+@use "../settings";
+
+@use "sass:color";
+@use "sass:math";
+
+// Color tweaking functions
+@function fs-color-shade($color, $percentage) {
+  @return color.mix(#000000, $color, $percentage);
+}
+
+@function fs-color-tint($color, $percentage) {
+  @return color.mix(#ffffff, $color, $percentage);
+}
+
+// Programatically determine whether black or white provides greater contrast for a given color
+// Hat tip: https://medium.com/dev-channel/using-sass-to-automatically-pick-text-colors-4ba7645d2796
+// Calculations derived from https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+@function _fs-color-luminance-channel($value) {
+  $value: $value / 255;
+  @if $value < 0.03928 {
+    @return $value / 12.92;
+  } @else {
+    @return math.pow(($value + 0.055) / 1.055, 2.4);
+  }
+}
+
+@function _fs-color-luminance($color) {
+  $red: _fs-color-luminance-channel(color.red($color));
+  $green: _fs-color-luminance-channel(color.green($color));
+  $blue: _fs-color-luminance-channel(color.blue($color));
+  @return (0.2126 * $red) + (0.7152 * $green) + (0.0722 * $blue);
+}
+
+@function _fs-color-contrast($col1, $col2) {
+  $col1-lum: _fs-color-luminance($col1);
+  $col2-lum: _fs-color-luminance($col2);
+  @if settings.$fs-enable-weber-contrast {
+    // Huang/Peli modified Weber perceptual contrast calculation
+    @return (math.max($col1-lum, $col2-lum) - math.min($col1-lum, $col2-lum)) /
+      (math.max($col1-lum, $col2-lum) + 0.05);
+  } @else {
+    // WCAG linear contrast ratio calculation
+    @return (math.max($col1-lum, $col2-lum) + 0.05) /
+      (math.min($col1-lum, $col2-lum) + 0.05);
+  }
+}
+
+@function fs-contrasting-color(
+  $color,
+  $light-color: white,
+  $dark-color: black
+) {
+  $light-contrast: _fs-color-contrast($color, $light-color);
+  $dark-contrast: _fs-color-contrast($color, $dark-color);
+  @if ($light-contrast > $dark-contrast) {
+    @return $light-color;
+  } @else {
+    @return $dark-color;
+  }
+}
+
+// Text selection highlight colour
+@mixin fs-selection-highlight {
+  color: fs-contrasting-color(settings.$fs-brand-color);
+  background-color: settings.$fs-brand-color;
+}

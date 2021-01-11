@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/all.css" />
+    <title>Tooltip</title>
+  </head>
+  <body>
+    <div class="fs-tooltip" data-module="fs-tooltip">
+      <button type="button">Button w/ tooltip</button>
+      <div class="fs-tooltip__tip">
+        Lorem ipsum dolor sit amet consectetur adipisicing, elit. Dicta mollitia
+        in impedit accusantium unde amet suscipit. Perferendis amet laboriosam
+        minima possimus nostrum accusantium, incidunt doloribus unde, id sit
+        quas, sapiente.
+      </div>
+    </div>
+
+    <div class="fs-tooltip" data-module="fs-tooltip">
+      <button type="button">Second button w/ tooltip</button>
+      <div class="fs-tooltip__tip">
+        Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Est quibusdam
+        magnam veritatis suscipit ea accusantium non ad totam neque recusandae,
+        et quam enim nostrum. Maiores dignissimos quisquam nobis, quos nisi.
+      </div>
+    </div>
+
+    <script src="../dist/all.js"></script>
+    <script>
+      window.fs.initAll();
+    </script>
+  </body>
+</html>

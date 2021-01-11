@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/all.css" />
+    <title>File upload</title>
+  </head>
+  <body>
+    <div class="fs-form-row">
+      <label class="fs-label" for="FileUpload">Upload a file</label>
+      <div class="fs-hint" id="FileUpload-Hint">
+        JPEG, GIF or PNG files up to 5 megabytes are allowed.
+      </div>
+      <input class="fs-file-upload" type="file" />
+    </div>
+
+    <script src="../dist/all.js"></script>
+    <script>
+      window.fs.initAll();
+    </script>
+  </body>
+</html>

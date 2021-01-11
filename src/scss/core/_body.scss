@@ -1,0 +1,37 @@
+@use "../settings";
+@use "../helpers/typography";
+
+.fs-template {
+  background-color: settings.$fs-canvas-background-color;
+  text-size-adjust: 100%;
+  @if settings.$fs-font-sizes-root != 16px {
+    font-size: settings.$fs-font-sizes-root;
+  }
+}
+
+.fs-template__body {
+  @include typography.fs-typography-common;
+  @include typography.fs-font-stack(body);
+  @include typography.fs-font-size(19);
+  margin: 0;
+  color: settings.$fs-text-color;
+  background-color: settings.$fs-body-background-color;
+}
+
+@if settings.$fs-enable-core-styles {
+  * {
+    box-sizing: border-box;
+    &::before,
+    &::after {
+      box-sizing: inherit;
+    }
+  }
+
+  html {
+    @extend .fs-template;
+  }
+
+  body {
+    @extend .fs-template__body;
+  }
+}

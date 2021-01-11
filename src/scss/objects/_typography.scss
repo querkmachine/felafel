@@ -1,0 +1,89 @@
+@use "../settings";
+@use "../helpers/spacing";
+@use "../helpers/typography";
+
+// Headings
+.fs-heading-xl,
+.fs-heading-l,
+.fs-heading-m,
+.fs-heading-s {
+  @include spacing.fs-responsive-margin(0, $direction: top);
+  @include typography.fs-font-stack(header, $weight: bold);
+  color: settings.$fs-text-color-heading;
+}
+
+.fs-heading-xl {
+  @include spacing.fs-responsive-margin(8, $direction: bottom);
+  @include typography.fs-font-size(48);
+}
+
+.fs-heading-l {
+  @include spacing.fs-responsive-margin(6, $direction: bottom);
+  @include typography.fs-font-size(36);
+}
+
+.fs-heading-m {
+  @include spacing.fs-responsive-margin(4, $direction: bottom);
+  @include typography.fs-font-size(24);
+}
+
+.fs-heading-s {
+  @include spacing.fs-responsive-margin(4, $direction: bottom);
+  @include typography.fs-font-size(19);
+}
+
+// Subheadings
+.fs-subheading-xl,
+.fs-subheading-l,
+.fs-subheading-m {
+  @include typography.fs-font-stack(header, $weight: regular);
+  display: block;
+  color: settings.$fs-text-color-secondary;
+}
+
+.fs-subheading-xl {
+  @include spacing.fs-responsive-margin(1, $direction: bottom);
+  @include typography.fs-font-size(36);
+}
+
+.fs-subheading-l {
+  @include typography.fs-font-size(24);
+}
+
+.fs-subheading-m {
+  @include typography.fs-font-size(19);
+}
+
+// Body copy
+.fs-body,
+.fs-body-l,
+.fs-body-s {
+  @include spacing.fs-responsive-margin(0, $direction: top);
+  @include spacing.fs-responsive-margin(3, $direction: bottom);
+}
+
+.fs-body {
+  @include typography.fs-font-size(19);
+}
+
+.fs-body-l {
+  @include typography.fs-font-size(24);
+}
+
+.fs-body-s {
+  @include typography.fs-font-size(16);
+}
+
+// Margins between elements
+.fs-body,
+.fs-body-l,
+.fs-body-s,
+.fs-list {
+  + .fs-heading-l {
+    @include spacing.fs-responsive-margin(4, $direction: top);
+  }
+  + .fs-heading-m,
+  + .fs-heading-s {
+    @include spacing.fs-responsive-margin(2, $direction: top);
+  }
+}

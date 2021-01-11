@@ -1,0 +1,30 @@
+@use "../settings";
+
+@use "../helpers/reset";
+@use "../helpers/links";
+@use "../helpers/spacing";
+@use "../helpers/typography";
+
+.fs-sidebar-navigation {
+  &__list {
+    @include reset.fs-reset-list;
+  }
+  &__item {
+  }
+  &__link {
+    @include spacing.fs-responsive-padding(1, $direction: top);
+    @include spacing.fs-responsive-padding(1, $direction: bottom);
+    @include spacing.fs-responsive-padding(1, $direction: right);
+    @include spacing.fs-responsive-padding(3, $direction: left);
+    @include links.fs-link($visited-style: false);
+    @include typography.fs-font-stack(body, $weight: 400);
+    @include typography.fs-font-size(16);
+    display: block;
+    border-left: settings.$fs-sidebar-navigation-border-width solid transparent;
+    text-decoration: none;
+    &[aria-current] {
+      @include typography.fs-font-stack(body, $weight: 700);
+      border-left-color: settings.$fs-sidebar-navigation-border-color;
+    }
+  }
+}

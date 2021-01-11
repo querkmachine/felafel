@@ -1,0 +1,22 @@
+@use "../settings";
+@use "../helpers/spacing";
+
+.fs-rule {
+  margin: 0;
+  border: 0;
+  &--xl {
+    @include spacing.fs-responsive-margin(8, $direction: top);
+    @include spacing.fs-responsive-margin(8, $direction: bottom);
+  }
+  &--l {
+    @include spacing.fs-responsive-margin(6, $direction: top);
+    @include spacing.fs-responsive-margin(6, $direction: bottom);
+  }
+  &--m {
+    @include spacing.fs-responsive-margin(4, $direction: top);
+    @include spacing.fs-responsive-margin(4, $direction: bottom);
+  }
+  &--visible {
+    border-bottom: settings.$fs-hr-width solid settings.$fs-border-color;
+  }
+}

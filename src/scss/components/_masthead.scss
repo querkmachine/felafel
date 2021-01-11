@@ -1,0 +1,38 @@
+@use "../settings";
+@use "../helpers/colors";
+@use "../helpers/layout";
+@use "../helpers/media-queries";
+@use "../helpers/spacing";
+@use "../helpers/typography";
+
+.fs-masthead {
+  @include spacing.fs-responsive-padding(4, $direction: top);
+  @include spacing.fs-responsive-padding(4, $direction: bottom);
+  border-width: 0;
+  border-top-width: settings.$fs-border-width;
+  border-style: solid;
+  border-color: settings.$fs-masthead-border-color;
+  color: settings.$fs-masthead-text-color;
+  background-color: settings.$fs-masthead-background-color;
+  &__inner {
+  }
+  &__logo,
+  &__section-name {
+    @include typography.fs-font-size(24);
+    @include typography.fs-font-stack(header, $weight: bold);
+  }
+  &__logo {
+    @include media-queries.fs-mq($from: tablet) {
+      flex-grow: 1;
+    }
+  }
+  &__logo-link {
+    text-decoration: none;
+  }
+  &__content {
+    @include spacing.fs-responsive-margin(2, $direction: top);
+    @include media-queries.fs-mq($from: tablet) {
+      @include spacing.fs-responsive-margin(0, $direction: top);
+    }
+  }
+}

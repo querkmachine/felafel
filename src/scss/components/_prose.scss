@@ -1,0 +1,31 @@
+@use "../helpers/typography";
+@forward "../objects/blockquote";
+@forward "../objects/lists";
+@forward "../objects/typography";
+
+.fs-prose {
+  p:not([class]) {
+    @extend .fs-body;
+  }
+  ul:not([class]) {
+    @extend .fs-list--bulleted;
+  }
+  ol:not([class]) {
+    @extend .fs-list--numbered;
+  }
+  h1:not([class]) {
+    @extend .fs-heading-xl;
+  }
+  h2:not([class]) {
+    @extend .fs-heading-l;
+  }
+  h3:not([class]) {
+    @extend .fs-heading-m;
+  }
+  h4:not([class]) {
+    @extend .fs-heading-s;
+  }
+  blockquote:not([class]) {
+    @extend .fs-blockquote;
+  }
+}

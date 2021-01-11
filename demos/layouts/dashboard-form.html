@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" class="fs-template">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../dist/all.css" />
+    <title>Example dashboard form layout</title>
+  </head>
+  <body class="fs-template__body">
+    <a class="fs-skiplink" href="#navigation">Skip to navigation</a>
+    <a class="fs-skiplink" href="#content">Skip to content</a>
+
+    <nav class="fs-masthead-tools" aria-label="Utilities">
+      <div class="fs-width-container fs-masthead-tools__inner">
+        <ul class="fs-masthead-tools__list">
+          <li class="fs-masthead-tools__item">
+            <a class="fs-masthead-tools__link" href="#"> Login or register </a>
+          </li>
+          <li class="fs-masthead-tools__item">
+            <a class="fs-masthead-tools__link" href="#"> Basket (0) </a>
+          </li>
+          <li class="fs-masthead-tools__item">
+            <a class="fs-masthead-tools__link" href="#"> Search </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <header class="fs-masthead">
+      <div class="fs-width-container fs-masthead__inner">
+        <div class="fs-grid-row">
+          <div class="fs-grid-column-one-third fs-masthead__logo">
+            <a class="fs-link-text fs-masthead__logo-link" href="#">
+              The Bread Club
+            </a>
+          </div>
+          <div class="fs-grid-column-two-thirds fs-masthead__content">
+            <nav
+              class="fs-primary-navigation"
+              id="navigation"
+              aria-label="Main navigation"
+            >
+              <ul class="fs-primary-navigation__list">
+                <li class="fs-primary-navigation__item">
+                  <a class="fs-link-text fs-primary-navigation__link" href="#">
+                    Loaves
+                  </a>
+                </li>
+                <li class="fs-primary-navigation__item">
+                  <a
+                    class="fs-link-text fs-primary-navigation__link"
+                    href="#"
+                    aria-current="true"
+                  >
+                    Rolls
+                  </a>
+                </li>
+                <li class="fs-primary-navigation__item">
+                  <a class="fs-link-text fs-primary-navigation__link" href="#">
+                    Pastries
+                  </a>
+                </li>
+                <li class="fs-primary-navigation__item">
+                  <a class="fs-link-text fs-primary-navigation__link" href="#">
+                    Crumpets
+                  </a>
+                </li>
+                <li class="fs-primary-navigation__item">
+                  <a class="fs-link-text fs-primary-navigation__link" href="#">
+                    Treats
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main
+      class="fs-width-container fs-!-margin-top-8 fs-!-margin-bottom-8"
+      id="content"
+    >
+      <div class="fs-grid-row">
+        <div class="fs-grid-column-one-third">
+          <nav
+            class="fs-sidebar-navigation fs-!-margin-bottom-8"
+            aria-label="Dashboard navigation"
+          >
+            <ul class="fs-sidebar-navigation__list">
+              <li class="fs-sidebar-navigation__item">
+                <a class="fs-sidebar-navigation__link" href="#"> Dashboard </a>
+              </li>
+              <li class="fs-sidebar-navigation__item">
+                <a class="fs-sidebar-navigation__link" href="#">
+                  Membership &amp; billing
+                </a>
+              </li>
+              <li class="fs-sidebar-navigation__item">
+                <a class="fs-sidebar-navigation__link" href="#"> My events </a>
+              </li>
+              <li class="fs-sidebar-navigation__item">
+                <a class="fs-sidebar-navigation__link" href="#">
+                  My learning
+                </a>
+              </li>
+              <li class="fs-sidebar-navigation__item">
+                <a class="fs-sidebar-navigation__link" href="#"> My grants </a>
+              </li>
+              <li class="fs-sidebar-navigation__item">
+                <a
+                  class="fs-sidebar-navigation__link"
+                  href="#"
+                  aria-current="page"
+                >
+                  Edit details
+                </a>
+              </li>
+              <li class="fs-sidebar-navigation__item">
+                <a class="fs-sidebar-navigation__link" href="#">
+                  Communication preferences
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="fs-grid-column-two-thirds">
+          <h1 class="fs-heading-xl">Edit details</h1>
+          <form>
+            <fieldset class="fs-fieldset">
+              <legend class="fs-fieldset__legend fs-fieldset__legend--l">
+                <h2 class="fs-heading-l">Personal details</h2>
+              </legend>
+              <div class="fs-form-row">
+                <label class="fs-label" for="FirstName">First name</label>
+                <input
+                  class="fs-input"
+                  type="text"
+                  id="FirstName"
+                  autocomplete="given-name"
+                  required
+                />
+              </div>
+              <div class="fs-form-row">
+                <label class="fs-label" for="LastName">Last name</label>
+                <input
+                  class="fs-input"
+                  type="text"
+                  id="LastName"
+                  autocomplete="family-name"
+                  required
+                />
+              </div>
+              <div class="fs-form-row">
+                <fieldset
+                  class="fs-fieldset"
+                  aria-describedby="DateOfBirth-Hint"
+                >
+                  <legend class="fs-fieldset__legend">Date of birth</legend>
+                  <div class="fs-hint" id="DateOfBirth-Hint">
+                    For example, 22 09 1991.
+                  </div>
+                  <div class="fs-date-input">
+                    <div class="fs-form-row fs-date-input__group">
+                      <label class="fs-label" for="DateOfBirth-Day">Day</label>
+                      <input
+                        class="fs-input fs-input--length-2"
+                        type="text"
+                        id="DateOfBirth-Day"
+                        autocomplete="bday-day"
+                        inputmode="numeric"
+                        pattern="[0-9]*"
+                      />
+                    </div>
+                    <div class="fs-form-row fs-date-input__group">
+                      <label class="fs-label" for="DateOfBirth-Month"
+                        >Month</label
+                      >
+                      <input
+                        class="fs-input fs-input--length-2"
+                        type="text"
+                        id="DateOfBirth-Month"
+                        autocomplete="bday-month"
+                        inputmode="numeric"
+                        pattern="[0-9]*"
+                      />
+                    </div>
+                    <div class="fs-form-row fs-date-input__group">
+                      <label class="fs-label" for="DateOfBirth-Year"
+                        >Year</label
+                      >
+                      <input
+                        class="fs-input fs-input--length-4"
+                        type="text"
+                        id="DateOfBirth-Year"
+                        autocomplete="bday-year"
+                        inputmode="numeric"
+                        pattern="[0-9]*"
+                      />
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </fieldset>
+            <fieldset class="fs-fieldset">
+              <legend class="fs-fieldset__legend fs-fieldset__legend--l">
+                <h2 class="fs-heading-l">Contact details</h2>
+              </legend>
+              <div class="fs-form-row">
+                <label class="fs-label" for="Email">Email address</label>
+                <input
+                  class="fs-input"
+                  type="email"
+                  id="Email"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+              <div class="fs-form-row">
+                <label class="fs-label" for="Phone"
+                  >Phone number (optional)</label
+                >
+                <input
+                  class="fs-input"
+                  type="tel"
+                  id="Phone"
+                  autocomplete="tel"
+                />
+              </div>
+              <fieldset class="fs-fieldset">
+                <legend class="fs-fieldset__legend fs-fieldset__legend--m">
+                  <h3 class="fs-heading-m">Postal address</h3>
+                </legend>
+                <div class="fs-form-row">
+                  <label class="fs-label" for="AddressLine1"
+                    >Address line 1</label
+                  >
+                  <input
+                    class="fs-input"
+                    type="text"
+                    id="AddressLine1"
+                    autocomplete="address-line1"
+                    required
+                  />
+                </div>
+                <div class="fs-form-row">
+                  <label class="fs-label" for="AddressLine2"
+                    >Address line 2 (optional)</label
+                  >
+                  <input
+                    class="fs-input"
+                    type="text"
+                    id="AddressLine2"
+                    autocomplete="address-line2"
+                  />
+                </div>
+                <div class="fs-form-row">
+                  <label class="fs-label" for="City">Town or city</label>
+                  <input
+                    class="fs-input"
+                    type="text"
+                    id="City"
+                    autocomplete="address-level1"
+                    required
+                  />
+                </div>
+                <div class="fs-form-row">
+                  <label class="fs-label" for="PostalCode"
+                    >Postal code (optional)</label
+                  >
+                  <input
+                    class="fs-input fs-input--length-8"
+                    type="text"
+                    id="PostalCode"
+                    autocomplete="postal-code"
+                  />
+                </div>
+                <div class="fs-form-row">
+                  <label class="fs-label" for="Country">Country</label>
+                  <select class="fs-select" id="Country">
+                    <option value="">Select country</option>
+                    <option selected>United Kingdom</option>
+                  </select>
+                </div>
+              </fieldset>
+            </fieldset>
+            <div class="fs-form-row">
+              <button
+                class="fs-button"
+                type="submit"
+                data-appearance="primary"
+                data-layout="elastic"
+              >
+                Save changes
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="fs-footer">
+      <div class="fs-width-container fs-footer__inner">
+        <div class="fs-grid-row">
+          <div
+            class="fs-grid-column-full desktop:fs-grid-column-one-half fs-footer__legal"
+          >
+            &copy; 2020 The Bread Club. All rights reserved.
+          </div>
+          <div
+            class="fs-grid-column-full desktop:fs-grid-column-one-half fs-footer__links"
+          >
+            <ul class="fs-footer__list">
+              <li class="fs-footer__item">
+                <a class="fs-footer__link" href="#"> Terms and conditions </a>
+              </li>
+              <li class="fs-footer__item">
+                <a class="fs-footer__link" href="#"> Privacy policy </a>
+              </li>
+              <li class="fs-footer__item">
+                <a class="fs-footer__link" href="#"> Contact us </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../../dist/all.js"></script>
+    <script>
+      window.fs.initAll();
+    </script>
+  </body>
+</html>

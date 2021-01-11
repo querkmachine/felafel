@@ -1,0 +1,73 @@
+@use "../settings";
+@use "a11y";
+
+@mixin _fs-link-common {
+  // Double :focus so that these styles are higher specificity than :visited, :active, et al.
+  &:focus:focus {
+    @include a11y.fs-focus-ring($fill: true);
+  }
+  @media only print {
+    &[href^="/"],
+    &[href^="http://"],
+    &[href^="https://"]
+    {
+      &:after {
+        content: " (" attr(href) ")";
+        font-size: 90%;
+        word-wrap: break-word;
+      }
+    }
+  }
+}
+
+@mixin fs-link($visited-style: true, $underline: true) {
+  @include _fs-link-common;
+  $self: &;
+  color: settings.$fs-link-color;
+  @if $underline {
+    text-decoration: underline;
+  } @else {
+    text-decoration: none;
+  }
+  @if $visited-style {
+    &:visited {
+      color: settings.$fs-link-visited-color;
+    }
+  }
+  &:hover {
+    color: settings.$fs-link-hover-color;
+  }
+  &:active {
+    color: settings.$fs-link-active-color;
+  }
+}
+
+@mixin fs-link--text($color: settings.$fs-text-color, $underline: true) {
+  @include _fs-link-common;
+  &,
+  &:visited,
+  &:hover,
+  &:active {
+    color: $color;
+    @if $underline {
+      text-decoration: underline;
+    } @else {
+      text-decoration: none;
+    }
+  }
+}
+
+@mixin fs-link--muted($underline: true) {
+  @include _fs-link-common;
+  &,
+  &:visited,
+  &:hover,
+  &:active {
+    color: settings.$fs-text-color-secondary;
+    @if $underline {
+      text-decoration: underline;
+    } @else {
+      text-decoration: none;
+    }
+  }
+}

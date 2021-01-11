@@ -1,0 +1,41 @@
+@use "../helpers/links";
+@use "../helpers/spacing";
+@use "../helpers/typography";
+
+// Default link
+.fs-link {
+  @include links.fs-link;
+}
+
+// Default link without visited style
+.fs-link-no-visited {
+  @include links.fs-link($visited-style: false);
+}
+
+// Muted link
+.fs-link-muted {
+  @include links.fs-link--muted;
+}
+
+// Link styled as text
+.fs-link-text {
+  @include links.fs-link--text;
+}
+
+.fs-back-link {
+  @include links.fs-link--text;
+  @include typography.fs-font-size(16);
+  display: inline-flex;
+  align-items: center;
+  &::before {
+    $height: 0.7em;
+    $width: $height * 0.5;
+    content: "";
+    display: inline-block;
+    width: $width;
+    height: $height;
+    margin-right: spacing.fs-spacing(2);
+    background-color: currentColor;
+    clip-path: polygon(0 50%, 100% 0, 100% 100%);
+  }
+}
