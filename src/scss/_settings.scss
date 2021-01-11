@@ -429,3 +429,12 @@ $fs-tabs-tab-selected-background-color: map.get(
 $fs-tabs-tab-selected-border-color: $fs-brand-color !default;
 $fs-tabs-panel-text-color: false !default;
 $fs-tabs-panel-background-color: $fs-tabs-tab-selected-background-color !default;
+
+// Tooltip
+$fs-tooltip-show-arrow: true !default;
+$fs-tooltip-arrow-size: 0.5rem !default;
+$fs-tooltip-text-color: false !default;
+$fs-tooltip-background-color: map.get(
+  $fs-default-color-palette,
+  "grey90"
+) !default;

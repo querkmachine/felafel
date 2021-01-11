@@ -5,16 +5,30 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.initAll = initAll;
+Object.defineProperty(exports, "Tabs", {
+  enumerable: true,
+  get: function () {
+    return _tabs.default;
+  }
+});
 Object.defineProperty(exports, "TextareaCounter", {
   enumerable: true,
   get: function () {
     return _textareaCounter.default;
   }
 });
+Object.defineProperty(exports, "Tooltip", {
+  enumerable: true,
+  get: function () {
+    return _tooltip.default;
+  }
+});
 
 var _tabs = _interopRequireDefault(require("./components/tabs"));
 
 var _textareaCounter = _interopRequireDefault(require("./components/textarea-counter"));
+
+var _tooltip = _interopRequireDefault(require("./components/tooltip"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29,9 +43,12 @@ function initAll(options) {
   scope.querySelectorAll('[data-module="fs-textarea-counter"]').forEach(m => {
     new _textareaCounter.default(m);
   });
+  scope.querySelectorAll('[data-module="fs-tooltip"]').forEach(m => {
+    new _tooltip.default(m);
+  });
 }
 
-},{"./components/tabs":2,"./components/textarea-counter":3}],2:[function(require,module,exports){
+},{"./components/tabs":2,"./components/textarea-counter":3,"./components/tooltip":4}],2:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -302,7 +319,7 @@ class Tab {
 
 exports.default = Tab;
 
-},{"../helpers/key-codes":4}],3:[function(require,module,exports){
+},{"../helpers/key-codes":5}],3:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -394,6 +411,135 @@ exports.default = TextareaCounter;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = void 0;
+
+var _strings = require("../helpers/strings");
+
+var _keyCodes = require("../helpers/key-codes");
+
+class Tooltip {
+  constructor($module) {
+    this.$module = $module;
+    this.$trigger = $module.firstElementChild;
+    this.$tooltip = $module.querySelector('.fs-tooltip__tip');
+    this.timeoutId = null;
+    this.timeoutLength = 500; // milliseconds
+
+    this.tooltipOriginalId = this.$tooltip.id;
+    this.tooltipId = this.tooltipOriginalId || `tooltip-${(0, _strings.GenerateGuid)()}`; // There's no tooltip, exit
+
+    if (!this.$trigger || !this.$tooltip) {
+      return;
+    }
+
+    this.create();
+  }
+
+  create() {
+    // Tooltip a11y
+    this.$tooltip.setAttribute('id', this.tooltipId);
+    this.$tooltip.setAttribute('aria-hidden', 'true'); // Trigger events
+
+    this.$trigger.boundMouseEnter = this.onFocus.bind(this);
+    this.$trigger.boundMouseLeave = this.onMouseLeave.bind(this);
+    this.$trigger.boundFocus = this.onFocus.bind(this);
+    this.$trigger.boundBlur = this.onBlur.bind(this);
+    this.$trigger.boundEscape = this.onEscape.bind(this);
+    this.$trigger.addEventListener('mouseenter', this.$trigger.boundMouseEnter, true);
+    this.$trigger.addEventListener('mouseleave', this.$trigger.boundMouseLeave, true);
+    this.$trigger.addEventListener('focus', this.$trigger.boundFocus, true);
+    this.$trigger.addEventListener('blur', this.$trigger.boundBlur, true);
+    this.$trigger.addEventListener('keydown', this.$trigger.boundEscape, true);
+    this.hideTooltip();
+  }
+
+  destroy() {
+    if (this.tooltipOriginalId) {
+      this.$tooltip.setAttribute('id', this.tooltipOriginalId);
+    } else {
+      this.$tooltip.removeAttribute('id');
+    }
+
+    this.$tooltip.removeAttribute('aria-hidden');
+    this.$trigger.removeEventListener('mouseenter', this.$trigger.boundMouseEnter, true);
+    this.$trigger.removeEventListener('mouseleave', this.$trigger.boundMouseLeave, true);
+    this.$trigger.removeEventListener('focus', this.$trigger.boundFocus, true);
+    this.$trigger.removeEventListener('blur', this.$trigger.boundBlur, true);
+    this.$trigger.removeEventListener('keydown', this.$trigger.boundEscape, true);
+  }
+
+  onFocus() {
+    this.showTooltip();
+  }
+
+  onBlur() {
+    this.hideTooltip();
+  }
+
+  onEscape(e) {
+    const code = e.which || e.keyCode;
+
+    if (code === (0, _keyCodes.KeyCodes)().ESCAPE) {
+      this.hideTooltip();
+    }
+  }
+
+  onMouseEnter() {
+    this.showTooltip();
+
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId);
+    }
+  }
+
+  onMouseLeave() {
+    this.timeoutId = setTimeout(() => {
+      this.hideTooltip();
+    }, this.timeoutLength);
+  }
+
+  showTooltip() {
+    this.determinePosition();
+    this.$tooltip.classList.remove('fs-tooltip__tip--hidden');
+    this.$tooltip.setAttribute('aria-hidden', 'false');
+  }
+
+  hideTooltip() {
+    this.$tooltip.classList.add('fs-tooltip__tip--hidden');
+    this.$tooltip.setAttribute('aria-hidden', 'true');
+  }
+
+  determinePosition() {
+    // Calculate element positions
+    const rect = this.$trigger.getBoundingClientRect();
+    const spaceAvailable = {
+      top: rect.top,
+      left: rect.left,
+      right: window.innerWidth - rect.right,
+      bottom: window.innerHeight - rect.bottom
+    }; // Iterate though the results to find where we have the most space
+
+    let largestVal = 0;
+    let largestKey = null;
+    Object.keys(spaceAvailable).map(key => {
+      if (spaceAvailable[key] > largestVal) {
+        largestVal = spaceAvailable[key];
+        largestKey = key;
+      }
+    });
+    this.$tooltip.dataset.side = largestKey || 'bottom';
+  }
+
+}
+
+exports.default = Tooltip;
+
+},{"../helpers/key-codes":5,"../helpers/strings":6}],5:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.KeyCodes = KeyCodes;
 
 function KeyCodes() {
@@ -406,6 +552,23 @@ function KeyCodes() {
     RIGHT: 39,
     DOWN: 40
   };
+}
+
+},{}],6:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.GenerateGuid = GenerateGuid;
+
+// Generate a GUID. Matches the RFC, but no real guarantee of uniqueness.
+function GenerateGuid() {
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+    var r = Math.random() * 16 | 0,
+        v = c == "x" ? r : r & 0x3 | 0x8;
+    return v.toString(16);
+  });
 }
 
 },{}]},{},[1])(1)

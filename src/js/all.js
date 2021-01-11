@@ -1,5 +1,6 @@
 import Tabs from "./components/tabs";
 import TextareaCounter from "./components/textarea-counter";
+import Tooltip from "./components/tooltip";
 
 function initAll(options) {
   options = typeof options !== "undefined" ? options : {};
@@ -15,6 +16,10 @@ function initAll(options) {
   scope.querySelectorAll('[data-module="fs-textarea-counter"]').forEach((m) => {
     new TextareaCounter(m);
   });
+
+  scope.querySelectorAll('[data-module="fs-tooltip"]').forEach((m) => {
+    new Tooltip(m);
+  });
 }
 
-export { initAll, TextareaCounter };
+export { initAll, Tabs, TextareaCounter, Tooltip };

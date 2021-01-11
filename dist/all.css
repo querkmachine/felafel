@@ -1897,6 +1897,99 @@ html.js .fs-tabs__panel {
   color: #ef4444;
 }
 
+.fs-tooltip {
+  display: inline;
+  position: relative;
+}
+.fs-tooltip__tip {
+  padding: 0.625rem;
+  display: inline-block;
+  width: 16rem;
+  position: absolute;
+  z-index: 1;
+  color: white;
+  background: #111827;
+}
+.fs-tooltip__tip a:focus:focus {
+  outline: 3px solid #f59e0b;
+  outline-offset: 0;
+  background-color: #f59e0b;
+  color: #000;
+}
+@media only print {
+  .fs-tooltip__tip a[href^="/"]:after, .fs-tooltip__tip a[href^="http://"]:after, .fs-tooltip__tip a[href^="https://"]:after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+    word-wrap: break-word;
+  }
+}
+.fs-tooltip__tip a, .fs-tooltip__tip a:visited, .fs-tooltip__tip a:hover, .fs-tooltip__tip a:active {
+  color: currentColor;
+  text-decoration: underline;
+}
+.fs-tooltip__tip--hidden {
+  display: none;
+}
+.fs-tooltip__tip::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
+}
+.fs-tooltip__tip[data-side=top] {
+  margin-bottom: 0.5rem;
+  bottom: 100%;
+  left: 50%;
+}
+.fs-tooltip__tip[data-side=top]::before {
+  top: 100%;
+  border-width: 0.5rem 0.5rem 0 0.5rem;
+  border-color: #111827 transparent transparent transparent;
+}
+.fs-tooltip__tip[data-side=right] {
+  margin-left: 0.5rem;
+  top: 50%;
+  left: 100%;
+}
+.fs-tooltip__tip[data-side=right]::before {
+  right: 100%;
+  border-width: 0.5rem 0.5rem 0.5rem 0;
+  border-color: transparent #111827 transparent transparent;
+}
+.fs-tooltip__tip[data-side=bottom] {
+  margin-top: 0.5rem;
+  top: 100%;
+  left: 50%;
+}
+.fs-tooltip__tip[data-side=bottom]::before {
+  bottom: 100%;
+  border-width: 0 0.5rem 0.5rem 0.5rem;
+  border-color: transparent transparent #111827 transparent;
+}
+.fs-tooltip__tip[data-side=left] {
+  margin-right: 0.5rem;
+  top: 50%;
+  right: 100%;
+}
+.fs-tooltip__tip[data-side=left]::before {
+  left: 100%;
+  border-width: 0.5rem 0 0.5rem 0.5rem;
+  border-color: transparent transparent transparent #111827;
+}
+.fs-tooltip__tip[data-side=top], .fs-tooltip__tip[data-side=bottom] {
+  transform: translateX(-50%);
+}
+.fs-tooltip__tip[data-side=top]::before, .fs-tooltip__tip[data-side=bottom]::before {
+  left: calc(50% - 0.5rem);
+}
+.fs-tooltip__tip[data-side=left], .fs-tooltip__tip[data-side=right] {
+  transform: translateY(-50%);
+}
+.fs-tooltip__tip[data-side=left]::before, .fs-tooltip__tip[data-side=right]::before {
+  top: calc(50% - 0.5rem);
+}
+
 .fs-\!-sr {
   position: absolute !important;
   width: 1px !important;
