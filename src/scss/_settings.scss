@@ -341,6 +341,13 @@ $fs-file-list-border-radius: if(
 $fs-footer-background-color: $fs-canvas-background-color !default;
 $fs-footer-text-color: $fs-text-color-secondary !default;
 
+// Fat footer
+$fs-fat-footer-background-color: map.get(
+  $fs-default-color-palette,
+  "grey90"
+) !default;
+$fs-fat-footer-text-color: map.get($fs-default-color-palette, "white") !default;
+
 // Input
 $fs-input-text-color: map.get($fs-default-color-palette, "grey90") !default;
 $fs-input-background-color: map.get(

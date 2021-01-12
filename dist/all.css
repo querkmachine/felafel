@@ -949,6 +949,45 @@ a:not([class]):active {
   margin-left: 0.625rem;
 }
 
+.fs-fat-footer {
+  padding-top: 0.9375rem;
+  padding-bottom: 0.9375rem;
+  color: #fff;
+  background-color: #111827;
+}
+.fs-fat-footer__heading {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.375;
+}
+@media screen and (min-width: 650px) {
+  .fs-fat-footer__heading {
+    font-size: 1.1875rem;
+    line-height: 1.4210526316;
+  }
+}
+.fs-fat-footer__link:focus:focus {
+  outline: 3px solid #f59e0b;
+  outline-offset: 0;
+  background-color: #f59e0b;
+  color: #000;
+}
+@media only print {
+  .fs-fat-footer__link[href^="/"]:after, .fs-fat-footer__link[href^="http://"]:after, .fs-fat-footer__link[href^="https://"]:after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+    word-wrap: break-word;
+  }
+}
+.fs-fat-footer__link, .fs-fat-footer__link:visited, .fs-fat-footer__link:hover, .fs-fat-footer__link:active {
+  color: currentColor;
+  text-decoration: none;
+}
+.fs-fat-footer__link:hover, .fs-fat-footer__link:active {
+  text-decoration: underline;
+}
+
 .fs-file-list {
   margin: 0rem;
   margin-bottom: 1.875rem;
@@ -1086,7 +1125,20 @@ a:not([class]):active {
     margin-left: 0.9375rem;
   }
 }
-.fs-footer__link {
+.fs-footer__link:focus:focus {
+  outline: 3px solid #f59e0b;
+  outline-offset: 0;
+  background-color: #f59e0b;
+  color: #000;
+}
+@media only print {
+  .fs-footer__link[href^="/"]:after, .fs-footer__link[href^="http://"]:after, .fs-footer__link[href^="https://"]:after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+    word-wrap: break-word;
+  }
+}
+.fs-footer__link, .fs-footer__link:visited, .fs-footer__link:hover, .fs-footer__link:active {
   color: currentColor;
   text-decoration: none;
 }

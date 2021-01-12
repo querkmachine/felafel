@@ -1,0 +1,24 @@
+@use "../settings";
+@use "../helpers/spacing";
+@use "../helpers/typography";
+@use "../helpers/links";
+
+.fs-fat-footer {
+  @include spacing.fs-responsive-padding(3, $direction: top);
+  @include spacing.fs-responsive-padding(3, $direction: bottom);
+  color: settings.$fs-fat-footer-text-color;
+  background-color: settings.$fs-fat-footer-background-color;
+  &__inner {
+  }
+  &__heading {
+    @include typography.fs-font-stack(header, $weight: bold);
+    @include typography.fs-font-size(19);
+  }
+  &__link {
+    @include links.fs-link--text($color: currentColor, $underline: false);
+    &:hover,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+}
