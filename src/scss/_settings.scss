@@ -328,6 +328,20 @@ $fs-checkbox-border-radius: if(
   0
 ) !default;
 
+// Details
+$fs-details-text-color: false !default;
+$fs-details-background-color: map.get(
+  $fs-default-color-palette,
+  "grey10"
+) !default;
+$fs-details-hover-text-color: false !default;
+$fs-details-hover-background-color: map.get(
+  $fs-default-color-palette,
+  "grey20"
+) !default;
+$fs-details-marker-size: 1rem !default;
+$fs-details-marker-color: currentColor !default;
+
 // File list
 $fs-file-list-border-color: $fs-border-color !default;
 $fs-file-list-border-width: $fs-border-width-narrow !default;

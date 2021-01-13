@@ -1,3 +1,4 @@
+import DetailsGroup from "./components/details-group";
 import Tabs from "./components/tabs";
 import TextareaCounter from "./components/textarea-counter";
 import Tooltip from "./components/tooltip";
@@ -9,6 +10,9 @@ function initAll(options) {
   // Defaults to entire document if not set
   const scope = typeof options.scope !== "undefined" ? options.scope : document;
 
+  scope.querySelectorAll('[data-module="fs-details-group"]').forEach((m) => {
+    new DetailsGroup(m);
+  });
   scope.querySelectorAll('[data-module="fs-tabs"]').forEach((m) => {
     new Tabs(m);
   });

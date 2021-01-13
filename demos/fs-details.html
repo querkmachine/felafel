@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/all.css" />
+    <title>Details</title>
+  </head>
+  <body>
+    <!-- Standalone details -->
+    <details class="fs-details">
+      <summary class="fs-details__summary">
+        <div class="fs-details__summary-text">Etymology</div>
+      </summary>
+      <div class="fs-details__body">
+        <div class="fs-prose">
+          <p>
+            The Old English word for bread was <em>hlaf</em> (<em>hlaifs</em> in
+            Gothic: modern English <em>loaf</em>), which appears to be the
+            oldest Teutonic name. Old High German <em>hleib</em> and modern
+            German <em>Laib</em> derive from this Proto-Germanic word, which was
+            borrowed into Slavic (Polish <em>chleb</em>, Russian <em>khleb</em>)
+            and Finnic (Finnish <em>leipä</em>, Estonian <em>leib</em>)
+            languages as well. The Middle and Modern English word bread appears
+            in Germanic languages, such as West Frisian <em>brea</em>, Dutch
+            <em>brood</em>, German <em>Brot</em>, Swedish <em>bröd</em>, and
+            Norwegian and Danish <em>brød</em>; it may be related to
+            <em>brew</em> or perhaps to <em>break</em>, originally meaning
+            "broken piece", "morsel".
+          </p>
+        </div>
+      </div>
+    </details>
+
+    <!-- Grouped details, which together produce an accordion -->
+    <div class="fs-details-group" data-module="fs-details-group">
+      <details class="fs-details">
+        <summary class="fs-details__summary">
+          <div class="fs-details__summary-text">
+            Physical-chemical composition
+          </div>
+        </summary>
+        <div class="fs-details__body">
+          <div class="fs-prose">
+            <p>
+              In wheat, phenolic compounds are mainly found in hulls in the form
+              of insoluble bound ferulic acid, where it is relevant to wheat
+              resistance to fungal diseases.
+            </p>
+            <p>
+              Rye bread contains phenolic acids and ferulic acid dehydrodimers.
+            </p>
+            <p>
+              Three natural phenolic glucosides, secoisolariciresinol
+              diglucoside, p-coumaric acid glucoside and ferulic acid glucoside,
+              can be found in commercial breads containing flaxseed.
+            </p>
+          </div>
+        </div>
+      </details>
+      <details class="fs-details">
+        <summary class="fs-details__summary">
+          <div class="fs-details__summary-text">Culinary uses</div>
+        </summary>
+        <div class="fs-details__body">
+          <div class="fs-prose">
+            <p>
+              Bread can be served at many temperatures; once baked, it can
+              subsequently be toasted. It is most commonly eaten with the hands,
+              either by itself or as a carrier for other foods. Bread can be
+              spread with butter, dipped into liquids such as gravy, olive oil,
+              or soup; it can be topped with various sweet and savory spreads,
+              or used to make sandwiches containing meats, cheeses, vegetables,
+              and condiments.
+            </p>
+          </div>
+        </div>
+      </details>
+      <details class="fs-details">
+        <summary class="fs-details__summary">
+          <div class="fs-details__summary-text">Nutritional significance</div>
+        </summary>
+        <div class="fs-details__body">
+          <div class="fs-prose">
+            <p>
+              Nutritionally, bread is categorized as a source of grains in the
+              food pyramid. Further, it is a good source of carbohydrates and
+              nutrients such as magnesium, iron, selenium, B vitamins, and
+              dietary fiber.
+            </p>
+          </div>
+        </div>
+      </details>
+      <details class="fs-details">
+        <summary class="fs-details__summary">
+          <div class="fs-details__summary-text">Crust</div>
+        </summary>
+        <div class="fs-details__body">
+          <div class="fs-prose">
+            <p>
+              Bread crust is formed from surface dough during the cooking
+              process. It is hardened and browned through the Maillard reaction
+              using the sugars and amino acids due to the intense heat at the
+              bread surface. The crust of most breads is harder, and more
+              complexly and intensely flavored, than the rest. Old wives' tales
+              suggest that eating the bread crust makes a person's hair curlier.
+              Additionally, the crust is rumored to be healthier than the
+              remainder of the bread. Some studies have shown that this is true
+              as the crust has more dietary fiber and antioxidants such as
+              pronyl-lysine, which is being researched for its potential
+              colorectal cancer inhibitory properties.
+            </p>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <script src="../dist/all.js"></script>
+    <script>
+      window.fs.initAll();
+    </script>
+  </body>
+</html>

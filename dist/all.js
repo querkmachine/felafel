@@ -24,6 +24,8 @@ Object.defineProperty(exports, "Tooltip", {
   }
 });
 
+var _detailsGroup = _interopRequireDefault(require("./components/details-group"));
+
 var _tabs = _interopRequireDefault(require("./components/tabs"));
 
 var _textareaCounter = _interopRequireDefault(require("./components/textarea-counter"));
@@ -37,6 +39,9 @@ function initAll(options) {
   // Defaults to entire document if not set
 
   const scope = typeof options.scope !== "undefined" ? options.scope : document;
+  scope.querySelectorAll('[data-module="fs-details-group"]').forEach(m => {
+    new _detailsGroup.default(m);
+  });
   scope.querySelectorAll('[data-module="fs-tabs"]').forEach(m => {
     new _tabs.default(m);
   });
@@ -48,7 +53,54 @@ function initAll(options) {
   });
 }
 
-},{"./components/tabs":2,"./components/textarea-counter":3,"./components/tooltip":4}],2:[function(require,module,exports){
+},{"./components/details-group":2,"./components/tabs":3,"./components/textarea-counter":4,"./components/tooltip":5}],2:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+class DetailsGroup {
+  constructor($container) {
+    this.$container = $container;
+    this.$allModules = $container.querySelectorAll('.fs-details');
+    this.create();
+  }
+
+  create() {
+    this.$allModules.forEach($module => {
+      $module.bindToggle = this.onToggle.bind(this);
+      $module.addEventListener('toggle', $module.bindToggle);
+    });
+  }
+
+  destroy() {
+    this.$allModules.forEach($module => {
+      $module.removeEventListener('toggle', $module.bindToggle);
+    });
+  }
+
+  onToggle(e) {
+    if (!e.target.hasAttribute('open')) {
+      return;
+    }
+
+    const $openModules = Array.from(this.$container.querySelectorAll('.fs-details[open]'));
+    $openModules.forEach($module => {
+      if ($module === e.target) {
+        return;
+      }
+
+      $module.removeAttribute('open');
+    });
+  }
+
+}
+
+exports.default = DetailsGroup;
+
+},{}],3:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -319,7 +371,7 @@ class Tab {
 
 exports.default = Tab;
 
-},{"../helpers/key-codes":5}],3:[function(require,module,exports){
+},{"../helpers/key-codes":6}],4:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -405,7 +457,7 @@ class TextareaCounter {
 
 exports.default = TextareaCounter;
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -534,7 +586,7 @@ class Tooltip {
 
 exports.default = Tooltip;
 
-},{"../helpers/key-codes":5,"../helpers/strings":6}],5:[function(require,module,exports){
+},{"../helpers/key-codes":6,"../helpers/strings":7}],6:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -554,7 +606,7 @@ function KeyCodes() {
   };
 }
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
