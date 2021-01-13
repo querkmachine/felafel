@@ -437,6 +437,18 @@ $fs-tabs-tab-selected-border-color: $fs-brand-color !default;
 $fs-tabs-panel-text-color: false !default;
 $fs-tabs-panel-background-color: $fs-tabs-tab-selected-background-color !default;
 
+// Testimonial
+$fs-testimonial-text-color: false !default;
+$fs-testimonial-background-color: map.get(
+  $fs-default-color-palette,
+  "grey20"
+) !default;
+$fs-testimonial-show-avatar: true !default;
+$fs-testimonial-avatar-size: 3rem !default;
+$fs-testimonial-citation-inset: 3rem !default;
+$fs-testimonial-show-arrow: true !default;
+$fs-testimonial-arrow-size: 1rem !default;
+
 // Tooltip
 $fs-tooltip-show-arrow: true !default;
 $fs-tooltip-arrow-size: 0.5rem !default;

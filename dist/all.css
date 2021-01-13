@@ -1886,6 +1886,59 @@ html.js .fs-tabs__panel {
   display: none;
 }
 
+.fs-testimonial {
+  margin: 0rem;
+}
+.fs-testimonial__quotation {
+  margin: 0rem;
+  padding: 0.9375rem;
+  display: inline-block;
+  position: relative;
+  color: black;
+  background-color: #e5e7eb;
+}
+.fs-testimonial__quotation::before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 100%;
+  left: 1.375rem;
+  border-width: 0 1rem 1rem 0;
+  border-style: solid;
+  border-color: transparent #e5e7eb transparent transparent;
+}
+.fs-testimonial__quotation > :last-child {
+  margin-bottom: 0rem;
+}
+.fs-testimonial__citation {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.2857142857;
+  padding: 0.625rem 0.625rem 0.625rem 3rem;
+  overflow: hidden;
+}
+@media screen and (min-width: 650px) {
+  .fs-testimonial__citation {
+    font-size: 1rem;
+    line-height: 1.375;
+  }
+}
+.fs-testimonial__avatar {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 1rem;
+  float: left;
+  object-fit: cover;
+}
+.fs-testimonial__name {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 700;
+}
+.fs-testimonial__role {
+  color: #6b7280;
+}
+
 .fs-textarea {
   margin: 0rem;
   border: 2px solid #111827;

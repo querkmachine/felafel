@@ -1,0 +1,75 @@
+@use "../settings";
+@use "../helpers/colors";
+@use "../helpers/spacing";
+@use "../helpers/typography";
+
+.fs-testimonial {
+  $display-avatar: settings.$fs-testimonial-show-avatar;
+  $avatar-size: if($display-avatar, settings.$fs-testimonial-avatar-size, 0);
+  $citation-padding: spacing.fs-spacing(2);
+  @include spacing.fs-responsive-margin(0, $direction: all);
+  &__quotation {
+    @include spacing.fs-responsive-margin(0, $direction: all);
+    @include spacing.fs-responsive-padding(3, $direction: all);
+    display: inline-block;
+    position: relative;
+    color: if(
+      settings.$fs-testimonial-text-color,
+      settings.$fs-testimonial-text-color,
+      colors.fs-contrasting-color(settings.$fs-testimonial-background-color)
+    );
+    background-color: settings.$fs-testimonial-background-color;
+    @if settings.$fs-testimonial-show-arrow {
+      &::before {
+        $offset: settings.$fs-testimonial-citation-inset -
+          settings.$fs-testimonial-arrow-size -
+          $citation-padding;
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 100%;
+        left: $offset;
+        border-width: 0
+          settings.$fs-testimonial-arrow-size
+          settings.$fs-testimonial-arrow-size
+          0;
+        border-style: solid;
+        border-color: transparent
+          settings.$fs-testimonial-background-color
+          transparent
+          transparent;
+      }
+    }
+    > :last-child {
+      @include spacing.fs-responsive-margin(0, $direction: bottom);
+    }
+  }
+  &__citation {
+    @include typography.fs-font-stack(body);
+    @include typography.fs-font-size(16);
+    padding: $citation-padding $citation-padding $citation-padding
+      settings.$fs-testimonial-citation-inset;
+    overflow: hidden;
+  }
+  &__avatar {
+    @if $display-avatar {
+      width: $avatar-size;
+      height: $avatar-size;
+      margin-right: 1rem;
+      float: left;
+      object-fit: cover;
+      @if settings.$fs-enable-rounded-corners {
+        border-radius: $avatar-size;
+      }
+    } @else {
+      display: none;
+    }
+  }
+  &__name {
+    @include typography.fs-font-stack(body, $weight: bold);
+  }
+  &__role {
+    color: settings.$fs-text-color-secondary;
+  }
+}
