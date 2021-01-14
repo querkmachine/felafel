@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/all.css" />
+    <title>Hero</title>
+  </head>
+  <body>
+    <section class="fs-hero">
+      <img
+        class="fs-hero__background"
+        alt=""
+        src="https://placehold.it/1000x500"
+        srcset="
+          https://placehold.it/400x200   400w,
+          https://placehold.it/600x300   600w,
+          https://placehold.it/1000x500 1000w,
+          https://placehold.it/1400x700 1400w
+        "
+        sizes="100vw"
+      />
+      <div class="fs-width-container fs-hero__inner">
+        <div class="fs-hero__body">
+          <h1 class="fs-hero__heading">A passion for bread</h1>
+          <div class="fs-prose">
+            <p>
+              We believe that bread should be available to everyone. Lorem ipsum
+              dolor sit, amet, consectetur adipisicing elit. Expedita alias nam,
+              quaerat inventore est id ducimus.
+            </p>
+          </div>
+          <a class="fs-button" data-appearance="ghost" href="#"
+            >Get your bread</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <script src="../dist/all.js"></script>
+    <script>
+      window.fs.initAll();
+    </script>
+  </body>
+</html>

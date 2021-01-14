@@ -371,6 +371,17 @@ $fs-fat-footer-background-color: map.get(
 ) !default;
 $fs-fat-footer-text-color: map.get($fs-default-color-palette, "white") !default;
 
+// Hero
+$fs-hero-margin: 9 !default;
+$fs-hero-padding: 6 !default;
+$fs-hero-text-color: false !default;
+$fs-hero-background-color: $fs-brand-color !default;
+$fs-hero-border-radius: if(
+  $fs-enable-rounded-corners,
+  $fs-border-radius,
+  0
+) !default;
+
 // Input
 $fs-input-text-color: map.get($fs-default-color-palette, "grey90") !default;
 $fs-input-background-color: map.get(
