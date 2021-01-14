@@ -1,0 +1,68 @@
+@use "../settings";
+@use "../helpers/a11y";
+@use "../helpers/typography";
+@use "../helpers/spacing";
+
+.fs-pagination {
+  $item-spacing: spacing.fs-spacing(2);
+  @include typography.fs-font-size(16);
+  @include typography.fs-font-stack(body, $weight: bold);
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  &__link {
+    @include spacing.fs-responsive-padding(1, $direction: all);
+    display: inline-block;
+    min-width: 2.25em;
+    border-width: settings.$fs-pagination-link-border-width;
+    border-style: solid;
+    border-color: currentColor;
+    color: settings.$fs-pagination-link-color;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1;
+    & + & {
+      margin-left: $item-spacing;
+    }
+    &:hover {
+      color: settings.$fs-pagination-hover-link-color;
+    }
+    &:focus {
+      @include a11y.fs-focus-ring($fill: true);
+    }
+    &--prev,
+    &--next {
+      &::before,
+      &::after {
+        $arrow-size: settings.$fs-pagination-arrow-size;
+        display: inline-block;
+        width: $arrow-size * 0.5;
+        height: $arrow-size;
+        margin-right: 0.25em;
+        margin-left: 0.25em;
+        background-color: currentColor;
+      }
+    }
+    &--prev {
+      &::before {
+        content: "";
+        clip-path: polygon(0 50%, 100% 0, 100% 100%);
+      }
+    }
+    &--next {
+      &::after {
+        content: "";
+        clip-path: polygon(0 0, 100% 50%, 0 100%);
+      }
+    }
+    &[aria-current] {
+      color: settings.$fs-pagination-current-link-color;
+      border-color: transparent;
+    }
+  }
+  &__jump {
+    margin-right: $item-spacing;
+    margin-left: $item-spacing;
+    color: settings.$fs-pagination-separator-color;
+  }
+}

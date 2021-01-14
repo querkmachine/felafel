@@ -419,6 +419,14 @@ $fs-masthead-text-color: map.get($fs-default-color-palette, "grey90") !default;
 $fs-masthead-tools-background-color: $fs-masthead-border-color !default;
 $fs-masthead-tools-text-color: false !default;
 
+// Pagination
+$fs-pagination-arrow-size: 0.6em !default;
+$fs-pagination-link-color: $fs-text-color !default;
+$fs-pagination-current-link-color: $fs-link-color !default;
+$fs-pagination-hover-link-color: $fs-pagination-current-link-color !default;
+$fs-pagination-separator-color: $fs-text-color-secondary !default;
+$fs-pagination-link-border-width: 2px !default;
+
 // Primary navigation
 $fs-primary-navigation-divider: $fs-border-color !default;
 $fs-primary-navigation-current-link-background-color: $fs-brand-color !default;
