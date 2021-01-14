@@ -71,3 +71,17 @@
     }
   }
 }
+
+@mixin fs-spread-link {
+  // Adds a pseudo element that covers the entire parent
+  // Expects the parent to have position: relative or equivalent
+  // Use sparingly: Will render other links in the card unclickable without futher work
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

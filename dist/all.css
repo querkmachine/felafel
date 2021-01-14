@@ -882,6 +882,51 @@ a:not([class]):active {
   cursor: default;
 }
 
+.fs-card {
+  position: relative;
+}
+.fs-card__media {
+  line-height: 0;
+}
+.fs-card__media a {
+  display: block;
+}
+.fs-card__image {
+  width: 100%;
+  height: auto;
+}
+.fs-card__body {
+  padding-top: 0.9375rem;
+}
+.fs-card__heading {
+  display: block;
+}
+.fs-card__link--spread::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.fs-card__content {
+  font-size: 0.875rem;
+  line-height: 1.2857142857;
+}
+@media screen and (min-width: 650px) {
+  .fs-card__content {
+    font-size: 1rem;
+    line-height: 1.375;
+  }
+}
+.fs-card--bordered {
+  border: 0.25rem solid #d1d5db;
+  border-radius: 0;
+}
+.fs-card--bordered .fs-card__body {
+  padding: 0.9375rem;
+}
+
 .fs-checkbox {
   margin-bottom: 0.9375rem;
   padding-left: calc(1.5rem + 0.9375rem);

@@ -2,6 +2,7 @@
 
 ## Next release
 
+- Added Card component.
 - Added Details component.
 - Added Fat Footer component.
 - Added Testimonial component.

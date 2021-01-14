@@ -319,6 +319,15 @@ $fs-button-ghost-background-color: transparent !default;
 $fs-button-ghost-background-hover-color: false !default;
 $fs-button-ghost-text-color: inherit !default;
 
+// Card
+$fs-card-border-width: $fs-border-width-narrow !default;
+$fs-card-border-color: $fs-border-color !default;
+$fs-card-border-radius: if(
+  $fs-enable-rounded-corners,
+  $fs-border-radius,
+  0
+) !default;
+
 // Checkbox
 $fs-checkbox-size: $fs-check-radio-size !default;
 $fs-checkbox-check-color: map.get($fs-default-color-palette, "grey90") !default;
