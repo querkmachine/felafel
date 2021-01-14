@@ -1,0 +1,52 @@
+@use "../settings";
+@use "../helpers/reset";
+@use "../helpers/links";
+@use "../helpers/typography";
+@use "../helpers/media-queries";
+
+.fs-breadcrumbs {
+  $self: &;
+  @include typography.fs-font-size(16);
+  &__list {
+    @include reset.fs-reset-list;
+  }
+  &__item {
+    display: inline-block;
+    &::before,
+    &::after {
+      $separator-size: settings.$fs-breadcrumbs-separator-size;
+      display: inline-block;
+      width: $separator-size * 0.5;
+      height: $separator-size;
+      margin-right: 0.25em;
+      margin-left: 0.25em;
+      background-color: settings.$fs-breadcrumbs-separator-color;
+    }
+    @include media-queries.fs-mq($to: tablet) {
+      &:nth-last-child(n + 3),
+      &:last-child {
+        display: none;
+      }
+      &:nth-last-child(n + 2)::before {
+        content: "";
+        clip-path: polygon(0 50%, 100% 0, 100% 100%);
+        margin-left: 0;
+      }
+    }
+    @include media-queries.fs-mq($from: tablet) {
+      &:nth-last-child(n + 2)::after {
+        content: "";
+        clip-path: polygon(0 0, 100% 50%, 0 100%);
+      }
+    }
+  }
+  &__link {
+    @include links.fs-link--text(
+      $color: settings.$fs-breadcrumbs-link-color,
+      $underline: false
+    );
+    &[aria-current="page"],
+    &[aria-current="true"] {
+    }
+  }
+}

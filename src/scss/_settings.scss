@@ -285,6 +285,11 @@ $fs-alert-border-radius: if(
   0
 ) !default;
 
+// Breadcrumbs
+$fs-breadcrumbs-separator-size: 0.6em !default;
+$fs-breadcrumbs-separator-color: $fs-text-color-secondary !default;
+$fs-breadcrumbs-link-color: $fs-link-color !default;
+
 // Button - Generic
 $fs-button-border-width: $fs-border-width-form-element !default;
 $fs-button-border-radius: if(

@@ -2,6 +2,7 @@
 
 ## Next release
 
+- Added Breadcrumbs component.
 - Added Card component.
 - Added Details component.
 - Added Fat Footer component.
