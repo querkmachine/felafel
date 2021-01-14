@@ -59,10 +59,11 @@
 @mixin fs-grid-column($width: full, $float: left, $at: tablet) {
   @if $at != desktop {
     width: 100%;
-    padding: 0 settings.$fs-gutter-half;
+    padding: 0 settings.$fs-gutter-half settings.$fs-gutter-half;
   }
   @include media-queries.fs-mq($from: $at) {
     width: fs-grid-width($width);
+    padding-bottom: settings.$fs-gutter;
     float: $float;
   }
 }

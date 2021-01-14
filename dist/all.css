@@ -218,66 +218,72 @@ a:not([class]):active {
 
 .fs-grid-column-one-quarter {
   width: 100%;
-  padding: 0 15px;
+  padding: 0 15px 15px;
 }
 @media screen and (min-width: 650px) {
   .fs-grid-column-one-quarter {
     width: 25%;
+    padding-bottom: 30px;
     float: left;
   }
 }
 
 .fs-grid-column-one-third {
   width: 100%;
-  padding: 0 15px;
+  padding: 0 15px 15px;
 }
 @media screen and (min-width: 650px) {
   .fs-grid-column-one-third {
     width: 33.3333%;
+    padding-bottom: 30px;
     float: left;
   }
 }
 
 .fs-grid-column-one-half {
   width: 100%;
-  padding: 0 15px;
+  padding: 0 15px 15px;
 }
 @media screen and (min-width: 650px) {
   .fs-grid-column-one-half {
     width: 50%;
+    padding-bottom: 30px;
     float: left;
   }
 }
 
 .fs-grid-column-two-thirds {
   width: 100%;
-  padding: 0 15px;
+  padding: 0 15px 15px;
 }
 @media screen and (min-width: 650px) {
   .fs-grid-column-two-thirds {
     width: 66.6666%;
+    padding-bottom: 30px;
     float: left;
   }
 }
 
 .fs-grid-column-three-quarters {
   width: 100%;
-  padding: 0 15px;
+  padding: 0 15px 15px;
 }
 @media screen and (min-width: 650px) {
   .fs-grid-column-three-quarters {
     width: 75%;
+    padding-bottom: 30px;
     float: left;
   }
 }
 
 .fs-grid-column-full {
   width: 100%;
-  padding: 0 15px;
+  padding: 0 15px 15px;
 }
 @media screen and (min-width: 650px) {
   .fs-grid-column-full {
     width: 100%;
+    padding-bottom: 30px;
     float: left;
   }
 }
@@ -285,6 +291,7 @@ a:not([class]):active {
 @media screen and (min-width: 800px) {
   .desktop\:fs-grid-column-one-quarter {
     width: 25%;
+    padding-bottom: 30px;
     float: left;
   }
 }
@@ -292,6 +299,7 @@ a:not([class]):active {
 @media screen and (min-width: 800px) {
   .desktop\:fs-grid-column-one-third {
     width: 33.3333%;
+    padding-bottom: 30px;
     float: left;
   }
 }
@@ -299,6 +307,7 @@ a:not([class]):active {
 @media screen and (min-width: 800px) {
   .desktop\:fs-grid-column-one-half {
     width: 50%;
+    padding-bottom: 30px;
     float: left;
   }
 }
@@ -306,6 +315,7 @@ a:not([class]):active {
 @media screen and (min-width: 800px) {
   .desktop\:fs-grid-column-two-thirds {
     width: 66.6666%;
+    padding-bottom: 30px;
     float: left;
   }
 }
@@ -313,6 +323,7 @@ a:not([class]):active {
 @media screen and (min-width: 800px) {
   .desktop\:fs-grid-column-three-quarters {
     width: 75%;
+    padding-bottom: 30px;
     float: left;
   }
 }
@@ -320,6 +331,7 @@ a:not([class]):active {
 @media screen and (min-width: 800px) {
   .desktop\:fs-grid-column-full {
     width: 100%;
+    padding-bottom: 30px;
     float: left;
   }
 }
@@ -1888,7 +1900,7 @@ a:not([class]):active {
   padding-right: 0.9375rem;
   border-bottom: 1px solid #d1d5db;
   text-align: left;
-  vertical-align: baseline;
+  vertical-align: top;
 }
 @media screen and (min-width: 650px) {
   .fs-table th,
