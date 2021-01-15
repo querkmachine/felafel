@@ -1334,6 +1334,7 @@ a:not([class]):active {
   top: 0;
   left: 0;
   cursor: pointer;
+  opacity: 0;
 }
 .fs-file-drag-and-drop__icons {
   margin-bottom: 0.9375rem;

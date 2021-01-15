@@ -131,8 +131,8 @@ class FileDragAndDrop {
   constructor($module) {
     this.$module = $module;
     this.$input = $module.querySelector('input[type="file"]');
-    this.$icons = $module.querySelector('.fs-file-drag-and-drop__icons');
-    this.$label = $module.querySelector('.fs-file-drag-and-drop__label');
+    this.$icons = $module.querySelector(".fs-file-drag-and-drop__icons");
+    this.$label = $module.querySelector(".fs-file-drag-and-drop__label");
     this.iconsDefaultHTML = this.$icons.innerHTML;
     this.labelDefaultHTML = this.$label.innerHTML;
     this.id = `DragAndDrop-${(0, _strings.GenerateGuid)()}`;
@@ -141,18 +141,18 @@ class FileDragAndDrop {
 
   create() {
     // Add a11y
-    this.$label.setAttribute('id', this.id);
-    this.$label.setAttribute('aria-live', 'polite');
-    this.$input.setAttribute('aria-describedby', this.$input.getAttribute('aria-describedby') ? this.$input.getAttribute('aria-describedby') + ' ' + this.id : this.id); // Bind events
+    this.$label.setAttribute("id", this.id);
+    this.$label.setAttribute("aria-live", "polite");
+    this.$input.setAttribute("aria-describedby", this.$input.getAttribute("aria-describedby") ? this.$input.getAttribute("aria-describedby") + " " + this.id : this.id); // Bind events
 
     this.$input.bindDragOver = this.onDragOver.bind(this);
     this.$input.bindDragOut = this.onDragOut.bind(this);
     this.$input.bindChange = this.onChange.bind(this);
-    this.$input.addEventListener('dragenter', this.$input.bindDragOver, true);
-    this.$input.addEventListener('dragover', this.$input.bindDragOver, true);
-    this.$input.addEventListener('dragleave', this.$input.bindDragOut, true);
-    this.$input.addEventListener('drop', this.$input.bindDragOut, true);
-    this.$input.addEventListener('change', this.$input.bindChange, true);
+    this.$input.addEventListener("dragenter", this.$input.bindDragOver, true);
+    this.$input.addEventListener("dragover", this.$input.bindDragOver, true);
+    this.$input.addEventListener("dragleave", this.$input.bindDragOut, true);
+    this.$input.addEventListener("drop", this.$input.bindDragOut, true);
+    this.$input.addEventListener("change", this.$input.bindChange, true);
   }
 
   onChange(e) {
@@ -160,11 +160,11 @@ class FileDragAndDrop {
   }
 
   onDragOver() {
-    this.$module.classList.add('fs-file-drag-and-drop--highlight');
+    this.$module.classList.add("fs-file-drag-and-drop--highlight");
   }
 
   onDragOut() {
-    this.$module.classList.remove('fs-file-drag-and-drop--highlight');
+    this.$module.classList.remove("fs-file-drag-and-drop--highlight");
   }
 
   handleFiles(files) {
@@ -173,18 +173,18 @@ class FileDragAndDrop {
     if (files.length) {
       let fileNames = [];
       let fileUrls = {};
-      this.$icons.innerHTML = ''; // Loop through files
+      this.$icons.innerHTML = ""; // Loop through files
 
       [...files].forEach(file => {
         fileNames.push(file.name); // Add image thumbnail (if it's an image)
 
-        if (['image/gif', 'image/jpeg', 'image/png'].includes(file.type)) {
+        if (["image/gif", "image/jpeg", "image/png"].includes(file.type)) {
           let reader = new FileReader();
 
           reader.onload = e => {
-            let $previewImg = document.createElement('img');
-            $previewImg.setAttribute('alt', file.name);
-            $previewImg.classList.add('fs-file-drag-and-drop__icon');
+            let $previewImg = document.createElement("img");
+            $previewImg.setAttribute("alt", file.name);
+            $previewImg.classList.add("fs-file-drag-and-drop__icon");
             $previewImg.src = e.target.result;
             this.$icons.appendChild($previewImg);
           };
