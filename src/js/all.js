@@ -1,4 +1,5 @@
 import DetailsGroup from "./components/details-group";
+import FileDragAndDrop from "./components/file-drag-and-drop";
 import Tabs from "./components/tabs";
 import TextareaCounter from "./components/textarea-counter";
 import Tooltip from "./components/tooltip";
@@ -13,6 +14,13 @@ function initAll(options) {
   scope.querySelectorAll('[data-module="fs-details-group"]').forEach((m) => {
     new DetailsGroup(m);
   });
+
+  scope
+    .querySelectorAll('[data-module="fs-file-drag-and-drop"]')
+    .forEach((m) => {
+      new FileDragAndDrop(m);
+    });
+
   scope.querySelectorAll('[data-module="fs-tabs"]').forEach((m) => {
     new Tabs(m);
   });
@@ -26,4 +34,11 @@ function initAll(options) {
   });
 }
 
-export { initAll, Tabs, TextareaCounter, Tooltip };
+export {
+  initAll,
+  DetailsGroup,
+  FileDragAndDrop,
+  Tabs,
+  TextareaCounter,
+  Tooltip,
+};

@@ -365,6 +365,9 @@ $fs-file-list-border-radius: if(
   0
 ) !default;
 
+// File upload
+$fs-file-upload-thumbnail-size: 6rem !default;
+
 // Footer
 $fs-footer-background-color: $fs-canvas-background-color !default;
 $fs-footer-text-color: $fs-text-color-secondary !default;

@@ -12,7 +12,38 @@
       <div class="fs-hint" id="FileUpload-Hint">
         JPEG, GIF or PNG files up to 5 megabytes are allowed.
       </div>
-      <input class="fs-file-upload" type="file" />
+      <input
+        class="fs-file-upload"
+        type="file"
+        id="FileUpload"
+        aria-describedby="FileUpload-Hint"
+      />
+    </div>
+
+    <div class="fs-form-row">
+      <label class="fs-label" for="FileUpload2">Upload a file</label>
+      <div class="fs-hint" id="FileUpload2-Hint">
+        JPEG, GIF or PNG files up to 5 megabytes are allowed.
+      </div>
+      <div class="fs-file-drag-and-drop" data-module="fs-file-drag-and-drop">
+        <input
+          class="fs-file-drag-and-drop__input"
+          type="file"
+          id="FileUpload2"
+          aria-describedby="FileUpload2-Hint"
+          multiple
+        />
+        <div class="fs-file-drag-and-drop__icons">
+          <img
+            class="fs-file-drag-and-drop__icon"
+            src="https://placehold.it/75x75"
+            alt=""
+          />
+        </div>
+        <span class="fs-file-drag-and-drop__label">
+          <strong>Choose a file</strong> or drag it here.
+        </span>
+      </div>
     </div>
 
     <script src="../dist/all.js"></script>
