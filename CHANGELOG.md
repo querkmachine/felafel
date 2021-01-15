@@ -5,6 +5,7 @@
 - Added Breadcrumbs component.
 - Added Card component.
 - Added Details component.
+- Added Empty component.
 - Added Fat Footer component.
 - Added Hero component.
 - Added Pagination component.
