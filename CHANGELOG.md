@@ -1,6 +1,6 @@
 # Changelog
 
-## Next release
+## v1.1.0
 
 - Added Breadcrumbs component.
 - Added Card component.
@@ -11,6 +11,9 @@
 - Added Hero component.
 - Added Pagination component.
 - Added Testimonial component.
+- Added Button variant: `[data-appearance="link"]`.
+- Added `fs-color` function to grab colours from `$fs-default-colour-palette` without referencing it directly.
+- Modified Primary Navigation styling.
 - Fixed font family override classes not accounting for what is passed as configuration.
 
 ## v1.0.0
