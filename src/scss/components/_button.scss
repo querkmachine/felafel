@@ -3,6 +3,7 @@
 @use "../helpers/media-queries";
 @use "../helpers/reset";
 @use "../helpers/spacing";
+@use "../helpers/links";
 @use "../helpers/typography";
 
 @use "sass:color";
@@ -84,6 +85,14 @@
       border-color: $hover-color;
       background-color: $hover-color;
     }
+  }
+  &[data-appearance="link"] {
+    @include spacing.fs-responsive-padding(0, $direction: all);
+    @include typography.fs-font-stack(body, $weight: regular);
+    @include links.fs-link($visited-style: false, $underline: true);
+    display: inline;
+    border: none;
+    background-color: transparent;
   }
   &[data-layout="block"] {
     width: 100%;
