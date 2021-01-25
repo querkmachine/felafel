@@ -51,6 +51,18 @@
   @include _fs-input-base;
   @include spacing.fs-responsive-padding(2, $direction: all);
   max-width: 100%;
+  &:focus {
+    @include a11y.fs-focus-ring;
+  }
+}
+
+@mixin fs-input-drag-and-drop {
+  @include _fs-input-base;
+  @include spacing.fs-responsive-padding(6, $direction: all);
+  border-style: dashed;
+  &:focus-within {
+    @include a11y.fs-focus-ring;
+  }
 }
 
 @mixin fs-input-text {

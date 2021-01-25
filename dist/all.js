@@ -5,6 +5,18 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.initAll = initAll;
+Object.defineProperty(exports, "DetailsGroup", {
+  enumerable: true,
+  get: function () {
+    return _detailsGroup.default;
+  }
+});
+Object.defineProperty(exports, "FileDragAndDrop", {
+  enumerable: true,
+  get: function () {
+    return _fileDragAndDrop.default;
+  }
+});
 Object.defineProperty(exports, "Tabs", {
   enumerable: true,
   get: function () {
@@ -24,6 +36,10 @@ Object.defineProperty(exports, "Tooltip", {
   }
 });
 
+var _detailsGroup = _interopRequireDefault(require("./components/details-group"));
+
+var _fileDragAndDrop = _interopRequireDefault(require("./components/file-drag-and-drop"));
+
 var _tabs = _interopRequireDefault(require("./components/tabs"));
 
 var _textareaCounter = _interopRequireDefault(require("./components/textarea-counter"));
@@ -37,6 +53,12 @@ function initAll(options) {
   // Defaults to entire document if not set
 
   const scope = typeof options.scope !== "undefined" ? options.scope : document;
+  scope.querySelectorAll('[data-module="fs-details-group"]').forEach(m => {
+    new _detailsGroup.default(m);
+  });
+  scope.querySelectorAll('[data-module="fs-file-drag-and-drop"]').forEach(m => {
+    new _fileDragAndDrop.default(m);
+  });
   scope.querySelectorAll('[data-module="fs-tabs"]').forEach(m => {
     new _tabs.default(m);
   });
@@ -48,7 +70,147 @@ function initAll(options) {
   });
 }
 
-},{"./components/tabs":2,"./components/textarea-counter":3,"./components/tooltip":4}],2:[function(require,module,exports){
+},{"./components/details-group":2,"./components/file-drag-and-drop":3,"./components/tabs":4,"./components/textarea-counter":5,"./components/tooltip":6}],2:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+class DetailsGroup {
+  constructor($container) {
+    this.$container = $container;
+    this.$allModules = $container.querySelectorAll(".fs-details");
+    this.create();
+  }
+
+  create() {
+    this.$allModules.forEach($module => {
+      $module.bindToggle = this.onToggle.bind(this);
+      $module.addEventListener("toggle", $module.bindToggle);
+    });
+  }
+
+  destroy() {
+    this.$allModules.forEach($module => {
+      $module.removeEventListener("toggle", $module.bindToggle);
+    });
+  }
+
+  onToggle(e) {
+    if (!e.target.hasAttribute("open")) {
+      return;
+    }
+
+    const $openModules = Array.from(this.$container.querySelectorAll(".fs-details[open]"));
+    $openModules.forEach($module => {
+      if ($module === e.target) {
+        return;
+      }
+
+      $module.removeAttribute("open");
+    });
+  }
+
+}
+
+exports.default = DetailsGroup;
+
+},{}],3:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _strings = require("../helpers/strings");
+
+class FileDragAndDrop {
+  constructor($module) {
+    this.$module = $module;
+    this.$input = $module.querySelector('input[type="file"]');
+    this.$icons = $module.querySelector(".fs-file-drag-and-drop__icons");
+    this.$label = $module.querySelector(".fs-file-drag-and-drop__label");
+    this.iconsDefaultHTML = this.$icons.innerHTML;
+    this.labelDefaultHTML = this.$label.innerHTML;
+    this.id = `DragAndDrop-${(0, _strings.GenerateGuid)()}`;
+    this.create();
+  }
+
+  create() {
+    // Add a11y
+    this.$label.setAttribute("id", this.id);
+    this.$label.setAttribute("aria-live", "polite");
+    this.$input.setAttribute("aria-describedby", this.$input.getAttribute("aria-describedby") ? this.$input.getAttribute("aria-describedby") + " " + this.id : this.id); // Bind events
+
+    this.$input.bindDragOver = this.onDragOver.bind(this);
+    this.$input.bindDragOut = this.onDragOut.bind(this);
+    this.$input.bindChange = this.onChange.bind(this);
+    this.$input.addEventListener("dragenter", this.$input.bindDragOver, true);
+    this.$input.addEventListener("dragover", this.$input.bindDragOver, true);
+    this.$input.addEventListener("dragleave", this.$input.bindDragOut, true);
+    this.$input.addEventListener("drop", this.$input.bindDragOut, true);
+    this.$input.addEventListener("change", this.$input.bindChange, true);
+  }
+
+  onChange(e) {
+    this.handleFiles(e.target.files);
+  }
+
+  onDragOver() {
+    this.$module.classList.add("fs-file-drag-and-drop--highlight");
+  }
+
+  onDragOut() {
+    this.$module.classList.remove("fs-file-drag-and-drop--highlight");
+  }
+
+  handleFiles(files) {
+    this.resetFilePreview();
+
+    if (files.length) {
+      let fileNames = [];
+      let fileUrls = {};
+      this.$icons.innerHTML = ""; // Loop through files
+
+      [...files].forEach(file => {
+        fileNames.push(file.name); // Add image thumbnail (if it's an image)
+
+        if (["image/gif", "image/jpeg", "image/png"].includes(file.type)) {
+          let reader = new FileReader();
+
+          reader.onload = e => {
+            let $previewImg = document.createElement("img");
+            $previewImg.setAttribute("alt", file.name);
+            $previewImg.classList.add("fs-file-drag-and-drop__icon");
+            $previewImg.src = e.target.result;
+            this.$icons.appendChild($previewImg);
+          };
+
+          reader.readAsDataURL(file);
+        }
+      }); // Update label
+
+      if (fileNames.length === 1) {
+        this.$label.innerHTML = `Selected file: <strong>${fileNames[0]}</strong>.`;
+      } else {
+        this.$label.innerHTML = `Selected <strong>${fileNames.length} files</strong>.`;
+      }
+    }
+  }
+
+  resetFilePreview() {
+    this.$icons.innerHTML = this.iconsDefaultHTML;
+    this.$label.innerHTML = this.labelDefaultHTML;
+  }
+
+}
+
+exports.default = FileDragAndDrop;
+
+},{"../helpers/strings":8}],4:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -319,7 +481,7 @@ class Tab {
 
 exports.default = Tab;
 
-},{"../helpers/key-codes":5}],3:[function(require,module,exports){
+},{"../helpers/key-codes":7}],5:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -405,7 +567,7 @@ class TextareaCounter {
 
 exports.default = TextareaCounter;
 
-},{}],4:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -534,7 +696,7 @@ class Tooltip {
 
 exports.default = Tooltip;
 
-},{"../helpers/key-codes":5,"../helpers/strings":6}],5:[function(require,module,exports){
+},{"../helpers/key-codes":7,"../helpers/strings":8}],7:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -554,7 +716,7 @@ function KeyCodes() {
   };
 }
 
-},{}],6:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

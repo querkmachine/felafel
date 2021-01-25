@@ -20,7 +20,7 @@
     @include spacing.fs-responsive-padding(4, $direction: right);
     border-bottom: settings.$fs-hr-width solid settings.$fs-border-color;
     text-align: left;
-    vertical-align: baseline;
+    vertical-align: top;
     &:last-child {
       @include spacing.fs-responsive-padding(0, $direction: right);
     }

@@ -2,6 +2,12 @@
 
 @use "sass:color";
 @use "sass:math";
+@use "sass:map";
+
+// Get color from palette
+@function fs-color($color) {
+  @return map.get(settings.$fs-default-color-palette, $color);
+}
 
 // Color tweaking functions
 @function fs-color-shade($color, $percentage) {

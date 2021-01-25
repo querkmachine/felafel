@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/all.css" />
+    <title>Pagination</title>
+  </head>
+  <body>
+    <nav class="fs-pagination" aria-label="Pagination">
+      <a
+        class="fs-pagination__link fs-pagination__link--prev"
+        aria-label="Go to previous page"
+        href="#"
+      >
+        Prev
+      </a>
+      <a class="fs-pagination__link" href="#">
+        <span class="fs-!-sr">Go to page</span> 1
+      </a>
+      <span class="fs-pagination__jump" aria-hidden="true">&hellip;</span>
+      <a class="fs-pagination__link" href="#">
+        <span class="fs-!-sr">Go to page</span> 10
+      </a>
+      <a class="fs-pagination__link" href="#">
+        <span class="fs-!-sr">Go to page</span> 11
+      </a>
+      <a class="fs-pagination__link" href="#" aria-current="page">
+        <span class="fs-!-sr">Go to page</span> 12
+      </a>
+      <a class="fs-pagination__link" href="#">
+        <span class="fs-!-sr">Go to page</span> 13
+      </a>
+      <a class="fs-pagination__link" href="#">
+        <span class="fs-!-sr">Go to page</span> 14
+      </a>
+      <span class="fs-pagination__jump" aria-hidden="true">&hellip;</span>
+      <a class="fs-pagination__link" href="#">
+        <span class="fs-!-sr">Go to page</span> 30
+      </a>
+      <a
+        class="fs-pagination__link fs-pagination__link--next"
+        aria-label="Go to next page"
+        href="#"
+      >
+        Next
+      </a>
+    </nav>
+
+    <script src="../dist/all.js"></script>
+    <script>
+      window.fs.initAll();
+    </script>
+  </body>
+</html>

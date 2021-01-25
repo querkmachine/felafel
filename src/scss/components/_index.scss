@@ -1,13 +1,20 @@
 @use "alert";
+@use "breadcrumbs";
 @use "button";
+@use "card";
 @use "checkbox";
 @use "date-input";
+@use "details";
+@use "empty";
+@use "fat-footer";
 @use "file-list";
 @use "file-upload";
 @use "footer";
+@use "hero";
 @use "input";
 @use "masthead";
 @use "masthead-tools";
+@use "pagination";
 @use "primary-navigation";
 @use "prose";
 @use "radio";
@@ -18,5 +25,6 @@
 @use "summary-list";
 @use "table";
 @use "tabs";
+@use "testimonial";
 @use "textarea";
 @use "tooltip";

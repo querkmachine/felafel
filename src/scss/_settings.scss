@@ -285,6 +285,11 @@ $fs-alert-border-radius: if(
   0
 ) !default;
 
+// Breadcrumbs
+$fs-breadcrumbs-separator-size: 0.6em !default;
+$fs-breadcrumbs-separator-color: $fs-text-color-secondary !default;
+$fs-breadcrumbs-link-color: $fs-link-color !default;
+
 // Button - Generic
 $fs-button-border-width: $fs-border-width-form-element !default;
 $fs-button-border-radius: if(
@@ -319,6 +324,15 @@ $fs-button-ghost-background-color: transparent !default;
 $fs-button-ghost-background-hover-color: false !default;
 $fs-button-ghost-text-color: inherit !default;
 
+// Card
+$fs-card-border-width: $fs-border-width-narrow !default;
+$fs-card-border-color: $fs-border-color !default;
+$fs-card-border-radius: if(
+  $fs-enable-rounded-corners,
+  $fs-border-radius,
+  0
+) !default;
+
 // Checkbox
 $fs-checkbox-size: $fs-check-radio-size !default;
 $fs-checkbox-check-color: map.get($fs-default-color-palette, "grey90") !default;
@@ -327,6 +341,20 @@ $fs-checkbox-border-radius: if(
   $fs-border-radius,
   0
 ) !default;
+
+// Details
+$fs-details-text-color: false !default;
+$fs-details-background-color: map.get(
+  $fs-default-color-palette,
+  "grey10"
+) !default;
+$fs-details-hover-text-color: false !default;
+$fs-details-hover-background-color: map.get(
+  $fs-default-color-palette,
+  "grey20"
+) !default;
+$fs-details-marker-size: 1rem !default;
+$fs-details-marker-color: currentColor !default;
 
 // File list
 $fs-file-list-border-color: $fs-border-color !default;
@@ -337,9 +365,30 @@ $fs-file-list-border-radius: if(
   0
 ) !default;
 
+// File upload
+$fs-file-upload-thumbnail-size: 6rem !default;
+
 // Footer
 $fs-footer-background-color: $fs-canvas-background-color !default;
 $fs-footer-text-color: $fs-text-color-secondary !default;
+
+// Fat footer
+$fs-fat-footer-background-color: map.get(
+  $fs-default-color-palette,
+  "grey90"
+) !default;
+$fs-fat-footer-text-color: map.get($fs-default-color-palette, "white") !default;
+
+// Hero
+$fs-hero-margin: 9 !default;
+$fs-hero-padding: 6 !default;
+$fs-hero-text-color: false !default;
+$fs-hero-background-color: $fs-brand-color !default;
+$fs-hero-border-radius: if(
+  $fs-enable-rounded-corners,
+  $fs-border-radius,
+  0
+) !default;
 
 // Input
 $fs-input-text-color: map.get($fs-default-color-palette, "grey90") !default;
@@ -372,6 +421,14 @@ $fs-masthead-text-color: map.get($fs-default-color-palette, "grey90") !default;
 // Masthead tools
 $fs-masthead-tools-background-color: $fs-masthead-border-color !default;
 $fs-masthead-tools-text-color: false !default;
+
+// Pagination
+$fs-pagination-arrow-size: 0.6em !default;
+$fs-pagination-link-color: $fs-text-color !default;
+$fs-pagination-current-link-color: $fs-link-color !default;
+$fs-pagination-hover-link-color: $fs-pagination-current-link-color !default;
+$fs-pagination-separator-color: $fs-text-color-secondary !default;
+$fs-pagination-link-border-width: 2px !default;
 
 // Primary navigation
 $fs-primary-navigation-divider: $fs-border-color !default;
@@ -429,6 +486,18 @@ $fs-tabs-tab-selected-background-color: map.get(
 $fs-tabs-tab-selected-border-color: $fs-brand-color !default;
 $fs-tabs-panel-text-color: false !default;
 $fs-tabs-panel-background-color: $fs-tabs-tab-selected-background-color !default;
+
+// Testimonial
+$fs-testimonial-text-color: false !default;
+$fs-testimonial-background-color: map.get(
+  $fs-default-color-palette,
+  "grey20"
+) !default;
+$fs-testimonial-show-avatar: true !default;
+$fs-testimonial-avatar-size: 3rem !default;
+$fs-testimonial-citation-inset: 3rem !default;
+$fs-testimonial-show-arrow: true !default;
+$fs-testimonial-arrow-size: 1rem !default;
 
 // Tooltip
 $fs-tooltip-show-arrow: true !default;

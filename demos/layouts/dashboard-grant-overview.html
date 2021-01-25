@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" class="fs-template">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../dist/all.css" />
+    <title>Example dashboard overview</title>
+  </head>
+  <body class="fs-template__body">
+    <a class="fs-skiplink" href="#navigation">Skip to navigation</a>
+    <a class="fs-skiplink" href="#content">Skip to content</a>
+
+    <nav class="fs-masthead-tools" aria-label="Utilities">
+      <div class="fs-width-container fs-masthead-tools__inner">
+        <ul class="fs-masthead-tools__list">
+          <li class="fs-masthead-tools__item">
+            <a class="fs-masthead-tools__link" href="#"> Login or register </a>
+          </li>
+          <li class="fs-masthead-tools__item">
+            <a class="fs-masthead-tools__link" href="#"> Basket (0) </a>
+          </li>
+          <li class="fs-masthead-tools__item">
+            <a class="fs-masthead-tools__link" href="#"> Search </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <header class="fs-masthead">
+      <div class="fs-width-container fs-masthead__inner">
+        <div class="fs-grid-row">
+          <div class="fs-grid-column-one-third fs-masthead__logo">
+            <a class="fs-link-text fs-masthead__logo-link" href="#">
+              The Bread Club
+            </a>
+          </div>
+          <div class="fs-grid-column-two-thirds fs-masthead__content">
+            <nav
+              class="fs-primary-navigation"
+              id="navigation"
+              aria-label="Main navigation"
+            >
+              <ul class="fs-primary-navigation__list">
+                <li class="fs-primary-navigation__item">
+                  <a class="fs-link-text fs-primary-navigation__link" href="#">
+                    Loaves
+                  </a>
+                </li>
+                <li class="fs-primary-navigation__item">
+                  <a
+                    class="fs-link-text fs-primary-navigation__link"
+                    href="#"
+                    aria-current="true"
+                  >
+                    Rolls
+                  </a>
+                </li>
+                <li class="fs-primary-navigation__item">
+                  <a class="fs-link-text fs-primary-navigation__link" href="#">
+                    Pastries
+                  </a>
+                </li>
+                <li class="fs-primary-navigation__item">
+                  <a class="fs-link-text fs-primary-navigation__link" href="#">
+                    Crumpets
+                  </a>
+                </li>
+                <li class="fs-primary-navigation__item">
+                  <a class="fs-link-text fs-primary-navigation__link" href="#">
+                    Treats
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main
+      class="fs-width-container fs-!-margin-top-8 fs-!-margin-bottom-8"
+      id="content"
+    >
+      <div class="fs-grid-row">
+        <div class="fs-grid-column-one-third">
+          <nav
+            class="fs-sidebar-navigation fs-!-margin-bottom-8"
+            aria-label="Dashboard navigation"
+          >
+            <ul class="fs-sidebar-navigation__list">
+              <li class="fs-sidebar-navigation__item">
+                <a class="fs-sidebar-navigation__link" href="#"> Dashboard </a>
+              </li>
+              <li class="fs-sidebar-navigation__item">
+                <a class="fs-sidebar-navigation__link" href="#">
+                  Membership &amp; billing
+                </a>
+              </li>
+              <li class="fs-sidebar-navigation__item">
+                <a class="fs-sidebar-navigation__link" href="#"> My events </a>
+              </li>
+              <li class="fs-sidebar-navigation__item">
+                <a class="fs-sidebar-navigation__link" href="#">
+                  My learning
+                </a>
+              </li>
+              <li class="fs-sidebar-navigation__item">
+                <a
+                  class="fs-sidebar-navigation__link"
+                  href="#"
+                  aria-current="page"
+                >
+                  My grants
+                </a>
+              </li>
+              <li class="fs-sidebar-navigation__item">
+                <a class="fs-sidebar-navigation__link" href="#">
+                  Edit details
+                </a>
+              </li>
+              <li class="fs-sidebar-navigation__item">
+                <a class="fs-sidebar-navigation__link" href="#">
+                  Communication preferences
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="fs-grid-column-two-thirds">
+          <a class="fs-back-link fs-!-margin-bottom-5" href="#">
+            Back <span class="fs-!-sr">to My Grants</span>
+          </a>
+          <h1 class="fs-heading-xl">
+            Bread Flour Subsidy 2021
+            <div class="fs-subheading-xl">Grant overview</div>
+          </h1>
+          <h2 class="fs-heading-l">Payments</h2>
+          <table class="fs-table">
+            <thead>
+              <tr>
+                <th class="fs-!-width-one-quarter" scope="col">Date</th>
+                <th class="fs-!-width-one-half" scope="col">
+                  Amount/Condition
+                </th>
+                <th class="fs-!-width-one-quarter" scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" rowspan="3">2020-09-21</th>
+                <td>&pound;96,211.49</td>
+                <td>
+                  Set up
+                  <div class="fs-body-s">Conditions not met</div>
+                </td>
+              </tr>
+              <tr>
+                <td>Sign contract</td>
+                <td>
+                  Condition not met
+                  <div class="fs-body-s">
+                    <a class="fs-link" href="#">Fulfil condition</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Provide invoice</td>
+                <td>
+                  Condition not met
+                  <div class="fs-body-s">
+                    <a class="fs-link" href="#">Fulfil condition</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">2020-10-25</th>
+                <td>&pound;45,833.55</td>
+                <td>
+                  Check request
+                  <div class="fs-body-s">Condition not met</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <h2 class="fs-heading-l">Conditions</h2>
+          <table class="fs-table">
+            <thead>
+              <tr>
+                <th scope="col">Intention</th>
+                <th class="fs-!-width-one-half" scope="col">Condition</th>
+                <th scope="col">Condition due</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Fundraising</th>
+                <td>
+                  Confirmation of service
+                  <div class="fs-body-s">Condition not met</div>
+                </td>
+                <td>2021-07-04</td>
+              </tr>
+              <tr>
+                <th scope="row">Fundraising</th>
+                <td>
+                  Request for payment
+                  <div class="fs-body-s">Condition met</div>
+                </td>
+                <td>2021-09-04</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <footer class="fs-footer">
+      <div class="fs-width-container fs-footer__inner">
+        <div class="fs-grid-row">
+          <div
+            class="fs-grid-column-full desktop:fs-grid-column-one-half fs-footer__legal"
+          >
+            &copy; 2020 The Bread Club. All rights reserved.
+          </div>
+          <div
+            class="fs-grid-column-full desktop:fs-grid-column-one-half fs-footer__links"
+          >
+            <ul class="fs-footer__list">
+              <li class="fs-footer__item">
+                <a class="fs-footer__link" href="#"> Terms and conditions </a>
+              </li>
+              <li class="fs-footer__item">
+                <a class="fs-footer__link" href="#"> Privacy policy </a>
+              </li>
+              <li class="fs-footer__item">
+                <a class="fs-footer__link" href="#"> Contact us </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../../dist/all.js"></script>
+    <script>
+      window.fs.initAll();
+    </script>
+  </body>
+</html>

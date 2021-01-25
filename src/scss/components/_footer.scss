@@ -3,6 +3,7 @@
 @use "../helpers/reset";
 @use "../helpers/spacing";
 @use "../helpers/typography";
+@use "../helpers/links";
 
 .fs-footer {
   @include spacing.fs-responsive-padding(3, $direction: top);
@@ -35,7 +36,6 @@
     }
   }
   &__link {
-    color: currentColor;
-    text-decoration: none;
+    @include links.fs-link--text($color: currentColor, $underline: false);
   }
 }

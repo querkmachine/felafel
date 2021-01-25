@@ -1,0 +1,40 @@
+@use "../settings";
+@use "../helpers/spacing";
+@use "../helpers/typography";
+@use "../helpers/links";
+
+.fs-card {
+  $self: &;
+  position: relative;
+  &__media {
+    line-height: 0;
+    a {
+      display: block;
+    }
+  }
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+  &__body {
+    @include spacing.fs-responsive-padding(3, $direction: top);
+  }
+  &__heading {
+    display: block;
+  }
+  &__link {
+    &--spread {
+      @include links.fs-spread-link;
+    }
+  }
+  &__content {
+    @include typography.fs-font-size(16);
+  }
+  &--bordered {
+    border: settings.$fs-card-border-width solid settings.$fs-card-border-color;
+    border-radius: settings.$fs-card-border-radius;
+    #{$self}__body {
+      @include spacing.fs-responsive-padding(3, $direction: all);
+    }
+  }
+}

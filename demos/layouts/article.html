@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en" class="fs-template">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../dist/all.css" />
+    <title>Example article page layout</title>
+  </head>
+  <body class="fs-template__body">
+    <a class="fs-skiplink" href="#navigation">Skip to navigation</a>
+    <a class="fs-skiplink" href="#content">Skip to content</a>
+
+    <nav class="fs-masthead-tools" aria-label="Utilities">
+      <div class="fs-width-container fs-masthead-tools__inner">
+        <ul class="fs-masthead-tools__list">
+          <li class="fs-masthead-tools__item">
+            <a class="fs-masthead-tools__link" href="#"> Login or register </a>
+          </li>
+          <li class="fs-masthead-tools__item">
+            <a class="fs-masthead-tools__link" href="#"> Basket (0) </a>
+          </li>
+          <li class="fs-masthead-tools__item">
+            <a class="fs-masthead-tools__link" href="#"> Search </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <header class="fs-masthead">
+      <div class="fs-width-container fs-masthead__inner">
+        <div class="fs-grid-row">
+          <div class="fs-grid-column-one-third fs-masthead__logo">
+            <a class="fs-link-text fs-masthead__logo-link" href="#">
+              The Bread Club
+            </a>
+          </div>
+          <div class="fs-grid-column-two-thirds fs-masthead__content">
+            <nav
+              class="fs-primary-navigation"
+              id="navigation"
+              aria-label="Main navigation"
+            >
+              <ul class="fs-primary-navigation__list">
+                <li class="fs-primary-navigation__item">
+                  <a class="fs-link-text fs-primary-navigation__link" href="#">
+                    Loaves
+                  </a>
+                </li>
+                <li class="fs-primary-navigation__item">
+                  <a
+                    class="fs-link-text fs-primary-navigation__link"
+                    href="#"
+                    aria-current="true"
+                  >
+                    Rolls
+                  </a>
+                </li>
+                <li class="fs-primary-navigation__item">
+                  <a class="fs-link-text fs-primary-navigation__link" href="#">
+                    Pastries
+                  </a>
+                </li>
+                <li class="fs-primary-navigation__item">
+                  <a class="fs-link-text fs-primary-navigation__link" href="#">
+                    Crumpets
+                  </a>
+                </li>
+                <li class="fs-primary-navigation__item">
+                  <a class="fs-link-text fs-primary-navigation__link" href="#">
+                    Treats
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="fs-!-margin-top-8 fs-!-margin-bottom-8" id="content">
+      <!-- Breadcrumbs: start -->
+      <div class="fs-width-container fs-!-margin-top-3 fs-!-margin-bottom-3">
+        <nav class="fs-breadcrumbs" aria-label="Breadcrumb navigation">
+          <ol class="fs-breadcrumbs__list">
+            <li class="fs-breadcrumbs__item">
+              <a class="fs-breadcrumbs__link" href="#"> Home </a>
+            </li>
+            <li class="fs-breadcrumbs__item">
+              <a class="fs-breadcrumbs__link" href="#"> Breads </a>
+            </li>
+            <li class="fs-breadcrumbs__item">
+              <a class="fs-breadcrumbs__link" href="#"> Preparation </a>
+            </li>
+            <li class="fs-breadcrumbs__item">
+              <a class="fs-breadcrumbs__link" href="#" aria-current="page">
+                Fats or shortenings
+              </a>
+            </li>
+          </ol>
+        </nav>
+      </div>
+      <!-- Breadcrumbs: end -->
+
+      <!-- Main article: start -->
+      <article class="fs-width-container">
+        <div class="fs-grid-row">
+          <div class="fs-grid-column-two-thirds">
+            <h1 class="fs-heading-xl">
+              Everything you knead to know about bread
+            </h1>
+            <img
+              alt="Bread!"
+              src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Bread_%2816757182610%29.jpg"
+            />
+            <div class="fs-prose">
+              <p>
+                <strong>Bread</strong> is a baked food product made of flour or
+                meal that is moistened, kneaded, and sometimes fermented. A
+                major food since prehistoric times, it has been made in various
+                forms using a variety of ingredients and methods throughout the
+                world. The first bread was made in Neolithic times, nearly
+                12,000 years ago, probably of coarsely crushed grain mixed with
+                water, with the resulting dough probably laid on heated stones
+                and baked by covering with hot ashes. The Egyptians apparently
+                discovered that allowing wheat doughs to ferment, thus forming
+                gases, produced a light, expanded loaf, and they also developed
+                baking ovens.
+              </p>
+              <p>
+                Flat breads, the earliest form of bread, are still eaten,
+                especially in much of the Middle East, Asia, and Africa. The
+                principal grains used in such breads are corn (maize), barley,
+                millet, and buckwheat—all lacking sufficient gluten (elastic
+                protein) to make raised breads—and wheat and rye. Millet cakes
+                and chapaties (crisp, whole-meal cakes) are popular types in
+                India. Corn is used to make the small, flat cakes known as
+                tortillas, important throughout much of Latin America; and in
+                Brazil small cakes are made from cassava.
+              </p>
+              <blockquote class="fs-blockquote">
+                <p>
+                  [Breadmaking is] one of those almost hypnotic businesses, like
+                  a dance from some ancient ceremony.
+                </p>
+                <p>
+                  It leaves you filled with one of the world's sweetest
+                  smells... there is no chiropractic treatment, no yoga
+                  exercise, no hour of meditation in a music-throbbing chapel
+                  that will leave you emptier of bad thoughts than this homely
+                  ceremony of making bread.
+                </p>
+              </blockquote>
+              <p>
+                Although Far Eastern peoples have traditionally preferred rice,
+                consumed as a grain, consumption of Western breads was
+                increasing there in the latter half of the 20th century; and in
+                Japan the bread-baking industry, using U.S. processes, expanded
+                rapidly after World War II. Raised black bread, common in
+                Germany, Russia, and Scandinavia, is made chiefly from rye.
+                Lighter rye loaves, with wheat flour added, are popular in the
+                United States. Raised wheat breads include white bread, made
+                from finely sifted wheat flour; whole wheat bread, made from
+                unsifted flour containing much of the outer and inner portions
+                of the wheat kernel normally removed for white flour; gluten
+                bread, lower in sugars because much of the starch is removed
+                from the flour; and Vienna and French bread, long, narrow,
+                crusty loaves. Other forms of raised breads include rolls and
+                buns, chemically leavened quick breads, and yeast-leavened sweet
+                goods that are rich in sugar and shortening.
+              </p>
+            </div>
+
+            <!-- Accordion section: start -->
+            <h2 class="fs-heading-l">Types of bread</h2>
+            <div class="fs-details-group" data-module="fs-details-group">
+              <details class="fs-details">
+                <summary class="fs-details__summary">
+                  <div class="fs-details__summary-text">Baguette</div>
+                </summary>
+                <div class="fs-details__body">
+                  <div class="fs-prose">
+                    <p>
+                      A baguette is a long, thin loaf of French bread that is
+                      commonly made from basic lean dough (the dough, though not
+                      the shape, is defined by French law). It is
+                      distinguishable by its length and crisp crust.
+                    </p>
+                  </div>
+                </div>
+              </details>
+              <details class="fs-details">
+                <summary class="fs-details__summary">
+                  <div class="fs-details__summary-text">Brioche</div>
+                </summary>
+                <div class="fs-details__body">
+                  <div class="fs-prose">
+                    <p>
+                      Brioche is a bread of French origin that is similar to a
+                      highly enriched pastry, and whose high egg and butter
+                      content (400 grams for each kilogram of flour) gives it a
+                      rich and tender crumb. Chef Joël Robuchon described it as
+                      "light and slightly puffy, more or less fine, according to
+                      the proportion of butter and eggs." It has a dark, golden,
+                      and flaky crust, frequently accentuated by an egg wash
+                      applied after proofing.
+                    </p>
+                  </div>
+                </div>
+              </details>
+              <details class="fs-details">
+                <summary class="fs-details__summary">
+                  <div class="fs-details__summary-text">Multigrain bread</div>
+                </summary>
+                <div class="fs-details__body">
+                  <div class="fs-prose">
+                    <p>
+                      Multigrain bread is a type of bread prepared with two or
+                      more types of grain. Grains used include barley, flax,
+                      millet, oats, wheat, and whole-wheat flour, among others.
+                      Some varieties include edible seeds in their preparation,
+                      such as flaxseed, quinoa, pumpkin seeds, and sunflower
+                      seeds. Rye and sourdough multigrain breads are additional
+                      varieties. Preparations include 7-grain and 9-grain bread,
+                      among others.
+                    </p>
+                  </div>
+                </div>
+              </details>
+              <details class="fs-details">
+                <summary class="fs-details__summary">
+                  <div class="fs-details__summary-text">Pita bread</div>
+                </summary>
+                <div class="fs-details__body">
+                  <div class="fs-prose">
+                    <p>
+                      Pita, or pitta, is a family of yeast-leavened round
+                      flatbreads baked from wheat flour, common in the
+                      Mediterranean, Middle East, and neighboring areas. It
+                      includes the widely known version with an interior pocket,
+                      also known as Arabic bread, Syrian bread, and other names,
+                      as well as pocketless versions such as the Greek pita,
+                      used to wrap souvlaki.
+                    </p>
+                  </div>
+                </div>
+              </details>
+              <details class="fs-details">
+                <summary class="fs-details__summary">
+                  <div class="fs-details__summary-text">Sourdough</div>
+                </summary>
+                <div class="fs-details__body">
+                  <div class="fs-prose">
+                    <p>
+                      Sourdough bread is made by the fermentation of dough using
+                      naturally occurring lactobacilli and yeast. The lactic
+                      acid produced by the lactobacilli gives it a more sour
+                      taste and improved keeping qualities.
+                    </p>
+                  </div>
+                </div>
+              </details>
+            </div>
+            <!-- Accordion section: end -->
+          </div>
+          <div class="fs-grid-column-one-third">
+            <!-- Tabbed section: start -->
+            <div class="fs-tabs" data-module="fs-tabs">
+              <ul class="fs-tabs__list" aria-label="Table of contents">
+                <li class="fs-tabs__item">
+                  <a class="fs-tabs__tab" href="#popular"> Popular </a>
+                </li>
+                <li class="fs-tabs__item">
+                  <a class="fs-tabs__tab" href="#related"> Related </a>
+                </li>
+              </ul>
+              <div class="fs-tabs__panel" id="popular">
+                <ul class="fs-list fs-body-s">
+                  <li>
+                    <a href="#" class="fs-link">Much ado about baguettes</a>
+                  </li>
+                  <li>
+                    <a href="#" class="fs-link">A matter of loaf and death</a>
+                  </li>
+                  <li>
+                    <a href="#" class="fs-link">Living for the wholemeal</a>
+                  </li>
+                  <li>
+                    <a href="#" class="fs-link"
+                      >A to Z of bread: from Anadama to Zwieback</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="fs-link"
+                      >Tiger bread: Time for a new name?</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="fs-link">Opinion: Scone or scone?</a>
+                  </li>
+                  <li>
+                    <a href="#" class="fs-link"
+                      >The wonderful history of roti</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="fs-link"
+                      >Potato bread &mdash; the forgotten cousin</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="fs-link"
+                      >Preparing the perfect panettone</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="fs-link"
+                      >The pain of French patisserie</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="fs-tabs__panel" id="related">
+                <ul class="fs-list fs-body-s">
+                  <li>
+                    <a href="#" class="fs-link"
+                      >Everything you knead to know about cake</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="fs-link"
+                      >Everything you knead to know about patisserie</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="fs-link"
+                      >Everything you knead to know about biscuits</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="fs-link"
+                      >Bread: a comprehensive history</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="fs-link"
+                      >Everything you knead to know about patise</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Tabbed section: end -->
+          </div>
+        </div>
+      </article>
+      <!-- Main article: end -->
+    </main>
+
+    <footer>
+      <div class="fs-fat-footer">
+        <div class="fs-width-container fs-fat-footer__inner">
+          <div class="fs-grid-row">
+            <div class="fs-grid-column-one-quarter fs-body-s">
+              <h2 class="fs-fat-footer__heading">The Bread Club</h2>
+              <ul class="fs-list">
+                <li>
+                  <a class="fs-fat-footer__link" href="#">About Bread Club</a>
+                </li>
+                <li><a class="fs-fat-footer__link" href="#">Careers</a></li>
+                <li>
+                  <a class="fs-fat-footer__link" href="#">Press releases</a>
+                </li>
+              </ul>
+            </div>
+            <div class="fs-grid-column-one-quarter fs-body-s">
+              <h2 class="fs-fat-footer__heading">Membership</h2>
+              <ul class="fs-list">
+                <li>
+                  <a class="fs-fat-footer__link" href="#">Join Bread Club</a>
+                </li>
+                <li>
+                  <a class="fs-fat-footer__link" href="#"
+                    >Benefits of membership</a
+                  >
+                </li>
+                <li>
+                  <a class="fs-fat-footer__link" href="#">Membership rules</a>
+                </li>
+                <li>
+                  <a class="fs-fat-footer__link" href="#">Manage membership</a>
+                </li>
+              </ul>
+            </div>
+            <div class="fs-grid-column-one-quarter fs-body-s">
+              <h2 class="fs-fat-footer__heading">Events</h2>
+              <ul class="fs-list">
+                <li>
+                  <a class="fs-fat-footer__link" href="#">Browse all events</a>
+                </li>
+                <li>
+                  <a class="fs-fat-footer__link" href="#">Baking classes</a>
+                </li>
+              </ul>
+            </div>
+            <div class="fs-grid-column-one-quarter fs-body-s">
+              <h2 class="fs-fat-footer__heading">Contact us</h2>
+              <p>
+                <a
+                  class="fs-fat-footer__link"
+                  href="mailto:email.address@example.com"
+                  >Email us! email.address@example.com</a
+                >
+              </p>
+              <p>
+                2 Brioche Place<br />
+                Bageltown<br />
+                BA7 1NG
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fs-footer">
+        <div class="fs-width-container fs-footer__inner">
+          <div class="fs-grid-row">
+            <div
+              class="fs-grid-column-full desktop:fs-grid-column-one-half fs-footer__legal"
+            >
+              &copy; 2020 The Bread Club. All rights reserved.
+            </div>
+            <div
+              class="fs-grid-column-full desktop:fs-grid-column-one-half fs-footer__links"
+            >
+              <ul class="fs-footer__list">
+                <li class="fs-footer__item">
+                  <a class="fs-footer__link" href="#"> Terms and conditions </a>
+                </li>
+                <li class="fs-footer__item">
+                  <a class="fs-footer__link" href="#"> Privacy policy </a>
+                </li>
+                <li class="fs-footer__item">
+                  <a class="fs-footer__link" href="#"> Contact us </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../../dist/all.js"></script>
+    <script>
+      window.fs.initAll();
+    </script>
+  </body>
+</html>

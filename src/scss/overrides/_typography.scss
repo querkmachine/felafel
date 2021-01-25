@@ -1,6 +1,8 @@
 @use "../settings";
 @use "../helpers/typography";
 
+@use "sass:map";
+
 // Font size
 @each $size, $map in settings.$fs-font-sizes-responsive {
   .fs-\!-font-size-#{$size} {
@@ -8,35 +10,22 @@
   }
 }
 
-// Font stacks
-.fs-\!-font-body {
-  @include typography.fs-font-stack(body, $important: true);
-}
-.fs-\!-font-body-regular {
-  @include typography.fs-font-stack(body, $weight: regular, $important: true);
-}
-.fs-\!-font-body-bold {
-  @include typography.fs-font-stack(body, $weight: bold, $important: true);
-}
-
-.fs-\!-font-header {
-  @include typography.fs-font-stack(header, $important: true);
-}
-.fs-\!-font-header-regular {
-  @include typography.fs-font-stack(header, $weight: regular, $important: true);
-}
-.fs-\!-font-header-bold {
-  @include typography.fs-font-stack(header, $weight: bold, $important: true);
-}
-
-.fs-\!-font-code {
-  @include typography.fs-font-stack(code, $important: true);
-}
-.fs-\!-font-code-regular {
-  @include typography.fs-font-stack(code, $weight: regular, $important: true);
-}
-.fs-\!-font-code-bold {
-  @include typography.fs-font-stack(code, $weight: bold, $important: true);
+@each $key, $map in settings.$fs-font-stacks {
+  @each $weight, $value in $map {
+    @if $weight == "stack" {
+      .fs-\!-font-#{$key} {
+        @include typography.fs-font-stack($key, $important: true);
+      }
+    } @else {
+      .fs-\!-font-#{$key}-#{$weight} {
+        @include typography.fs-font-stack(
+          $key,
+          $weight: $weight,
+          $important: true
+        );
+      }
+    }
+  }
 }
 
 // Text alignment

@@ -1,0 +1,22 @@
+@use "../settings";
+@use "../helpers/spacing";
+@use "../helpers/typography";
+
+.fs-empty {
+  @include spacing.fs-responsive-padding(6, $direction: all);
+  text-align: center;
+  &__image {
+    @include spacing.fs-responsive-margin(4, $direction: bottom);
+  }
+  &__body {
+  }
+  &__heading {
+    @include typography.fs-font-stack(header, $weight: regular);
+  }
+  &__content {
+    color: settings.$fs-text-color-secondary;
+  }
+  &__cta {
+    @include spacing.fs-responsive-margin(4, $direction: top);
+  }
+}

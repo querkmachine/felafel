@@ -1,0 +1,56 @@
+@use "../settings";
+@use "../helpers/spacing";
+@use "../helpers/colors";
+
+@forward "../objects/typography";
+
+.fs-hero {
+  position: relative;
+  &__background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+  &__inner {
+    position: relative;
+  }
+  &__body {
+    @include spacing.fs-responsive-margin(
+      settings.$fs-hero-margin,
+      $direction: top
+    );
+    @include spacing.fs-responsive-margin(
+      settings.$fs-hero-margin,
+      $direction: bottom
+    );
+    @include spacing.fs-responsive-padding(
+      settings.$fs-hero-padding,
+      $direction: all
+    );
+    display: inline-block;
+    max-width: 30em;
+    border-radius: settings.$fs-hero-border-radius;
+    @if settings.$fs-hero-background-color {
+      color: if(
+        settings.$fs-hero-text-color,
+        settings.$fs-hero-text-color,
+        colors.fs-contrasting-color(settings.$fs-hero-background-color)
+      );
+      background-color: settings.$fs-hero-background-color;
+    } @else {
+      color: if(
+        settings.$fs-hero-text-color,
+        settings.$fs-hero-text-color,
+        white
+      );
+    }
+  }
+  &__heading {
+    @extend .fs-heading-xl;
+    @include spacing.fs-responsive-margin(3, $direction: bottom);
+    color: currentColor;
+  }
+}
