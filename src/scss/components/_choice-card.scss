@@ -1,0 +1,61 @@
+@use "../settings";
+
+@use "../helpers/a11y";
+@use "../helpers/spacing";
+@use "../helpers/typography";
+
+.fs-choice-card {
+  $self: &;
+  $padding: spacing.fs-spacing(1);
+  &__input {
+    @include a11y.fs-visually-hidden;
+    &:focus {
+      + #{$self}__label {
+        @include a11y.fs-focus-ring;
+      }
+    }
+    &:checked {
+      + #{$self}__label {
+        border-color: settings.$fs-choice-card-selected-border-color;
+        color: settings.$fs-choice-card-selected-text-color;
+        background-color: settings.$fs-choice-card-selected-background-color;
+        #{$self}__heading {
+          border-bottom-color: settings.$fs-choice-card-selected-border-color;
+        }
+      }
+    }
+  }
+  &__label {
+    display: block;
+    height: 100%;
+    padding: $padding;
+    border: settings.$fs-choice-card-border-width solid
+      settings.$fs-choice-card-border-color;
+    border-radius: settings.$fs-choice-card-border-radius;
+    position: relative;
+    color: settings.$fs-choice-card-text-color;
+    background-color: settings.$fs-choice-card-background-color;
+    text-align: center;
+    cursor: pointer;
+  }
+  &__heading {
+    display: block;
+    margin: (0 - $padding) (0 - $padding) $padding (0 - $padding);
+    padding: $padding;
+    border-bottom: settings.$fs-choice-card-border-width solid
+      settings.$fs-choice-card-border-color;
+    font-weight: bold;
+    text-align: left;
+  }
+  &__description {
+    @include typography.fs-font-size(16);
+    text-align: left;
+  }
+}
+
+.fs-choice-card-group {
+  --max-width: #{settings.$fs-choice-card-max-width};
+  display: grid;
+  grid-gap: spacing.fs-spacing(2);
+  grid-template-columns: repeat(auto-fill, var(--max-width));
+}

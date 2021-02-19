@@ -1073,6 +1073,67 @@ a:not([class]):active {
   pointer-events: none;
   cursor: default;
 }
+.fs-choice-card__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+.fs-choice-card__input:focus + .fs-choice-card__label {
+  outline: 3px solid #f59e0b;
+  outline-offset: 0;
+}
+.fs-choice-card__input:checked + .fs-choice-card__label {
+  border-color: #3b82f6;
+  color: #3b82f6;
+  background-color: #fff;
+}
+.fs-choice-card__input:checked + .fs-choice-card__label .fs-choice-card__heading {
+  border-bottom-color: #3b82f6;
+}
+.fs-choice-card__label {
+  display: block;
+  height: 100%;
+  padding: 0.3125rem;
+  border: 2px solid #111827;
+  border-radius: 0;
+  position: relative;
+  color: #111827;
+  background-color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+.fs-choice-card__heading {
+  display: block;
+  margin: -0.3125rem -0.3125rem 0.3125rem -0.3125rem;
+  padding: 0.3125rem;
+  border-bottom: 2px solid #111827;
+  font-weight: bold;
+  text-align: left;
+}
+.fs-choice-card__description {
+  font-size: 0.875rem;
+  line-height: 1.2857142857;
+  text-align: left;
+}
+@media screen and (min-width: 650px) {
+  .fs-choice-card__description {
+    font-size: 1rem;
+    line-height: 1.375;
+  }
+}
+
+.fs-choice-card-group {
+  --max-width: 10em;
+  display: grid;
+  grid-gap: 0.625rem;
+  grid-template-columns: repeat(auto-fill, var(--max-width));
+}
+
 .fs-date-input {
   display: flex;
   flex-direction: row;

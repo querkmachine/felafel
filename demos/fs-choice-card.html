@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/all.css" />
+    <title>Choice card</title>
+  </head>
+  <body>
+    <div class="fs-form-row">
+      <fieldset class="fs-fieldset">
+        <legend class="fs-fieldset__legend">Single select choice cards</legend>
+        <div class="fs-choice-card-group">
+          <div class="fs-choice-card">
+            <input
+              class="fs-choice-card__input"
+              type="radio"
+              name="RadioGroup"
+              id="radio1"
+              checked
+            />
+            <label class="fs-choice-card__label" for="radio1">
+              San Marino
+            </label>
+          </div>
+          <div class="fs-choice-card">
+            <input
+              class="fs-choice-card__input"
+              type="radio"
+              name="RadioGroup"
+              id="radio2"
+            />
+            <label class="fs-choice-card__label" for="radio2">
+              United States of America
+            </label>
+          </div>
+          <div class="fs-choice-card">
+            <input
+              class="fs-choice-card__input"
+              type="radio"
+              name="RadioGroup"
+              id="radio3"
+            />
+            <label class="fs-choice-card__label" for="radio3">
+              Marshall Islands
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="fs-form-row">
+      <fieldset class="fs-fieldset">
+        <legend class="fs-fieldset__legend">
+          Multi-select choice cards (w/ descriptions)
+        </legend>
+        <div class="fs-hint" id="ChoiceHint">Select all that apply.</div>
+        <div class="fs-choice-card-group">
+          <div class="fs-choice-card">
+            <input
+              class="fs-choice-card__input"
+              type="checkbox"
+              id="checkbox2"
+              aria-describedby="ChoiceHint"
+            />
+            <label class="fs-choice-card__label" for="checkbox2">
+              <strong class="fs-choice-card__heading">Zimbabwe</strong>
+              <div class="fs-choice-card__description">
+                Totam ex provident facere maiores nulla illo qui, aliquam
+                libero! Quidem dignissimos et, esse accusamus?
+              </div>
+            </label>
+          </div>
+          <div class="fs-choice-card">
+            <input
+              class="fs-choice-card__input"
+              type="checkbox"
+              id="checkbox3"
+              aria-describedby="ChoiceHint"
+            />
+            <label class="fs-choice-card__label" for="checkbox3">
+              <strong class="fs-choice-card__heading">New Zealand</strong>
+              <div class="fs-choice-card__description">
+                Nemo quidem quam at cum nobis vero sequi in sapiente?
+              </div>
+            </label>
+          </div>
+          <div class="fs-choice-card">
+            <input
+              class="fs-choice-card__input"
+              type="checkbox"
+              id="checkbox4"
+              aria-describedby="ChoiceHint"
+            />
+            <label class="fs-choice-card__label" for="checkbox4">
+              <strong class="fs-choice-card__heading">Benin</strong>
+              <div class="fs-choice-card__description">
+                Eius veritatis magni incidunt impedit vitae perspiciatis quam
+                voluptates maxime.
+              </div>
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <script src="../dist/all.js"></script>
+    <script>
+      window.fs.initAll();
+    </script>
+  </body>
+</html>

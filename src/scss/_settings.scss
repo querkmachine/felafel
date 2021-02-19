@@ -342,6 +342,30 @@ $fs-checkbox-border-radius: if(
   0
 ) !default;
 
+// Choice card
+$fs-choice-card-max-width: 10em !default;
+$fs-choice-card-border-width: $fs-border-width-form-element !default;
+$fs-choice-card-text-color: map.get(
+  $fs-default-color-palette,
+  "grey90"
+) !default;
+$fs-choice-card-background-color: map.get(
+  $fs-default-color-palette,
+  "white"
+) !default;
+$fs-choice-card-border-color: $fs-choice-card-text-color !default;
+$fs-choice-card-selected-text-color: map.get(
+  $fs-default-color-palette,
+  "blue"
+) !default;
+$fs-choice-card-selected-background-color: $fs-choice-card-background-color !default;
+$fs-choice-card-selected-border-color: $fs-choice-card-selected-text-color !default;
+$fs-choice-card-border-radius: if(
+  $fs-enable-rounded-corners,
+  $fs-border-radius,
+  0
+) !default;
+
 // Details
 $fs-details-text-color: false !default;
 $fs-details-background-color: map.get(
