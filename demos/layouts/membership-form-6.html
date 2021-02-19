@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" class="fs-template">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../dist/all.css" />
+    <title>Membership form 6</title>
+  </head>
+  <body class="fs-template__body">
+    <a class="fs-skiplink" href="#navigation">Skip to navigation</a>
+    <a class="fs-skiplink" href="#content">Skip to content</a>
+
+    <nav class="fs-masthead-tools" aria-label="Utilities">
+      <div class="fs-width-container fs-masthead-tools__inner">
+        <ul class="fs-masthead-tools__list">
+          <li class="fs-masthead-tools__item">
+            <a class="fs-masthead-tools__link" href="#"> Login or register </a>
+          </li>
+          <li class="fs-masthead-tools__item">
+            <a class="fs-masthead-tools__link" href="#"> Basket (0) </a>
+          </li>
+          <li class="fs-masthead-tools__item">
+            <a class="fs-masthead-tools__link" href="#"> Search </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <header class="fs-masthead">
+      <div class="fs-width-container fs-masthead__inner">
+        <div class="fs-grid-row">
+          <div class="fs-grid-column-one-third fs-masthead__logo">
+            <a class="fs-link-text fs-masthead__logo-link" href="#">
+              The Bread Club
+            </a>
+          </div>
+          <div class="fs-grid-column-two-thirds fs-masthead__content">
+            <nav
+              class="fs-primary-navigation"
+              id="navigation"
+              aria-label="Main navigation"
+            >
+              <ul class="fs-primary-navigation__list">
+                <li class="fs-primary-navigation__item">
+                  <a class="fs-link-text fs-primary-navigation__link" href="#">
+                    Loaves
+                  </a>
+                </li>
+                <li class="fs-primary-navigation__item">
+                  <a
+                    class="fs-link-text fs-primary-navigation__link"
+                    href="#"
+                    aria-current="true"
+                  >
+                    Rolls
+                  </a>
+                </li>
+                <li class="fs-primary-navigation__item">
+                  <a class="fs-link-text fs-primary-navigation__link" href="#">
+                    Pastries
+                  </a>
+                </li>
+                <li class="fs-primary-navigation__item">
+                  <a class="fs-link-text fs-primary-navigation__link" href="#">
+                    Crumpets
+                  </a>
+                </li>
+                <li class="fs-primary-navigation__item">
+                  <a class="fs-link-text fs-primary-navigation__link" href="#">
+                    Treats
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main
+      class="fs-width-container fs-!-margin-top-8 fs-!-margin-bottom-8"
+      id="content"
+    >
+      <div class="fs-grid-row">
+        <div class="fs-grid-column-one-third">
+          <div
+            class="fs-step-indicator"
+            data-orientation="vertical"
+            data-counters
+            aria-label="Progress"
+          >
+            <ol class="fs-step-indicator__list">
+              <li
+                class="fs-step-indicator__item fs-step-indicator__item--complete"
+              >
+                <span class="fs-step-indicator__label">
+                  Membership type <span class="fs-!-sr">(complete)</span>
+                </span>
+              </li>
+              <li
+                class="fs-step-indicator__item fs-step-indicator__item--complete"
+              >
+                <span class="fs-step-indicator__label">
+                  Your details <span class="fs-!-sr">(complete)</span>
+                </span>
+              </li>
+              <li
+                class="fs-step-indicator__item fs-step-indicator__item--complete"
+              >
+                <span class="fs-step-indicator__label">
+                  Additional members
+                  <span class="fs-!-sr">(current step)</span></span
+                >
+              </li>
+              <li
+                class="fs-step-indicator__item fs-step-indicator__item--complete"
+              >
+                <span class="fs-step-indicator__label">
+                  Payment details <span class="fs-!-sr">(complete)</span>
+                </span>
+              </li>
+              <li
+                class="fs-step-indicator__item fs-step-indicator__item--complete"
+              >
+                <span class="fs-step-indicator__label">
+                  Gift Aid <span class="fs-!-sr">(complete)</span>
+                </span>
+              </li>
+              <li
+                class="fs-step-indicator__item fs-step-indicator__item--current"
+              >
+                <span class="fs-step-indicator__label">
+                  Review <span class="fs-!-sr">(current step)</span>
+                </span>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="fs-grid-column-two-thirds">
+          <h1 class="fs-heading-xl">
+            <div class="fs-subheading-xl">Become a member</div>
+            Review
+          </h1>
+          <form>
+            <dl class="fs-summary-list">
+              <div class="fs-summary-list__item">
+                <dt class="fs-summary-list__key">Membership type</dt>
+                <dd class="fs-summary-list__value">
+                  Paper-based membership (monthly)
+                </dd>
+                <dd class="fs-summary-list__actions">
+                  <a class="fs-link-no-visited" href="#"
+                    >Edit <span class="fs-!-sr">membership type</span></a
+                  >
+                </dd>
+              </div>
+              <div class="fs-summary-list__item">
+                <dt class="fs-summary-list__key">Primary member</dt>
+                <dd class="fs-summary-list__value">
+                  Kimberly Grey<br />
+                  test@example.com
+                </dd>
+                <dd class="fs-summary-list__actions">
+                  <a class="fs-link-no-visited" href="#"
+                    >Edit <span class="fs-!-sr">primary member</span></a
+                  >
+                </dd>
+              </div>
+            </dl>
+            <table class="fs-table">
+              <caption>
+                <h2 class="fs-heading-l">Your basket</h2>
+              </caption>
+              <thead>
+                <tr>
+                  <th class="fs-!-width-three-quarters" scope="col">Item</th>
+                  <th
+                    class="fs-!-width-one-quarter"
+                    data-type="numeric"
+                    scope="col"
+                  >
+                    Price
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Paper-based membership</th>
+                  <td data-type="numeric">£3.00</td>
+                </tr>
+                <tr>
+                  <th scope="row">Donation</th>
+                  <td data-type="numeric">£5.00</td>
+                </tr>
+                <tr>
+                  <th scope="row">2&times; Additional members</th>
+                  <td data-type="numeric">£6.00</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th scope="row">Total:</th>
+                  <td data-type="numeric">
+                    £14.00
+                    <span class="fs-!-font-size-14 fs-!-display-block"
+                      >/ month</span
+                    >
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+            <div class="fs-form-row">
+              <button
+                class="fs-button"
+                type="submit"
+                data-appearance="primary"
+                data-layout="elastic"
+              >
+                Complete registration
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="fs-footer">
+      <div class="fs-width-container fs-footer__inner">
+        <div class="fs-grid-row">
+          <div
+            class="fs-grid-column-full desktop:fs-grid-column-one-half fs-footer__legal"
+          >
+            &copy; 2020 The Bread Club. All rights reserved.
+          </div>
+          <div
+            class="fs-grid-column-full desktop:fs-grid-column-one-half fs-footer__links"
+          >
+            <ul class="fs-footer__list">
+              <li class="fs-footer__item">
+                <a class="fs-footer__link" href="#"> Terms and conditions </a>
+              </li>
+              <li class="fs-footer__item">
+                <a class="fs-footer__link" href="#"> Privacy policy </a>
+              </li>
+              <li class="fs-footer__item">
+                <a class="fs-footer__link" href="#"> Contact us </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../../dist/all.js"></script>
+    <script>
+      window.fs.initAll();
+    </script>
+  </body>
+</html>
