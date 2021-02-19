@@ -9,6 +9,9 @@
 
 .fs-fieldset {
   @include reset.fs-reset-fieldset;
+  > :last-child {
+    @include spacing.fs-responsive-margin(0, $direction: bottom);
+  }
   &__legend {
     @include spacing.fs-responsive-margin(1, $direction: bottom);
     @include typography.fs-font-stack(body, $weight: regular);
