@@ -1,5 +1,14 @@
 # Changelog
 
+## Next release
+
+- Added Choice Card component.
+- Fixed Form Rows within Fieldsets producing a double bottom margin.
+
+## v1.1.1
+
+- Removed unused .npmrc file.
+
 ## v1.1.0
 
 - Added Breadcrumbs component.
