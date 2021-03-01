@@ -9,7 +9,7 @@
   @include spacing.fs-responsive-padding(4, $direction: top);
   @include spacing.fs-responsive-padding(4, $direction: bottom);
   border-width: 0;
-  border-top-width: settings.$fs-border-width;
+  border-top-width: settings.$fs-masthead-border-top-width;
   border-style: solid;
   border-color: settings.$fs-masthead-border-color;
   color: settings.$fs-masthead-text-color;

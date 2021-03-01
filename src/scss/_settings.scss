@@ -435,6 +435,7 @@ $fs-input-mask-background-color: map.get(
 ) !default;
 
 // Masthead
+$fs-masthead-border-top-width: $fs-border-width !default;
 $fs-masthead-border-color: $fs-brand-color !default;
 $fs-masthead-background-color: map.get(
   $fs-default-color-palette,
