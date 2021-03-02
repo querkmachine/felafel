@@ -1042,8 +1042,8 @@ a:not([class]):active {
   position: relative;
   line-height: 1;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border-radius: 0;
   margin-left: calc(0px - (1.5rem + 0.9375rem));
   float: left;
@@ -1550,22 +1550,24 @@ a:not([class]):active {
   padding: 0.625rem;
   width: 100%;
   -webkit-appearance: textfield;
-     -moz-appearance: textfield;
-          appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
 .fs-input[type=number]::-webkit-inner-spin-button, .fs-input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   margin: 0;
 }
 .fs-input[type=search] {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .fs-input[type=search]::-webkit-search-cancel-button, .fs-input[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .fs-input[aria-invalid=true] {
   outline: 4px solid #ef4444;
@@ -1856,8 +1858,8 @@ a:not([class]):active {
   position: relative;
   line-height: 1;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border-radius: 1.5rem;
   margin-left: calc(0px - (1.5rem + 0.9375rem));
   float: left;
@@ -1907,8 +1909,8 @@ a:not([class]):active {
   background-position: right 0.625rem top 50%;
   background-repeat: no-repeat;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .fs-select[aria-invalid=true] {
   outline: 4px solid #ef4444;
@@ -2417,24 +2419,26 @@ html.js .fs-tabs__panel {
   padding: 0.625rem;
   width: 100%;
   -webkit-appearance: textfield;
-     -moz-appearance: textfield;
-          appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
   min-height: 6.5rem;
   resize: vertical;
 }
 .fs-textarea[type=number]::-webkit-inner-spin-button, .fs-textarea[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   margin: 0;
 }
 .fs-textarea[type=search] {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .fs-textarea[type=search]::-webkit-search-cancel-button, .fs-textarea[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .fs-textarea[aria-invalid=true] {
   outline: 4px solid #ef4444;

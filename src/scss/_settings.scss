@@ -63,11 +63,7 @@ $fs-text-color-secondary: map.get($fs-default-color-palette, "grey50") !default;
 // Links
 $fs-link-color: map.get($fs-default-color-palette, "blue") !default;
 $fs-link-visited-color: map.get($fs-default-color-palette, "purple") !default;
-$fs-link-hover-color: color.mix(
-  #000,
-  map.get($fs-default-color-palette, "blue"),
-  20%
-) !default;
+$fs-link-hover-color: color.mix(#000, $fs-link-color, 20%) !default;
 $fs-link-active-color: $fs-text-color !default;
 
 // Accessibility states
