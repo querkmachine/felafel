@@ -3,7 +3,10 @@
 ## Next release
 
 - Added Choice Card component.
+- Added configuration option to change the Masthead top border width (`$fs-masthead-border-top-width`).
+- Added configuration option to hide a browser's default controls for input `type`s 'number' (`$fs-input-number-hide-controls`) and 'search' (`$fs-input-search-hide-controls`). Both default to `true` to maintain the default styling from previous version.
 - Fixed Form Rows within Fieldsets producing a double bottom margin.
+- Fixed unprefixed uses of appearance CSS property.
 
 ## v1.1.1
 
