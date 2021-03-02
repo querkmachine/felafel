@@ -427,6 +427,12 @@ $fs-input-border-radius: if(
   0
 ) !default;
 
+// Input [type="number"]
+$fs-input-number-hide-controls: true !default;
+
+// Input [type="search"]
+$fs-input-search-hide-controls: true !default;
+
 // Input masks
 $fs-input-mask-text-color: $fs-input-text-color !default;
 $fs-input-mask-background-color: map.get(

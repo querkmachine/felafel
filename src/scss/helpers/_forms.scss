@@ -27,6 +27,8 @@
     top: $vertical-offset;
   }
   line-height: 1;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
 }
 
@@ -69,19 +71,31 @@
   @include _fs-input-base;
   @include spacing.fs-responsive-padding(2, $direction: all);
   width: 100%;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
   appearance: textfield;
-  &[type="number"] {
-    &::-webkit-inner-spin-button,
-    &::-webkit-outer-spin-button {
-      appearance: none;
-      margin: 0;
+  @if settings.$fs-input-number-hide-controls {
+    &[type="number"] {
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        margin: 0;
+      }
     }
   }
   &[type="search"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
-    &::-webkit-search-cancel-button,
-    &::-webkit-search-decoration {
-      appearance: none;
+    @if settings.$fs-input-search-hide-controls {
+      &::-webkit-search-cancel-button,
+      &::-webkit-search-decoration {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
     }
   }
   &[aria-invalid="true"] {
@@ -105,6 +119,8 @@
   background-size: $arrow-size auto;
   background-position: right $arrow-size top 50%;
   background-repeat: no-repeat;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   &[aria-invalid="true"] {
     @include _fs-input-error;
