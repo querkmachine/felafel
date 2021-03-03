@@ -51,6 +51,7 @@
   }
 }
 
+// Select a given light or dark colour, depending on which provides greater contrast with the base colour
 @function fs-contrasting-color(
   $color,
   $light-color: white,
@@ -62,6 +63,21 @@
     @return $light-color;
   } @else {
     @return $dark-color;
+  }
+}
+
+// The above, but wrapped up in an existence check.
+// If $color is defined, use it. If not, fall back to whatever provides greater contrast with the 'paired' colour.
+@function fs-color-if-set(
+  $color,
+  $paired-color,
+  $light-color: white,
+  $dark-color: black
+) {
+  @if $color {
+    @return $color;
+  } @else {
+    @return fs-contrasting-color($paired-color, $light-color, $dark-color);
   }
 }
 

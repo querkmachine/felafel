@@ -34,10 +34,9 @@
     max-width: 30em;
     border-radius: settings.$fs-hero-border-radius;
     @if settings.$fs-hero-background-color {
-      color: if(
+      color: colors.fs-color-if-set(
         settings.$fs-hero-text-color,
-        settings.$fs-hero-text-color,
-        colors.fs-contrasting-color(settings.$fs-hero-background-color)
+        settings.$fs-hero-background-color
       );
       background-color: settings.$fs-hero-background-color;
     } @else {

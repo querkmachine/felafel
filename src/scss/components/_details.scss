@@ -12,19 +12,17 @@
     @include spacing.fs-responsive-padding(3, $direction: all);
   }
   &__summary {
-    color: if(
+    color: colors.fs-color-if-set(
       settings.$fs-details-text-color,
-      settings.$fs-details-text-color,
-      colors.fs-contrasting-color(settings.$fs-details-background-color)
+      settings.$fs-details-background-color
     );
     background-color: settings.$fs-details-background-color;
     list-style-type: none;
     cursor: pointer;
     &:hover {
-      color: if(
+      color: colors.fs-color-if-set(
         settings.$fs-details-hover-text-color,
-        settings.$fs-details-hover-text-color,
-        colors.fs-contrasting-color(settings.$fs-details-hover-background-color)
+        settings.$fs-details-hover-background-color
       );
       background-color: settings.$fs-details-hover-background-color;
     }

@@ -34,10 +34,9 @@
   }
   &:not([data-appearance]) {
     border-color: settings.$fs-button-background-color;
-    color: if(
+    color: colors.fs-color-if-set(
       settings.$fs-button-text-color,
-      settings.$fs-button-text-color,
-      colors.fs-contrasting-color(settings.$fs-button-background-color)
+      settings.$fs-button-background-color
     );
     background-color: settings.$fs-button-background-color;
     &:hover,
@@ -48,10 +47,9 @@
   }
   &[data-appearance="primary"] {
     border-color: settings.$fs-button-primary-background-color;
-    color: if(
+    color: colors.fs-color-if-set(
       settings.$fs-button-primary-text-color,
-      settings.$fs-button-primary-text-color,
-      colors.fs-contrasting-color(settings.$fs-button-primary-background-color)
+      settings.$fs-button-primary-background-color
     );
     background-color: settings.$fs-button-primary-background-color;
     &:hover,

@@ -13,10 +13,9 @@
     @include spacing.fs-responsive-padding(3, $direction: all);
     display: inline-block;
     position: relative;
-    color: if(
+    color: colors.fs-color-if-set(
       settings.$fs-testimonial-text-color,
-      settings.$fs-testimonial-text-color,
-      colors.fs-contrasting-color(settings.$fs-testimonial-background-color)
+      settings.$fs-testimonial-background-color
     );
     background-color: settings.$fs-testimonial-background-color;
     border-radius: settings.$fs-testimonial-border-radius;

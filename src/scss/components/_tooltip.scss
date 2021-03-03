@@ -12,10 +12,9 @@
     width: 16rem;
     position: absolute;
     z-index: 1;
-    color: if(
+    color: colors.fs-color-if-set(
       settings.$fs-tooltip-text-color,
-      settings.$fs-tooltip-text-color,
-      colors.fs-contrasting-color(settings.$fs-tooltip-background-color)
+      settings.$fs-tooltip-background-color
     );
     background: settings.$fs-tooltip-background-color;
     a {

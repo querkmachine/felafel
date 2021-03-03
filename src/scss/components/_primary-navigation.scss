@@ -43,10 +43,9 @@
       margin-left: 0 - spacing.fs-spacing(2);
       &:hover,
       &[aria-current] {
-        color: if(
+        color: colors.fs-color-if-set(
           settings.$fs-primary-navigation-current-link-text-color,
-          settings.$fs-primary-navigation-current-link-text-color,
-          colors.fs-contrasting-color($current-color)
+          $current-color
         );
         background-color: $current-color;
       }

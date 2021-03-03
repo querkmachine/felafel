@@ -15,10 +15,9 @@
     border-style: solid;
     border-color: settings.$fs-masthead-border-color;
   }
-  color: if(
+  color: colors.fs-color-if-set(
     settings.$fs-masthead-tools-text-color,
-    settings.$fs-masthead-tools-text-color,
-    colors.fs-contrasting-color(settings.$fs-masthead-tools-background-color)
+    settings.$fs-masthead-tools-background-color
   );
   background-color: settings.$fs-masthead-tools-background-color;
   &__inner {

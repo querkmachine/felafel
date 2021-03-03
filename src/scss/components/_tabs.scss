@@ -17,19 +17,15 @@
     box-sizing: content-box;
     position: relative;
     margin-right: settings.$fs-tabs-tab-spacing;
-    color: if(
+    color: colors.fs-color-if-set(
       settings.$fs-tabs-tab-text-color,
-      settings.$fs-tabs-tab-text-color,
-      colors.fs-contrasting-color(settings.$fs-tabs-tab-background-color)
+      settings.$fs-tabs-tab-background-color
     );
     background-color: settings.$fs-tabs-tab-background-color;
     &--current {
-      color: if(
+      color: colors.fs-color-if-set(
         settings.$fs-tabs-tab-selected-text-color,
-        settings.$fs-tabs-tab-selected-text-color,
-        colors.fs-contrasting-color(
-          settings.$fs-tabs-tab-selected-background-color
-        )
+        settings.$fs-tabs-tab-selected-background-color
       );
       background-color: settings.$fs-tabs-tab-selected-background-color;
       border-top: settings.$fs-tabs-tab-border-width solid
@@ -50,10 +46,9 @@
   &__panel {
     @include spacing.fs-responsive-margin(6, $direction: bottom);
     @include spacing.fs-responsive-padding(3, $direction: all);
-    color: if(
+    color: colors.fs-color-if-set(
       settings.$fs-tabs-panel-text-color,
-      settings.$fs-tabs-panel-text-color,
-      colors.fs-contrasting-color(settings.$fs-tabs-panel-background-color)
+      settings.$fs-tabs-panel-background-color
     );
     background-color: settings.$fs-tabs-panel-background-color;
     html.js & {
