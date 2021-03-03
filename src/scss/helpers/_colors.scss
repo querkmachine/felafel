@@ -82,7 +82,7 @@
 }
 
 // Text selection highlight colour
-@mixin fs-selection-highlight {
-  color: fs-contrasting-color(settings.$fs-brand-color);
-  background-color: settings.$fs-brand-color;
+@mixin fs-selection-highlight($color: settings.$fs-selection-color) {
+  color: fs-contrasting-color($color);
+  background-color: $color;
 }
