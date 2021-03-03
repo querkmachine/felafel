@@ -520,8 +520,18 @@ $fs-testimonial-background-color: map.get(
   $fs-default-color-palette,
   "grey20"
 ) !default;
+$fs-testimonial-border-radius: if(
+  $fs-enable-rounded-corners,
+  $fs-border-radius,
+  0
+) !default;
 $fs-testimonial-show-avatar: true !default;
 $fs-testimonial-avatar-size: 3rem !default;
+$fs-testimonial-avatar-border-radius: if(
+  $fs-enable-rounded-corners,
+  $fs-testimonial-avatar-size,
+  0
+) !default;
 $fs-testimonial-citation-inset: 3rem !default;
 $fs-testimonial-show-arrow: true !default;
 $fs-testimonial-arrow-size: 1rem !default;

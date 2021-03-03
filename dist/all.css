@@ -2362,6 +2362,7 @@ html.js .fs-tabs__panel {
   position: relative;
   color: black;
   background-color: #e5e7eb;
+  border-radius: 0;
 }
 .fs-testimonial__quotation::before {
   content: "";
@@ -2394,6 +2395,7 @@ html.js .fs-tabs__panel {
   width: 3rem;
   height: 3rem;
   margin-right: 1rem;
+  border-radius: 0;
   float: left;
   object-fit: cover;
 }

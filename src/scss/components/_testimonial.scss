@@ -19,6 +19,7 @@
       colors.fs-contrasting-color(settings.$fs-testimonial-background-color)
     );
     background-color: settings.$fs-testimonial-background-color;
+    border-radius: settings.$fs-testimonial-border-radius;
     @if settings.$fs-testimonial-show-arrow {
       &::before {
         $offset: settings.$fs-testimonial-citation-inset -
@@ -57,11 +58,9 @@
       width: $avatar-size;
       height: $avatar-size;
       margin-right: 1rem;
+      border-radius: settings.$fs-testimonial-avatar-border-radius;
       float: left;
       object-fit: cover;
-      @if settings.$fs-enable-rounded-corners {
-        border-radius: $avatar-size;
-      }
     } @else {
       display: none;
     }
