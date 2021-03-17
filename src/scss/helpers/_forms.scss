@@ -110,15 +110,9 @@
 }
 
 @mixin fs-input-select {
-  $arrow-size: spacing.fs-spacing(2);
   @include _fs-input-base;
   @include spacing.fs-responsive-padding(2, $direction: all);
   width: 100%;
-  padding-right: (spacing.fs-spacing(2) * 2) + $arrow-size;
-  background-image: url("assets/select-arrow.svg");
-  background-size: $arrow-size auto;
-  background-position: right $arrow-size top 50%;
-  background-repeat: no-repeat;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
