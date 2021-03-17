@@ -6,17 +6,20 @@
 // ====================================
 
 $fs-enable-core-styles: true !default;
-$fs-enable-rounded-corners: true !default;
+$fs-enable-rounded-corners: false !default;
 $fs-enable-weber-contrast: true !default;
 
 // ====================================
 // BREAKPOINTS
 // ====================================
 
-$fs-breakpoints: (
+$fs-default-breakpoints: (
   tablet: 650px,
   desktop: 800px,
-) !default;
+);
+
+$fs-breakpoints: () !default;
+$fs-breakpoints: map.merge($fs-default-breakpoints, $fs-breakpoints);
 
 // ====================================
 // COLORS
@@ -43,7 +46,11 @@ $fs-default-color-palette: (
   "grey70": #374151,
   "grey80": #1f2937,
   "grey90": #111827,
-) !default;
+);
+
+// User-defined colour palette
+$fs-color-palette: () !default;
+$fs-color-palette: map.merge($fs-default-color-palette, $fs-color-palette);
 
 // Brand accent (use sparingly)
 $fs-brand-color: map.get($fs-default-color-palette, "grey90") !default;
@@ -126,7 +133,8 @@ $fs-check-radio-size: 1.5rem !default;
 // SPACING
 // ====================================
 
-$fs-spacing-responsive: (
+// Default spacing config
+$fs-default-spacing-responsive: (
   0: (
     null: 0,
   ),
@@ -163,7 +171,14 @@ $fs-spacing-responsive: (
     null: 40px,
     tablet: 60px,
   ),
-) !default;
+);
+
+// User-defined spacing config
+$fs-spacing-responsive: () !default;
+$fs-spacing-responsive: map.merge(
+  $fs-default-spacing-responsive,
+  $fs-spacing-responsive
+);
 
 // ====================================
 // TYPOGRAPHY
@@ -176,8 +191,8 @@ $fs-spacing-responsive: (
 // however the user is free to scale this up and down according to their needs.
 $fs-font-sizes-root: 16px !default;
 
-// Font family stacks
-$fs-font-stacks: (
+// Default font stacks
+$fs-default-font-stacks: (
   body: (
     stack:
       '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
@@ -196,10 +211,14 @@ $fs-font-stacks: (
     regular: 400,
     bold: 700,
   ),
-) !default;
+);
+
+// User-defined font stacks
+$fs-font-stacks: () !default;
+$fs-font-stacks: map.merge($fs-default-font-stacks, $fs-font-stacks);
 
 // Font sizes / line heights
-$fs-font-sizes-responsive: (
+$fs-default-font-sizes-responsive: (
   14: (
     null: (
       font-size: 12px,
@@ -270,7 +289,14 @@ $fs-font-sizes-responsive: (
       line-height: 80px,
     ),
   ),
-) !default;
+);
+
+// User-defined font stacks
+$fs-font-sizes-responsive: () !default;
+$fs-font-sizes-responsive: map.merge(
+  $fs-default-font-sizes-responsive,
+  $fs-font-sizes-responsive
+);
 
 // ====================================
 // COMPONENT SETTINGS
