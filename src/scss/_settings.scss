@@ -6,17 +6,20 @@
 // ====================================
 
 $fs-enable-core-styles: true !default;
-$fs-enable-rounded-corners: true !default;
+$fs-enable-rounded-corners: false !default;
 $fs-enable-weber-contrast: true !default;
 
 // ====================================
 // BREAKPOINTS
 // ====================================
 
-$fs-breakpoints: (
+$fs-default-breakpoints: (
   tablet: 650px,
   desktop: 800px,
-) !default;
+);
+
+$fs-breakpoints: () !default;
+$fs-breakpoints: map.merge($fs-default-breakpoints, $fs-breakpoints);
 
 // ====================================
 // COLORS
