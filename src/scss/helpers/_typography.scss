@@ -44,10 +44,10 @@
 
 // Responsive font-size mixin
 @mixin fs-font-size($size, $important: false) {
-  @if not map.has-key(settings.$fs-font-sizes-responsive, $size) {
+  @if not map.has-key(settings.$fs-font-sizes, $size) {
     @error "Unknown font size `#{$size}` - expected a point from the typography scale.";
   }
-  $size-map: map.get(settings.$fs-font-sizes-responsive, $size);
+  $size-map: map.get(settings.$fs-font-sizes, $size);
   @each $breakpoint, $breakpoint-map in $size-map {
     $font-size: map.get($breakpoint-map, "font-size");
     $font-size-rem: measurements.fs-px-to-rem($font-size);

@@ -134,7 +134,7 @@ $fs-check-radio-size: 1.5rem !default;
 // ====================================
 
 // Default spacing config
-$fs-default-spacing-responsive: (
+$fs-default-spacing: (
   0: (
     null: 0,
   ),
@@ -174,11 +174,8 @@ $fs-default-spacing-responsive: (
 );
 
 // User-defined spacing config
-$fs-spacing-responsive: () !default;
-$fs-spacing-responsive: map.merge(
-  $fs-default-spacing-responsive,
-  $fs-spacing-responsive
-);
+$fs-spacing: () !default;
+$fs-spacing: map.merge($fs-default-spacing, $fs-spacing);
 
 // ====================================
 // TYPOGRAPHY
@@ -218,7 +215,7 @@ $fs-font-stacks: () !default;
 $fs-font-stacks: map.merge($fs-default-font-stacks, $fs-font-stacks);
 
 // Font sizes / line heights
-$fs-default-font-sizes-responsive: (
+$fs-default-font-sizes: (
   14: (
     null: (
       font-size: 12px,
@@ -292,11 +289,8 @@ $fs-default-font-sizes-responsive: (
 );
 
 // User-defined font stacks
-$fs-font-sizes-responsive: () !default;
-$fs-font-sizes-responsive: map.merge(
-  $fs-default-font-sizes-responsive,
-  $fs-font-sizes-responsive
-);
+$fs-font-sizes: () !default;
+$fs-font-sizes: map.merge($fs-default-font-sizes, $fs-font-sizes);
 
 // ====================================
 // COMPONENT SETTINGS

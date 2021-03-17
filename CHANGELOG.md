@@ -1,6 +1,18 @@
 # Changelog
 
-## Next release
+## Next release (2.0.0)
+
+This release simplifies the customisation of a number of global and component-level options. Configuration maps are now merged together when built, allowing for the modification of existing options and addition of new options without having to redefine the entire map. Some of these maps have been renamed to be consistent with other maps.
+
+The following configurations have been updated to work in this way:
+
+- Breakpoints (using `$fs-breakpoints`).
+- Colour palette (`$fs-color-palette`). That this variable was previously named `$fs-default-color-palette`. That variable, though still existing, can no longer be overridden via Felafel configuration.
+- Spacings (`$fs-spacing`). This was previously named `$fs-spacing-responsive`.
+- Font stacks (`$fs-font-stacks`).
+- Font sizes (`$fs-font-sizes`). This was previously named `$fs-font-sizes-responsive`.
+
+In addition:
 
 - Added Choice Card component.
 - Added configuration option to change the Masthead top border width (`$fs-masthead-border-top-width`).

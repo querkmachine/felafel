@@ -4,7 +4,7 @@
 @use "sass:map";
 
 // Font size
-@each $size, $map in settings.$fs-font-sizes-responsive {
+@each $size, $map in settings.$fs-font-sizes {
   .fs-\!-font-size-#{$size} {
     @include typography.fs-font-size($size, $important: true);
   }
