@@ -6,7 +6,7 @@
 
 // Get color from palette
 @function fs-color($color) {
-  @return map.get(settings.$fs-default-color-palette, $color);
+  @return map.get(settings.$fs-color-palette, $color);
 }
 
 // Color tweaking functions
