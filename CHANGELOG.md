@@ -20,10 +20,12 @@ In addition:
 - Added configuration options to hide a browser's default controls for input `type`s 'number' (`$fs-input-number-hide-controls`) and 'search' (`$fs-input-search-hide-controls`). Both default to `true` to maintain the default styling from previous versions.
 - Added configuration option to define the selection (text highlight) colour (`$fs-selection-color`).
 - Abstracted multiple instances of `if` and `fs-contrasting-color` into a new `colors` function: `fs-color-if-set`.
+- Refactored Select component, replacing the SVG arrow icon with a HTML/CSS equivalent.
 - Fixed Form Rows within Fieldsets producing a double bottom margin.
 - Fixed unprefixed uses of appearance CSS property.
 - Fixed `fs-selection-highlight` mixin not being used by the selection core style.
 - Fixed selection core style not being behind the `$fs-enable-core-styles` flag.
+- Fixed input masks having incorrectly rounded corners if rounded corners is enabled.
 
 ## v1.1.1
 
