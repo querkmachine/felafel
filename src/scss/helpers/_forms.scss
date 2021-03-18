@@ -1,14 +1,20 @@
 @use "../settings";
 @use "a11y";
+@use "colors";
 @use "spacing";
 
-@mixin _fs-input-base {
+@mixin _fs-input-base(
+  $border-width: settings.$fs-border-width-form-element,
+  $border-color: settings.$fs-form-element-border-color,
+  $border-radius: settings.$fs-form-element-border-radius,
+  $text-color: settings.$fs-form-element-text-color,
+  $background-color: settings.$fs-form-element-background-color
+) {
   @include spacing.fs-responsive-margin(0, $direction: all);
-  border: settings.$fs-border-width-form-element solid
-    settings.$fs-input-border-color;
-  border-radius: settings.$fs-input-border-radius;
-  color: settings.$fs-input-text-color;
-  background-color: settings.$fs-input-background-color;
+  border: $border-width solid $border-color;
+  border-radius: $border-radius;
+  color: $text-color;
+  background-color: $background-color;
   box-shadow: none;
   font-family: inherit;
   font-size: inherit;
@@ -67,14 +73,14 @@
   }
 }
 
-@mixin fs-input-text {
+@mixin fs-input-text($number-hide-controls: true, $search-hide-controls: true) {
   @include _fs-input-base;
   @include spacing.fs-responsive-padding(2, $direction: all);
   width: 100%;
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   appearance: textfield;
-  @if settings.$fs-input-number-hide-controls {
+  @if $number-hide-controls {
     &[type="number"] {
       &::-webkit-inner-spin-button,
       &::-webkit-outer-spin-button {
@@ -89,7 +95,7 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    @if settings.$fs-input-search-hide-controls {
+    @if $search-hide-controls {
       &::-webkit-search-cancel-button,
       &::-webkit-search-decoration {
         -webkit-appearance: none;
@@ -128,17 +134,18 @@
 }
 
 @mixin fs-input-checkbox(
-  $size: settings.$fs-checkbox-size,
+  $size: settings.$fs-check-radio-size,
   $vertical-offset: 0,
   $check-ratio: 0.6,
   $check-stroke: settings.$fs-border-width-form-element,
-  $check-color: settings.$fs-checkbox-check-color
+  $check-color: settings.$fs-form-element-border-color,
+  $border-radius: 0
 ) {
   @include _fs-input-checkradio(
     $size: $size,
     $vertical-offset: $vertical-offset
   );
-  border-radius: settings.$fs-checkbox-border-radius;
+  border-radius: $border-radius;
   &::after {
     $check-width: $size * $check-ratio;
     $check-height: $check-width * 0.4;
@@ -170,10 +177,10 @@
 }
 
 @mixin fs-input-radio(
-  $size: settings.$fs-radio-size,
+  $size: settings.$fs-check-radio-size,
   $vertical-offset: 0,
   $check-ratio: 0.6,
-  $check-color: settings.$fs-radio-check-color
+  $check-color: settings.$fs-form-element-border-color
 ) {
   @include _fs-input-checkradio(
     $size: $size,

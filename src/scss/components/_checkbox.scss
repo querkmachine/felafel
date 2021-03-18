@@ -1,15 +1,27 @@
 @use "../settings";
-
+@use "../helpers/colors";
 @use "../helpers/forms";
 @use "../helpers/spacing";
 
+// Checkbox
+$size: settings.$fs-check-radio-size !default;
+$check-color: colors.fs-color("grey90") !default;
+$border-radius: if(
+  settings.$fs-enable-rounded-corners,
+  settings.$fs-border-radius,
+  0
+) !default;
+
 .fs-checkbox {
-  $checkbox-size: settings.$fs-checkbox-size;
   @include spacing.fs-responsive-margin(3, $direction: bottom);
-  padding-left: calc(#{$checkbox-size} + #{spacing.fs-spacing(3)});
+  padding-left: calc(#{$size} + #{spacing.fs-spacing(3)});
   &__input {
-    @include forms.fs-input-checkbox;
-    margin-left: calc(0px - (#{$checkbox-size} + #{spacing.fs-spacing(3)}));
+    @include forms.fs-input-checkbox(
+      $size: $size,
+      $check-color: $check-color,
+      $border-radius: $border-radius
+    );
+    margin-left: calc(0px - (#{$size} + #{spacing.fs-spacing(3)}));
     float: left;
   }
   &__label {

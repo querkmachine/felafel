@@ -1,7 +1,8 @@
 @use "../settings";
-
 @use "../helpers/forms";
 @use "../helpers/spacing";
+
+$thumbnail-size: 6rem !default;
 
 .fs-file-upload {
   @include forms.fs-input-file;
@@ -33,8 +34,8 @@
   }
   &__icon {
     @include spacing.fs-responsive-margin(1, $direction: all);
-    width: settings.$fs-file-upload-thumbnail-size;
-    height: settings.$fs-file-upload-thumbnail-size;
+    width: $thumbnail-size;
+    height: $thumbnail-size;
     object-fit: cover;
   }
   &__label {

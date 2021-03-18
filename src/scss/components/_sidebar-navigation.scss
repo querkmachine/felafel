@@ -1,9 +1,12 @@
 @use "../settings";
-
 @use "../helpers/reset";
 @use "../helpers/links";
 @use "../helpers/spacing";
 @use "../helpers/typography";
+
+// Sidebar navigation
+$border-width: settings.$fs-border-width-narrow !default;
+$border-color: settings.$fs-brand-color !default;
 
 .fs-sidebar-navigation {
   &__list {
@@ -20,11 +23,11 @@
     @include typography.fs-font-stack(body, $weight: 400);
     @include typography.fs-font-size(16);
     display: block;
-    border-left: settings.$fs-sidebar-navigation-border-width solid transparent;
+    border-left: $border-width solid transparent;
     text-decoration: none;
     &[aria-current] {
       @include typography.fs-font-stack(body, $weight: 700);
-      border-left-color: settings.$fs-sidebar-navigation-border-color;
+      border-left-color: $border-color;
     }
   }
 }

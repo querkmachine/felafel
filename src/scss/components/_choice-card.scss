@@ -1,8 +1,23 @@
 @use "../settings";
-
 @use "../helpers/a11y";
+@use "../helpers/colors";
 @use "../helpers/spacing";
 @use "../helpers/typography";
+
+// Choice card
+$max-width: 10em !default;
+$border-width: settings.$fs-border-width-form-element !default;
+$text-color: colors.fs-color("grey90") !default;
+$background-color: colors.fs-color("white") !default;
+$border-color: $text-color !default;
+$selected-text-color: colors.fs-color("blue") !default;
+$selected-background-color: $background-color !default;
+$selected-border-color: $selected-text-color !default;
+$border-radius: if(
+  settings.$fs-enable-rounded-corners,
+  settings.$fs-border-radius,
+  0
+) !default;
 
 .fs-choice-card {
   $self: &;
@@ -16,11 +31,11 @@
     }
     &:checked {
       + #{$self}__label {
-        border-color: settings.$fs-choice-card-selected-border-color;
-        color: settings.$fs-choice-card-selected-text-color;
-        background-color: settings.$fs-choice-card-selected-background-color;
+        border-color: $selected-border-color;
+        color: $selected-text-color;
+        background-color: $selected-background-color;
         #{$self}__heading {
-          border-bottom-color: settings.$fs-choice-card-selected-border-color;
+          border-bottom-color: $selected-border-color;
         }
       }
     }
@@ -29,12 +44,11 @@
     display: block;
     height: 100%;
     padding: $padding;
-    border: settings.$fs-choice-card-border-width solid
-      settings.$fs-choice-card-border-color;
-    border-radius: settings.$fs-choice-card-border-radius;
+    border: $border-width solid $border-color;
+    border-radius: $border-radius;
     position: relative;
-    color: settings.$fs-choice-card-text-color;
-    background-color: settings.$fs-choice-card-background-color;
+    color: $text-color;
+    background-color: $background-color;
     text-align: center;
     cursor: pointer;
   }
@@ -42,8 +56,7 @@
     display: block;
     margin: (0 - $padding) (0 - $padding) $padding (0 - $padding);
     padding: $padding;
-    border-bottom: settings.$fs-choice-card-border-width solid
-      settings.$fs-choice-card-border-color;
+    border-bottom: $border-width solid $border-color;
     font-weight: bold;
     text-align: left;
   }
@@ -54,7 +67,7 @@
 }
 
 .fs-choice-card-group {
-  --max-width: #{settings.$fs-choice-card-max-width};
+  --max-width: #{$max-width};
   display: grid;
   grid-gap: spacing.fs-spacing(2);
   grid-template-columns: repeat(auto-fill, var(--max-width));

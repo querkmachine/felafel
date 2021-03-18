@@ -4,6 +4,11 @@
 @use "../helpers/typography";
 @use "../helpers/media-queries";
 
+// Breadcrumbs
+$separator-size: 0.6em !default;
+$separator-color: settings.$fs-text-color-secondary !default;
+$link-color: settings.$fs-link-color !default;
+
 .fs-breadcrumbs {
   $self: &;
   @include typography.fs-font-size(16);
@@ -14,13 +19,13 @@
     display: inline-block;
     &::before,
     &::after {
-      $separator-size: settings.$fs-breadcrumbs-separator-size;
+      $separator-size: $separator-size;
       display: inline-block;
       width: $separator-size * 0.5;
       height: $separator-size;
       margin-right: 0.25em;
       margin-left: 0.25em;
-      background-color: settings.$fs-breadcrumbs-separator-color;
+      background-color: $separator-color;
     }
     @include media-queries.fs-mq($to: tablet) {
       &:nth-last-child(n + 3),
@@ -41,10 +46,7 @@
     }
   }
   &__link {
-    @include links.fs-link--text(
-      $color: settings.$fs-breadcrumbs-link-color,
-      $underline: false
-    );
+    @include links.fs-link--text($color: $link-color, $underline: false);
     &[aria-current="page"],
     &[aria-current="true"] {
     }

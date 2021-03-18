@@ -1,5 +1,4 @@
 @use "../settings";
-
 @use "../helpers/a11y";
 @use "../helpers/colors";
 @use "../helpers/media-queries";
@@ -7,9 +6,22 @@
 @use "../helpers/spacing";
 @use "../helpers/typography";
 
+// Step indicator
+$border-width: settings.$fs-border-width-narrow !default;
+$counter-size: 2rem !default;
+$segment-color: colors.fs-color("grey30") !default;
+$segment-counter-text-color: settings.$fs-text-color-secondary !default;
+$segment-label-text-color: settings.$fs-text-color-secondary !default;
+$current-segment-color: settings.$fs-link-color !default;
+$current-segment-counter-text-color: colors.fs-color("white") !default;
+$current-segment-label-text-color: $current-segment-color !default;
+$complete-segment-color: settings.$fs-link-hover-color !default;
+$complete-segment-counter-text-color: colors.fs-color("white") !default;
+$complete-segment-label-text-color: $complete-segment-color !default;
+
 .fs-step-indicator {
   $self: &;
-  $counter-size: settings.$fs-step-indicator-counter-size;
+  $counter-size: $counter-size;
   @include spacing.fs-responsive-margin(5, $direction: bottom);
   @include typography.fs-font-stack(body, $weight: regular);
   @include typography.fs-font-size(16);
@@ -21,22 +33,22 @@
     counter-increment: stepIndicator;
     border-width: 0;
     border-style: solid;
-    border-color: settings.$fs-step-indicator-segment-color;
+    border-color: $segment-color;
     position: relative;
     #{$self}__label {
-      color: settings.$fs-step-indicator-segment-label-text-color;
+      color: $segment-label-text-color;
     }
     &--complete {
-      border-color: settings.$fs-step-indicator-complete-segment-color;
+      border-color: $complete-segment-color;
       #{$self}__label {
-        color: settings.$fs-step-indicator-complete-segment-label-text-color;
+        color: $complete-segment-label-text-color;
       }
     }
     &--current {
-      border-color: settings.$fs-step-indicator-current-segment-color;
+      border-color: $current-segment-color;
       #{$self}__label {
         @include typography.fs-font-stack(body, $weight: bold);
-        color: settings.$fs-step-indicator-current-segment-label-text-color;
+        color: $current-segment-label-text-color;
       }
     }
   }
@@ -56,19 +68,19 @@
         width: $counter-size;
         height: $counter-size;
         border-radius: $counter-size;
-        color: settings.$fs-step-indicator-segment-counter-text-color;
-        background-color: settings.$fs-step-indicator-segment-color;
+        color: $segment-counter-text-color;
+        background-color: $segment-color;
       }
       &--complete {
         &::before {
-          color: settings.$fs-step-indicator-complete-segment-counter-text-color;
-          background-color: settings.$fs-step-indicator-complete-segment-color;
+          color: $complete-segment-counter-text-color;
+          background-color: $complete-segment-color;
         }
       }
       &--current {
         &::before {
-          color: settings.$fs-step-indicator-current-segment-counter-text-color;
-          background-color: settings.$fs-step-indicator-current-segment-color;
+          color: $current-segment-counter-text-color;
+          background-color: $current-segment-color;
         }
       }
     }
@@ -81,7 +93,7 @@
       @include spacing.fs-responsive-padding(1, $direction: bottom);
       @include spacing.fs-responsive-padding(1, $direction: right);
       @include spacing.fs-responsive-padding(3, $direction: left);
-      border-left-width: settings.$fs-step-indicator-border-width;
+      border-left-width: $border-width;
     }
     &[data-counters] {
       #{$self}__item {
@@ -98,7 +110,7 @@
     }
     #{$self}__item {
       flex: 1 1 1px;
-      border-top-width: settings.$fs-step-indicator-border-width;
+      border-top-width: $border-width;
       + #{$self}__item {
         @include spacing.fs-responsive-margin(1, $direction: left);
       }
@@ -115,10 +127,7 @@
       #{$self}__item {
         &::before {
           position: absolute;
-          top: calc(
-            0px - #{$counter-size / 2} - #{settings.$fs-step-indicator-border-width /
-              2}
-          );
+          top: calc(0px - #{$counter-size / 2} - #{$border-width / 2});
           left: -1px;
         }
       }

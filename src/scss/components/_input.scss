@@ -1,8 +1,22 @@
 @use "../settings";
+@use "../helpers/colors";
 @use "../helpers/forms";
 
+// Input [type="number"]
+$number-hide-controls: true !default;
+
+// Input [type="search"]
+$search-hide-controls: true !default;
+
+// Input masks
+$mask-text-color: currentColor !default;
+$mask-background-color: colors.fs-color("grey20") !default;
+
 .fs-input {
-  @include forms.fs-input-text;
+  @include forms.fs-input-text(
+    $number-hide-controls: true,
+    $search-hide-controls: true
+  );
   @each $length in (20, 10, 8, 5, 4, 3, 2) {
     &--length-#{$length} {
       max-width: ($length + 1) * 1em;
@@ -17,8 +31,8 @@
   &__suffix {
     @include forms.fs-input-mask;
     flex-shrink: 0;
-    color: settings.$fs-input-mask-text-color;
-    background-color: settings.$fs-input-mask-background-color;
+    color: $mask-text-color;
+    background-color: $mask-background-color;
     white-space: nowrap;
   }
   &__prefix {

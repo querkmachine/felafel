@@ -1,8 +1,16 @@
 @use "../settings";
-
 @use "../helpers/media-queries";
 @use "../helpers/spacing";
 @use "../helpers/typography";
+
+// File list
+$border-color: settings.$fs-border-color !default;
+$border-width: settings.$fs-border-width-narrow !default;
+$border-radius: if(
+  settings.$fs-enable-rounded-corners,
+  settings.$fs-border-radius,
+  0
+) !default;
 
 .fs-file-list {
   $self: &;
@@ -11,9 +19,8 @@
   @include typography.fs-font-stack(body, $weight: regular);
   &__item {
     @include spacing.fs-responsive-padding(3, $direction: all);
-    border: settings.$fs-file-list-border-color solid
-      settings.$fs-file-list-border-width;
-    border-radius: settings.$fs-file-list-border-radius;
+    border: $border-width solid $border-color;
+    border-radius: $border-radius;
     + #{$self}__item {
       @include spacing.fs-responsive-margin(3, $direction: top);
     }

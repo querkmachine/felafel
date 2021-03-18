@@ -3,6 +3,15 @@
 @use "../helpers/typography";
 @use "../helpers/links";
 
+// Card
+$border-width: settings.$fs-border-width-narrow !default;
+$border-color: settings.$fs-border-color !default;
+$border-radius: if(
+  settings.$fs-enable-rounded-corners,
+  settings.$fs-border-radius,
+  0
+) !default;
+
 .fs-card {
   $self: &;
   position: relative;
@@ -31,8 +40,8 @@
     @include typography.fs-font-size(16);
   }
   &--bordered {
-    border: settings.$fs-card-border-width solid settings.$fs-card-border-color;
-    border-radius: settings.$fs-card-border-radius;
+    border: $border-width solid $border-color;
+    border-radius: $border-radius;
     #{$self}__body {
       @include spacing.fs-responsive-padding(3, $direction: all);
     }
