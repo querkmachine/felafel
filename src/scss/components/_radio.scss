@@ -1,15 +1,18 @@
 @use "../settings";
-
+@use "../helpers/colors";
 @use "../helpers/forms";
 @use "../helpers/spacing";
 
+// Radio
+$size: settings.$fs-check-radio-size !default;
+$check-color: colors.fs-color("grey90") !default;
+
 .fs-radio {
-  $checkbox-size: settings.$fs-radio-size;
   @include spacing.fs-responsive-margin(3, $direction: bottom);
-  padding-left: calc(#{$checkbox-size} + #{spacing.fs-spacing(3)});
+  padding-left: calc(#{$size} + #{spacing.fs-spacing(3)});
   &__input {
-    @include forms.fs-input-radio;
-    margin-left: calc(0px - (#{$checkbox-size} + #{spacing.fs-spacing(3)}));
+    @include forms.fs-input-radio($size: $size, $check-color: $check-color);
+    margin-left: calc(0px - (#{$size} + #{spacing.fs-spacing(3)}));
     float: left;
   }
   &__label {

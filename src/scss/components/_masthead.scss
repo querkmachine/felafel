@@ -2,18 +2,29 @@
 @use "../helpers/colors";
 @use "../helpers/layout";
 @use "../helpers/media-queries";
+@use "../helpers/reset";
 @use "../helpers/spacing";
 @use "../helpers/typography";
+
+// Masthead
+$border-top-width: settings.$fs-border-width !default;
+$border-color: settings.$fs-brand-color !default;
+$background-color: colors.fs-color("white") !default;
+$text-color: colors.fs-color("grey90") !default;
+
+// Masthead tools
+$tools-background-color: $border-color !default;
+$tools-text-color: false !default;
 
 .fs-masthead {
   @include spacing.fs-responsive-padding(4, $direction: top);
   @include spacing.fs-responsive-padding(4, $direction: bottom);
   border-width: 0;
-  border-top-width: settings.$fs-border-width;
+  border-top-width: $border-top-width;
   border-style: solid;
-  border-color: settings.$fs-masthead-border-color;
-  color: settings.$fs-masthead-text-color;
-  background-color: settings.$fs-masthead-background-color;
+  border-color: $border-color;
+  color: $text-color;
+  background-color: $background-color;
   &__inner {
   }
   &__logo,
@@ -34,5 +45,36 @@
     @include media-queries.fs-mq($from: tablet) {
       @include spacing.fs-responsive-margin(0, $direction: top);
     }
+  }
+}
+
+.fs-masthead-tools {
+  @include typography.fs-font-size(14);
+  @if $tools-background-color == $border-color {
+    border-width: 0;
+    border-top-width: settings.$fs-border-width;
+    border-style: solid;
+    border-color: $border-color;
+  }
+  color: colors.fs-color-if-set($tools-text-color, $tools-background-color);
+  background-color: $tools-background-color;
+  &__inner {
+  }
+  &__list {
+    @include reset.fs-reset-list;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  &__item {
+    & + & {
+      @include spacing.fs-responsive-margin(3, $direction: left);
+    }
+  }
+  &__link {
+    color: currentColor;
+    text-decoration: none;
+    text-transform: uppercase;
   }
 }

@@ -4,6 +4,14 @@
 @use "../helpers/spacing";
 @use "../helpers/typography";
 
+// Details
+$text-color: false !default;
+$background-color: colors.fs-color("grey10") !default;
+$hover-text-color: false !default;
+$hover-background-color: colors.fs-color("grey20") !default;
+$marker-size: 1rem !default;
+$marker-color: currentColor !default;
+
 .fs-details {
   $self: &;
   @include spacing.fs-responsive-margin(3, $direction: bottom);
@@ -12,21 +20,13 @@
     @include spacing.fs-responsive-padding(3, $direction: all);
   }
   &__summary {
-    color: if(
-      settings.$fs-details-text-color,
-      settings.$fs-details-text-color,
-      colors.fs-contrasting-color(settings.$fs-details-background-color)
-    );
-    background-color: settings.$fs-details-background-color;
+    color: colors.fs-color-if-set($text-color, $background-color);
+    background-color: $background-color;
     list-style-type: none;
     cursor: pointer;
     &:hover {
-      color: if(
-        settings.$fs-details-hover-text-color,
-        settings.$fs-details-hover-text-color,
-        colors.fs-contrasting-color(settings.$fs-details-hover-background-color)
-      );
-      background-color: settings.$fs-details-hover-background-color;
+      color: colors.fs-color-if-set($hover-text-color, $hover-background-color);
+      background-color: $hover-background-color;
     }
     &:focus {
       outline: none;
@@ -45,14 +45,13 @@
     justify-content: space-between;
     align-items: center;
     &::after {
-      $marker-size: settings.$fs-details-marker-size;
       content: "";
       display: inline-block;
       width: $marker-size;
       height: $marker-size;
       margin-left: $marker-size;
       float: right;
-      background-color: settings.$fs-details-marker-color;
+      background-color: $marker-color;
       clip-path: polygon(
         45% 0,
         55% 0,

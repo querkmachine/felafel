@@ -3,6 +3,14 @@
 @use "../helpers/typography";
 @use "../helpers/spacing";
 
+// Pagination
+$arrow-size: 0.6em !default;
+$link-color: settings.$fs-text-color !default;
+$current-link-color: settings.$fs-link-color !default;
+$hover-link-color: $current-link-color !default;
+$separator-color: settings.$fs-text-color-secondary !default;
+$link-border-width: 2px !default;
+
 .fs-pagination {
   $item-spacing: spacing.fs-spacing(2);
   @include typography.fs-font-size(16);
@@ -14,10 +22,10 @@
     @include spacing.fs-responsive-padding(1, $direction: all);
     display: inline-block;
     min-width: 2.25em;
-    border-width: settings.$fs-pagination-link-border-width;
+    border-width: $link-border-width;
     border-style: solid;
     border-color: currentColor;
-    color: settings.$fs-pagination-link-color;
+    color: $link-color;
     text-decoration: none;
     text-align: center;
     line-height: 1;
@@ -25,7 +33,7 @@
       margin-left: $item-spacing;
     }
     &:hover {
-      color: settings.$fs-pagination-hover-link-color;
+      color: $hover-link-color;
     }
     &:focus {
       @include a11y.fs-focus-ring($fill: true);
@@ -34,7 +42,7 @@
     &--next {
       &::before,
       &::after {
-        $arrow-size: settings.$fs-pagination-arrow-size;
+        $arrow-size: $arrow-size;
         display: inline-block;
         width: $arrow-size * 0.5;
         height: $arrow-size;
@@ -56,13 +64,13 @@
       }
     }
     &[aria-current] {
-      color: settings.$fs-pagination-current-link-color;
+      color: $current-link-color;
       border-color: transparent;
     }
   }
   &__jump {
     margin-right: $item-spacing;
     margin-left: $item-spacing;
-    color: settings.$fs-pagination-separator-color;
+    color: $separator-color;
   }
 }

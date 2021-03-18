@@ -10,10 +10,10 @@
   @if $actual-input-type != "number" {
     @error "Expected a number (integer), but got a #{$actual-input-type}.";
   }
-  @if not map.has-key(settings.$fs-spacing-responsive, $spacing-point) {
+  @if not map.has-key(settings.$fs-spacing, $spacing-point) {
     @error "Unknown spacing point `#{$spacing-point}`.";
   }
-  $spacing-map: map.get(settings.$fs-spacing-responsive, $spacing-point);
+  $spacing-map: map.get(settings.$fs-spacing, $spacing-point);
   @if not map.has-key($spacing-map, $breakpoint) {
     @error "Breakpoint `#{$breakpoint}` does not exist for spacing point #{$spacing-point}.";
   }
@@ -27,7 +27,7 @@
   $direction: "all",
   $important: false
 ) {
-  $spacing-map: map.get(settings.$fs-spacing-responsive, $spacing-point);
+  $spacing-map: map.get(settings.$fs-spacing, $spacing-point);
   @each $breakpoint, $breakpoint-value in $spacing-map {
     @if ($breakpoint == null) {
       @if $direction == "all" {

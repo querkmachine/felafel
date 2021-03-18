@@ -1,8 +1,17 @@
 @use "../settings";
-@use "../helpers/spacing";
 @use "../helpers/colors";
+@use "../helpers/spacing";
 
-@forward "../objects/typography";
+// Hero
+$margin: 9 !default;
+$padding: 6 !default;
+$text-color: false !default;
+$background-color: settings.$fs-brand-color !default;
+$border-radius: if(
+  settings.$fs-enable-rounded-corners,
+  settings.$fs-border-radius,
+  0
+) !default;
 
 .fs-hero {
   position: relative;
@@ -18,38 +27,20 @@
     position: relative;
   }
   &__body {
-    @include spacing.fs-responsive-margin(
-      settings.$fs-hero-margin,
-      $direction: top
-    );
-    @include spacing.fs-responsive-margin(
-      settings.$fs-hero-margin,
-      $direction: bottom
-    );
-    @include spacing.fs-responsive-padding(
-      settings.$fs-hero-padding,
-      $direction: all
-    );
+    @include spacing.fs-responsive-margin($margin, $direction: top);
+    @include spacing.fs-responsive-margin($margin, $direction: bottom);
+    @include spacing.fs-responsive-padding($padding, $direction: all);
     display: inline-block;
     max-width: 30em;
-    border-radius: settings.$fs-hero-border-radius;
-    @if settings.$fs-hero-background-color {
-      color: if(
-        settings.$fs-hero-text-color,
-        settings.$fs-hero-text-color,
-        colors.fs-contrasting-color(settings.$fs-hero-background-color)
-      );
-      background-color: settings.$fs-hero-background-color;
+    border-radius: $border-radius;
+    @if $background-color {
+      color: colors.fs-color-if-set($text-color, $background-color);
+      background-color: $background-color;
     } @else {
-      color: if(
-        settings.$fs-hero-text-color,
-        settings.$fs-hero-text-color,
-        white
-      );
+      color: if($text-color, $text-color, white);
     }
   }
   &__heading {
-    @extend .fs-heading-xl;
     @include spacing.fs-responsive-margin(3, $direction: bottom);
     color: currentColor;
   }

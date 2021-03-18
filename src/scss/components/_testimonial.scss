@@ -3,9 +3,27 @@
 @use "../helpers/spacing";
 @use "../helpers/typography";
 
+// Testimonial
+$text-color: false !default;
+$background-color: colors.fs-color("grey20") !default;
+$border-radius: if(
+  settings.$fs-enable-rounded-corners,
+  settings.$fs-border-radius,
+  0
+) !default;
+$show-avatar: true !default;
+$avatar-size: 3rem !default;
+$avatar-border-radius: if(
+  settings.$fs-enable-rounded-corners,
+  settings.$avatar-size,
+  0
+) !default;
+$citation-inset: 3rem !default;
+$show-arrow: true !default;
+$arrow-size: 1rem !default;
+
 .fs-testimonial {
-  $display-avatar: settings.$fs-testimonial-show-avatar;
-  $avatar-size: if($display-avatar, settings.$fs-testimonial-avatar-size, 0);
+  $avatar-size: if($show-avatar, $avatar-size, 0);
   $citation-padding: spacing.fs-spacing(2);
   @include spacing.fs-responsive-margin(0, $direction: all);
   &__quotation {
@@ -13,32 +31,21 @@
     @include spacing.fs-responsive-padding(3, $direction: all);
     display: inline-block;
     position: relative;
-    color: if(
-      settings.$fs-testimonial-text-color,
-      settings.$fs-testimonial-text-color,
-      colors.fs-contrasting-color(settings.$fs-testimonial-background-color)
-    );
-    background-color: settings.$fs-testimonial-background-color;
-    @if settings.$fs-testimonial-show-arrow {
+    color: colors.fs-color-if-set($text-color, $background-color);
+    background-color: $background-color;
+    border-radius: $border-radius;
+    @if $show-arrow {
       &::before {
-        $offset: settings.$fs-testimonial-citation-inset -
-          settings.$fs-testimonial-arrow-size -
-          $citation-padding;
+        $offset: $citation-inset - $arrow-size - $citation-padding;
         content: "";
         width: 0;
         height: 0;
         position: absolute;
         top: 100%;
         left: $offset;
-        border-width: 0
-          settings.$fs-testimonial-arrow-size
-          settings.$fs-testimonial-arrow-size
-          0;
+        border-width: 0 $arrow-size $arrow-size 0;
         border-style: solid;
-        border-color: transparent
-          settings.$fs-testimonial-background-color
-          transparent
-          transparent;
+        border-color: transparent $background-color transparent transparent;
       }
     }
     > :last-child {
@@ -49,19 +56,17 @@
     @include typography.fs-font-stack(body);
     @include typography.fs-font-size(16);
     padding: $citation-padding $citation-padding $citation-padding
-      settings.$fs-testimonial-citation-inset;
+      $citation-inset;
     overflow: hidden;
   }
   &__avatar {
-    @if $display-avatar {
+    @if $show-avatar {
       width: $avatar-size;
       height: $avatar-size;
       margin-right: 1rem;
+      border-radius: $avatar-border-radius;
       float: left;
       object-fit: cover;
-      @if settings.$fs-enable-rounded-corners {
-        border-radius: $avatar-size;
-      }
     } @else {
       display: none;
     }

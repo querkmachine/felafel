@@ -4,6 +4,17 @@
 @use "../helpers/spacing";
 @use "../helpers/links";
 
+// Tabs
+$tab-border-width: settings.$fs-border-width-narrow !default;
+$tab-spacing: $tab-border-width !default;
+$tab-text-color: false !default;
+$tab-background-color: colors.fs-color("grey20") !default;
+$tab-selected-text-color: false !default;
+$tab-selected-background-color: colors.fs-color("grey10") !default;
+$tab-selected-border-color: settings.$fs-brand-color !default;
+$panel-text-color: false !default;
+$panel-background-color: $tab-selected-background-color !default;
+
 .fs-tabs {
   $self: &;
   &__list {
@@ -16,24 +27,16 @@
     @include spacing.fs-responsive-padding(2, $direction: all);
     box-sizing: content-box;
     position: relative;
-    margin-right: settings.$fs-tabs-tab-spacing;
-    color: if(
-      settings.$fs-tabs-tab-text-color,
-      settings.$fs-tabs-tab-text-color,
-      colors.fs-contrasting-color(settings.$fs-tabs-tab-background-color)
-    );
-    background-color: settings.$fs-tabs-tab-background-color;
+    margin-right: $tab-spacing;
+    color: colors.fs-color-if-set($tab-text-color, $tab-background-color);
+    background-color: $tab-background-color;
     &--current {
-      color: if(
-        settings.$fs-tabs-tab-selected-text-color,
-        settings.$fs-tabs-tab-selected-text-color,
-        colors.fs-contrasting-color(
-          settings.$fs-tabs-tab-selected-background-color
-        )
+      color: colors.fs-color-if-set(
+        $tab-selected-text-color,
+        $tab-selected-background-color
       );
-      background-color: settings.$fs-tabs-tab-selected-background-color;
-      border-top: settings.$fs-tabs-tab-border-width solid
-        settings.$fs-tabs-tab-selected-border-color;
+      background-color: $tab-selected-background-color;
+      border-top: $tab-border-width solid $tab-selected-border-color;
     }
   }
   &__tab {
@@ -50,12 +53,8 @@
   &__panel {
     @include spacing.fs-responsive-margin(6, $direction: bottom);
     @include spacing.fs-responsive-padding(3, $direction: all);
-    color: if(
-      settings.$fs-tabs-panel-text-color,
-      settings.$fs-tabs-panel-text-color,
-      colors.fs-contrasting-color(settings.$fs-tabs-panel-background-color)
-    );
-    background-color: settings.$fs-tabs-panel-background-color;
+    color: colors.fs-color-if-set($panel-text-color, $panel-background-color);
+    background-color: $panel-background-color;
     html.js & {
       @include spacing.fs-responsive-margin(0, $direction: bottom);
     }

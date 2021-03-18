@@ -2,24 +2,11 @@
 
 @use "../helpers/colors";
 
-::-moz-selection {
-  color: if(
-    settings.$fs-primary-navigation-current-link-text-color,
-    settings.$fs-primary-navigation-current-link-text-color,
-    colors.fs-contrasting-color(
-      settings.$fs-primary-navigation-current-link-background-color
-    )
-  );
-  background-color: settings.$fs-primary-navigation-current-link-background-color;
-}
-
-::selection {
-  color: if(
-    settings.$fs-primary-navigation-current-link-text-color,
-    settings.$fs-primary-navigation-current-link-text-color,
-    colors.fs-contrasting-color(
-      settings.$fs-primary-navigation-current-link-background-color
-    )
-  );
-  background-color: settings.$fs-primary-navigation-current-link-background-color;
+@if settings.$fs-enable-core-styles {
+  ::-moz-selection {
+    @include colors.fs-selection-highlight;
+  }
+  ::selection {
+    @include colors.fs-selection-highlight;
+  }
 }

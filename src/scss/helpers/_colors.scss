@@ -6,7 +6,7 @@
 
 // Get color from palette
 @function fs-color($color) {
-  @return map.get(settings.$fs-default-color-palette, $color);
+  @return map.get(settings.$fs-color-palette, $color);
 }
 
 // Color tweaking functions
@@ -51,6 +51,7 @@
   }
 }
 
+// Select a given light or dark colour, depending on which provides greater contrast with the base colour
 @function fs-contrasting-color(
   $color,
   $light-color: white,
@@ -65,8 +66,23 @@
   }
 }
 
+// The above, but wrapped up in an existence check.
+// If $color is defined, use it. If not, fall back to whatever provides greater contrast with the 'paired' colour.
+@function fs-color-if-set(
+  $color,
+  $paired-color,
+  $light-color: white,
+  $dark-color: black
+) {
+  @if $color {
+    @return $color;
+  } @else {
+    @return fs-contrasting-color($paired-color, $light-color, $dark-color);
+  }
+}
+
 // Text selection highlight colour
-@mixin fs-selection-highlight {
-  color: fs-contrasting-color(settings.$fs-brand-color);
-  background-color: settings.$fs-brand-color;
+@mixin fs-selection-highlight($color: settings.$fs-selection-color) {
+  color: fs-contrasting-color($color);
+  background-color: $color;
 }

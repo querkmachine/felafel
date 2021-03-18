@@ -3,6 +3,12 @@
 @use "../helpers/spacing";
 @use "../helpers/links";
 
+// Tooltip
+$show-arrow: true !default;
+$arrow-size: 0.5rem !default;
+$text-color: false !default;
+$background-color: colors.fs-color("grey90") !default;
+
 .fs-tooltip {
   display: inline;
   position: relative;
@@ -12,19 +18,15 @@
     width: 16rem;
     position: absolute;
     z-index: 1;
-    color: if(
-      settings.$fs-tooltip-text-color,
-      settings.$fs-tooltip-text-color,
-      colors.fs-contrasting-color(settings.$fs-tooltip-background-color)
-    );
-    background: settings.$fs-tooltip-background-color;
+    color: colors.fs-color-if-set($text-color, $background-color);
+    background: $background-color;
     a {
       @include links.fs-link--text($color: currentColor);
     }
     &--hidden {
       display: none;
     }
-    @if settings.$fs-tooltip-show-arrow {
+    @if $show-arrow {
       &::before {
         content: "";
         width: 0;
@@ -34,65 +36,57 @@
       }
     }
     &[data-side="top"] {
-      margin-bottom: settings.$fs-tooltip-arrow-size;
+      margin-bottom: $arrow-size;
       bottom: 100%;
       left: 50%;
       &::before {
         top: 100%;
-        border-width: settings.$fs-tooltip-arrow-size
-          settings.$fs-tooltip-arrow-size 0 settings.$fs-tooltip-arrow-size;
-        border-color: settings.$fs-tooltip-background-color transparent
-          transparent transparent;
+        border-width: $arrow-size $arrow-size 0 $arrow-size;
+        border-color: $background-color transparent transparent transparent;
       }
     }
     &[data-side="right"] {
-      margin-left: settings.$fs-tooltip-arrow-size;
+      margin-left: $arrow-size;
       top: 50%;
       left: 100%;
       &::before {
         right: 100%;
-        border-width: settings.$fs-tooltip-arrow-size
-          settings.$fs-tooltip-arrow-size settings.$fs-tooltip-arrow-size 0;
-        border-color: transparent settings.$fs-tooltip-background-color
-          transparent transparent;
+        border-width: $arrow-size $arrow-size $arrow-size 0;
+        border-color: transparent $background-color transparent transparent;
       }
     }
     &[data-side="bottom"] {
-      margin-top: settings.$fs-tooltip-arrow-size;
+      margin-top: $arrow-size;
       top: 100%;
       left: 50%;
       &::before {
         bottom: 100%;
-        border-width: 0 settings.$fs-tooltip-arrow-size
-          settings.$fs-tooltip-arrow-size settings.$fs-tooltip-arrow-size;
-        border-color: transparent transparent
-          settings.$fs-tooltip-background-color transparent;
+        border-width: 0 $arrow-size $arrow-size $arrow-size;
+        border-color: transparent transparent $background-color transparent;
       }
     }
     &[data-side="left"] {
-      margin-right: settings.$fs-tooltip-arrow-size;
+      margin-right: $arrow-size;
       top: 50%;
       right: 100%;
       &::before {
         left: 100%;
-        border-width: settings.$fs-tooltip-arrow-size 0
-          settings.$fs-tooltip-arrow-size settings.$fs-tooltip-arrow-size;
-        border-color: transparent transparent transparent
-          settings.$fs-tooltip-background-color;
+        border-width: $arrow-size 0 $arrow-size $arrow-size;
+        border-color: transparent transparent transparent $background-color;
       }
     }
     &[data-side="top"],
     &[data-side="bottom"] {
       transform: translateX(-50%);
       &::before {
-        left: calc(50% - #{settings.$fs-tooltip-arrow-size});
+        left: calc(50% - #{$arrow-size});
       }
     }
     &[data-side="left"],
     &[data-side="right"] {
       transform: translateY(-50%);
       &::before {
-        top: calc(50% - #{settings.$fs-tooltip-arrow-size});
+        top: calc(50% - #{$arrow-size});
       }
     }
   }

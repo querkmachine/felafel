@@ -5,12 +5,16 @@
 @use "../helpers/typography";
 @use "../helpers/links";
 
+// Footer
+$background-color: settings.$fs-canvas-background-color !default;
+$text-color: settings.$fs-text-color-secondary !default;
+
 .fs-footer {
   @include spacing.fs-responsive-padding(3, $direction: top);
   @include spacing.fs-responsive-padding(3, $direction: bottom);
   @include typography.fs-font-size(14);
-  color: settings.$fs-footer-text-color;
-  background-color: settings.$fs-footer-background-color;
+  color: $text-color;
+  background-color: $background-color;
   &__inner {
   }
   &__legal {

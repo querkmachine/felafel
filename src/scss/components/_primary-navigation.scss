@@ -1,10 +1,19 @@
 @use "../settings";
-
 @use "../helpers/colors";
 @use "../helpers/media-queries";
 @use "../helpers/reset";
 @use "../helpers/spacing";
 @use "../helpers/typography";
+
+// Primary navigation
+$divider: settings.$fs-border-color !default;
+$current-link-background-color: settings.$fs-brand-color !default;
+$current-link-text-color: false !default;
+$border-radius: if(
+  settings.$fs-enable-rounded-corners,
+  settings.$fs-border-radius,
+  0
+) !default;
 
 .fs-primary-navigation {
   $self: &;
@@ -13,8 +22,7 @@
   }
   &__item {
     @include media-queries.fs-mq($to: tablet) {
-      border-bottom: settings.$fs-hr-width solid
-        settings.$fs-primary-navigation-divider;
+      border-bottom: settings.$fs-hr-width solid $divider;
     }
     @include media-queries.fs-mq($from: tablet) {
       @include spacing.fs-responsive-margin(3, $direction: right);
@@ -22,7 +30,7 @@
     }
   }
   &__link {
-    $current-color: settings.$fs-primary-navigation-current-link-background-color;
+    $current-color: $current-link-background-color;
     display: inline-block;
     text-decoration: none;
     @include media-queries.fs-mq($to: tablet) {
@@ -43,11 +51,7 @@
       margin-left: 0 - spacing.fs-spacing(2);
       &:hover,
       &[aria-current] {
-        color: if(
-          settings.$fs-primary-navigation-current-link-text-color,
-          settings.$fs-primary-navigation-current-link-text-color,
-          colors.fs-contrasting-color($current-color)
-        );
+        color: colors.fs-color-if-set($current-link-text-color, $current-color);
         background-color: $current-color;
       }
     }

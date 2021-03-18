@@ -1,0 +1,74 @@
+@use "../settings";
+@use "../helpers/a11y";
+@use "../helpers/colors";
+@use "../helpers/spacing";
+@use "../helpers/typography";
+
+// Choice card
+$max-width: 10em !default;
+$border-width: settings.$fs-border-width-form-element !default;
+$text-color: colors.fs-color("grey90") !default;
+$background-color: colors.fs-color("white") !default;
+$border-color: $text-color !default;
+$selected-text-color: colors.fs-color("blue") !default;
+$selected-background-color: $background-color !default;
+$selected-border-color: $selected-text-color !default;
+$border-radius: if(
+  settings.$fs-enable-rounded-corners,
+  settings.$fs-border-radius,
+  0
+) !default;
+
+.fs-choice-card {
+  $self: &;
+  $padding: spacing.fs-spacing(1);
+  &__input {
+    @include a11y.fs-visually-hidden;
+    &:focus {
+      + #{$self}__label {
+        @include a11y.fs-focus-ring;
+      }
+    }
+    &:checked {
+      + #{$self}__label {
+        border-color: $selected-border-color;
+        color: $selected-text-color;
+        background-color: $selected-background-color;
+        #{$self}__heading {
+          border-bottom-color: $selected-border-color;
+        }
+      }
+    }
+  }
+  &__label {
+    display: block;
+    height: 100%;
+    padding: $padding;
+    border: $border-width solid $border-color;
+    border-radius: $border-radius;
+    position: relative;
+    color: $text-color;
+    background-color: $background-color;
+    text-align: center;
+    cursor: pointer;
+  }
+  &__heading {
+    display: block;
+    margin: (0 - $padding) (0 - $padding) $padding (0 - $padding);
+    padding: $padding;
+    border-bottom: $border-width solid $border-color;
+    font-weight: bold;
+    text-align: left;
+  }
+  &__description {
+    @include typography.fs-font-size(16);
+    text-align: left;
+  }
+}
+
+.fs-choice-card-group {
+  --max-width: #{$max-width};
+  display: grid;
+  grid-gap: spacing.fs-spacing(2);
+  grid-template-columns: repeat(auto-fill, var(--max-width));
+}

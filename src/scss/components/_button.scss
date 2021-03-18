@@ -8,6 +8,34 @@
 
 @use "sass:color";
 
+// Button - Generic
+$border-width: settings.$fs-border-width-form-element !default;
+$border-radius: if(
+  settings.$fs-enable-rounded-corners,
+  settings.$fs-border-radius,
+  0
+) !default;
+$all-caps: false !default;
+
+// Button - Default
+$background-color: colors.fs-color("grey20") !default;
+$background-hover-color: colors.fs-color("grey30") !default;
+$text-color: false !default;
+
+// Button - Primary
+$primary-background-color: settings.$fs-brand-color !default;
+$primary-background-hover-color: color.mix(
+  #000,
+  $primary-background-color,
+  20%
+) !default;
+$primary-text-color: false !default;
+
+// Button - Ghost
+$ghost-background-color: transparent !default;
+$ghost-background-hover-color: false !default;
+$ghost-text-color: inherit !default;
+
 .fs-button {
   @include reset.fs-reset-button;
   @include spacing.fs-responsive-margin(0, $direction: all);
@@ -21,57 +49,49 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  border: settings.$fs-button-border-width solid currentColor;
-  border-radius: settings.$fs-button-border-radius;
+  border: $border-width solid currentColor;
+  border-radius: $border-radius;
   position: relative;
   text-align: center;
   text-decoration: none;
   line-height: inherit;
   vertical-align: middle;
-  @if settings.$fs-button-all-caps {
+  @if $all-caps {
     text-transform: uppercase;
     letter-spacing: 0.01em;
   }
   &:not([data-appearance]) {
-    border-color: settings.$fs-button-background-color;
-    color: if(
-      settings.$fs-button-text-color,
-      settings.$fs-button-text-color,
-      colors.fs-contrasting-color(settings.$fs-button-background-color)
-    );
-    background-color: settings.$fs-button-background-color;
+    border-color: $background-color;
+    color: colors.fs-color-if-set($text-color, $background-color);
+    background-color: $background-color;
     &:hover,
     &:active {
-      border-color: settings.$fs-button-background-hover-color;
-      background-color: settings.$fs-button-background-hover-color;
+      border-color: $background-hover-color;
+      background-color: $background-hover-color;
     }
   }
   &[data-appearance="primary"] {
-    border-color: settings.$fs-button-primary-background-color;
-    color: if(
-      settings.$fs-button-primary-text-color,
-      settings.$fs-button-primary-text-color,
-      colors.fs-contrasting-color(settings.$fs-button-primary-background-color)
+    border-color: $primary-background-color;
+    color: colors.fs-color-if-set(
+      $primary-text-color,
+      $primary-background-color
     );
-    background-color: settings.$fs-button-primary-background-color;
+    background-color: $primary-background-color;
     &:hover,
     &:active {
-      border-color: settings.$fs-button-primary-background-hover-color;
-      background-color: settings.$fs-button-primary-background-hover-color;
+      border-color: $primary-background-hover-color;
+      background-color: $primary-background-hover-color;
     }
   }
   &[data-appearance="ghost"] {
-    color: settings.$fs-button-ghost-text-color;
-    background-color: settings.$fs-button-ghost-background-color;
+    color: $ghost-text-color;
+    background-color: $ghost-background-color;
     &:hover,
     &:active {
       background-color: if(
-        settings.$fs-button-ghost-background-hover-color,
-        settings.$fs-button-ghost-background-hover-color,
-        color.change(
-          settings.$fs-button-primary-background-hover-color,
-          $alpha: 0.15
-        )
+        $ghost-background-hover-color,
+        $ghost-background-hover-color,
+        color.change($primary-background-hover-color, $alpha: 0.15)
       );
     }
   }

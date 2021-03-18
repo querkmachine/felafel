@@ -7,30 +7,34 @@
     <title>Select</title>
   </head>
   <body>
-    <select class="fs-select">
-      <option value="">Select a type of bread</option>
-      <option>Multigrain</option>
-      <option>Pumpernickel</option>
-      <option>Rye</option>
-      <option>Sourdough</option>
-      <option>Sprouted grain</option>
-      <option>White</option>
-      <option>Wheat</option>
-      <option>Whole grain</option>
-      <option>Whole wheat</option>
-    </select>
+    <div class="fs-select">
+      <select class="fs-select__input">
+        <option value="">Select a type of bread</option>
+        <option>Multigrain</option>
+        <option>Pumpernickel</option>
+        <option>Rye</option>
+        <option>Sourdough</option>
+        <option>Sprouted grain</option>
+        <option>White</option>
+        <option>Wheat</option>
+        <option>Whole grain</option>
+        <option>Whole wheat</option>
+      </select>
+    </div>
 
     <br /><br />
 
     <label class="fs-label" id="breads">How many breads?</label>
     <div class="fs-input-mask">
-      <select class="fs-select fs-select--length-5" id="breads">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
+      <div class="fs-select fs-select--length-5">
+        <select class="fs-select__input" id="breads">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
       <div class="fs-input-mask__suffix" aria-hidden="true">breads</div>
     </div>
 
