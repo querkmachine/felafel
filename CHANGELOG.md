@@ -1,6 +1,8 @@
 # Changelog
 
-## Next release (2.0.0)
+## 2.0.0
+
+A huge bunch of changes, including our first real backwards compatibility breaking changes.
 
 ### BREAKING: Configuration maps are now merged, not replaced
 
@@ -45,7 +47,7 @@ From version 2.0.0 onwards, it looks more like this:
 );
 ```
 
-There are some small exceptions to this change. For example, a number of configuration options for the Input component were being re-used for the Checkbox, Radio, and Textarea components. These options have stayed in the global scope and been renamed to better indicate their use.
+Configuration options for the Input component are the sole exceptions to this change. The Input options couldn't be easily moved as they were also being used for the Checkbox, Radio, Select and Textarea components. These options have instead stayed in the global scope and been renamed to better indicate their use.
 
 - `$fs-input-background-color` → `$fs-form-element-background-color`
 - `$fs-input-border-color` → `$fs-form-element-border-color`
