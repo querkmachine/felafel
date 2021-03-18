@@ -21,6 +21,7 @@ In addition:
 - Added configuration option to define the selection (text highlight) colour (`$fs-selection-color`).
 - Abstracted multiple instances of `if` and `fs-contrasting-color` into a new `colors` function: `fs-color-if-set`.
 - Refactored Select component, replacing the SVG arrow icon with a HTML/CSS equivalent.
+- Refactored `$fs-font-stacks` and associated helpers to use lists instead of strings when passing font stacks.
 - Fixed Form Rows within Fieldsets producing a double bottom margin.
 - Fixed unprefixed uses of appearance CSS property.
 - Fixed `fs-selection-highlight` mixin not being used by the selection core style.
