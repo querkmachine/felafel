@@ -190,6 +190,11 @@ $fs-default-spacing: (
 $fs-spacing: () !default;
 $fs-spacing: map.merge($fs-default-spacing, $fs-spacing);
 
+// Form input padding
+$fs-check-radio-margin: 3 !default;
+$fs-form-element-horizontal-padding: 2 !default;
+$fs-form-element-vertical-padding: 2 !default;
+
 // ====================================
 // TYPOGRAPHY
 // ====================================

@@ -35,7 +35,10 @@ $arrow-color: currentColor !default;
   &__input {
     @include forms.fs-input-select;
     @if $show-arrow {
-      padding-right: (spacing.fs-spacing(2) * 2) + $arrow-size;
+      padding-right: (
+          spacing.fs-spacing(settings.$fs-form-element-horizontal-padding) * 2
+        ) +
+        $arrow-size;
     }
   }
 }

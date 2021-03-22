@@ -835,6 +835,10 @@ a:not([class]):active {
             clip-path: polygon(0 0, 100% 50%, 0 100%);
   }
 }
+.fs-breadcrumbs__link {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 400;
+}
 .fs-breadcrumbs__link:focus:focus {
   outline: 3px solid #f59e0b;
   outline-offset: 0;
@@ -852,6 +856,11 @@ a:not([class]):active {
   color: #3b82f6;
   text-decoration: none;
 }
+.fs-breadcrumbs__link[aria-current] {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 700;
+}
+
 .fs-button {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1371,7 +1380,10 @@ a:not([class]):active {
   font-size: inherit;
   font-style: inherit;
   line-height: inherit;
-  padding: 0.625rem;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
   max-width: 100%;
 }
 .fs-file-upload:focus {
@@ -1547,7 +1559,10 @@ a:not([class]):active {
   font-size: inherit;
   font-style: inherit;
   line-height: inherit;
-  padding: 0.625rem;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
   width: 100%;
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
@@ -1619,7 +1634,10 @@ a:not([class]):active {
   font-size: inherit;
   font-style: inherit;
   line-height: inherit;
-  padding: 0.625rem;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
   flex-shrink: 0;
   color: currentColor;
   background-color: #e5e7eb;
@@ -1950,7 +1968,10 @@ a:not([class]):active {
   font-size: inherit;
   font-style: inherit;
   line-height: inherit;
-  padding: 0.625rem;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
   width: 100%;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -2442,7 +2463,10 @@ html.js .fs-tabs__panel {
   font-size: inherit;
   font-style: inherit;
   line-height: inherit;
-  padding: 0.625rem;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
   width: 100%;
   -webkit-appearance: textfield;
   -moz-appearance: textfield;

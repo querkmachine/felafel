@@ -12,10 +12,11 @@ $border-radius: if(
   settings.$fs-border-radius,
   0
 ) !default;
+$label-margin: spacing.fs-spacing(settings.$fs-check-radio-margin) !default;
 
 .fs-checkbox {
   @include spacing.fs-responsive-margin(3, $direction: bottom);
-  padding-left: calc(#{$size} + #{spacing.fs-spacing(3)});
+  padding-left: calc(#{$size} + #{$label-margin});
   &__input {
     @include forms.fs-input-checkbox(
       $size: $size,
@@ -23,7 +24,7 @@ $border-radius: if(
       $check-color: $check-color,
       $border-radius: $border-radius
     );
-    margin-left: calc(0px - (#{$size} + #{spacing.fs-spacing(3)}));
+    margin-left: calc(0px - (#{$size} + #{$label-margin}));
     float: left;
   }
   &__label {
