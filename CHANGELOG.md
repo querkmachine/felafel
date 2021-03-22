@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.1.0
+
+- Added some new global configuration options:
+  - `$fs-check-radio-margin`: Controls spacing between input and labelling on Checkbox and Radio components.
+  - `$fs-form-element-horizontal-padding` and `$fs-form-element-vertical-padding`: Controls the horizontal (left/right) and vertical (top/bottom) padding on the text-like form components — File Upload, Input, Select, Textarea.
+- Added some new component configuration options:
+  - Checkbox: `$check-stroke`, `$label-margin`.
+  - Radio: `$label-margin`.
+  - Select: `$show-arrow`, `$arrow-color`, `$arrow-size`, `$arrow-stroke`.
+- Breadcrumbs: Added `aria-current` style.
+
 ## 2.0.0
 
 A huge bunch of changes, including our first real backwards compatibility breaking changes.
