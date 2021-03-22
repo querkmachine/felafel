@@ -46,9 +46,10 @@ $link-color: settings.$fs-link-color !default;
     }
   }
   &__link {
+    @include typography.fs-font-stack(body, $weight: regular);
     @include links.fs-link--text($color: $link-color, $underline: false);
-    &[aria-current="page"],
-    &[aria-current="true"] {
+    &[aria-current] {
+      @include typography.fs-font-stack(body, $weight: bold);
     }
   }
 }
