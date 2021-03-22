@@ -6,6 +6,7 @@
 // Checkbox
 $size: settings.$fs-check-radio-size !default;
 $check-color: colors.fs-color("grey90") !default;
+$check-stroke: 2px !default;
 $border-radius: if(
   settings.$fs-enable-rounded-corners,
   settings.$fs-border-radius,
@@ -18,6 +19,7 @@ $border-radius: if(
   &__input {
     @include forms.fs-input-checkbox(
       $size: $size,
+      $check-stroke: $check-stroke,
       $check-color: $check-color,
       $border-radius: $border-radius
     );
