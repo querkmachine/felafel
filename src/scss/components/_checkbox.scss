@@ -6,22 +6,25 @@
 // Checkbox
 $size: settings.$fs-check-radio-size !default;
 $check-color: colors.fs-color("grey90") !default;
+$check-stroke: 2px !default;
 $border-radius: if(
   settings.$fs-enable-rounded-corners,
   settings.$fs-border-radius,
   0
 ) !default;
+$label-margin: spacing.fs-spacing(settings.$fs-check-radio-margin) !default;
 
 .fs-checkbox {
   @include spacing.fs-responsive-margin(3, $direction: bottom);
-  padding-left: calc(#{$size} + #{spacing.fs-spacing(3)});
+  padding-left: calc(#{$size} + #{$label-margin});
   &__input {
     @include forms.fs-input-checkbox(
       $size: $size,
+      $check-stroke: $check-stroke,
       $check-color: $check-color,
       $border-radius: $border-radius
     );
-    margin-left: calc(0px - (#{$size} + #{spacing.fs-spacing(3)}));
+    margin-left: calc(0px - (#{$size} + #{$label-margin}));
     float: left;
   }
   &__label {

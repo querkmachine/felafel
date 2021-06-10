@@ -1,5 +1,6 @@
-@use "sass:map";
 @use "sass:color";
+@use "sass:map";
+@use "sass:math";
 
 // ====================================
 // FEATURE TOGGLES
@@ -114,7 +115,7 @@ $fs-grid: (
 
 // Grid gutters
 $fs-gutter: 30px !default;
-$fs-gutter-half: $fs-gutter / 2 !default;
+$fs-gutter-half: math.div($fs-gutter, 2) !default;
 
 // Generic borders
 $fs-border-width: 0.5rem !default;
@@ -189,6 +190,11 @@ $fs-default-spacing: (
 // User-defined spacing config
 $fs-spacing: () !default;
 $fs-spacing: map.merge($fs-default-spacing, $fs-spacing);
+
+// Form input padding
+$fs-check-radio-margin: 3 !default;
+$fs-form-element-horizontal-padding: 2 !default;
+$fs-form-element-vertical-padding: 2 !default;
 
 // ====================================
 // TYPOGRAPHY

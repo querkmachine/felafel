@@ -6,13 +6,14 @@
 // Radio
 $size: settings.$fs-check-radio-size !default;
 $check-color: colors.fs-color("grey90") !default;
+$label-margin: spacing.fs-spacing(settings.$fs-check-radio-margin) !default;
 
 .fs-radio {
   @include spacing.fs-responsive-margin(3, $direction: bottom);
-  padding-left: calc(#{$size} + #{spacing.fs-spacing(3)});
+  padding-left: calc(#{$size} + #{$label-margin});
   &__input {
     @include forms.fs-input-radio($size: $size, $check-color: $check-color);
-    margin-left: calc(0px - (#{$size} + #{spacing.fs-spacing(3)}));
+    margin-left: calc(0px - (#{$size} + #{$label-margin}));
     float: left;
   }
   &__label {

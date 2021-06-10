@@ -4,31 +4,41 @@
 
 @use "sass:math";
 
+$show-arrow: true !default;
+$arrow-size: spacing.fs-spacing(2) !default;
+$arrow-stroke: 2px !default;
+$arrow-color: currentColor !default;
+
 .fs-select {
-  $arrow-size: spacing.fs-spacing(2);
   position: relative;
   @each $length in (20, 10, 8, 5, 4, 3, 2) {
     &--length-#{$length} {
       max-width: ($length + 1) * 1em;
     }
   }
-  &::after {
-    $arrow-size-diagonal: $arrow-size * 1.41421356237; // square root of 2
-    content: "";
-    width: $arrow-size;
-    height: $arrow-size;
-    position: absolute;
-    right: $arrow-size;
-    top: calc(50% - #{$arrow-size-diagonal / 2});
-    border-width: 0 settings.$fs-border-width-form-element
-      settings.$fs-border-width-form-element 0;
-    border-style: solid;
-    border-color: currentColor;
-    transform: rotate(45deg);
-    pointer-events: none;
+  @if $show-arrow {
+    &::after {
+      $arrow-size-diagonal: $arrow-size * 1.41421356237; // square root of 2
+      content: "";
+      width: $arrow-size;
+      height: $arrow-size;
+      position: absolute;
+      right: $arrow-size;
+      top: calc(50% - #{math.div($arrow-size-diagonal, 2)});
+      border-width: 0 $arrow-stroke $arrow-stroke 0;
+      border-style: solid;
+      border-color: $arrow-color;
+      transform: rotate(45deg);
+      pointer-events: none;
+    }
   }
   &__input {
     @include forms.fs-input-select;
-    padding-right: (spacing.fs-spacing(2) * 2) + $arrow-size;
+    @if $show-arrow {
+      padding-right: (
+          spacing.fs-spacing(settings.$fs-form-element-horizontal-padding) * 2
+        ) +
+        $arrow-size;
+    }
   }
 }
