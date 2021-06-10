@@ -24,7 +24,7 @@ $arrow-color: currentColor !default;
       height: $arrow-size;
       position: absolute;
       right: $arrow-size;
-      top: calc(50% - #{$arrow-size-diagonal / 2});
+      top: calc(50% - #{math.div($arrow-size-diagonal, 2)});
       border-width: 0 $arrow-stroke $arrow-stroke 0;
       border-style: solid;
       border-color: $arrow-color;

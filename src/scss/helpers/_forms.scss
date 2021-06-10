@@ -3,6 +3,8 @@
 @use "colors";
 @use "spacing";
 
+@use "sass:math";
+
 @mixin _fs-input-base(
   $border-width: settings.$fs-border-width-form-element,
   $border-color: settings.$fs-form-element-border-color,
@@ -216,8 +218,8 @@
     border-style: solid;
     border-color: $check-color;
     position: absolute;
-    top: calc(#{($size - $check-height) / 2.5} - 1px);
-    left: calc(#{($size - $check-width) / 2} - 1px);
+    top: calc(#{math.div($size - $check-height, 2.5)} - 1px);
+    left: calc(#{math.div($size - $check-width, 2)} - 1px);
     transform: rotate(-45deg);
   }
   &[aria-invalid="true"] {
@@ -254,8 +256,8 @@
     height: $check-size;
     border-radius: $check-size;
     position: absolute;
-    top: calc(50% - #{$check-size / 2});
-    left: calc(50% - #{$check-size / 2});
+    top: calc(50% - #{math.div($check-size, 2)});
+    left: calc(50% - #{math.div($check-size, 2)});
     background-color: $check-color;
   }
   &[aria-invalid="true"] {

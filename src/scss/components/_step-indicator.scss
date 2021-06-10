@@ -6,6 +6,8 @@
 @use "../helpers/spacing";
 @use "../helpers/typography";
 
+@use "sass:math";
+
 // Step indicator
 $border-width: settings.$fs-border-width-narrow !default;
 $counter-size: 2rem !default;
@@ -127,7 +129,9 @@ $complete-segment-label-text-color: $complete-segment-color !default;
       #{$self}__item {
         &::before {
           position: absolute;
-          top: calc(0px - #{$counter-size / 2} - #{$border-width / 2});
+          top: calc(
+            0px - #{math.div($counter-size, 2)} - #{math.div($border-width, 2)}
+          );
           left: -1px;
         }
       }

@@ -22,11 +22,11 @@
 // Hat tip: https://medium.com/dev-channel/using-sass-to-automatically-pick-text-colors-4ba7645d2796
 // Calculations derived from https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
 @function _fs-color-luminance-channel($value) {
-  $value: $value / 255;
+  $value: math.div($value, 255);
   @if $value < 0.03928 {
-    @return $value / 12.92;
+    @return math.div($value, 12.92);
   } @else {
-    @return math.pow(($value + 0.055) / 1.055, 2.4);
+    @return math.pow(math.div(($value + 0.055), 1.055), 2.4);
   }
 }
 
@@ -42,12 +42,16 @@
   $col2-lum: _fs-color-luminance($col2);
   @if settings.$fs-enable-weber-contrast {
     // Huang/Peli modified Weber perceptual contrast calculation
-    @return (math.max($col1-lum, $col2-lum) - math.min($col1-lum, $col2-lum)) /
-      (math.max($col1-lum, $col2-lum) + 0.05);
+    @return math.div(
+      (math.max($col1-lum, $col2-lum) - math.min($col1-lum, $col2-lum)),
+      (math.max($col1-lum, $col2-lum) + 0.05)
+    );
   } @else {
     // WCAG linear contrast ratio calculation
-    @return (math.max($col1-lum, $col2-lum) + 0.05) /
-      (math.min($col1-lum, $col2-lum) + 0.05);
+    @return math.div(
+      (math.max($col1-lum, $col2-lum) + 0.05),
+      (math.min($col1-lum, $col2-lum) + 0.05)
+    );
   }
 }
 
