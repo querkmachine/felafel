@@ -4,29 +4,15 @@ Felafel (aka, the **Fel**inesoft **A**gile **F**ront-**E**nd **L**ibrary) is a s
 
 ## Current state
 
-At the moment I’ve done all the template and forms-y items, including the five wireframes I was given to focus on—three condition of grants pages, grants overview, and edit details. Content page items (cards, collapsable panels, things like that) aren’t done.
-
 In lieu of a demo or significant documentation at this time, examples of components and layouts are located in the `demo/` folder of the package. I’ve started to write fuller documentation and a more comprehensive example implementation (with them being the same thing to be extra fancy), but they’re far from ready.
 
 ## Installing Felafel
 
 The project is set up a bit differently to others as I’ve made it in the style of an npm package. I did this because packages are generally a lot easier to work with than submodules, which ought to be useful for rapid prototyping and building demos.
 
-### Using npm
-
-As we (presumably) don’t want Felafel to be publicly hosted, it needs to be installed using a reference to the git repo. This would normally be achieved like so:
-
-```
-npm install --save git+ssh://git@ssh.dev.azure.com:v3/felinesoft/FelinesoftFrameworks/FELAFEL
-```
-
-…However this seems to error out. It works for other git providers I’ve tried, so presumably this is a DevOps configuration or permissions problem.
-
-Azure DevOps has a way to [set up a private npm registry](https://docs.microsoft.com/en-us/azure/devops/artifacts/get-started-npm?view=azure-devops&tabs=windows) in a similar vein to NuGet. We might want to do that.
-
 ### Using precompiled files
 
-If little to no customisation is necessary, you can [copy the precompiled files from the git repo](https://dev.azure.com/felinesoft/FelinesoftFrameworks/_git/FELAFEL?path=%2Fdist) and reference them directly in HTML.
+If little to no customisation is necessary, you can copy the precompiled files from the `dist` folder or reference them directly in HTML.
 
 ```
 <!-- In the page's <head> element -->
@@ -38,6 +24,8 @@ If little to no customisation is necessary, you can [copy the precompiled files 
 ```
 
 ## Using Felafel
+
+Felafel makes heavy use of several modern features introduced into the Sass language, such as the module system. Felafel **requires Dart Sass version 1.33.0 or higher** as a result and will not work with Node or Ruby versions of Sass, nor older versions of Dart Sass.
 
 Felafel is built in a (mostly) modular way, and is most powerful when used alongside Sass. Using Sass it’s possible to only import certain components or styles into a project:
 
@@ -52,43 +40,13 @@ Felafel is built in a (mostly) modular way, and is most powerful when used along
 @use "node_modules/fs-felafel/src/scss/components/step-indicator";
 ```
 
-(In practice some components have dependencies on others that aren’t currently described in code. Date inputs won’t work without text inputs, for example. I’ll look into sorting that out at some point.)
-
 Alternatively, get everything:
 
 ```
 @use "node_modules/fs-felafel/src/scss/all";
 ```
 
-How Sass has been implemented can be as simple or complex as necessary. It can be a terminal command, an npm script, or part of a whole Gulpwebpackbrowserify build process—Felafel doesn’t care. Just be sure it’s using some implementation of [Dart Sass](https://github.com/sass/dart-sass) and it should “just work” (fingers crossed).
-
-### Customising Felafel
-
-Like all CSS, Felafel’s styles can be overwritten by simply including more CSS that overwrites it.
-
-To customise Felafel directly, import the settings file with any overrides you want to apply before importing everything else.
-
-```
-// First, load the settings file
-// Overruling some of variables as we go
-@use "node_modules/fs-felafel/src/scss/settings" with (
-	$fs-brand-color: green,
-	$fs-page-width: 1200px,
-	$fs-breakpoints: (
-		tablet: 599px,
-		desktop: 769px,
-	)
-	// Any other options...
-);
-
-// Then load everything else
-// Can be all of Felafel or just the parts you want
-@use "node_modules/fs-felafel/src/scss/all";
-```
-
-There are [a lot of variables that can be overridden](https://dev.azure.com/felinesoft/FelinesoftFrameworks/_git/FELAFEL?path=%2Fsrc%2Fscss%2F_settings.scss), ranging from project wide changes (do you want stuff to have rounded corners or not?) to changing colours on individual components.
-
-Not _everything_ is currently configurable in this way, and changing some variables will probably make everything fall over. The defaults are sensible, and it is to some degree self-correcting—change the background colour of a button and it’ll (albeit wonkily) change the default text colour to fit—but it’s a work in progress.
+How you implement Sass can be as simple or complex as necessary. It can be a terminal command, an npm script, or part of a whole Gulpwebpackbrowserify build process—Felafel doesn’t care.
 
 ### Usage tips
 
