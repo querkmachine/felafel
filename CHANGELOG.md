@@ -3,6 +3,7 @@
 ## Next
 
 - Added Avatar component.
+- Added Toggle component.
 
 ## 2.1.0
 

@@ -2547,6 +2547,69 @@ html.js .fs-tabs__panel {
   color: #ef4444;
 }
 
+.fs-toggle {
+  margin-bottom: 0.9375rem;
+}
+.fs-toggle__input {
+  margin: 0rem;
+  border: 2px solid currentColor;
+  border-radius: 0;
+  color: currentColor;
+  background-color: #fff;
+  box-shadow: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  line-height: inherit;
+  box-sizing: content-box;
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: relative;
+  line-height: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 3rem;
+  border-radius: 0;
+  background-color: #fff;
+  margin-left: 0.9375rem;
+  float: right;
+}
+.fs-toggle__input, .fs-toggle__input::after {
+  transition-property: background-color, left;
+  transition-duration: 0.333s;
+  transition-timing-function: ease-in-out;
+}
+.fs-toggle__input::after {
+  content: "";
+  display: block;
+  width: calc(1.5rem - 2px * 2);
+  height: calc(1.5rem - 2px * 2);
+  border-radius: 0;
+  position: absolute;
+  top: calc(50% - calc(1.5rem - 2px * 2) / 2);
+  left: 2px;
+  background-color: #111827;
+}
+.fs-toggle__input[aria-invalid=true] {
+  outline: 4px solid #ef4444;
+}
+.fs-toggle__input:checked {
+  background-color: #fff;
+}
+.fs-toggle__input:checked::after {
+  left: calc(3rem - calc(1.5rem - 2px * 2) - 2px);
+}
+.fs-toggle__input:focus {
+  outline: 3px solid #f59e0b;
+  outline-offset: 0;
+}
+.fs-toggle__input:disabled {
+  filter: grayscale(100%);
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
+}
 .fs-tooltip {
   display: inline;
   position: relative;

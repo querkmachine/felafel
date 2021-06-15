@@ -1,0 +1,48 @@
+@use "../settings";
+@use "../helpers/colors";
+@use "../helpers/forms";
+@use "../helpers/spacing";
+
+@use "sass:math";
+
+// Toggle
+$float-left: false !default;
+$height: settings.$fs-check-radio-size !default;
+$width: $height * 2 !default;
+$knob-color: colors.fs-color("grey90") !default;
+$background-color: settings.$fs-form-element-background-color !default;
+$background-color-checked: settings.$fs-form-element-background-color !default;
+$border-radius: if(
+  settings.$fs-enable-rounded-corners,
+  math.min($width, $height),
+  0
+) !default;
+$label-margin: spacing.fs-spacing(settings.$fs-check-radio-margin) !default;
+
+.fs-toggle {
+  @include spacing.fs-responsive-margin(3, $direction: bottom);
+  @if $float-left {
+    padding-left: calc(#{$width} + #{$label-margin});
+  }
+  &__input {
+    @include forms.fs-input-toggle(
+      $width: $width,
+      $height: $height,
+      $knob-color: $knob-color,
+      $border-radius: $border-radius,
+      $background-color: $background-color,
+      $background-color-checked: $background-color-checked
+    );
+    @if $float-left {
+      margin-left: calc(0px - (#{$width} + #{$label-margin}));
+      float: left;
+    } @else {
+      margin-left: $label-margin;
+      float: right;
+    }
+  }
+  &__label {
+  }
+  &__hint {
+  }
+}

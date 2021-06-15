@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/all.css" />
+    <title>Toggle</title>
+  </head>
+  <body>
+    <div class="fs-form-row">
+      <div class="fs-toggle">
+        <input
+          class="fs-toggle__input"
+          type="checkbox"
+          id="Checkbox1"
+          aria-describedby="Checkbox1-Hint"
+        />
+        <label class="fs-label fs-toggle__label" for="Checkbox1"
+          >Form label</label
+        >
+        <div class="fs-hint fs-toggle__hint" id="Checkbox1-Hint">Form hint</div>
+      </div>
+    </div>
+
+    <script src="../dist/all.js"></script>
+    <script>
+      window.fs.initAll();
+    </script>
+  </body>
+</html>

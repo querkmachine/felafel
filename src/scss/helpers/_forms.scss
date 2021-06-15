@@ -275,3 +275,55 @@
     @include _fs-input-disabled;
   }
 }
+
+@mixin fs-input-toggle(
+  $height: settings.$fs-check-radio-size,
+  $width: settings.$fs-check-radio-size * 2,
+  $vertical-offset: 0,
+  $knob-inset: settings.$fs-border-width-form-element,
+  $knob-color: settings.$fs-form-element-border-color,
+  $background-color: settings.$fs-form-element-background-color,
+  $background-color-checked: settings.$fs-form-element-background-color,
+  $border-radius: 0
+) {
+  $knob-size: calc(#{$height} - #{$knob-inset} * 2);
+  @include _fs-input-checkradio(
+    $size: $height,
+    $vertical-offset: $vertical-offset
+  );
+  width: $width;
+  border-radius: $border-radius;
+  background-color: $background-color;
+  &,
+  &::after {
+    transition-property: background-color, left;
+    transition-duration: 0.333s;
+    transition-timing-function: ease-in-out;
+  }
+  &::after {
+    content: "";
+    display: block;
+    width: $knob-size;
+    height: $knob-size;
+    border-radius: $border-radius;
+    position: absolute;
+    top: calc(50% - #{$knob-size} / 2);
+    left: $knob-inset;
+    background-color: $knob-color;
+  }
+  &[aria-invalid="true"] {
+    @include _fs-input-error;
+  }
+  &:checked {
+    background-color: $background-color-checked;
+    &::after {
+      left: calc(#{$width} - #{$knob-size} - #{$knob-inset});
+    }
+  }
+  &:focus {
+    @include a11y.fs-focus-ring;
+  }
+  &:disabled {
+    @include _fs-input-disabled;
+  }
+}
