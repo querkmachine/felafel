@@ -791,6 +791,44 @@ a:not([class]):active {
   border-color: #ef4444;
 }
 
+.fs-avatar {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 1em;
+  height: 1em;
+  border: 0.25rem solid #fff;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  background-color: #000;
+}
+.fs-avatar__initials {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  font-size: 0.55em;
+}
+.fs-avatar__image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.fs-avatar-group {
+  display: flex;
+  flex-direction: row;
+}
+.fs-avatar-group > .fs-avatar + .fs-avatar {
+  margin-left: 0.3125rem;
+}
+.fs-avatar-group--condensed > .fs-avatar + .fs-avatar {
+  margin-left: -0.25em;
+}
+
 .fs-breadcrumbs {
   font-size: 0.875rem;
   line-height: 1.2857142857;

@@ -1,5 +1,9 @@
 # Changelog
 
+## Next
+
+- Added Avatar component.
+
 ## 2.1.0
 
 - Added some new global configuration options:
