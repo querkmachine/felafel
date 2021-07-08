@@ -4,6 +4,7 @@
 
 - Added Avatar component.
 - Added Toggle component.
+- Fixed color override classes using the default settings map instead of the merged map.
 
 ## 2.1.0
 
