@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.2.0
+
+- Added Avatar component.
+- Added Toggle component.
+- Fixed color override classes using the default settings map instead of the merged map.
+
 ## 2.1.0
 
 - Added some new global configuration options:

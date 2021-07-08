@@ -1,0 +1,65 @@
+@use "../settings";
+@use "../helpers/colors";
+@use "../helpers/spacing";
+@use "../helpers/typography";
+
+@use "sass:color";
+@use "sass:list";
+
+// Avatar
+$text-color: false !default;
+$background-colors: colors.fs-color("black") !default;
+$border-width: settings.$fs-border-width-narrow !default;
+$border-color: colors.fs-color("white") !default;
+$border-radius: 50% !default;
+$font-stack: body !default;
+
+.fs-avatar {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 1em;
+  height: 1em;
+  border: $border-width solid $border-color;
+  border-radius: $border-radius;
+  position: relative;
+  overflow: hidden;
+  $background-color-length: list.length($background-colors);
+  @if $background-color-length > 1 {
+    @for $i from 1 through $background-color-length {
+      &:nth-of-type(#{$background-color-length}n + #{$i}) {
+        $col: list.nth($background-colors, $i);
+        color: colors.fs-color-if-set($text-color, $col);
+        background-color: $col;
+      }
+    }
+  } @else {
+    color: colors.fs-color-if-set($text-color, $background-colors);
+    background-color: $background-colors;
+  }
+  &__initials {
+    @include typography.fs-font-stack($font-stack, $weight: bold);
+    font-size: 0.55em;
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+}
+
+.fs-avatar-group {
+  display: flex;
+  flex-direction: row;
+  > .fs-avatar + .fs-avatar {
+    @include spacing.fs-responsive-margin(1, $direction: left);
+  }
+  &--condensed {
+    > .fs-avatar + .fs-avatar {
+      margin-left: -0.25em;
+    }
+  }
+}
