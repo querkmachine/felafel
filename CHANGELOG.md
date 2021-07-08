@@ -1,6 +1,6 @@
 # Changelog
 
-## Next
+## 2.2.0
 
 - Added Avatar component.
 - Added Toggle component.
