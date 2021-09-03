@@ -1,14 +1,12 @@
 # 🧆 Felafel
 
-Felafel (aka, the **Fel**inesoft **A**gile **F**ront-**E**nd **L**ibrary) is a set of basic components and layouts built according to the [Felinesoft front-end standards](http://querkmachine.github.io/FSFrontEndDocs/) and compatible with [Kickstart8](https://github.com/querkmachine/kickstart8), the front-end framework used across all web projects starting from 2020.
+Felafel (aka, the **Fel**inesoft **A**gile **F**ront-**E**nd **L**ibrary) is a set of basic components that we use in projects at [Felinesoft](https://felinesoft.com).
 
 ## Current state
 
-In lieu of a demo or significant documentation at this time, examples of components and layouts are located in the `demo/` folder of the package. I’ve started to write fuller documentation and a more comprehensive example implementation (with them being the same thing to be extra fancy), but they’re far from ready.
+Felafel is mostly used internally at Felinesoft. As a result it is tailored to the problems we frequently deal with and opinionated to the way that we work. The project is fairly likely to accomodate breaking changes should the need arise, but these will be minimised where possible.
 
 ## Installing Felafel
-
-The project is set up a bit differently to others as I’ve made it in the style of an npm package. I did this because packages are generally a lot easier to work with than submodules, which ought to be useful for rapid prototyping and building demos.
 
 ### Using precompiled files
 
@@ -27,7 +25,7 @@ If little to no customisation is necessary, you can copy the precompiled files f
 
 Felafel makes heavy use of several modern features introduced into the Sass language, such as the module system. Felafel **requires Dart Sass version 1.33.0 or higher** as a result and will not work with Node or Ruby versions of Sass, nor older versions of Dart Sass.
 
-Felafel is built in a (mostly) modular way, and is most powerful when used alongside Sass. Using Sass it’s possible to only import certain components or styles into a project:
+Felafel is built in a modular fashion, and is most powerful when used alongside Sass. Using Sass it’s possible to only import certain components or styles into a project:
 
 ```
 // We want all of this
@@ -52,4 +50,4 @@ How you implement Sass can be as simple or complex as necessary. It can be a ter
 
 - Felafel is utilitarian as a default. Out of the box it’s black and white, uses system fonts, and only supports up to four columns. It tries to not be too assuming, whilst still working to maintain some consistency.
 - Felafel has a lot of override classes. If a bit of spacing looks weird, you want to change the size of this one heading, or put all this text in a big red box without making a whole new component for it, you can do that with overrides.
-- Forms are expected to take up about two-thirds of the container width (by the default definitions of those). You can go wider if you want, but inputs tend to start looking a bit weird if you do.
+- If something isn't precisely how you need it, then remember that you don't need to referenc it directly. Every part is optional, you can always exclude one thing in favour of a bespoke approach if you want to.

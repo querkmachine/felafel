@@ -1,0 +1,7 @@
+.husky/
+.nova/
+demos/
+.prettierignore
+gulpfile.js
+dist/assets/demo-logo.png
+src/assets/demo-logo.png
