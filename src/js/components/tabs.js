@@ -4,7 +4,7 @@
 
 import { KeyCodes } from "../helpers/key-codes";
 
-export default class Tab {
+class Tab {
   constructor($module) {
     this.$module = $module;
     this.$tabs = $module.querySelectorAll(".fs-tabs__tab");
@@ -232,3 +232,5 @@ export default class Tab {
     return hash;
   }
 }
+
+export default Tab;

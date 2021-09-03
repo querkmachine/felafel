@@ -1,4 +1,4 @@
-export default class TextareaCounter {
+class TextareaCounter {
   constructor($module) {
     this.$module = $module;
     this.$textarea = $module.querySelector("textarea");
@@ -83,3 +83,5 @@ export default class TextareaCounter {
     };
   }
 }
+
+export default TextareaCounter;

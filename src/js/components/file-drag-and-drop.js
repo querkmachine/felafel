@@ -1,6 +1,6 @@
 import { GenerateGuid } from "../helpers/strings";
 
-export default class FileDragAndDrop {
+class FileDragAndDrop {
   constructor($module) {
     this.$module = $module;
     this.$input = $module.querySelector('input[type="file"]');
@@ -75,3 +75,5 @@ export default class FileDragAndDrop {
     this.$label.innerHTML = this.labelDefaultHTML;
   }
 }
+
+export default FileDragAndDrop;

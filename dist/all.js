@@ -115,7 +115,8 @@ class DetailsGroup {
 
 }
 
-exports.default = DetailsGroup;
+var _default = DetailsGroup;
+exports.default = _default;
 
 },{}],3:[function(require,module,exports){
 "use strict";
@@ -208,7 +209,8 @@ class FileDragAndDrop {
 
 }
 
-exports.default = FileDragAndDrop;
+var _default = FileDragAndDrop;
+exports.default = _default;
 
 },{"../helpers/strings":8}],4:[function(require,module,exports){
 "use strict";
@@ -479,7 +481,8 @@ class Tab {
 
 }
 
-exports.default = Tab;
+var _default = Tab;
+exports.default = _default;
 
 },{"../helpers/key-codes":7}],5:[function(require,module,exports){
 "use strict";
@@ -565,7 +568,8 @@ class TextareaCounter {
 
 }
 
-exports.default = TextareaCounter;
+var _default = TextareaCounter;
+exports.default = _default;
 
 },{}],6:[function(require,module,exports){
 "use strict";
@@ -694,7 +698,8 @@ class Tooltip {
 
 }
 
-exports.default = Tooltip;
+var _default = Tooltip;
+exports.default = _default;
 
 },{"../helpers/key-codes":7,"../helpers/strings":8}],7:[function(require,module,exports){
 "use strict";
