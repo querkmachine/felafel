@@ -1,5 +1,6 @@
 @use "../settings";
 @use "../helpers/a11y";
+@use "../helpers/arrows";
 @use "../helpers/typography";
 @use "../helpers/spacing";
 
@@ -52,14 +53,14 @@ $link-border-width: 2px !default;
     }
     &--prev {
       &::before {
+        @include arrows.fs-arrow($direction: inline-start);
         content: "";
-        clip-path: polygon(0 50%, 100% 0, 100% 100%);
       }
     }
     &--next {
       &::after {
+        @include arrows.fs-arrow($direction: inline-end);
         content: "";
-        clip-path: polygon(0 0, 100% 50%, 0 100%);
       }
     }
     &[aria-current] {

@@ -1,4 +1,5 @@
 @use "../settings";
+@use "../helpers/arrows";
 @use "../helpers/reset";
 @use "../helpers/links";
 @use "../helpers/typography";
@@ -32,15 +33,15 @@ $link-color: settings.$fs-link-color !default;
         display: none;
       }
       &:nth-last-child(n + 2)::before {
+        @include arrows.fs-arrow($direction: inline-start);
         content: "";
-        clip-path: polygon(0 50%, 100% 0, 100% 100%);
         margin-inline-start: 0;
       }
     }
     @include media-queries.fs-mq($from: tablet) {
       &:nth-last-child(n + 2)::after {
+        @include arrows.fs-arrow($direction: inline-end);
         content: "";
-        clip-path: polygon(0 0, 100% 50%, 0 100%);
       }
     }
   }
