@@ -31,3 +31,12 @@
   padding: 0;
   border: 0;
 }
+
+@mixin fs-reset-details {
+  > summary {
+    list-style-type: none;
+  }
+  > summary::-webkit-details-marker {
+    display: none;
+  }
+}
