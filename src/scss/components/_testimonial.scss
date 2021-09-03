@@ -38,18 +38,18 @@ $arrow-size: 1rem !default;
       &::before {
         $offset: $citation-inset - $arrow-size - $citation-padding;
         content: "";
-        width: 0;
-        height: 0;
+        block-size: 0;
+        inline-size: 0;
         position: absolute;
-        top: 100%;
-        left: $offset;
+        inset-block-start: 100%;
+        inset-inline-start: $offset;
         border-width: 0 $arrow-size $arrow-size 0;
         border-style: solid;
         border-color: transparent $background-color transparent transparent;
       }
     }
     > :last-child {
-      @include spacing.fs-responsive-margin(0, $direction: bottom);
+      @include spacing.fs-responsive-margin(0, $direction: block-end);
     }
   }
   &__citation {
@@ -61,11 +61,11 @@ $arrow-size: 1rem !default;
   }
   &__avatar {
     @if $show-avatar {
-      width: $avatar-size;
-      height: $avatar-size;
-      margin-right: 1rem;
+      block-size: $avatar-size;
+      inline-size: $avatar-size;
+      margin-inline-end: 1rem;
       border-radius: $avatar-border-radius;
-      float: left;
+      float: inline-start;
       object-fit: cover;
     } @else {
       display: none;

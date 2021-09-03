@@ -26,7 +26,7 @@
 
 @mixin fs-reset-fieldset {
   @include layout.fs-clearfix;
-  min-width: 0;
+  min-inline-size: 0;
   margin: 0;
   padding: 0;
   border: 0;

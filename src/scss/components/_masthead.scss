@@ -17,10 +17,9 @@ $tools-background-color: $border-color !default;
 $tools-text-color: false !default;
 
 .fs-masthead {
-  @include spacing.fs-responsive-padding(4, $direction: top);
-  @include spacing.fs-responsive-padding(4, $direction: bottom);
+  @include spacing.fs-responsive-padding(4, $direction: block);
   border-width: 0;
-  border-top-width: $border-top-width;
+  border-block-start-width: $border-top-width;
   border-style: solid;
   border-color: $border-color;
   color: $text-color;
@@ -41,9 +40,9 @@ $tools-text-color: false !default;
     text-decoration: none;
   }
   &__content {
-    @include spacing.fs-responsive-margin(2, $direction: top);
+    @include spacing.fs-responsive-margin(2, $direction: block-start);
     @include media-queries.fs-mq($from: tablet) {
-      @include spacing.fs-responsive-margin(0, $direction: top);
+      @include spacing.fs-responsive-margin(0, $direction: block-start);
     }
   }
 }
@@ -52,7 +51,7 @@ $tools-text-color: false !default;
   @include typography.fs-font-size(14);
   @if $tools-background-color == $border-color {
     border-width: 0;
-    border-top-width: settings.$fs-border-width;
+    border-block-start-width: settings.$fs-border-width;
     border-style: solid;
     border-color: $border-color;
   }
@@ -69,7 +68,7 @@ $tools-text-color: false !default;
   }
   &__item {
     & + & {
-      @include spacing.fs-responsive-margin(3, $direction: left);
+      @include spacing.fs-responsive-margin(3, $direction: inline-start);
     }
   }
   &__link {

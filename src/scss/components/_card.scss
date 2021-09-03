@@ -22,11 +22,11 @@ $border-radius: if(
     }
   }
   &__image {
-    width: 100%;
-    height: auto;
+    block-size: auto;
+    inline-size: 100%;
   }
   &__body {
-    @include spacing.fs-responsive-padding(3, $direction: top);
+    @include spacing.fs-responsive-padding(3, $direction: block-start);
   }
   &__heading {
     display: block;

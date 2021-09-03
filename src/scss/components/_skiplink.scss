@@ -11,8 +11,8 @@
   @include typography.fs-font-size(16);
   display: inline-block;
   position: absolute;
-  top: -9999em;
-  left: -9999em;
+  inset-block-start: -9999em;
+  inset-inline-start: -9999em;
   &:focus {
     position: static;
   }

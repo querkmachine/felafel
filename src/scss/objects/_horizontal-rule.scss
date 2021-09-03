@@ -5,18 +5,15 @@
   margin: 0;
   border: 0;
   &--xl {
-    @include spacing.fs-responsive-margin(8, $direction: top);
-    @include spacing.fs-responsive-margin(8, $direction: bottom);
+    @include spacing.fs-responsive-margin(8, $direction: block);
   }
   &--l {
-    @include spacing.fs-responsive-margin(6, $direction: top);
-    @include spacing.fs-responsive-margin(6, $direction: bottom);
+    @include spacing.fs-responsive-margin(6, $direction: block);
   }
   &--m {
-    @include spacing.fs-responsive-margin(4, $direction: top);
-    @include spacing.fs-responsive-margin(4, $direction: bottom);
+    @include spacing.fs-responsive-margin(4, $direction: block);
   }
   &--visible {
-    border-bottom: settings.$fs-hr-width solid settings.$fs-border-color;
+    border-block-end: settings.$fs-hr-width solid settings.$fs-border-color;
   }
 }

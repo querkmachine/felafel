@@ -21,7 +21,7 @@ $link-border-width: 2px !default;
   &__link {
     @include spacing.fs-responsive-padding(1, $direction: all);
     display: inline-block;
-    min-width: 2.25em;
+    min-inline-size: 2.25em;
     border-width: $link-border-width;
     border-style: solid;
     border-color: currentColor;
@@ -30,7 +30,7 @@ $link-border-width: 2px !default;
     text-align: center;
     line-height: 1;
     & + & {
-      margin-left: $item-spacing;
+      margin-inline-start: $item-spacing;
     }
     &:hover {
       color: $hover-link-color;
@@ -44,10 +44,9 @@ $link-border-width: 2px !default;
       &::after {
         $arrow-size: $arrow-size;
         display: inline-block;
-        width: $arrow-size * 0.5;
-        height: $arrow-size;
-        margin-right: 0.25em;
-        margin-left: 0.25em;
+        block-size: $arrow-size;
+        inline-size: $arrow-size * 0.5;
+        margin-inline: 0.25em;
         background-color: currentColor;
       }
     }
@@ -69,8 +68,7 @@ $link-border-width: 2px !default;
     }
   }
   &__jump {
-    margin-right: $item-spacing;
-    margin-left: $item-spacing;
+    margin-inline: $item-spacing;
     color: $separator-color;
   }
 }

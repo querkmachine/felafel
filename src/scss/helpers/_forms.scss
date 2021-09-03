@@ -28,11 +28,11 @@
   @include _fs-input-base;
   box-sizing: content-box;
   display: inline-block;
-  width: $size;
-  height: $size;
+  inline-size: $size;
+  block-size: $size;
   position: relative;
   @if $vertical-offset != 0 {
-    top: $vertical-offset;
+    inset-block-start: $vertical-offset;
   }
   line-height: 1;
   -webkit-appearance: none;
@@ -56,19 +56,11 @@
   @include _fs-input-base;
   @include spacing.fs-responsive-padding(
     settings.$fs-form-element-vertical-padding,
-    $direction: top
-  );
-  @include spacing.fs-responsive-padding(
-    settings.$fs-form-element-vertical-padding,
-    $direction: bottom
+    $direction: block
   );
   @include spacing.fs-responsive-padding(
     settings.$fs-form-element-horizontal-padding,
-    $direction: right
-  );
-  @include spacing.fs-responsive-padding(
-    settings.$fs-form-element-horizontal-padding,
-    $direction: left
+    $direction: inline
   );
 }
 
@@ -76,21 +68,13 @@
   @include _fs-input-base;
   @include spacing.fs-responsive-padding(
     settings.$fs-form-element-vertical-padding,
-    $direction: top
-  );
-  @include spacing.fs-responsive-padding(
-    settings.$fs-form-element-vertical-padding,
-    $direction: bottom
+    $direction: block
   );
   @include spacing.fs-responsive-padding(
     settings.$fs-form-element-horizontal-padding,
-    $direction: right
+    $direction: inline
   );
-  @include spacing.fs-responsive-padding(
-    settings.$fs-form-element-horizontal-padding,
-    $direction: left
-  );
-  max-width: 100%;
+  max-inline-size: 100%;
   &:focus {
     @include a11y.fs-focus-ring;
   }
@@ -109,21 +93,13 @@
   @include _fs-input-base;
   @include spacing.fs-responsive-padding(
     settings.$fs-form-element-vertical-padding,
-    $direction: top
-  );
-  @include spacing.fs-responsive-padding(
-    settings.$fs-form-element-vertical-padding,
-    $direction: bottom
+    $direction: block
   );
   @include spacing.fs-responsive-padding(
     settings.$fs-form-element-horizontal-padding,
-    $direction: right
+    $direction: inline
   );
-  @include spacing.fs-responsive-padding(
-    settings.$fs-form-element-horizontal-padding,
-    $direction: left
-  );
-  width: 100%;
+  inline-size: 100%;
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   appearance: textfield;
@@ -166,21 +142,13 @@
   @include _fs-input-base;
   @include spacing.fs-responsive-padding(
     settings.$fs-form-element-vertical-padding,
-    $direction: top
-  );
-  @include spacing.fs-responsive-padding(
-    settings.$fs-form-element-vertical-padding,
-    $direction: bottom
+    $direction: block
   );
   @include spacing.fs-responsive-padding(
     settings.$fs-form-element-horizontal-padding,
-    $direction: right
+    $direction: inline
   );
-  @include spacing.fs-responsive-padding(
-    settings.$fs-form-element-horizontal-padding,
-    $direction: left
-  );
-  width: 100%;
+  inline-size: 100%;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -212,14 +180,14 @@
     $check-width: $size * $check-ratio;
     $check-height: $check-width * 0.4;
     display: block;
-    width: $check-width;
-    height: $check-height;
+    block-size: $check-height;
+    inline-size: $check-width;
     border-width: 0 0 $check-stroke $check-stroke;
     border-style: solid;
     border-color: $check-color;
     position: absolute;
-    top: calc(#{math.div($size - $check-height, 2.5)} - 1px);
-    left: calc(#{math.div($size - $check-width, 2)} - 1px);
+    inset-block-start: calc(#{math.div($size - $check-height, 2.5)} - 1px);
+    inset-inline-start: calc(#{math.div($size - $check-width, 2)} - 1px);
     transform: rotate(-45deg);
   }
   &[aria-invalid="true"] {
@@ -252,12 +220,12 @@
   &::after {
     $check-size: $size * $check-ratio;
     display: block;
-    width: $check-size;
-    height: $check-size;
+    inline-size: $check-size;
+    block-size: $check-size;
     border-radius: $check-size;
     position: absolute;
-    top: calc(50% - #{math.div($check-size, 2)});
-    left: calc(50% - #{math.div($check-size, 2)});
+    inset-block-start: calc(50% - #{math.div($check-size, 2)});
+    inset-inline-start: calc(50% - #{math.div($check-size, 2)});
     background-color: $check-color;
   }
   &[aria-invalid="true"] {
@@ -291,24 +259,24 @@
     $size: $height,
     $vertical-offset: $vertical-offset
   );
-  width: $width;
+  inline-size: $width;
   border-radius: $border-radius;
   background-color: $background-color;
   &,
   &::after {
-    transition-property: background-color, left;
+    transition-property: background-color, inset-inline-start;
     transition-duration: 0.333s;
     transition-timing-function: ease-in-out;
   }
   &::after {
     content: "";
     display: block;
-    width: $knob-size;
-    height: $knob-size;
+    block-size: $knob-size;
+    inline-size: $knob-size;
     border-radius: $border-radius;
     position: absolute;
-    top: calc(50% - #{$knob-size} / 2);
-    left: $knob-inset;
+    inset-block-start: calc(50% - #{$knob-size} / 2);
+    inset-inline-start: $knob-inset;
     background-color: $knob-color;
   }
   &[aria-invalid="true"] {
@@ -317,7 +285,7 @@
   &:checked {
     background-color: $background-color-checked;
     &::after {
-      left: calc(#{$width} - #{$knob-size} - #{$knob-inset});
+      inset-inline-start: calc(#{$width} - #{$knob-size} - #{$knob-inset});
     }
   }
   &:focus {

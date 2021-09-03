@@ -15,19 +15,18 @@ $border-color: settings.$fs-brand-color !default;
   &__item {
   }
   &__link {
-    @include spacing.fs-responsive-padding(1, $direction: top);
-    @include spacing.fs-responsive-padding(1, $direction: bottom);
-    @include spacing.fs-responsive-padding(1, $direction: right);
-    @include spacing.fs-responsive-padding(3, $direction: left);
+    @include spacing.fs-responsive-padding(1, $direction: block);
+    @include spacing.fs-responsive-padding(1, $direction: inline-end);
+    @include spacing.fs-responsive-padding(3, $direction: inline-start);
     @include links.fs-link($visited-style: false);
     @include typography.fs-font-stack(body, $weight: 400);
     @include typography.fs-font-size(16);
     display: block;
-    border-left: $border-width solid transparent;
+    border-inline-start: $border-width solid transparent;
     text-decoration: none;
     &[aria-current] {
       @include typography.fs-font-stack(body, $weight: 700);
-      border-left-color: $border-color;
+      border-inline-start-color: $border-color;
     }
   }
 }

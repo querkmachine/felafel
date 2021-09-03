@@ -21,10 +21,9 @@ $link-color: settings.$fs-link-color !default;
     &::after {
       $separator-size: $separator-size;
       display: inline-block;
-      width: $separator-size * 0.5;
-      height: $separator-size;
-      margin-right: 0.25em;
-      margin-left: 0.25em;
+      block-size: $separator-size;
+      inline-size: $separator-size * 0.5;
+      margin-inline: 0.25em;
       background-color: $separator-color;
     }
     @include media-queries.fs-mq($to: tablet) {
@@ -35,7 +34,7 @@ $link-color: settings.$fs-link-color !default;
       &:nth-last-child(n + 2)::before {
         content: "";
         clip-path: polygon(0 50%, 100% 0, 100% 100%);
-        margin-left: 0;
+        margin-inline-start: 0;
       }
     }
     @include media-queries.fs-mq($from: tablet) {

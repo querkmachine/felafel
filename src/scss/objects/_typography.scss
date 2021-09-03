@@ -7,28 +7,28 @@
 .fs-heading-l,
 .fs-heading-m,
 .fs-heading-s {
-  @include spacing.fs-responsive-margin(0, $direction: top);
+  @include spacing.fs-responsive-margin(0, $direction: block-start);
   @include typography.fs-font-stack(header, $weight: bold);
   color: settings.$fs-text-color-heading;
 }
 
 .fs-heading-xl {
-  @include spacing.fs-responsive-margin(8, $direction: bottom);
+  @include spacing.fs-responsive-margin(8, $direction: block-end);
   @include typography.fs-font-size(48);
 }
 
 .fs-heading-l {
-  @include spacing.fs-responsive-margin(6, $direction: bottom);
+  @include spacing.fs-responsive-margin(6, $direction: block-end);
   @include typography.fs-font-size(36);
 }
 
 .fs-heading-m {
-  @include spacing.fs-responsive-margin(4, $direction: bottom);
+  @include spacing.fs-responsive-margin(4, $direction: block-end);
   @include typography.fs-font-size(24);
 }
 
 .fs-heading-s {
-  @include spacing.fs-responsive-margin(4, $direction: bottom);
+  @include spacing.fs-responsive-margin(4, $direction: block-end);
   @include typography.fs-font-size(19);
 }
 
@@ -42,7 +42,7 @@
 }
 
 .fs-subheading-xl {
-  @include spacing.fs-responsive-margin(1, $direction: bottom);
+  @include spacing.fs-responsive-margin(1, $direction: block-end);
   @include typography.fs-font-size(36);
 }
 
@@ -58,8 +58,8 @@
 .fs-body,
 .fs-body-l,
 .fs-body-s {
-  @include spacing.fs-responsive-margin(0, $direction: top);
-  @include spacing.fs-responsive-margin(3, $direction: bottom);
+  @include spacing.fs-responsive-margin(0, $direction: block-start);
+  @include spacing.fs-responsive-margin(3, $direction: block-end);
 }
 
 .fs-body {
@@ -80,10 +80,10 @@
 .fs-body-s,
 .fs-list {
   + .fs-heading-l {
-    @include spacing.fs-responsive-margin(4, $direction: top);
+    @include spacing.fs-responsive-margin(4, $direction: block-start);
   }
   + .fs-heading-m,
   + .fs-heading-s {
-    @include spacing.fs-responsive-margin(2, $direction: top);
+    @include spacing.fs-responsive-margin(2, $direction: block-start);
   }
 }
