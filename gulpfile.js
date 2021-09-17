@@ -4,7 +4,8 @@ const argv = require("yargs").argv;
 const sourcemaps = require("gulp-sourcemaps");
 
 // CSS dependencies
-const autoprefixer = require("gulp-autoprefixer");
+const postcss = require("gulp-postcss");
+const postcssPresetEnv = require("postcss-preset-env");
 const sass = require("gulp-dart-sass");
 
 // JS dependencies
@@ -39,11 +40,7 @@ gulp.task("css", () => {
         outputStyle: argv.minify ? "compressed" : "expanded",
       }).on("error", sass.logError)
     )
-    .pipe(
-      autoprefixer({
-        grid: "autoplace",
-      })
-    )
+    .pipe(postcss([postcssPresetEnv()]))
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("./dist"));
 });
