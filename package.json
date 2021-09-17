@@ -7,7 +7,7 @@
   "scripts": {
     "start": "npm run serve",
     "serve": "gulp default",
-    "build": "gulp build",
+    "build": "gulp build --minify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Kimberly Grey <kimberly.grey@felinesoft.com>",
@@ -16,6 +16,7 @@
     "@babel/preset-env": "^7.12.7",
     "babelify": "^10.0.0",
     "browserify": "^17.0.0",
+    "cssnano": "^5.0.8",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-dart-sass": "^1.0.2",
