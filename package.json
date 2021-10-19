@@ -4,6 +4,7 @@
   "description": "The Felinesoft Agile Front-End Library.",
   "browserslist": "last 2 versions and last 2 years and not dead",
   "main": "dist/all.js",
+  "module": "dist/all.mjs",
   "scripts": {
     "start": "npm run serve",
     "serve": "gulp default",

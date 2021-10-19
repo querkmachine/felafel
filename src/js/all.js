@@ -1,9 +1,3 @@
-import DetailsGroup from "./components/details-group";
-import FileDragAndDrop from "./components/file-drag-and-drop";
-import Tabs from "./components/tabs";
-import TextareaCounter from "./components/textarea-counter";
-import Tooltip from "./components/tooltip";
-
 function initAll(options) {
   options = typeof options !== "undefined" ? options : {};
 
@@ -11,34 +5,26 @@ function initAll(options) {
   // Defaults to entire document if not set
   const scope = typeof options.scope !== "undefined" ? options.scope : document;
 
-  scope.querySelectorAll('[data-module="fs-details-group"]').forEach((m) => {
-    new DetailsGroup(m);
-  });
+  const loadModule = (moduleName) => {
+    const elements = scope.querySelectorAll(`[data-module="fs-${moduleName}"]`);
+    if (elements.length) {
+      import(`../src/js/components/${moduleName}.js`)
+        .then((m) => {
+          elements.forEach((e) => {
+            new m.default(e);
+          });
+        })
+        .catch((ex) => {
+          console.error(`Failed to import module "${moduleName}".`, ex);
+        });
+    }
+  };
 
-  scope
-    .querySelectorAll('[data-module="fs-file-drag-and-drop"]')
-    .forEach((m) => {
-      new FileDragAndDrop(m);
-    });
-
-  scope.querySelectorAll('[data-module="fs-tabs"]').forEach((m) => {
-    new Tabs(m);
-  });
-
-  scope.querySelectorAll('[data-module="fs-textarea-counter"]').forEach((m) => {
-    new TextareaCounter(m);
-  });
-
-  scope.querySelectorAll('[data-module="fs-tooltip"]').forEach((m) => {
-    new Tooltip(m);
-  });
+  loadModule("details-group");
+  loadModule("file-drag-and-drop");
+  loadModule("tabs");
+  loadModule("textarea-counter");
+  loadModule("tooltip");
 }
 
-export {
-  initAll,
-  DetailsGroup,
-  FileDragAndDrop,
-  Tabs,
-  TextareaCounter,
-  Tooltip,
-};
+export { initAll };

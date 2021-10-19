@@ -1,4 +1,4 @@
-import { GenerateGuid } from "../helpers/strings";
+import { GenerateGuid } from "../helpers/strings.js";
 
 class FileDragAndDrop {
   constructor($module) {

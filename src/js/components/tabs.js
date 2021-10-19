@@ -2,7 +2,7 @@
 // Hat tip to them and the GOV.UK team.
 // https://github.com/alphagov/govuk-frontend/blob/master/src/govuk/components/tabs/tabs.js
 
-import { KeyCodes } from "../helpers/key-codes";
+import { KeyCodes } from "../helpers/key-codes.js";
 
 class Tab {
   constructor($module) {

@@ -1,5 +1,5 @@
-import { GenerateGuid } from "../helpers/strings";
-import { KeyCodes } from "../helpers/key-codes";
+import { GenerateGuid } from "../helpers/strings.js";
+import { KeyCodes } from "../helpers/key-codes.js";
 
 class Tooltip {
   constructor($module) {
