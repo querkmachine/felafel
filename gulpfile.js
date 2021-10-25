@@ -30,7 +30,15 @@ gulp.task("css:watch", () => {
 });
 
 gulp.task("css", () => {
-  const postcssPlugins = [postcssPresetEnv()];
+  const postcssPlugins = [
+    postcssPresetEnv({
+      features: {
+        "logical-properties-and-values": {
+          dir: argv.dir || "ltr",
+        },
+      },
+    }),
+  ];
   if (argv.minify) {
     postcssPlugins.push(postcssNano());
   }
