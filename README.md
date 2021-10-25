@@ -12,13 +12,25 @@ Felafel is mostly used internally at Felinesoft. As a result it is tailored to t
 
 If little to no customisation is necessary, you can copy the precompiled files from the `dist` folder or reference them directly in HTML.
 
-```
+```html
 <!-- In the page's <head> element -->
-<link ref="stylesheet" href="path-to-felafel/dist/all.css">
+<link ref="stylesheet" href="node_modules/@querkmachine/felafel/dist/all.css" />
 
 <!-- Above the page's closing <body> tag -->
-<script src="path-to-felafel/dist/all.js"></script>
-<script>window.fs.initAll();</script>
+<script src="node_modules/@querkmachine/felafel/dist/all.js"></script>
+
+<!-- Want everything? Do this. -->
+<script>
+  window.fs.initAll();
+</script>
+
+<!-- Only want a specific module? Then do something like this. -->
+<script>
+  const tabsElement = document.getElementById("tabs");
+  window.fs.loadModule("tabs").then((tabs) => {
+    new tabs.default(tabsElement);
+  });
+</script>
 ```
 
 ## Using Felafel
@@ -27,21 +39,15 @@ Felafel makes heavy use of several modern features introduced into the Sass lang
 
 Felafel is built in a modular fashion, and is most powerful when used alongside Sass. Using Sass it’s possible to only import certain components or styles into a project:
 
-```
+```scss
 // We want all of this
-@use "node_modules/fs-felafel/src/scss/core";
+@use "node_modules/@querkmachine/felafel/src/scss/core";
 
 // Some useful mixins here
-@use "node_modules/fs-felafel/src/scss/helpers/typography";
+@use "node_modules/@querkmachine/felafel/src/scss/helpers/typography";
 
 // Want this too
-@use "node_modules/fs-felafel/src/scss/components/step-indicator";
-```
-
-Alternatively, get everything:
-
-```
-@use "node_modules/fs-felafel/src/scss/all";
+@use "node_modules/@querkmachine/felafel/src/scss/components/step-indicator";
 ```
 
 How you implement Sass can be as simple or complex as necessary. It can be a terminal command, an npm script, or part of a whole Gulpwebpackbrowserify build process—Felafel doesn’t care.

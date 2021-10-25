@@ -234,3 +234,5 @@ class Tab {
 }
 
 export default Tab;
+
+//# sourceMappingURL=tabs.js.map

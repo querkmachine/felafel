@@ -77,3 +77,5 @@ class FileDragAndDrop {
 }
 
 export default FileDragAndDrop;
+
+//# sourceMappingURL=file-drag-and-drop.js.map
