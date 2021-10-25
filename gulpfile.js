@@ -10,10 +10,7 @@ const postcssNano = require("cssnano");
 const sass = require("gulp-dart-sass");
 
 // JS dependencies
-const browserify = require("browserify");
 const gulpif = require("gulp-if");
-const vinylSource = require("vinyl-source-stream");
-const vinylBuffer = require("vinyl-buffer");
 const uglify = require("gulp-uglify");
 
 /**
@@ -51,25 +48,16 @@ gulp.task("css", () => {
  */
 
 gulp.task("js:watch", () => {
-  gulp.watch("./src/js", gulp.parallel("js"));
+  gulp.watch("./src/js/**/*", gulp.parallel("js"));
 });
 
 gulp.task("js", () => {
-  const b = browserify({
-    entries: ["./src/js/all.js"],
-    standalone: "fs",
-  });
-  return b
-    .transform("babelify", {
-      presets: [["@babel/preset-env"]],
-    })
-    .bundle()
-    .pipe(vinylSource("all.js"))
-    .pipe(vinylBuffer())
+  return gulp
+    .src("./src/js/**/*")
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(gulpif(argv.minify, uglify()))
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest("./dist"));
+    .pipe(gulp.dest("./dist/js"));
 });
 
 /**
