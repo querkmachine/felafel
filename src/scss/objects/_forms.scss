@@ -4,27 +4,27 @@
 @use "../helpers/typography";
 
 .fs-form-row {
-  @include spacing.fs-responsive-margin(6, $direction: bottom);
+  @include spacing.fs-responsive-margin(6, $direction: block-end);
 }
 
 .fs-fieldset {
   @include reset.fs-reset-fieldset;
   > :last-child {
-    @include spacing.fs-responsive-margin(0, $direction: bottom);
+    @include spacing.fs-responsive-margin(0, $direction: block-end);
   }
   &__legend {
-    @include spacing.fs-responsive-margin(1, $direction: bottom);
+    @include spacing.fs-responsive-margin(1, $direction: block-end);
     @include typography.fs-font-stack(body, $weight: regular);
     @include typography.fs-font-size(19);
     display: table;
-    max-width: 100%;
+    max-inline-size: 100%;
     padding: 0;
     white-space: normal;
     &--xl,
     &--l,
     &--m,
     &--s {
-      @include spacing.fs-responsive-margin(3, $direction: bottom);
+      @include spacing.fs-responsive-margin(3, $direction: block-end);
       @include typography.fs-font-stack(header, $weight: bold);
     }
     &--xl {
@@ -40,14 +40,14 @@
 }
 
 .fs-label {
-  @include spacing.fs-responsive-margin(1, $direction: bottom);
+  @include spacing.fs-responsive-margin(1, $direction: block-end);
   @include typography.fs-font-stack(body, $weight: regular);
   @include typography.fs-font-size(19);
   display: block;
 }
 
 .fs-hint {
-  @include spacing.fs-responsive-margin(2, $direction: bottom);
+  @include spacing.fs-responsive-margin(2, $direction: block-end);
   @include typography.fs-font-stack(body, $weight: regular);
   @include typography.fs-font-size(19);
   display: block;
@@ -55,7 +55,7 @@
 }
 
 .fs-error {
-  @include spacing.fs-responsive-margin(2, $direction: bottom);
+  @include spacing.fs-responsive-margin(2, $direction: block-end);
   @include typography.fs-font-stack(body, $weight: bold);
   @include typography.fs-font-size(19);
   display: block;

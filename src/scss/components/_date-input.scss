@@ -5,9 +5,9 @@
   display: flex;
   flex-direction: row;
   &__group {
-    @include spacing.fs-responsive-margin(0, $direction: bottom);
+    @include spacing.fs-responsive-margin(0, $direction: block-end);
     & + & {
-      @include spacing.fs-responsive-margin(2, $direction: left);
+      @include spacing.fs-responsive-margin(2, $direction: inline-start);
     }
   }
 }

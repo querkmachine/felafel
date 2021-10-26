@@ -9,8 +9,7 @@ $background-color: colors.fs-color("grey90") !default;
 $text-color: colors.fs-color("white") !default;
 
 .fs-fat-footer {
-  @include spacing.fs-responsive-padding(3, $direction: top);
-  @include spacing.fs-responsive-padding(3, $direction: bottom);
+  @include spacing.fs-responsive-padding(3, $direction: block);
   color: $text-color;
   background-color: $background-color;
   &__inner {

@@ -6,7 +6,7 @@
   @include spacing.fs-responsive-padding(6, $direction: all);
   text-align: center;
   &__image {
-    @include spacing.fs-responsive-margin(4, $direction: bottom);
+    @include spacing.fs-responsive-margin(4, $direction: block-end);
   }
   &__body {
   }
@@ -17,6 +17,6 @@
     color: settings.$fs-text-color-secondary;
   }
   &__cta {
-    @include spacing.fs-responsive-margin(4, $direction: top);
+    @include spacing.fs-responsive-margin(4, $direction: block-start);
   }
 }

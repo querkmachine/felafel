@@ -1,0 +1,42 @@
+// clip-path isn't compatible with logical properties as it's not intrinsically
+// directional, so we're kinda faking it here.
+@function _fs-arrow-raw($physicalDirection) {
+  @if $physicalDirection == "up" {
+    @return polygon(50% 0, 100% 100%, 0 100%);
+  } @else if $physicalDirection == "down" {
+    @return polygon(50% 100%, 0 0, 100% 0);
+  } @else if $physicalDirection == "left" {
+    @return polygon(0 50%, 100% 0, 100% 100%);
+  } @else if $physicalDirection == "right" {
+    @return polygon(100% 50%, 0 100%, 0 0);
+  } @else {
+    @error "Direction `#{$physicalDirection}` doesn't exist.";
+  }
+}
+
+@mixin fs-arrow($direction) {
+  @if not $direction {
+    @error "You must specify an arrow direction.";
+  }
+  @if $direction == "block-start" {
+    clip-path: _fs-arrow-raw("up");
+  } @else if $direction == "block-end" {
+    clip-path: _fs-arrow-raw("down");
+  } @else if $direction == "inline-start" {
+    &:dir(ltr) {
+      clip-path: _fs-arrow-raw("left");
+    }
+    &:dir(rtl) {
+      clip-path: _fs-arrow-raw("right");
+    }
+  } @else if $direction == "inline-end" {
+    &:dir(ltr) {
+      clip-path: _fs-arrow-raw("right");
+    }
+    &:dir(rtl) {
+      clip-path: _fs-arrow-raw("left");
+    }
+  } @else {
+    clip-path: _fs-arrow-raw($direction);
+  }
+}

@@ -1,7 +1,7 @@
-import { GenerateGuid } from "../helpers/strings";
-import { KeyCodes } from "../helpers/key-codes";
+import { GenerateGuid } from "../helpers/strings.js";
+import { KeyCodes } from "../helpers/key-codes.js";
 
-export default class Tooltip {
+class Tooltip {
   constructor($module) {
     this.$module = $module;
     this.$trigger = $module.firstElementChild;
@@ -119,3 +119,5 @@ export default class Tooltip {
     this.$tooltip.dataset.side = largestKey || "bottom";
   }
 }
+
+export default Tooltip;

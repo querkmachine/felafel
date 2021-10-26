@@ -3,23 +3,23 @@
 // Lists
 .fs-list {
   @include spacing.fs-responsive-margin(0);
-  @include spacing.fs-responsive-margin(3, $direction: bottom);
+  @include spacing.fs-responsive-margin(3, $direction: block-end);
   padding: 0;
   list-style-type: none;
   li + li {
-    @include spacing.fs-responsive-margin(1, $direction: top);
+    @include spacing.fs-responsive-margin(1, $direction: block-start);
   }
   &--bulleted {
-    padding-left: 2em;
+    padding-inline-start: 2em;
     list-style-type: disc;
   }
   &--numbered {
-    padding-left: 2em;
+    padding-inline-start: 2em;
     list-style-type: decimal;
   }
   &--spaced {
     li + li {
-      @include spacing.fs-responsive-margin(3, $direction: top);
+      @include spacing.fs-responsive-margin(3, $direction: block-start);
     }
   }
 }

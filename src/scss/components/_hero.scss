@@ -16,22 +16,21 @@ $border-radius: if(
 .fs-hero {
   position: relative;
   &__background {
-    width: 100%;
-    height: 100%;
+    inline-size: 100%;
+    block-size: 100%;
     position: absolute;
-    top: 0;
-    left: 0;
+    inset-block-start: 0;
+    inset-inline-start: 0;
     object-fit: cover;
   }
   &__inner {
     position: relative;
   }
   &__body {
-    @include spacing.fs-responsive-margin($margin, $direction: top);
-    @include spacing.fs-responsive-margin($margin, $direction: bottom);
+    @include spacing.fs-responsive-margin($margin, $direction: block);
     @include spacing.fs-responsive-padding($padding, $direction: all);
     display: inline-block;
-    max-width: 30em;
+    max-inline-size: 30em;
     border-radius: $border-radius;
     @if $background-color {
       color: colors.fs-color-if-set($text-color, $background-color);
@@ -41,7 +40,7 @@ $border-radius: if(
     }
   }
   &__heading {
-    @include spacing.fs-responsive-margin(3, $direction: bottom);
+    @include spacing.fs-responsive-margin(3, $direction: block-end);
     color: currentColor;
   }
 }

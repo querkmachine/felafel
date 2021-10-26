@@ -1,3 +1,4 @@
+@use "../helpers/arrows";
 @use "../helpers/links";
 @use "../helpers/spacing";
 @use "../helpers/typography";
@@ -28,14 +29,14 @@
   display: inline-flex;
   align-items: center;
   &::before {
+    @include arrows.fs-arrow($direction: inline-start);
     $height: 0.7em;
     $width: $height * 0.5;
     content: "";
     display: inline-block;
-    width: $width;
-    height: $height;
-    margin-right: spacing.fs-spacing(2);
+    block-size: $height;
+    inline-size: $width;
+    margin-inline-end: spacing.fs-spacing(2);
     background-color: currentColor;
-    clip-path: polygon(0 50%, 100% 0, 100% 100%);
   }
 }

@@ -2,9 +2,9 @@
 // Hat tip to them and the GOV.UK team.
 // https://github.com/alphagov/govuk-frontend/blob/master/src/govuk/components/tabs/tabs.js
 
-import { KeyCodes } from "../helpers/key-codes";
+import { KeyCodes } from "../helpers/key-codes.js";
 
-export default class Tab {
+class Tabs {
   constructor($module) {
     this.$module = $module;
     this.$tabs = $module.querySelectorAll(".fs-tabs__tab");
@@ -232,3 +232,5 @@ export default class Tab {
     return hash;
   }
 }
+
+export default Tabs;

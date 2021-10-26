@@ -8,14 +8,17 @@
 @function fs-spacing($spacing-point, $breakpoint: null) {
   $actual-input-type: meta.type-of($spacing-point);
   @if $actual-input-type != "number" {
-    @error "Expected a number (integer), but got a #{$actual-input-type}.";
+    @warn "Expected an integer, but was passed a #{$actual-input-type}.";
+    @return 0;
   }
   @if not map.has-key(settings.$fs-spacing, $spacing-point) {
-    @error "Unknown spacing point `#{$spacing-point}`.";
+    @warn "Unknown spacing point `#{$spacing-point}` - expected a key from the `$fs-spacing` map.";
+    @return 0;
   }
   $spacing-map: map.get(settings.$fs-spacing, $spacing-point);
   @if not map.has-key($spacing-map, $breakpoint) {
-    @error "Breakpoint `#{$breakpoint}` does not exist for spacing point #{$spacing-point}.";
+    @warn "Breakpoint `#{$breakpoint}` does not exist for spacing point `#{$spacing-point}` in `$fs-spacing` map.";
+    @return 0;
   }
   @return measurements.fs-px-to-rem(map.get($spacing-map, $breakpoint));
 }

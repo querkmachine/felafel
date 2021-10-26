@@ -20,9 +20,9 @@ $border-radius: if(
 $label-margin: spacing.fs-spacing(settings.$fs-check-radio-margin) !default;
 
 .fs-toggle {
-  @include spacing.fs-responsive-margin(3, $direction: bottom);
+  @include spacing.fs-responsive-margin(3, $direction: block-end);
   @if $float-left {
-    padding-left: calc(#{$width} + #{$label-margin});
+    padding-inline-start: calc(#{$width} + #{$label-margin});
   }
   &__input {
     @include forms.fs-input-toggle(
@@ -34,11 +34,11 @@ $label-margin: spacing.fs-spacing(settings.$fs-check-radio-margin) !default;
       $background-color-checked: $background-color-checked
     );
     @if $float-left {
-      margin-left: calc(0px - (#{$width} + #{$label-margin}));
-      float: left;
+      margin-inline-start: calc(0px - (#{$width} + #{$label-margin}));
+      float: inline-start;
     } @else {
-      margin-left: $label-margin;
-      float: right;
+      margin-inline-start: $label-margin;
+      float: inline-end;
     }
   }
   &__label {

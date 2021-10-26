@@ -9,12 +9,12 @@ $check-color: colors.fs-color("grey90") !default;
 $label-margin: spacing.fs-spacing(settings.$fs-check-radio-margin) !default;
 
 .fs-radio {
-  @include spacing.fs-responsive-margin(3, $direction: bottom);
-  padding-left: calc(#{$size} + #{$label-margin});
+  @include spacing.fs-responsive-margin(3, $direction: block-end);
+  padding-inline-start: calc(#{$size} + #{$label-margin});
   &__input {
     @include forms.fs-input-radio($size: $size, $check-color: $check-color);
-    margin-left: calc(0px - (#{$size} + #{$label-margin}));
-    float: left;
+    margin-inline-start: calc(0px - (#{$size} + #{$label-margin}));
+    float: inline-start;
   }
   &__label {
   }

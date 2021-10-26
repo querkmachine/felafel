@@ -10,8 +10,7 @@ $background-color: settings.$fs-canvas-background-color !default;
 $text-color: settings.$fs-text-color-secondary !default;
 
 .fs-footer {
-  @include spacing.fs-responsive-padding(3, $direction: top);
-  @include spacing.fs-responsive-padding(3, $direction: bottom);
+  @include spacing.fs-responsive-padding(3, $direction: block);
   @include typography.fs-font-size(14);
   color: $text-color;
   background-color: $background-color;
@@ -23,9 +22,9 @@ $text-color: settings.$fs-text-color-secondary !default;
   }
   &__list {
     @include reset.fs-reset-list;
-    @include spacing.fs-responsive-margin(3, $direction: top);
+    @include spacing.fs-responsive-margin(3, $direction: block-start);
     @include media-queries.fs-mq($from: desktop) {
-      @include spacing.fs-responsive-margin(0, $direction: top);
+      @include spacing.fs-responsive-margin(0, $direction: block-start);
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -35,7 +34,7 @@ $text-color: settings.$fs-text-color-secondary !default;
   &__item {
     @include media-queries.fs-mq($from: desktop) {
       & + & {
-        @include spacing.fs-responsive-margin(3, $direction: left);
+        @include spacing.fs-responsive-margin(3, $direction: inline-start);
       }
     }
   }

@@ -1,3 +1,4 @@
+@use "../helpers/spacing";
 @use "../helpers/typography";
 @forward "../objects/blockquote";
 @forward "../objects/lists";
@@ -18,12 +19,21 @@
   }
   h2:not([class]) {
     @extend .fs-heading-l;
+    &:not(:first-child) {
+      @include spacing.fs-responsive-margin(6, $direction: block-start);
+    }
   }
   h3:not([class]) {
     @extend .fs-heading-m;
+    &:not(:first-child) {
+      @include spacing.fs-responsive-margin(4, $direction: block-start);
+    }
   }
   h4:not([class]) {
     @extend .fs-heading-s;
+    &:not(:first-child) {
+      @include spacing.fs-responsive-margin(4, $direction: block-start);
+    }
   }
   blockquote:not([class]) {
     @extend .fs-blockquote;

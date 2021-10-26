@@ -39,10 +39,8 @@ $ghost-text-color: inherit !default;
 .fs-button {
   @include reset.fs-reset-button;
   @include spacing.fs-responsive-margin(0, $direction: all);
-  @include spacing.fs-responsive-padding(2, $direction: top);
-  @include spacing.fs-responsive-padding(2, $direction: bottom);
-  @include spacing.fs-responsive-padding(3, $direction: right);
-  @include spacing.fs-responsive-padding(3, $direction: left);
+  @include spacing.fs-responsive-padding(2, $direction: block);
+  @include spacing.fs-responsive-padding(3, $direction: inline);
   @include typography.fs-font-stack(body, $weight: bold);
   @include typography.fs-font-size(16);
   display: inline-block; // fallback for browsers that don't allow buttons to be flexboxes
@@ -115,12 +113,12 @@ $ghost-text-color: inherit !default;
     background-color: transparent;
   }
   &[data-layout="block"] {
-    width: 100%;
+    inline-size: 100%;
   }
   &[data-layout="elastic"] {
-    width: 100%;
+    inline-size: 100%;
     @include media-queries.fs-mq($from: tablet) {
-      width: auto;
+      inline-size: auto;
     }
   }
   &:disabled {

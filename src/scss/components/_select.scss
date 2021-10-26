@@ -13,18 +13,18 @@ $arrow-color: currentColor !default;
   position: relative;
   @each $length in (20, 10, 8, 5, 4, 3, 2) {
     &--length-#{$length} {
-      max-width: ($length + 1) * 1em;
+      max-inline-size: ($length + 1) * 1em;
     }
   }
   @if $show-arrow {
     &::after {
       $arrow-size-diagonal: $arrow-size * 1.41421356237; // square root of 2
       content: "";
-      width: $arrow-size;
-      height: $arrow-size;
+      block-size: $arrow-size;
+      inline-size: $arrow-size;
       position: absolute;
-      right: $arrow-size;
-      top: calc(50% - #{math.div($arrow-size-diagonal, 2)});
+      inset-block-start: calc(50% - #{math.div($arrow-size-diagonal, 2)});
+      inset-inline-end: $arrow-size;
       border-width: 0 $arrow-stroke $arrow-stroke 0;
       border-style: solid;
       border-color: $arrow-color;
@@ -35,7 +35,7 @@ $arrow-color: currentColor !default;
   &__input {
     @include forms.fs-input-select;
     @if $show-arrow {
-      padding-right: (
+      padding-inline-end: (
           spacing.fs-spacing(settings.$fs-form-element-horizontal-padding) * 2
         ) +
         $arrow-size;

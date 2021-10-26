@@ -35,14 +35,14 @@ $border-radius: if(
         color: $selected-text-color;
         background-color: $selected-background-color;
         #{$self}__heading {
-          border-bottom-color: $selected-border-color;
+          border-block-end-color: $selected-border-color;
         }
       }
     }
   }
   &__label {
     display: block;
-    height: 100%;
+    block-size: 100%;
     padding: $padding;
     border: $border-width solid $border-color;
     border-radius: $border-radius;
@@ -56,13 +56,13 @@ $border-radius: if(
     display: block;
     margin: (0 - $padding) (0 - $padding) $padding (0 - $padding);
     padding: $padding;
-    border-bottom: $border-width solid $border-color;
+    border-block-end: $border-width solid $border-color;
     font-weight: bold;
-    text-align: left;
+    text-align: unset;
   }
   &__description {
     @include typography.fs-font-size(16);
-    text-align: left;
+    text-align: unset;
   }
 }
 

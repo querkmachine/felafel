@@ -4,14 +4,13 @@ const argv = require("yargs").argv;
 const sourcemaps = require("gulp-sourcemaps");
 
 // CSS dependencies
-const autoprefixer = require("gulp-autoprefixer");
+const postcss = require("gulp-postcss");
+const postcssPresetEnv = require("postcss-preset-env");
+const postcssNano = require("cssnano");
 const sass = require("gulp-dart-sass");
 
 // JS dependencies
-const browserify = require("browserify");
 const gulpif = require("gulp-if");
-const vinylSource = require("vinyl-source-stream");
-const vinylBuffer = require("vinyl-buffer");
 const uglify = require("gulp-uglify");
 
 /**
@@ -31,19 +30,23 @@ gulp.task("css:watch", () => {
 });
 
 gulp.task("css", () => {
+  const postcssPlugins = [
+    postcssPresetEnv({
+      features: {
+        "logical-properties-and-values": {
+          dir: argv.dir || "ltr",
+        },
+      },
+    }),
+  ];
+  if (argv.minify) {
+    postcssPlugins.push(postcssNano());
+  }
   return gulp
     .src("./src/scss/**/*.{sass,scss}")
     .pipe(sourcemaps.init())
-    .pipe(
-      sass({
-        outputStyle: argv.minify ? "compressed" : "expanded",
-      }).on("error", sass.logError)
-    )
-    .pipe(
-      autoprefixer({
-        grid: "autoplace",
-      })
-    )
+    .pipe(sass().on("error", sass.logError))
+    .pipe(postcss(postcssPlugins))
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("./dist"));
 });
@@ -53,21 +56,12 @@ gulp.task("css", () => {
  */
 
 gulp.task("js:watch", () => {
-  gulp.watch("./src/js", gulp.parallel("js"));
+  gulp.watch("./src/js/**/*", gulp.parallel("js"));
 });
 
 gulp.task("js", () => {
-  const b = browserify({
-    entries: ["./src/js/all.js"],
-    standalone: "fs",
-  });
-  return b
-    .transform("babelify", {
-      presets: [["@babel/preset-env"]],
-    })
-    .bundle()
-    .pipe(vinylSource("all.js"))
-    .pipe(vinylBuffer())
+  return gulp
+    .src("./src/js/**/*")
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(gulpif(argv.minify, uglify()))
     .pipe(sourcemaps.write("."))

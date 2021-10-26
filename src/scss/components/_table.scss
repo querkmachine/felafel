@@ -4,29 +4,28 @@
 @use "../helpers/spacing";
 
 .fs-table {
-  @include spacing.fs-responsive-margin(8, $direction: bottom);
-  width: 100%;
+  @include spacing.fs-responsive-margin(8, $direction: block-end);
+  inline-size: 100%;
   border-collapse: collapse;
   table-layout: fixed;
   caption {
     @include typography.fs-font-stack(body, $weight: bold);
-    caption-side: top;
-    text-align: left;
+    caption-side: block-start;
+    text-align: start;
   }
   th,
   td {
-    @include spacing.fs-responsive-padding(2, $direction: top);
-    @include spacing.fs-responsive-padding(2, $direction: bottom);
-    @include spacing.fs-responsive-padding(4, $direction: right);
-    border-bottom: settings.$fs-hr-width solid settings.$fs-border-color;
-    text-align: left;
+    @include spacing.fs-responsive-padding(2, $direction: block);
+    @include spacing.fs-responsive-padding(4, $direction: inline-end);
+    border-block-end: settings.$fs-hr-width solid settings.$fs-border-color;
+    text-align: start;
     vertical-align: top;
     &:last-child {
-      @include spacing.fs-responsive-padding(0, $direction: right);
+      @include spacing.fs-responsive-padding(0, $direction: inline-end);
     }
     &[data-type="numeric"] {
       @include typography.fs-tabular-figures;
-      text-align: right;
+      text-align: end;
     }
   }
   th {

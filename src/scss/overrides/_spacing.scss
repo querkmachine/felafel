@@ -2,7 +2,21 @@
 @use "../helpers/spacing";
 
 @each $size, $map in settings.$fs-spacing {
-  @each $dir in (all, top, right, bottom, left) {
+  @each $dir
+    in (
+      all,
+      top,
+      left,
+      bottom,
+      right,
+      block,
+      inline,
+      block-start,
+      block-end,
+      inline-start,
+      inline-end
+    )
+  {
     .fs-\!-margin#{if($dir != "all", "-" + $dir, null)}-#{$size} {
       @include spacing.fs-responsive-margin(
         $spacing-point: $size,

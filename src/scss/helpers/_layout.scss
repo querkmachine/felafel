@@ -13,29 +13,23 @@
     #{settings.$fs-gutter-half} + env(safe-area-inset-left)
   );
   display: block;
-  max-width: settings.$fs-page-width;
-  margin-right: settings.$fs-gutter-half;
-  margin-left: settings.$fs-gutter-half;
+  max-inline-size: settings.$fs-page-width;
+  margin-inline: settings.$fs-gutter-half;
   @supports (margin: max(calc(0px))) {
-    margin-right: max(#{settings.$fs-gutter-half}, #{$gutter-safe-area-right});
-    margin-left: max(#{settings.$fs-gutter-half}, #{$gutter-safe-area-left});
+    margin-inline: max(#{settings.$fs-gutter-half}, #{$gutter-safe-area-right});
   }
   @include media-queries.fs-mq($from: tablet) {
-    margin-right: settings.$fs-gutter;
-    margin-left: settings.$fs-gutter;
+    margin-inline: settings.$fs-gutter;
     @supports (margin: max(calc(0px))) {
-      margin-right: max(#{settings.$fs-gutter}, #{$gutter-safe-area-right});
-      margin-left: max(#{settings.$fs-gutter}, #{$gutter-safe-area-left});
+      margin-inline: max(#{settings.$fs-gutter}, #{$gutter-safe-area-right});
     }
   }
   @include media-queries.fs-mq(
     $and: "(min-width: #{(settings.$fs-page-width + settings.$fs-gutter * 2)})"
   ) {
-    margin-right: auto;
-    margin-left: auto;
+    margin-inline: auto;
     @supports (margin: max(calc(0px))) {
-      margin-right: auto;
-      margin-left: auto;
+      margin-inline: auto;
     }
   }
 }
@@ -51,18 +45,17 @@
 // Grid row
 @mixin fs-grid-row {
   @include fs-clearfix;
-  margin-right: 0 - settings.$fs-gutter-half;
-  margin-left: 0 - settings.$fs-gutter-half;
+  margin-inline: 0 - settings.$fs-gutter-half;
 }
 
 // Grid column mixin
-@mixin fs-grid-column($width: full, $float: left, $at: tablet) {
+@mixin fs-grid-column($width: full, $float: inline-start, $at: tablet) {
   @if $at != desktop {
-    width: 100%;
+    inline-size: 100%;
     padding: 0 settings.$fs-gutter-half;
   }
   @include media-queries.fs-mq($from: $at) {
-    width: fs-grid-width($width);
+    inline-size: fs-grid-width($width);
     float: $float;
   }
 }

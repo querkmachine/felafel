@@ -18,8 +18,8 @@ $font-stack: body !default;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 1em;
-  height: 1em;
+  block-size: 1em;
+  inline-size: 1em;
   border: $border-width solid $border-color;
   border-radius: $border-radius;
   position: relative;
@@ -42,11 +42,11 @@ $font-stack: body !default;
     font-size: 0.55em;
   }
   &__image {
-    width: 100%;
-    height: 100%;
+    block-size: 100%;
+    inline-size: 100%;
     position: absolute;
-    top: 0;
-    left: 0;
+    inset-block-start: 0;
+    inset-inline-start: 0;
     object-fit: cover;
   }
 }
@@ -55,11 +55,11 @@ $font-stack: body !default;
   display: flex;
   flex-direction: row;
   > .fs-avatar + .fs-avatar {
-    @include spacing.fs-responsive-margin(1, $direction: left);
+    @include spacing.fs-responsive-margin(1, $direction: inline-start);
   }
   &--condensed {
     > .fs-avatar + .fs-avatar {
-      margin-left: -0.25em;
+      margin-inline-start: -0.25em;
     }
   }
 }

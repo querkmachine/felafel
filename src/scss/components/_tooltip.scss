@@ -15,7 +15,7 @@ $background-color: colors.fs-color("grey90") !default;
   &__tip {
     @include spacing.fs-responsive-padding(2, $direction: all);
     display: inline-block;
-    width: 16rem;
+    inline-size: 16rem;
     position: absolute;
     z-index: 1;
     color: colors.fs-color-if-set($text-color, $background-color);
@@ -29,48 +29,48 @@ $background-color: colors.fs-color("grey90") !default;
     @if $show-arrow {
       &::before {
         content: "";
-        width: 0;
-        height: 0;
+        block-size: 0;
+        inline-size: 0;
         border-style: solid;
         position: absolute;
       }
     }
     &[data-side="top"] {
-      margin-bottom: $arrow-size;
-      bottom: 100%;
-      left: 50%;
+      margin-block-end: $arrow-size;
+      inset-block-end: 100%;
+      inset-inline-start: 50%;
       &::before {
-        top: 100%;
+        inset-block-start: 100%;
         border-width: $arrow-size $arrow-size 0 $arrow-size;
         border-color: $background-color transparent transparent transparent;
       }
     }
     &[data-side="right"] {
-      margin-left: $arrow-size;
-      top: 50%;
-      left: 100%;
+      margin-inline-start: $arrow-size;
+      inset-block-start: 50%;
+      inset-inline-start: 100%;
       &::before {
-        right: 100%;
+        inset-inline-end: 100%;
         border-width: $arrow-size $arrow-size $arrow-size 0;
         border-color: transparent $background-color transparent transparent;
       }
     }
     &[data-side="bottom"] {
-      margin-top: $arrow-size;
-      top: 100%;
-      left: 50%;
+      margin-block-start: $arrow-size;
+      inset-block-start: 100%;
+      inset-inline-start: 50%;
       &::before {
-        bottom: 100%;
+        inset-block-end: 100%;
         border-width: 0 $arrow-size $arrow-size $arrow-size;
         border-color: transparent transparent $background-color transparent;
       }
     }
     &[data-side="left"] {
-      margin-right: $arrow-size;
-      top: 50%;
-      right: 100%;
+      margin-inline-end: $arrow-size;
+      inset-block-start: 50%;
+      inset-inline-end: 100%;
       &::before {
-        left: 100%;
+        inset-inline-start: 100%;
         border-width: $arrow-size 0 $arrow-size $arrow-size;
         border-color: transparent transparent transparent $background-color;
       }
@@ -79,14 +79,14 @@ $background-color: colors.fs-color("grey90") !default;
     &[data-side="bottom"] {
       transform: translateX(-50%);
       &::before {
-        left: calc(50% - #{$arrow-size});
+        inset-inline-start: calc(50% - #{$arrow-size});
       }
     }
     &[data-side="left"],
     &[data-side="right"] {
       transform: translateY(-50%);
       &::before {
-        top: calc(50% - #{$arrow-size});
+        inset-block-start: calc(50% - #{$arrow-size});
       }
     }
   }

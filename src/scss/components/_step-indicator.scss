@@ -24,7 +24,7 @@ $complete-segment-label-text-color: $complete-segment-color !default;
 .fs-step-indicator {
   $self: &;
   $counter-size: $counter-size;
-  @include spacing.fs-responsive-margin(5, $direction: bottom);
+  @include spacing.fs-responsive-margin(5, $direction: block-end);
   @include typography.fs-font-stack(body, $weight: regular);
   @include typography.fs-font-size(16);
   &__list {
@@ -56,7 +56,7 @@ $complete-segment-label-text-color: $complete-segment-color !default;
   }
   &__label {
     display: block;
-    text-align: left;
+    text-align: start;
   }
   &[data-counters] {
     #{$self}__item {
@@ -67,8 +67,8 @@ $complete-segment-label-text-color: $complete-segment-color !default;
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        width: $counter-size;
-        height: $counter-size;
+        block-size: $counter-size;
+        inline-size: $counter-size;
         border-radius: $counter-size;
         color: $segment-counter-text-color;
         background-color: $segment-color;
@@ -89,18 +89,16 @@ $complete-segment-label-text-color: $complete-segment-color !default;
   }
   &[data-orientation="vertical"] {
     #{$self}__item {
-      @include spacing.fs-responsive-margin(1, $direction: top);
-      @include spacing.fs-responsive-margin(1, $direction: bottom);
-      @include spacing.fs-responsive-padding(1, $direction: top);
-      @include spacing.fs-responsive-padding(1, $direction: bottom);
-      @include spacing.fs-responsive-padding(1, $direction: right);
-      @include spacing.fs-responsive-padding(3, $direction: left);
-      border-left-width: $border-width;
+      @include spacing.fs-responsive-margin(1, $direction: block);
+      @include spacing.fs-responsive-padding(1, $direction: block);
+      @include spacing.fs-responsive-padding(1, $direction: inline-end);
+      @include spacing.fs-responsive-padding(3, $direction: inline-start);
+      border-inline-start-width: $border-width;
     }
     &[data-counters] {
       #{$self}__item {
         &::before {
-          @include spacing.fs-responsive-margin(1, $direction: bottom);
+          @include spacing.fs-responsive-margin(1, $direction: block-end);
         }
       }
     }
@@ -112,13 +110,13 @@ $complete-segment-label-text-color: $complete-segment-color !default;
     }
     #{$self}__item {
       flex: 1 1 1px;
-      border-top-width: $border-width;
+      border-block-start-width: $border-width;
       + #{$self}__item {
-        @include spacing.fs-responsive-margin(1, $direction: left);
+        @include spacing.fs-responsive-margin(1, $direction: inline-start);
       }
     }
     #{$self}__label {
-      @include spacing.fs-responsive-padding(1, $direction: top);
+      @include spacing.fs-responsive-padding(1, $direction: block-start);
     }
     @include media-queries.fs-mq($to: tablet) {
       #{$self}__label {
@@ -129,14 +127,14 @@ $complete-segment-label-text-color: $complete-segment-color !default;
       #{$self}__item {
         &::before {
           position: absolute;
-          top: calc(
+          inset-block-start: calc(
             0px - #{math.div($counter-size, 2)} - #{math.div($border-width, 2)}
           );
-          left: -1px;
+          inset-inline-start: -1px;
         }
       }
       #{$self}__label {
-        @include spacing.fs-responsive-padding(3, $direction: top);
+        @include spacing.fs-responsive-padding(3, $direction: block-start);
       }
       @include media-queries.fs-mq($to: tablet) {
         #{$self}__item::before {

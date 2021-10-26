@@ -1,4 +1,4 @@
-export default class DetailsGroup {
+class DetailsGroup {
   constructor($container) {
     this.$container = $container;
     this.$allModules = $container.querySelectorAll(".fs-details");
@@ -30,3 +30,5 @@ export default class DetailsGroup {
     });
   }
 }
+
+export default DetailsGroup;

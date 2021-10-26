@@ -22,10 +22,10 @@ $border-radius: if(
   }
   &__item {
     @include media-queries.fs-mq($to: tablet) {
-      border-bottom: settings.$fs-hr-width solid $divider;
+      border-block-end: settings.$fs-hr-width solid $divider;
     }
     @include media-queries.fs-mq($from: tablet) {
-      @include spacing.fs-responsive-margin(3, $direction: right);
+      @include spacing.fs-responsive-margin(3, $direction: inline-end);
       display: inline-block;
     }
   }
@@ -34,21 +34,18 @@ $border-radius: if(
     display: inline-block;
     text-decoration: none;
     @include media-queries.fs-mq($to: tablet) {
-      @include spacing.fs-responsive-padding(1, $direction: top);
-      @include spacing.fs-responsive-padding(1, $direction: bottom);
+      @include spacing.fs-responsive-padding(1, $direction: block);
       &[aria-current] {
-        @include spacing.fs-responsive-padding(2, $direction: left);
-
-        border-left: settings.$fs-border-width-narrow solid $current-color;
+        @include spacing.fs-responsive-padding(2, $direction: inline-start);
+        border-inline-start: settings.$fs-border-width-narrow solid
+          $current-color;
       }
     }
     @include media-queries.fs-mq($from: tablet) {
-      @include spacing.fs-responsive-padding(2, $direction: top);
-      @include spacing.fs-responsive-padding(3, $direction: right);
-      @include spacing.fs-responsive-padding(2, $direction: bottom);
-      @include spacing.fs-responsive-padding(3, $direction: left);
+      @include spacing.fs-responsive-padding(2, $direction: block);
+      @include spacing.fs-responsive-padding(3, $direction: inline);
       @include typography.fs-font-size(24);
-      margin-left: 0 - spacing.fs-spacing(2);
+      margin-inline-start: 0 - spacing.fs-spacing(2);
       &:hover,
       &[aria-current] {
         color: colors.fs-color-if-set($current-link-text-color, $current-color);

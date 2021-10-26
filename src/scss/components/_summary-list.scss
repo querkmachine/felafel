@@ -7,24 +7,24 @@
 .fs-summary-list {
   $self: &;
   @include spacing.fs-responsive-margin(0, $direction: all);
-  @include spacing.fs-responsive-margin(8, $direction: bottom);
+  @include spacing.fs-responsive-margin(8, $direction: block-end);
   @include typography.fs-font-stack(body, $weight: regular);
   &__item {
-    border-bottom: settings.$fs-hr-width solid settings.$fs-border-color;
+    border-block-end: settings.$fs-hr-width solid settings.$fs-border-color;
     + #{$self}__item {
-      @include spacing.fs-responsive-padding(3, $direction: top);
+      @include spacing.fs-responsive-padding(3, $direction: block-start);
     }
   }
   &__key {
     @include typography.fs-font-stack(body, $weight: bold);
-    @include spacing.fs-responsive-margin(1, $direction: bottom);
+    @include spacing.fs-responsive-margin(1, $direction: block-end);
   }
   &__value,
   &__actions {
     @include spacing.fs-responsive-margin(0, $direction: all);
-    @include spacing.fs-responsive-margin(3, $direction: bottom);
+    @include spacing.fs-responsive-margin(3, $direction: block-end);
     > :last-child {
-      @include spacing.fs-responsive-margin(0, $direction: bottom);
+      @include spacing.fs-responsive-margin(0, $direction: block-end);
     }
   }
   @include media-queries.fs-mq($from: tablet) {
@@ -32,16 +32,15 @@
       display: flex;
       flex-direction: row;
       + #{$self}__item {
-        @include spacing.fs-responsive-padding(0, $direction: top);
+        @include spacing.fs-responsive-padding(0, $direction: block-start);
       }
     }
     #{$self}__key,
     #{$self}__value,
     #{$self}__actions {
-      @include spacing.fs-responsive-margin(0, $direction: bottom);
-      @include spacing.fs-responsive-padding(2, $direction: top);
-      @include spacing.fs-responsive-padding(2, $direction: bottom);
-      @include spacing.fs-responsive-padding(4, $direction: right);
+      @include spacing.fs-responsive-margin(0, $direction: block-end);
+      @include spacing.fs-responsive-padding(2, $direction: block);
+      @include spacing.fs-responsive-padding(4, $direction: inline-end);
       display: table-cell;
       word-wrap: break-word;
       overflow-wrap: break-word;
@@ -56,9 +55,9 @@
       }
     }
     #{$self}__actions {
-      @include spacing.fs-responsive-padding(0, $direction: right);
+      @include spacing.fs-responsive-padding(0, $direction: inline-end);
       flex: 0 0 20%;
-      text-align: right;
+      text-align: end;
     }
   }
 }

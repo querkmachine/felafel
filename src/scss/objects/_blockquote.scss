@@ -3,9 +3,9 @@
 
 .fs-blockquote {
   @include spacing.fs-responsive-margin(0);
-  @include spacing.fs-responsive-margin(3, $direction: bottom);
-  @include spacing.fs-responsive-padding(5, $direction: left);
-  border-left: settings.$fs-border-width solid settings.$fs-border-color;
+  @include spacing.fs-responsive-margin(3, $direction: block-end);
+  @include spacing.fs-responsive-padding(5, $direction: inline-start);
+  border-inline-start: settings.$fs-border-width solid settings.$fs-border-color;
   hanging-punctuation: first;
   p::before {
     content: "\201C";
