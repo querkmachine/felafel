@@ -6,7 +6,12 @@
 
 // Get color from palette
 @function fs-color($color) {
-  @return map.get(settings.$fs-color-palette, $color);
+  @if not map.has-key(settings.$fs-color-palette, $color) {
+    @warn "Colour `#{$color}` could not be found - expected a key from the `$fs-color-palette` map.";
+    @return #000;
+  } @else {
+    @return map.get(settings.$fs-color-palette, $color);
+  }
 }
 
 // Color tweaking functions

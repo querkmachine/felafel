@@ -10,6 +10,14 @@ $fs-enable-core-styles: true !default;
 $fs-enable-rounded-corners: false !default;
 $fs-enable-weber-contrast: true !default;
 
+// Merge maps or not?
+$fs-merge-config-maps: true !default;
+$fs-merge-breakpoints: if($fs-merge-config-maps, true, false) !default;
+$fs-merge-colour-palette: if($fs-merge-config-maps, true, false) !default;
+$fs-merge-spacing: if($fs-merge-config-maps, true, false) !default;
+$fs-merge-font-stacks: if($fs-merge-config-maps, true, false) !default;
+$fs-merge-font-sizes: if($fs-merge-config-maps, true, false) !default;
+
 // ====================================
 // BREAKPOINTS
 // ====================================
@@ -20,7 +28,11 @@ $fs-default-breakpoints: (
 );
 
 $fs-breakpoints: () !default;
-$fs-breakpoints: map.merge($fs-default-breakpoints, $fs-breakpoints);
+$fs-breakpoints: if(
+  $fs-merge-breakpoints,
+  map.merge($fs-default-breakpoints, $fs-breakpoints),
+  $fs-breakpoints
+);
 
 // ====================================
 // COLORS
@@ -51,7 +63,11 @@ $fs-default-color-palette: (
 
 // User-defined colour palette
 $fs-color-palette: () !default;
-$fs-color-palette: map.merge($fs-default-color-palette, $fs-color-palette);
+$fs-color-palette: if(
+  $fs-merge-colour-palette,
+  map.merge($fs-default-color-palette, $fs-color-palette),
+  $fs-color-palette
+);
 
 // Brand accent (use sparingly)
 $fs-brand-color: map.get($fs-default-color-palette, "grey90") !default;
@@ -189,7 +205,11 @@ $fs-default-spacing: (
 
 // User-defined spacing config
 $fs-spacing: () !default;
-$fs-spacing: map.merge($fs-default-spacing, $fs-spacing);
+$fs-spacing: if(
+  $fs-merge-spacing,
+  map.merge($fs-default-spacing, $fs-spacing),
+  $fs-spacing
+);
 
 // Form input padding
 $fs-check-radio-margin: 3 !default;
@@ -256,7 +276,11 @@ $fs-default-font-stacks: (
 
 // User-defined font stacks
 $fs-font-stacks: () !default;
-$fs-font-stacks: map.merge($fs-default-font-stacks, $fs-font-stacks);
+$fs-font-stacks: if(
+  $fs-merge-font-stacks,
+  map.merge($fs-default-font-stacks, $fs-font-stacks),
+  $fs-font-stacks
+);
 
 // Font sizes / line heights
 $fs-default-font-sizes: (
@@ -334,4 +358,8 @@ $fs-default-font-sizes: (
 
 // User-defined font stacks
 $fs-font-sizes: () !default;
-$fs-font-sizes: map.merge($fs-default-font-sizes, $fs-font-sizes);
+$fs-font-sizes: if(
+  $fs-merge-font-sizes,
+  map.merge($fs-default-font-sizes, $fs-font-sizes),
+  $fs-font-sizes
+);
