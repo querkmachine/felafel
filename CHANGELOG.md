@@ -41,7 +41,7 @@ window.fs.loadModule("tabs").then((module) => {
 });
 
 // Import an individual component (in JS)
-import Tabs from "@querkmachine/felafel/dist/js/components/tabs";
+import Tabs from "@querkmachine/felafel/dist/components/tabs";
 ```
 
 ### Other breaking changes
