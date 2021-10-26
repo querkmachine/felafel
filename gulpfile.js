@@ -65,7 +65,7 @@ gulp.task("js", () => {
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(gulpif(argv.minify, uglify()))
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest("./dist/js"));
+    .pipe(gulp.dest("./dist"));
 });
 
 /**

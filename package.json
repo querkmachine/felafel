@@ -1,15 +1,13 @@
 {
   "name": "@querkmachine/felafel",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "The Felinesoft Agile Front-End Library.",
   "browserslist": "last 2 versions and last 2 years and not dead",
   "main": "dist/all.js",
-  "module": "dist/all.mjs",
   "scripts": {
     "start": "npm run serve",
     "serve": "gulp default",
-    "build": "gulp build --minify",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp build --minify"
   },
   "author": "Kimberly Grey <kimberly.grey@felinesoft.com>",
   "devDependencies": {

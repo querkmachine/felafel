@@ -4,7 +4,7 @@
 
 import { KeyCodes } from "../helpers/key-codes.js";
 
-class Tab {
+class Tabs {
   constructor($module) {
     this.$module = $module;
     this.$tabs = $module.querySelectorAll(".fs-tabs__tab");
@@ -233,4 +233,4 @@ class Tab {
   }
 }
 
-export default Tab;
+export default Tabs;

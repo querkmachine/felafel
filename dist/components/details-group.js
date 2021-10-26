@@ -1,0 +1,2 @@
+class DetailsGroup{constructor(e){this.$container=e,this.$allModules=e.querySelectorAll(".fs-details"),this.create()}create(){this.$allModules.forEach(e=>{e.bindToggle=this.onToggle.bind(this),e.addEventListener("toggle",e.bindToggle)})}destroy(){this.$allModules.forEach(e=>{e.removeEventListener("toggle",e.bindToggle)})}onToggle(t){if(t.target.hasAttribute("open")){const e=Array.from(this.$container.querySelectorAll(".fs-details[open]"));e.forEach(e=>{e!==t.target&&e.removeAttribute("open")})}}}export default DetailsGroup;
+//# sourceMappingURL=details-group.js.map
