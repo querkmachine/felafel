@@ -1,0 +1,2 @@
+!function(){window.fs={};const o=["details-group","file-drag-and-drop","tabs","textarea-counter","tooltip"];window.fs.initAll=t=>{t=void 0!==t?t:{},o.forEach(o=>{((t,o)=>{const e=void 0!==o.scope?o.scope:document,n=e.querySelectorAll(`[data-module="fs-${t}"]`);n.length&&import(`./components/${t}.js`).then(t=>{n.forEach(o=>{new t.default(o)})}).catch(o=>{console.error(`Failed to import module "${t}".`,o)})})(o,t)})},window.fs.loadModule=o=>import(`./components/${o}.js`)}();
+//# sourceMappingURL=all.js.map
