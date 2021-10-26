@@ -6,27 +6,30 @@
 @mixin fs-mq($from: null, $to: null, $and: null) {
   $map: settings.$fs-breakpoints;
   $query: "";
-  @if not map.has-key($map, $from) {
+  @if $from and not map.has-key($map, $from) {
     @warn "From breakpoint `#{$from}` could not be found - expected a key from the `$fs-breakpoints` map.";
   } @else {
     @if map.has-key($map, $from) {
       $query: "#{$query} (min-width: #{map.get($map, $from)})";
     }
-    @if $to {
-      @if not map.has-key($map, $to) {
-        @warn "To breakpoint `#{$to}` could not be found - expected a key from the `$fs-breakpoints` map.";
-      } @else {
-        @if map.has-key($map, $from) and map.has-key($map, $to) {
-          $query: "#{$query} and";
-        }
-        @if map.has-key($map, $to) {
-          $query: "#{$query} (max-width: #{map.get($map, $to) - 1px})";
-        }
+  }
+
+  @if $to and not map.has-key($map, $to) {
+    @warn "To breakpoint `#{$to}` could not be found - expected a key from the `$fs-breakpoints` map.";
+  } @else {
+    @if map.has-key($map, $to) {
+      @if $from and map.has-key($map, $from) {
+        $query: "#{$query} and";
       }
+      $query: "#{$query} (max-width: #{map.get($map, $to) - 1px})";
     }
-    @if $and {
-      $query: "#{$query} #{$and}";
-    }
+  }
+
+  @if $and {
+    $query: "#{$query} #{$and}";
+  }
+
+  @if $query != "" {
     @media screen and #{$query} {
       @content;
     }
