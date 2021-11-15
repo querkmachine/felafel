@@ -1,6 +1,5 @@
 @use "sass:color";
 @use "sass:map";
-@use "sass:math";
 
 // ====================================
 // FEATURE TOGGLES
@@ -131,7 +130,7 @@ $fs-grid: (
 
 // Grid gutters
 $fs-gutter: 30px !default;
-$fs-gutter-half: math.div($fs-gutter, 2) !default;
+$fs-gutter-half: $fs-gutter * 0.5 !default;
 
 // Generic borders
 $fs-border-width: 0.5rem !default;
