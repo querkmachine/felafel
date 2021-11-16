@@ -12,7 +12,7 @@ $fs-enable-weber-contrast: true !default;
 // Merge maps or not?
 $fs-merge-config-maps: true !default;
 $fs-merge-breakpoints: if($fs-merge-config-maps, true, false) !default;
-$fs-merge-colour-palette: if($fs-merge-config-maps, true, false) !default;
+$fs-merge-color-palette: if($fs-merge-config-maps, true, false) !default;
 $fs-merge-spacing: if($fs-merge-config-maps, true, false) !default;
 $fs-merge-font-stacks: if($fs-merge-config-maps, true, false) !default;
 $fs-merge-font-sizes: if($fs-merge-config-maps, true, false) !default;
@@ -60,10 +60,10 @@ $fs-default-color-palette: (
   "grey90": #111827,
 );
 
-// User-defined colour palette
+// User-defined color palette
 $fs-color-palette: () !default;
 $fs-color-palette: if(
-  $fs-merge-colour-palette,
+  $fs-merge-color-palette,
   map.merge($fs-default-color-palette, $fs-color-palette),
   $fs-color-palette
 );
