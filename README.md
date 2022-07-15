@@ -1,5 +1,7 @@
 # 🧆 Felafel
 
+**⚠️ I no longer work at Felinesoft. This documentation is unlikely to receive any new updates.**
+
 Felafel (aka, the **Fel**inesoft **A**gile **F**ront-**E**nd **L**ibrary) is a set of basic components that we use in projects at [Felinesoft](https://felinesoft.com).
 
 ## Current state
